@@ -64,16 +64,8 @@ public class PlayerCharacter : Character {
         this.tag = Tags.ENEMY;
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            DealDamage();
-        }
-    }
-
     void DealDamage()
     {
-        //ExecuteEvents.Execute<IDamageable>(enemy, null, (x, y) => x.TakeDamage(Damage));
+        //ExecuteEvents.Execute<IDamageable>(enemy, null, (x, y) => x.TakeDamage(Damage, this));
     }
 }
