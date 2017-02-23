@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class PlayerCharacter : Character {
+public class PlayerCharacter : Character
+{
 
     protected int _playerID;
 

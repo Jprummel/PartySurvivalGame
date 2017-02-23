@@ -11,7 +11,7 @@ public class Character : MonoBehaviour {
     [SerializeField]protected float     _damage;
     [SerializeField]protected float     _attackSpeed;
 
-    protected float _currentHealth;
+    [SerializeField]protected float _currentHealth;
     protected Character _damageSource;
     
     //Getters & Setters
