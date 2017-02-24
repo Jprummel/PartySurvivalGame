@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class PlayerCharacter : Character {
 
-    protected int _playerID;
+    [SerializeField]protected int _playerID;
 
     protected int _gold;
     protected int _score;

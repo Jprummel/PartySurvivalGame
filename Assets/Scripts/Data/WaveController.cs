@@ -44,7 +44,6 @@ public class WaveController : MonoBehaviour
         {
             _enemySpawner.SpawnEnemy();
             _enemiesSpawned++;
-            Debug.Log(_enemiesSpawned);
         }
         timer = 0;
     }

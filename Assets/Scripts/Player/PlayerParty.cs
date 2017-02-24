@@ -4,35 +4,28 @@ using UnityEngine;
 
 public class PlayerParty : MonoBehaviour {
 
-    [SerializeField]private List<GameObject> _players = new List<GameObject>();
-    [SerializeField]private List<PlayerCharacter> _playerCharacters = new List<PlayerCharacter>();
+    [SerializeField]public static List<GameObject> Players = new List<GameObject>();
+    [SerializeField]public static List<PlayerCharacter> PlayerCharacters = new List<PlayerCharacter>();
 	// Use this for initialization
 	void Start () {
         AddPlayers();
         AddCharacters();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-
 
     void AddPlayers()
     {
         foreach (GameObject player in GameObject.FindGameObjectsWithTag(Tags.PLAYER))
         {
-            _players.Add(player);
+            Players.Add(player);
         }
     }
 
     void AddCharacters()
     {
-        for (int i = 0; i < _players.Count; i++)
+        for (int i = 0; i < Players.Count; i++)
         {
-            PlayerCharacter characterToAdd = _players[i].GetComponent<PlayerCharacter>();
-            _playerCharacters.Add(characterToAdd);
+            PlayerCharacter characterToAdd = Players[i].GetComponent<PlayerCharacter>();
+            PlayerCharacters.Add(characterToAdd);                       
         }
     }
 }
