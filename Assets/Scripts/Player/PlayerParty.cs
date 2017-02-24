@@ -17,6 +17,8 @@ public class PlayerParty : MonoBehaviour {
 		
 	}
 
+
+
     void AddPlayers()
     {
         foreach (GameObject player in GameObject.FindGameObjectsWithTag(Tags.PLAYER))
