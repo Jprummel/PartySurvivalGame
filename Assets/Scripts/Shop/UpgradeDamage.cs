@@ -8,7 +8,7 @@ public class UpgradeDamage : ShopItem, IUpgrade {
     {
         if (_cost <= character.Gold)
         {
-            character.Damage = character.Damage * 1.1f;
+            character.Damage = Mathf.Round(character.Damage * 1.1f);
             character.Gold -= _cost; //Reduces the players gold by the cost of the upgrade
             DetermineNewCost();
         }
@@ -16,6 +16,6 @@ public class UpgradeDamage : ShopItem, IUpgrade {
 
     public void DetermineNewCost()
     {
-        _cost = _cost /100 * 110;
+        _cost = Mathf.Round(_cost * 1.1f);
     }
 }

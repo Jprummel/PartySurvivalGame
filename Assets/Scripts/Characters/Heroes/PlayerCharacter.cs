@@ -7,7 +7,7 @@ public class PlayerCharacter : Character {
 
     [SerializeField]protected int _playerID;
 
-    protected int _gold;
+    protected float _gold;
     protected int _score;
     protected enum PlayerState
     {
@@ -24,7 +24,7 @@ public class PlayerCharacter : Character {
         set { _playerID = value; }
     }
 
-    public int Gold
+    public float Gold
     {
         get { return _gold; }
         set { _gold = value; }
