@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class UpgradeHealth : ShopItem, IUpgrade {
 
-    public void Upgrade(PlayerCharacter player)
+    public void Upgrade()
     {
-        if (_cost <= player.Gold)
+        if (_cost <= _display.MatchingPlayer.Gold)
         {
-            player.MaxHealth = Mathf.Round(player.MaxHealth * 1.1f);
-            player.Gold -= _cost;
+            _display.MatchingPlayer.MaxHealth = Mathf.Round(_display.MatchingPlayer.MaxHealth * 1.1f);
+            _display.MatchingPlayer.Gold -= _cost;
             DetermineNewCost();
         }
     }

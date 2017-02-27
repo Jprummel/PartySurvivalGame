@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class UpgradeDamage : ShopItem, IUpgrade {
 
-    public void Upgrade(PlayerCharacter character)
+    public void Upgrade()
     {
-        if (_cost <= character.Gold)
+        if (_cost <= _display.MatchingPlayer.Gold)
         {
-            character.Damage = Mathf.Round(character.Damage * 1.1f);
-            character.Gold -= _cost; //Reduces the players gold by the cost of the upgrade
+            _display.MatchingPlayer.Damage = Mathf.Round(_display.MatchingPlayer.Damage * 1.1f);           
+            _display.MatchingPlayer.Gold -= _cost; //Reduces the players gold by the cost of the upgrade
             DetermineNewCost();
         }
     }

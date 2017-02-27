@@ -9,8 +9,11 @@ public class DisplayStats : MonoBehaviour {
     [SerializeField]private Text _statDisplayText;
     [SerializeField]private Text _statValuesText;
     [SerializeField]private PlayerCharacter _player;
+    private ShopDisplay _display;
 
-	void Start () {
+
+    void Start () {
+        _display = GetComponentInParent<ShopDisplay>();
         DisplayStatNames();
 	}
 	
@@ -20,7 +23,7 @@ public class DisplayStats : MonoBehaviour {
 
     void DisplayStatNames()
     {
-        _playerName.text = _player.Name;
+        _playerName.text = _display.MatchingPlayer.Name;
         _statDisplayText.text = "Damage" + "\n" +
                                 "Health" + "\n" +
                                 "Move Speed";
@@ -28,9 +31,9 @@ public class DisplayStats : MonoBehaviour {
 
     void DisplayStatValues()
     {
-        _statValuesText.text =  _player.Damage + "\n" +
-                                _player.MaxHealth + "\n" +
-                                _player.MovementSpeed;
+        _statValuesText.text =  _display.MatchingPlayer.Damage + "\n" +
+                                _display.MatchingPlayer.MaxHealth + "\n" +
+                                _display.MatchingPlayer.MovementSpeed;
     }
 
 }

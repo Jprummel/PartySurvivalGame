@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class UpgradeMovementSpeed : ShopItem, IUpgrade {
 
-    public void Upgrade(PlayerCharacter player)
+    public void Upgrade()
     {
-        if (_cost <= player.Gold)
+        if (_cost <= _display.MatchingPlayer.Gold)
         {
-            player.MovementSpeed = player.MovementSpeed + 0.25f;
-            player.Gold -= _cost;
+            _display.MatchingPlayer.MovementSpeed = _display.MatchingPlayer.MovementSpeed + 0.25f;
+            _display.MatchingPlayer.Gold -= _cost;
             DetermineNewCost();
         }
     }

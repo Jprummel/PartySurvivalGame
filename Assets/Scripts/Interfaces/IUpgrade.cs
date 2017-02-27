@@ -5,6 +5,6 @@ using UnityEngine;
 public interface IUpgrade{
 
     //Upgrade Interface
-	void Upgrade(PlayerCharacter character);
+	void Upgrade();
     void DetermineNewCost();
 }
