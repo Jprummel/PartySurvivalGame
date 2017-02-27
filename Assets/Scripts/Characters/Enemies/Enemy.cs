@@ -5,6 +5,19 @@ using UnityEngine;
 
 public class Enemy : Character, IDamageable{
 
+    private List<GameObject> _players;
+    [HideInInspector]public Vector2 closestTarget;
+    private float _distToPlayer;
+    public float DistToPlayer
+    {
+        get{return _distToPlayer;}
+    }
+    private GameObject _target;
+    public GameObject Target
+    {
+        get { return _target; }
+    }
+
     [SerializeField]protected int _scoreValue;
     [SerializeField]protected int _goldValue;
     private EnemySpawner _enemySpawner;
@@ -12,6 +25,7 @@ public class Enemy : Character, IDamageable{
     void Start()
     {
         _enemySpawner = GameObject.FindGameObjectWithTag(Tags.ENEMYSPAWNER).GetComponent<EnemySpawner>();
+        _players = PlayerParty.Players;
         //StartCoroutine(DeathRoutine());
     }
 
@@ -23,9 +37,10 @@ public class Enemy : Character, IDamageable{
             //player.Gold += _goldValue;
             //player.Score += _scoreValue;
         }
+        CalculateDist();
     }
 
-    public void TakeDamage(float damage, PlayerCharacter player)
+    public void TakeDamage(float damage)
     {
         Debug.Log("take damage");
         _currentHealth -= damage;
@@ -45,8 +60,21 @@ public class Enemy : Character, IDamageable{
         Destroy(this.gameObject);
     }
 
-    public void TakeDamage(float damage)
+    void CalculateDist()
     {
-        throw new NotImplementedException();
+        float ClosestDistance = 420;
+
+        for (int i = 0; i < _players.Count; i++)
+        {
+            _distToPlayer = Vector2.Distance(transform.position, _players[i].transform.position);
+            //Debug.Log(_distToPlayer);
+
+            if (_distToPlayer < ClosestDistance)
+            {
+                ClosestDistance = _distToPlayer;
+                closestTarget = _players[i].transform.position;
+                _target = _players[i].gameObject;
+            }
+        }
     }
 }

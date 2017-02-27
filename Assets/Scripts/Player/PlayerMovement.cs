@@ -17,15 +17,6 @@ public class PlayerMovement : MonoBehaviour {
 
 	void Start () {
         _rgb2d = GetComponent<Rigidbody2D>();
-        switch (_player.PlayerID)
-        {
-            case 1:
-                ControllerInput.MovementInputP1 += Move;
-                break;
-            case 2:
-                ControllerInput.MovementInputP2 += Move;
-                break;
-        }
         //ControllerInput.MovementInput += Move;
 	}
 
@@ -36,6 +27,6 @@ public class PlayerMovement : MonoBehaviour {
             _rgb2d = player.gameObject.GetComponent<Rigidbody2D>();
             _gotRB = true;
         }
-        _rgb2d.MovePosition(_rgb2d.position + moveDir * _moveSpeed * Time.deltaTime);
+        _rgb2d.MovePosition(_rgb2d.position + moveDir * _player.MovementSpeed * Time.deltaTime);
     }
 }

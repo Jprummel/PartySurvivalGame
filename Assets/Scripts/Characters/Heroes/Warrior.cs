@@ -6,6 +6,6 @@ public class Warrior : PlayerCharacter {
 
     void Start()
     {
-        Gold = 30000;
+        Gold = int.MaxValue;
     }
 }

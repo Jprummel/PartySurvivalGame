@@ -9,7 +9,7 @@ public class Character : MonoBehaviour {
     [SerializeField]protected float     _movementSpeed;
     [SerializeField]protected float     _maxHealth;
     [SerializeField]protected float     _damage;
-    [SerializeField]protected float     _attackSpeed;
+    [SerializeField]protected float     _attackRange;
 
     [SerializeField]protected float _currentHealth;
     protected Character _damageSource;
@@ -45,11 +45,13 @@ public class Character : MonoBehaviour {
         set { _damage = value; }
     }
 
-    public float AttackSpeed
+    public float AttackRange
     {
-        get { return _attackSpeed; }
-        set { _attackSpeed = value; }
+        get { return _attackRange; }
+        set { _attackRange = value; }
     }
+
+    
 
     protected Animator _animator;
 
