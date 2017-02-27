@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//Author : Jordi Prummel
-
 public class DisplayUpgradeInfo : MonoBehaviour {
 
     [SerializeField]private ShopItem    _upgradeType;
