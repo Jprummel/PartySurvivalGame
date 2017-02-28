@@ -38,7 +38,7 @@ public class SpawnShopHUDPanels : MonoBehaviour {
                     panelTransform.sizeDelta = new Vector2(Screen.width / 2, Screen.height / 2);
                     break;
             }
-            panel.SetActive(false);
+            //panel.SetActive(false);
             panel.transform.SetParent(_panelParent);
         }
     }
