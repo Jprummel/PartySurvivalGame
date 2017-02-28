@@ -8,4 +8,5 @@ public class Tags : MonoBehaviour {
     public const string ENEMY           = "Enemy";
     public const string ENEMYSPAWNER    = "EnemySpawner";
     public const string WAVEMANAGER     = "WaveManager";
+    public const string SHOPPANEL       = "ShopPanel";
 }

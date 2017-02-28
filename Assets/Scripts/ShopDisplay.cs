@@ -22,16 +22,11 @@ public class ShopDisplay : MonoBehaviour {
         FindingNemo();// ><> blub
     }
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
     void FindingNemo()
     {
         for (int i = 0; i < PlayerParty.PlayerCharacters.Count; i++)
         {
-            if (i == _shopPanelID -1)
+            if (PlayerParty.PlayerCharacters[i].PlayerID == _shopPanelID)
             {
                 _matchingPlayer = PlayerParty.PlayerCharacters[i];
             }
