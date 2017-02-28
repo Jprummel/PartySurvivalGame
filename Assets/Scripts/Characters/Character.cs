@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour {
+public class Character : MonoBehaviour, IDamageable {
 
     //Editor Values
     [SerializeField]protected string    _name;
@@ -10,6 +10,7 @@ public class Character : MonoBehaviour {
     [SerializeField]protected float     _maxHealth;
     [SerializeField]protected float     _damage;
     [SerializeField]protected float     _attackRange;
+    [SerializeField]protected float     _attackSpeed;
 
     [SerializeField]protected float _currentHealth;
     protected Character _damageSource;
@@ -51,6 +52,11 @@ public class Character : MonoBehaviour {
         set { _attackRange = value; }
     }
 
+    public float AttackSpeed
+    {
+        get { return _attackSpeed; }
+    }
+
     
 
     protected Animator _animator;
@@ -65,5 +71,13 @@ public class Character : MonoBehaviour {
     {
         _animator = GetComponent<Animator>();   //Gets the characters animator
         _currentHealth = _maxHealth;            //Sets the characters current health to its max health on spawn
+    }
+
+    public void TakeDamage(float damage)
+    {
+        if(_currentHealth > 0)
+        {
+            _currentHealth -= damage;
+        }
     }
 }

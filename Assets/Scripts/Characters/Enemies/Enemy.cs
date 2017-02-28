@@ -10,7 +10,7 @@ public class Enemy : Character, IDamageable{
     private float _distToPlayer;
     public float DistToPlayer
     {
-        get{return _distToPlayer;}
+        get { return _distToPlayer; }
     }
     private GameObject _target;
     public GameObject Target
@@ -40,7 +40,7 @@ public class Enemy : Character, IDamageable{
         CalculateDist();
     }
 
-    public void TakeDamage(float damage)
+    /*public void TakeDamage(float damage)
     {
         Debug.Log("take damage");
         _currentHealth -= damage;
@@ -50,7 +50,7 @@ public class Enemy : Character, IDamageable{
             //player.Gold += _goldValue;
             //player.Score += _scoreValue;
         }
-    }
+    }*/
 
     IEnumerator DeathRoutine()
     {
