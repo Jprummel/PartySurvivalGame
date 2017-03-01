@@ -46,7 +46,6 @@ public class ShopDisplay : MonoBehaviour {
         {
             //Goes back to combat phase and closes the shop
             //Also resets the timer and player to shop for the next wave
-            Debug.Log("Aylmao");
             _waveController.IsCombatPhase = true;
             _shopPanel.SetActive(false);
             _playerToShop = 1;
