@@ -9,6 +9,17 @@ public class PlayerCharacter : Character {
 
     protected float _gold;
     protected int _score;
+
+    public float CurrentDamageCost { get; set; }
+    public float CurrentHealthCost { get; set; }
+    public float CurrentMoveSpeedCost { get; set; }
+
+    public int DamageLevel { get; set; }
+
+    public int HealthLevel { get; set; }
+
+    public int MoveSpeedLevel { get; set; }
+
     protected enum PlayerState
     {
         ALIVE,

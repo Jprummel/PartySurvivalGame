@@ -5,9 +5,16 @@ using UnityEngine.EventSystems;
 
 public class ShopDisplay : MonoBehaviour {
 
+    //Shop panel
     [SerializeField]private GameObject  _shopPanel;
+    [SerializeField]private UpgradeDamage _damageUpgrade;
+    [SerializeField]private UpgradeHealth _healthUpgrade;
+    [SerializeField]private UpgradeMovementSpeed _moveSpeedUpgrade;
+    
+    //Shop time variables
     [SerializeField]private float       _maxTimeToShop;
                     private float       _timeToShop;
+    //Inputs
     private StandaloneInputModule       _inputs;
     
     private WaveController  _waveController;
@@ -18,19 +25,20 @@ public class ShopDisplay : MonoBehaviour {
         set { _matchingPlayer = value; }
     }
 
-    private int     _playerToShop = 1;
+    [SerializeField]private int     _playerToShop = 1;
     private bool    _isShopPhase;
 
 	void Start () {
         _timeToShop = _maxTimeToShop;
         _waveController = GameObject.FindGameObjectWithTag(Tags.WAVEMANAGER).GetComponent<WaveController>();
         _inputs = _shopPanel.GetComponentInChildren<StandaloneInputModule>();
+        FindingNemo();
         SetShopInputs();
     }
 
     void Update()
     {
-        FindingNemo();
+        //FindingNemo();
         ShopPhase();
     }
 
@@ -77,14 +85,18 @@ public class ShopDisplay : MonoBehaviour {
         if (_playerToShop < PlayerParty.PlayerCharacters.Count)
         {
             _playerToShop++;
-            _timeToShop = _maxTimeToShop;
+            FindingNemo();
             SetShopInputs();
+            ShowPlayerUpgradeCosts();
+            _timeToShop = _maxTimeToShop;
         }
         else if (_playerToShop == PlayerParty.PlayerCharacters.Count)
         {
             _isShopPhase = false;
             _timeToShop = _maxTimeToShop;
         }
+
+        
     }
 
     void FindingNemo()
@@ -96,5 +108,12 @@ public class ShopDisplay : MonoBehaviour {
                 _matchingPlayer = PlayerParty.PlayerCharacters[i];
             }
         }
+    }
+
+    void ShowPlayerUpgradeCosts()
+    {
+        _damageUpgrade.GetCurrentCost();
+        _healthUpgrade.GetCurrentCost();
+        _moveSpeedUpgrade.GetCurrentCost();        
     }
 }
