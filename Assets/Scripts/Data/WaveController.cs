@@ -16,6 +16,13 @@ public class WaveController : MonoBehaviour
     [SerializeField]
     private int _timeBetweenWaves;
     private bool _waiting;
+    private bool _isCombatPhase = true;
+
+    public bool IsCombatPhase
+    {
+        get { return _isCombatPhase; }
+        set { _isCombatPhase = value; }
+    }
 
     void Start()
     {
@@ -31,6 +38,11 @@ public class WaveController : MonoBehaviour
             {
                 SpawnEnemy();
             }
+        }
+        if (_enemiesSpawned == _enemiesToSpawn && _enemySpawner.spawnedEnemies.Count == 0 && !_waiting)
+        {
+            _isCombatPhase = false;
+            //StartCoroutine(NextWave());
         }
         if (_enemiesSpawned == _enemiesToSpawn && _enemySpawner.spawnedEnemies.Count == 0 && !_waiting)
         {

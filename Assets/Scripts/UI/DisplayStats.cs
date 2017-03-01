@@ -13,7 +13,7 @@ public class DisplayStats : MonoBehaviour {
 
 
     void Start () {
-        _display = GetComponentInParent<ShopDisplay>();
+        _display = GameObject.FindGameObjectWithTag(Tags.SHOPMANAGER).GetComponent<ShopDisplay>();
         DisplayStatNames();
 	}
 	
