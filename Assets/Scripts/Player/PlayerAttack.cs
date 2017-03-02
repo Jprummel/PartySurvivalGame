@@ -9,6 +9,7 @@ public class PlayerAttack : MonoBehaviour {
 
     [SerializeField]private GameObject _hitbox;
     private Animator _anim;
+    private bool _readyToAttack = true;
 
     void Awake()
     {
@@ -19,9 +20,14 @@ public class PlayerAttack : MonoBehaviour {
 
     public void Attack()
     {
-        StartCoroutine(AttackState());
-        //dealdamage(multilpier) for later on heavy and maybe combo attacks;
-        _playerCharacter.DealDamage(1f, _slashCollider.Target);
+        if (_readyToAttack)
+        {
+            StartCoroutine(AttackState());
+            //dealdamage(multilpier) for later on heavy and maybe combo attacks;
+            _playerCharacter.DealDamage(1f, _slashCollider.Target);
+            _readyToAttack = false;
+            StartCoroutine(Cooldown(0.6f));
+        }
     }
 
     IEnumerator AttackState()
@@ -29,5 +35,11 @@ public class PlayerAttack : MonoBehaviour {
         _anim.SetInteger("AttackState", 1);
         yield return new WaitForSeconds(0.01f);
         _anim.SetInteger("AttackState", 0);
+    }
+
+    IEnumerator Cooldown(float cd)
+    {       
+        yield return new WaitForSeconds(cd);
+        _readyToAttack = true;
     }
 }

@@ -56,7 +56,7 @@ public class Enemy : Character, IDamageable{
     {
         //_animator.SetBool("isDead", true);
         _enemySpawner.spawnedEnemies.Remove(this.gameObject);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f);
         Destroy(this.gameObject);
     }
 

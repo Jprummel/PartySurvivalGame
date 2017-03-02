@@ -81,11 +81,10 @@ public class PlayerCharacter : Character {
         this.tag = Tags.ENEMY;
     }
 
-    public void DealDamage(float multiplier, GameObject target)
+    public void DealDamage(float multiplier, List<GameObject> target)
     {
-        StartCoroutine(EnableHitbox(0.5f));
-        float damage = Damage * multiplier;
-        ExecuteEvents.Execute<IDamageable>(target, null, (x, y) => x.TakeDamage(damage));
+        StartCoroutine(EnableHitbox(0.2f));
+        StartCoroutine(AttackTargets(target));
     }
 
     IEnumerator EnableHitbox(float duration)
@@ -94,11 +93,19 @@ public class PlayerCharacter : Character {
         {
             yield return new WaitForSeconds(0.1f);
             _hitBox.SetActive(true);
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(duration);
             _hitBox.SetActive(false);
         }
-
-
     }
 
+    IEnumerator AttackTargets(List<GameObject> target)
+    {
+        //float damage = Damage * multiplier;
+        //hitbox duration
+        yield return new WaitForSeconds(0.15f);
+        for (int i = 0; i < target.Count; i++)
+        {
+            ExecuteEvents.Execute<IDamageable>(target[i], null, (x, y) => x.TakeDamage(Damage));
+        }
+    }
 }
