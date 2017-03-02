@@ -11,15 +11,25 @@ public class PlayerCharacter : Character {
     protected float _gold;
     protected int _score;
 
-    public float CurrentDamageCost { get; set; }
-    public float CurrentHealthCost { get; set; }
-    public float CurrentMoveSpeedCost { get; set; }
+    private float _currrentDamageCost = 500;
+    private float _currentHealthCost = 500;
+    private float _currentMoveSpeedCost = 500;
 
-    public int DamageLevel { get; set; }
-
-    public int HealthLevel { get; set; }
-
-    public int MoveSpeedLevel { get; set; }
+    public float CurrentDamageCost 
+    {
+        get { return _currrentDamageCost; }
+        set { _currrentDamageCost = value; }
+    }
+    public float CurrentHealthCost 
+    {
+        get { return _currentHealthCost; }
+        set { _currentHealthCost = value; }
+    }
+    public float CurrentMoveSpeedCost
+    {
+        get { return _currentMoveSpeedCost; }
+        set { _currentMoveSpeedCost = value; }
+    }
 
     protected enum PlayerState
     {

@@ -11,13 +11,6 @@ public class ShopItem : MonoBehaviour {
     void Start()
     {
         _display = GameObject.FindGameObjectWithTag(Tags.SHOPMANAGER).GetComponent<ShopDisplay>();
-        foreach (PlayerCharacter player in PlayerParty.PlayerCharacters)
-        {
-            PlayerCharacter playerinfo = player.GetComponent<PlayerCharacter>();
-            playerinfo.CurrentDamageCost = 500;
-            playerinfo.CurrentHealthCost = 500;
-            playerinfo.CurrentMoveSpeedCost = 500;
-        }
     }
 
     public float Cost
