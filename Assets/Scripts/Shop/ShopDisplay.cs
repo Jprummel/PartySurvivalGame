@@ -48,6 +48,8 @@ public class ShopDisplay : MonoBehaviour {
             //shows the shop panel
             _isShopPhase = true;
             _shopPanel.SetActive(true);
+            FindingNemo();
+            SetShopInputs();
             ShopTurnTimer(); //Runs the timer
         }
         if (!_isShopPhase)
