@@ -7,6 +7,7 @@ public class PlayerCharacter : Character {
 
     [SerializeField]protected int _playerID;
 
+    private GameObject _hitBox;
     protected float _gold;
     protected int _score;
     protected enum PlayerState
@@ -34,6 +35,11 @@ public class PlayerCharacter : Character {
     {
         get { return _score; }
         set { _score = value; }
+    }
+
+    void Awake()
+    {
+        _hitBox = transform.GetChild(0).gameObject;
     }
 
     void Death()
@@ -64,16 +70,24 @@ public class PlayerCharacter : Character {
         this.tag = Tags.ENEMY;
     }
 
-    void Update()
+    public void DealDamage(float multiplier, GameObject target)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            DealDamage();
-        }
+        StartCoroutine(EnableHitbox(0.5f));
+        float damage = Damage * multiplier;
+        ExecuteEvents.Execute<IDamageable>(target, null, (x, y) => x.TakeDamage(damage));
     }
 
-    void DealDamage()
+    IEnumerator EnableHitbox(float duration)
     {
-        //ExecuteEvents.Execute<IDamageable>(enemy, null, (x, y) => x.TakeDamage(Damage));
+        if (!_hitBox.active)
+        {
+            yield return new WaitForSeconds(0.1f);
+            _hitBox.SetActive(true);
+            yield return new WaitForSeconds(0.2f);
+            _hitBox.SetActive(false);
+        }
+
+
     }
+
 }

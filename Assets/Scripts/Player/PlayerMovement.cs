@@ -5,13 +5,15 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
-    private SpriteRenderer _renderer;
+    private Animator _anim;
     private PlayerCharacter _player;
     private Rigidbody2D _rgb2d;
+    private Quaternion _rotation;
+    private Vector2 _direction;
 
     void Awake()
     {
-        _renderer = GetComponent<SpriteRenderer>();
+        _anim = GetComponent<Animator>();
         _player = GetComponent<PlayerCharacter>();
     }
 
@@ -21,15 +23,32 @@ public class PlayerMovement : MonoBehaviour {
 
     public void Move(Vector2 moveDir)
     {
+        transform.rotation = _rotation;
+
         _rgb2d.MovePosition(_rgb2d.position + moveDir * _player.MovementSpeed * Time.deltaTime);
-        //Makes the characters sprite face his move direction    
+   
+        PlayAnimation(moveDir);
+        
+        //Makes the characters sprite face his move direction 
         if (moveDir.x < 0)
         {
-            _renderer.flipX = true;
+            _rotation.y = 180;
         }
         else if (moveDir.x > 0)
         {
-            _renderer.flipX = false;
+            _rotation.y = 0;
+        }
+    }
+
+    private void PlayAnimation(Vector2 dir)
+    {
+        if(dir != Vector2.zero)
+        {
+            _anim.SetBool("IsMoving", true);
+        }
+        else
+        {
+            _anim.SetBool("IsMoving", false);
         }
     }
 }

@@ -1,23 +1,27 @@
 fileFormatVersion: 2
-guid: e95de46fdb4d91b438587ce8f36a6476
-timeCreated: 1488315124
+guid: a622410ec1e0b4542b6600806bb552c3
+timeCreated: 1488361864
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Knight_Hit_0
-    21300002: Knight_Hit_1
-    21300004: Knight_Hit_2
-    21300006: Knight_Hit_3
-    21300008: Knight_Hit_4
-    21300010: Knight_Hit_5
-    21300012: Knight_Hit_6
-    21300014: Knight_Hit_7
-    21300016: Knight_Hit_8
-    21300018: Knight_Hit_9
-    21300020: Knight_Hit_10
-    21300022: Knight_Hit_11
-    21300024: Knight_Hit_12
-    21300026: Knight_Hit_13
+    21300000: backhand_0
+    21300002: backhand_1
+    21300004: backhand_2
+    21300006: backhand_3
+    21300008: backhand_4
+    21300010: backhand_5
+    21300012: backhand_6
+    21300014: backhand_7
+    21300016: backhand_8
+    21300018: backhand_9
+    21300020: backhand_10
+    21300022: backhand_11
+    21300024: backhand_12
+    21300026: backhand_13
+    21300028: backhand_14
+    21300030: backhand_15
+    21300032: backhand_16
+    21300034: backhand_17
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -80,196 +84,240 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: Android
-    maxTextureSize: 2048
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Knight_Hit_0
+      name: backhand_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1110
-        width: 214
-        height: 185
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 422
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Knight_Hit_1
+      name: backhand_1
       rect:
         serializedVersion: 2
-        x: 214
-        y: 1110
-        width: 214
-        height: 185
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 299
+        y: 422
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Knight_Hit_2
+      name: backhand_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 925
-        width: 214
-        height: 185
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 598
+        y: 422
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Knight_Hit_3
+      name: backhand_3
       rect:
         serializedVersion: 2
-        x: 214
-        y: 925
-        width: 214
-        height: 185
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 897
+        y: 422
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Knight_Hit_4
+      name: backhand_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 740
-        width: 214
-        height: 185
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1196
+        y: 422
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Knight_Hit_5
+      name: backhand_5
       rect:
         serializedVersion: 2
-        x: 214
-        y: 740
-        width: 214
-        height: 185
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1495
+        y: 422
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Knight_Hit_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 555
-        width: 214
-        height: 185
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Knight_Hit_7
-      rect:
-        serializedVersion: 2
-        x: 214
-        y: 555
-        width: 214
-        height: 185
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Knight_Hit_8
+      name: backhand_6
       rect:
         serializedVersion: 2
         x: 0
-        y: 370
-        width: 214
-        height: 185
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        y: 211
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Knight_Hit_9
+      name: backhand_7
       rect:
         serializedVersion: 2
-        x: 214
-        y: 370
-        width: 214
-        height: 185
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 299
+        y: 211
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Knight_Hit_10
+      name: backhand_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 185
-        width: 214
-        height: 185
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 598
+        y: 211
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Knight_Hit_11
+      name: backhand_9
       rect:
         serializedVersion: 2
-        x: 214
-        y: 185
-        width: 214
-        height: 185
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 897
+        y: 211
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Knight_Hit_12
+      name: backhand_10
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 211
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: backhand_11
+      rect:
+        serializedVersion: 2
+        x: 1495
+        y: 211
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: backhand_12
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 214
-        height: 185
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Knight_Hit_13
+      name: backhand_13
       rect:
         serializedVersion: 2
-        x: 214
+        x: 299
         y: 0
-        width: 214
-        height: 185
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: backhand_14
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 0
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: backhand_15
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 0
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: backhand_16
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 0
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: backhand_17
+      rect:
+        serializedVersion: 2
+        x: 1495
+        y: 0
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
