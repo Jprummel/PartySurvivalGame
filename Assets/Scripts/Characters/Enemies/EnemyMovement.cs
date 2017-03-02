@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour {
 
-    Enemy _enemy;
-
     [SerializeField]private float _moveSpeed;
+                    private Enemy _enemy;
+                    private Quaternion _rotation;
 
     void Awake()
     {
@@ -16,6 +16,7 @@ public class EnemyMovement : MonoBehaviour {
 
 	void Update () {
         Move();
+        transform.rotation = _rotation;
 	}
 
     void Move()
@@ -23,6 +24,14 @@ public class EnemyMovement : MonoBehaviour {
         if(_enemy.DistToPlayer > _enemy.AttackRange)
         {
             transform.position = Vector2.MoveTowards(transform.position, _enemy.closestTarget, _moveSpeed * Time.deltaTime);
+            if (transform.position.x > _enemy.closestTarget.x)
+            {
+                _rotation.y = 180;
+            }
+            else if (transform.position.x < _enemy.closestTarget.x)
+            {
+                _rotation.y = 0;
+            }
         }
     }
 }
