@@ -12,11 +12,8 @@ public class WaveController : MonoBehaviour
     private int _maxEnemies = 15;
     private int _enemiesSpawned;
     private float _jeMoeder = 1.2f;//_enemyAmountModifier
-    private float timer;
-    [SerializeField]
-    private int _timeBetweenWaves;
-    private bool _waiting;
-    private bool _isCombatPhase = true;
+    private float timer;//enemy respawn timer
+    private bool _isCombatPhase = false;
 
     public bool IsCombatPhase
     {
@@ -26,29 +23,25 @@ public class WaveController : MonoBehaviour
 
     void Start()
     {
-        _isCombatPhase = false;
         _enemySpawner = GameObject.FindWithTag("EnemySpawner").GetComponent<EnemySpawner>();
     }
 
     void Update()
-    {
-        if (_enemiesSpawned < _enemiesToSpawn)
-        {
+    {//if there are less enemies spawned than supposed to
+        if (_enemiesSpawned < _enemiesToSpawn && _isCombatPhase)
+        {//wait 0.5s before spawning another enemy
             timer += Time.deltaTime;
             if (timer >= 0.5)
             {
                 SpawnEnemy();
             }
-        }
-        if (_enemiesSpawned == _enemiesToSpawn && _enemySpawner.spawnedEnemies.Count == 0 && !_waiting)
+        }//if the right amount of enemies are spawned, the list is empty and the players arent shopping.
+        if (_enemiesSpawned == _enemiesToSpawn && _enemySpawner.spawnedEnemies.Count == 0 && _isCombatPhase)
         {
-            _isCombatPhase = false;
-            //StartCoroutine(NextWave());
+            //reset wave values
+            ResetWave();
         }
-        if (_enemiesSpawned == _enemiesToSpawn && _enemySpawner.spawnedEnemies.Count == 0 && !_waiting)
-        {
-            StartCoroutine(NextWave());
-        }
+
     }
 
     void SpawnEnemy()
@@ -61,14 +54,13 @@ public class WaveController : MonoBehaviour
         timer = 0;
     }
 
-    IEnumerator NextWave()
+    void ResetWave()
     {
-        _waiting = true;
-        yield return new WaitForSeconds(_timeBetweenWaves);
+        _isCombatPhase = false;
         _enemiesSpawned = 0;
         float newEnemyAmount = _enemiesToSpawn;
         GameInformation.Wave++;
-
+        WaveDisplay.updateWave += ResetWave;
         switch (GameInformation.Wave)
         {
             case 10:
@@ -80,8 +72,6 @@ public class WaveController : MonoBehaviour
                 _jeMoeder = 1.05f;
                 break;
         }
-
         _enemiesToSpawn = Mathf.RoundToInt(newEnemyAmount * _jeMoeder);
-        _waiting = false;
     }
 }

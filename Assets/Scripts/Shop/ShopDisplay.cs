@@ -42,6 +42,7 @@ public class ShopDisplay : MonoBehaviour {
 
     void Update()
     {
+        FindingNemo();
         ShopPhase();
     }
 
@@ -77,11 +78,6 @@ public class ShopDisplay : MonoBehaviour {
 
     void NextPlayerShopTurn()
     {
-        FindingNemo();
-        SetShopInputs();
-        ShowPlayerUpgradeCosts();
-        _timeToShop = _maxTimeToShop;  
-
         if (_playerToShop < PlayerParty.PlayerCharacters.Count)
         {
             _playerToShop++; //If the current player shopping isnt the last one in the list go to the next one
@@ -92,18 +88,22 @@ public class ShopDisplay : MonoBehaviour {
             _playerToShop = 1;
             _waveController.IsCombatPhase = true;
             _shopPanel.SetActive(false);
-        }      
+        }
+        FindingNemo();
+        SetShopInputs();
+        ShowPlayerUpgradeCosts();
+        _timeToShop = _maxTimeToShop;
     }
 
     void FindingNemo()
     {
         for (int i = 0; i < PlayerParty.PlayerCharacters.Count; i++)
-        {
-            if (PlayerParty.PlayerCharacters[i].PlayerID == _playerToShop)
             {
-                _matchingPlayer = PlayerParty.PlayerCharacters[i];
+                if (PlayerParty.PlayerCharacters[i].PlayerID == _playerToShop)
+                {
+                    _matchingPlayer = PlayerParty.PlayerCharacters[i];
+                }
             }
-        }
     }
 
     void ShowPlayerUpgradeCosts()

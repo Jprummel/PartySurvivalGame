@@ -22,6 +22,6 @@ public class UpgradeDamage : ShopItem, IUpgrade {
 
     public void GetCurrentCost()
     {
-        _cost = _display.MatchingPlayer.CurrentDamageCost; 
+        _cost = _display.MatchingPlayer.CurrentDamageCost;
     }
 }

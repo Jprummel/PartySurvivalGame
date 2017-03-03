@@ -15,20 +15,23 @@ public class DisplayStats : MonoBehaviour {
 
     void Start () {
         _display = GameObject.FindGameObjectWithTag(Tags.SHOPMANAGER).GetComponent<ShopDisplay>();
-        DisplayStatNames();
+        
 	}
 	
 	void Update () {
-        DisplayStatValues();
-        DisplayAvailableGold();
-	}
+        if(_display.MatchingPlayer != null){
+            DisplayStatValues();
+            DisplayAvailableGold();
+            DisplayStatNames();
+        }
+    }
 
     void DisplayStatNames()
     {
-        _playerName.text = _display.MatchingPlayer.Name;
-        _statDisplayText.text = "Damage" + "\n" +
-                                "Health" + "\n" +
-                                "Move Speed";
+            _playerName.text = _display.MatchingPlayer.Name;
+            _statDisplayText.text = "Damage" + "\n" +
+                                    "Health" + "\n" +
+                                    "Move Speed";   
     }
 
     void DisplayStatValues()

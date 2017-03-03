@@ -16,7 +16,7 @@ public class PlayerHud : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
     void DisplayGold()
