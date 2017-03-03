@@ -1,14 +1,21 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 4b8db832d4dcd724faedca4a7d9df7c2
-timeCreated: 1488440592
-=======
-guid: 06b7e267b59dabd4d9b44595cc68de19
-timeCreated: 1488440846
->>>>>>> origin/master
+timeCreated: 1488457754
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: forhand_0
+    21300002: forhand_1
+    21300004: forhand_2
+    21300006: forhand_3
+    21300008: forhand_4
+    21300010: forhand_5
+    21300012: forhand_6
+    21300014: forhand_7
+    21300016: forhand_8
+    21300018: forhand_9
+    21300020: forhand_10
+    21300022: forhand_11
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -39,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -63,9 +70,173 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: forhand_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 839
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: forhand_1
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 839
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: forhand_2
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 839
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: forhand_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 628
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: forhand_4
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 628
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: forhand_5
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 628
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: forhand_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 417
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: forhand_7
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 417
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: forhand_8
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 417
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: forhand_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 206
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: forhand_10
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 206
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: forhand_11
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 206
+        width: 299
+        height: 211
+      alignment: 9
+      pivot: {x: 0.56, y: 0.53}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 

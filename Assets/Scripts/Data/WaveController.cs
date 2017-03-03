@@ -72,7 +72,7 @@ public class WaveController : MonoBehaviour
         switch (GameInformation.Wave)
         {
             case 10:
-                Debug.Log("wave 15");
+                Debug.Log("wave 10");
                 _jeMoeder = 1.10f;
                 break;
             case 20:

@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class EnemyAttack : MonoBehaviour {
 
     Enemy _enemy;
-    private float _attackCooldown;
+    private bool _readyToAttack = true;
 
 	void Awake () {
         _enemy = GetComponent<Enemy>();
@@ -19,12 +19,20 @@ public class EnemyAttack : MonoBehaviour {
 
     void Attack()
     {
-        if(_enemy.DistToPlayer <= _enemy.AttackRange)
+        if (_enemy.DistToPlayer <= _enemy.AttackRange)
         {
-            if(_attackCooldown >= _enemy.AttackSpeed)
+            if (_readyToAttack)
             {
-                ExecuteEvents.Execute<IDamageable>(_enemy.Target, null, (x, y) => x.TakeDamage(_enemy.Damage));
+                StartCoroutine(AttackCooldown());
+                _readyToAttack = false;
             }
         }
+    }
+
+    IEnumerator AttackCooldown()
+    {
+        yield return new WaitForSeconds(_enemy.AttackSpeed);
+        ExecuteEvents.Execute<IDamageable>(_enemy.Target, null, (x, y) => x.TakeDamage(_enemy.Damage));
+        _readyToAttack = true;
     }
 }
