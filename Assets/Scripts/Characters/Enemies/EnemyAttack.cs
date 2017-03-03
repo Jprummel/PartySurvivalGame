@@ -23,8 +23,8 @@ public class EnemyAttack : MonoBehaviour {
         {
             if (_readyToAttack)
             {
-                StartCoroutine(AttackCooldown());
                 _readyToAttack = false;
+                StartCoroutine(AttackCooldown());
             }
         }
     }

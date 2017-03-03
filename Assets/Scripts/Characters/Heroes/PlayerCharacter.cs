@@ -80,6 +80,7 @@ public class PlayerCharacter : Character {
 
     IEnumerator DeathRoutine()
     {
+        Debug.Log("ded");
         _animator.SetBool("isDead", true);
         _currentState = PlayerState.DEAD;
         yield return new WaitForSeconds(1);

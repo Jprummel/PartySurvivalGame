@@ -40,18 +40,6 @@ public class Enemy : Character, IDamageable{
         CalculateDist();
     }
 
-    /*public void TakeDamage(float damage)
-    {
-        Debug.Log("take damage");
-        _currentHealth -= damage;
-        if (_currentHealth <= 0)
-        {
-            StartCoroutine(DeathRoutine());
-            //player.Gold += _goldValue;
-            //player.Score += _scoreValue;
-        }
-    }*/
-
     IEnumerator DeathRoutine()
     {
         //_animator.SetBool("isDead", true);
@@ -67,7 +55,6 @@ public class Enemy : Character, IDamageable{
         for (int i = 0; i < _players.Count; i++)
         {
             _distToPlayer = Vector2.Distance(transform.position, _players[i].transform.position);
-            //Debug.Log(_distToPlayer);
 
             if (_distToPlayer < ClosestDistance)
             {
