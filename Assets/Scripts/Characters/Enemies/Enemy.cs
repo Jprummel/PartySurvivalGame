@@ -42,7 +42,6 @@ public class Enemy : Character, IDamageable{
 
     IEnumerator DeathRoutine()
     {
-        //_animator.SetBool("isDead", true);
         _animator.SetInteger("AnimationState", 3);
         _enemySpawner.spawnedEnemies.Remove(this.gameObject);
         yield return new WaitForSeconds(0.1f);
