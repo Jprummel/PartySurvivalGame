@@ -57,9 +57,12 @@ public class Character : MonoBehaviour, IDamageable {
         get { return _attackSpeed; }
     }
 
-    
-
     protected Animator _animator;
+    public Animator CharacterAnimator
+    {
+        get { return _animator; }
+        set { _animator = value; }
+    }
 
     public Character DamageSource
     {
