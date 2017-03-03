@@ -8,6 +8,7 @@ public class DisplayStats : MonoBehaviour {
     [SerializeField]private Text _playerName;
     [SerializeField]private Text _statDisplayText;
     [SerializeField]private Text _statValuesText;
+    [SerializeField]private Text _availableGold;
     [SerializeField]private PlayerCharacter _player;
     private ShopDisplay _display;
 
@@ -19,6 +20,7 @@ public class DisplayStats : MonoBehaviour {
 	
 	void Update () {
         DisplayStatValues();
+        DisplayAvailableGold();
 	}
 
     void DisplayStatNames()
@@ -36,4 +38,8 @@ public class DisplayStats : MonoBehaviour {
                                 _display.MatchingPlayer.MovementSpeed;
     }
 
+    void DisplayAvailableGold()
+    {
+        _availableGold.text = "Gold : " + _display.MatchingPlayer.Gold;
+    }
 }

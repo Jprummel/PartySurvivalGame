@@ -24,6 +24,10 @@ public class ShopDisplay : MonoBehaviour {
         get { return _matchingPlayer; }
         set { _matchingPlayer = value; }
     }
+    public float TimeToShop
+    {
+        get { return _timeToShop; }
+    }
 
     [SerializeField]private int     _playerToShop = 1;
     private bool    _isShopPhase;
@@ -38,7 +42,6 @@ public class ShopDisplay : MonoBehaviour {
 
     void Update()
     {
-        //FindingNemo();
         ShopPhase();
     }
 
@@ -48,18 +51,8 @@ public class ShopDisplay : MonoBehaviour {
             //shows the shop panel
             _isShopPhase = true;
             _shopPanel.SetActive(true);
-            FindingNemo();
             SetShopInputs();
             ShopTurnTimer(); //Runs the timer
-        }
-        if (!_isShopPhase)
-        {
-            //Goes back to combat phase and closes the shop
-            //Also resets the timer and player to shop for the next wave
-            _waveController.IsCombatPhase = true;
-            _shopPanel.SetActive(false);
-            _playerToShop = 1;
-            _timeToShop = _maxTimeToShop;
         }
     }
 
@@ -84,21 +77,22 @@ public class ShopDisplay : MonoBehaviour {
 
     void NextPlayerShopTurn()
     {
+        FindingNemo();
+        SetShopInputs();
+        ShowPlayerUpgradeCosts();
+        _timeToShop = _maxTimeToShop;  
+
         if (_playerToShop < PlayerParty.PlayerCharacters.Count)
         {
-            _playerToShop++;
-            FindingNemo();
-            SetShopInputs();
-            ShowPlayerUpgradeCosts();
-            _timeToShop = _maxTimeToShop;
+            _playerToShop++; //If the current player shopping isnt the last one in the list go to the next one
         }
         else if (_playerToShop == PlayerParty.PlayerCharacters.Count)
         {
-            _isShopPhase = false;
-            _timeToShop = _maxTimeToShop;
-        }
-
-        
+            //Sets everything up for re-use after the next wave
+            _playerToShop = 1;
+            _waveController.IsCombatPhase = true;
+            _shopPanel.SetActive(false);
+        }      
     }
 
     void FindingNemo()

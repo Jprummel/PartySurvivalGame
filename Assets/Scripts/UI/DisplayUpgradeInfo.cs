@@ -24,6 +24,6 @@ public class DisplayUpgradeInfo : MonoBehaviour {
 
     void DisplayUpgradeCost()
     {
-        _costText.text = "Cost : " + _upgradeType.Cost; 
+        _costText.text = "Cost : " + _upgradeType.Cost.ToString();
     }
 }
