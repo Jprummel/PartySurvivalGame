@@ -6,6 +6,7 @@ public class ShopItem : MonoBehaviour {
 
     [SerializeField]protected string _name;
     [SerializeField]protected float _cost;
+    protected bool _maxedOut;
     protected ShopDisplay _display;
 
     void Start()
@@ -21,5 +22,10 @@ public class ShopItem : MonoBehaviour {
     public string Name
     {
         get { return _name; }
+    }
+
+    public bool MaxedOut
+    {
+        get { return _maxedOut; }
     }
 }

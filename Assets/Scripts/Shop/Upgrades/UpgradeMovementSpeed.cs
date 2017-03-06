@@ -4,13 +4,30 @@ using UnityEngine;
 
 public class UpgradeMovementSpeed : ShopItem, IUpgrade {
 
+    void Update()
+    {
+        CheckIfMaxed();
+    }
+
+    void CheckIfMaxed()
+    {
+        if (_display.MatchingPlayer.MovementSpeed < 12.5)
+        {
+            _maxedOut = false;
+        }
+        else if (_display.MatchingPlayer.MovementSpeed >= 12.5)
+        {
+            _maxedOut = true;
+        }
+    }
+
     public void Upgrade()
     {
-        if (_cost <= _display.MatchingPlayer.Gold)
+        if (_cost <= _display.MatchingPlayer.Gold && !_maxedOut)
         {
             _display.MatchingPlayer.MovementSpeed = _display.MatchingPlayer.MovementSpeed + 0.25f;
             _display.MatchingPlayer.Gold -= _cost;
-            DetermineNewCost();
+            DetermineNewCost();            
         }
     }
 

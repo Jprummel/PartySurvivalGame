@@ -6,9 +6,16 @@ using UnityEngine.UI;
 public class PlayerHud : MonoBehaviour {
 
     private PlayerCharacter _player;
+    private int _hudID;
     [SerializeField]private Image _portrait;
     [SerializeField]private Text _gold;
     [SerializeField]private Image _healthBar;
+
+    public int HUDId
+    {
+        get { return _hudID; }
+        set { _hudID = value; }
+    }
 	// Use this for initialization
 	void Start () {
 		

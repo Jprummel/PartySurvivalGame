@@ -7,16 +7,13 @@ public class ShopDisplay : MonoBehaviour {
 
     //Shop panel
     [SerializeField]private GameObject  _shopPanel;
-    [SerializeField]private UpgradeDamage _damageUpgrade;
-    [SerializeField]private UpgradeHealth _healthUpgrade;
-    [SerializeField]private UpgradeMovementSpeed _moveSpeedUpgrade;
     
     //Shop time variables
     [SerializeField]private float       _maxTimeToShop;
                     private float       _timeToShop;
-    //Inputs
-    private StandaloneInputModule       _inputs;
-    
+    //
+    private ShopPhaseTurns _shopTurns;
+    private GetUpgradeCosts _upgradeCosts;
     private WaveController  _waveController;
     private PlayerCharacter _matchingPlayer;
     public  PlayerCharacter MatchingPlayer
@@ -29,15 +26,13 @@ public class ShopDisplay : MonoBehaviour {
         get { return _timeToShop; }
     }
 
-    [SerializeField]private int     _playerToShop = 1;
-    private bool    _isShopPhase;
-
 	void Start () {
         _timeToShop = _maxTimeToShop;
         _waveController = GameObject.FindGameObjectWithTag(Tags.WAVEMANAGER).GetComponent<WaveController>();
-        _inputs = _shopPanel.GetComponentInChildren<StandaloneInputModule>();
+        _shopTurns = GetComponent<ShopPhaseTurns>();
+        _upgradeCosts = GetComponent<GetUpgradeCosts>();
         FindingNemo();
-        SetShopInputs();
+        _shopTurns.SetShopInputs();
     }
 
     void Update()
@@ -50,20 +45,10 @@ public class ShopDisplay : MonoBehaviour {
     {
         if(!_waveController.IsCombatPhase){
             //shows the shop panel
-            _isShopPhase = true;
             _shopPanel.SetActive(true);
-            SetShopInputs();
+            _shopTurns.SetShopInputs();
             ShopTurnTimer(); //Runs the timer
         }
-    }
-
-    void SetShopInputs()
-    {
-        //Sets input to every individual player during his turn
-        _inputs.horizontalAxis = InputAxes.LEFT_JOYSTICK_X + _playerToShop;
-        _inputs.verticalAxis = InputAxes.LEFT_JOYSTICK_Y + _playerToShop;
-        _inputs.submitButton = InputAxes.XBOX_A + _playerToShop;
-        _inputs.cancelButton = InputAxes.XBOX_B + _playerToShop;
     }
 
     void ShopTurnTimer()
@@ -78,20 +63,20 @@ public class ShopDisplay : MonoBehaviour {
 
     void NextPlayerShopTurn()
     {
-        if (_playerToShop < PlayerParty.PlayerCharacters.Count)
+        if (_shopTurns.PlayerToShop < PlayerParty.PlayerCharacters.Count)
         {
-            _playerToShop++; //If the current player shopping isnt the last one in the list go to the next one
+            _shopTurns.PlayerToShop++; //If the current player shopping isnt the last one in the list go to the next one
         }
-        else if (_playerToShop == PlayerParty.PlayerCharacters.Count)
+        else if (_shopTurns.PlayerToShop == PlayerParty.PlayerCharacters.Count)
         {
             //Sets everything up for re-use after the next wave
-            _playerToShop = 1;
+            _shopTurns.PlayerToShop = 1;
             _waveController.IsCombatPhase = true;
             _shopPanel.SetActive(false);
         }
         FindingNemo();
-        SetShopInputs();
-        ShowPlayerUpgradeCosts();
+        _shopTurns.SetShopInputs();
+        _upgradeCosts.ShowPlayerUpgradeCosts();
         _timeToShop = _maxTimeToShop;
     }
 
@@ -99,17 +84,10 @@ public class ShopDisplay : MonoBehaviour {
     {
         for (int i = 0; i < PlayerParty.PlayerCharacters.Count; i++)
             {
-                if (PlayerParty.PlayerCharacters[i].PlayerID == _playerToShop)
+                if (PlayerParty.PlayerCharacters[i].PlayerID == _shopTurns.PlayerToShop)
                 {
                     _matchingPlayer = PlayerParty.PlayerCharacters[i];
                 }
             }
-    }
-
-    void ShowPlayerUpgradeCosts()
-    {
-        _damageUpgrade.GetCurrentCost();
-        _healthUpgrade.GetCurrentCost();
-        _moveSpeedUpgrade.GetCurrentCost();        
     }
 }

@@ -19,11 +19,18 @@ public class DisplayUpgradeInfo : MonoBehaviour {
 
     void DisplayUpgradeType()
     {
-        _upgradeTypeText.text = "Upgrade " + _upgradeType.Name;
+        _upgradeTypeText.text = _upgradeType.Name;
     }
 
     void DisplayUpgradeCost()
     {
-        _costText.text = "Cost : " + _upgradeType.Cost.ToString();
+        if (!_upgradeType.MaxedOut)
+        {
+            _costText.text = "Cost : " + _upgradeType.Cost.ToString();
+        }
+        else
+        {
+            _costText.text = "MAXED OUT";
+        }
     }
 }

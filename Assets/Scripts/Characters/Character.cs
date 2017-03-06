@@ -64,12 +64,6 @@ public class Character : MonoBehaviour, IDamageable {
         set { _animator = value; }
     }
 
-    public Character DamageSource
-    {
-        get { return _damageSource; }
-        set { _damageSource = value; }
-    }
-
     void Awake()
     {
         _animator = GetComponent<Animator>();   //Gets the characters animator

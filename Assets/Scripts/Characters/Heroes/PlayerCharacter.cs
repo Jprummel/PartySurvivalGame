@@ -7,9 +7,9 @@ public class PlayerCharacter : Character {
 
     [SerializeField]protected int _playerID;
 
-    private GameObject _hitBox;
-    protected float _gold;
-    protected int _score;
+    private GameObject  _hitBox;
+    protected float     _gold;
+    protected int       _score;
 
     private float _currrentDamageCost = 500;
     private float _currentHealthCost = 500;
