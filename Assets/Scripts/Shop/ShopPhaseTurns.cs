@@ -14,14 +14,6 @@ public class ShopPhaseTurns : MonoBehaviour {
         set { _playerToShop = value; }
     }
 
-	void Start () {
-		
-	}
-	
-	void Update () {
-		
-	}
-
     public void SetShopInputs()
     {
         //Sets input to every individual player during his turn
