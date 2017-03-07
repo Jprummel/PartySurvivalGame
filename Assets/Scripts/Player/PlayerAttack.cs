@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour {
 
     PlayerCharacter _playerCharacter;
-    SlashCollider _slashCollider;
+    AttackCollider _attackCollider;
 
     [SerializeField]private GameObject _hitbox;
     private bool _readyToAttack = true;
@@ -13,7 +13,7 @@ public class PlayerAttack : MonoBehaviour {
     void Awake()
     {  
         _playerCharacter = GetComponent<PlayerCharacter>();
-        _slashCollider = _hitbox.GetComponent<SlashCollider>();
+        _attackCollider = _hitbox.GetComponent<AttackCollider>();
     }
 
     public void Attack()
@@ -22,7 +22,7 @@ public class PlayerAttack : MonoBehaviour {
         {
             StartCoroutine(AttackState());
             //dealdamage(multilpier) for later on heavy and maybe combo attacks;
-            _playerCharacter.DealDamage(1f, _slashCollider.Target);
+            _playerCharacter.DealDamage(1f, _attackCollider.Target);
             _readyToAttack = false;
             StartCoroutine(Cooldown(0.6f));
         }
