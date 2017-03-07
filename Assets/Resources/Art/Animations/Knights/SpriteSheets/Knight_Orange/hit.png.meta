@@ -1,23 +1,23 @@
 fileFormatVersion: 2
-guid: e95de46fdb4d91b438587ce8f36a6476
-timeCreated: 1488315124
+guid: cc64be78975507a498716262e0f0d1fe
+timeCreated: 1488878490
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Knight_Hit_0
-    21300002: Knight_Hit_1
-    21300004: Knight_Hit_2
-    21300006: Knight_Hit_3
-    21300008: Knight_Hit_4
-    21300010: Knight_Hit_5
-    21300012: Knight_Hit_6
-    21300014: Knight_Hit_7
-    21300016: Knight_Hit_8
-    21300018: Knight_Hit_9
-    21300020: Knight_Hit_10
-    21300022: Knight_Hit_11
-    21300024: Knight_Hit_12
-    21300026: Knight_Hit_13
+    21300000: hit_0
+    21300002: hit_1
+    21300004: hit_2
+    21300006: hit_3
+    21300008: hit_4
+    21300010: hit_5
+    21300012: hit_6
+    21300014: hit_7
+    21300016: hit_8
+    21300018: hit_9
+    21300020: hit_10
+    21300022: hit_11
+    21300024: hit_12
+    21300026: hit_13
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -80,194 +80,186 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: Android
-    maxTextureSize: 2048
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Knight_Hit_0
+      name: hit_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1110
-        width: 214
-        height: 185
+        y: 908
+        width: 327
+        height: 227
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Knight_Hit_1
+      name: hit_1
       rect:
         serializedVersion: 2
-        x: 214
-        y: 1110
-        width: 214
-        height: 185
+        x: 327
+        y: 908
+        width: 327
+        height: 227
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Knight_Hit_2
+      name: hit_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 925
-        width: 214
-        height: 185
+        x: 654
+        y: 908
+        width: 327
+        height: 227
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Knight_Hit_3
-      rect:
-        serializedVersion: 2
-        x: 214
-        y: 925
-        width: 214
-        height: 185
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Knight_Hit_4
+      name: hit_3
       rect:
         serializedVersion: 2
         x: 0
-        y: 740
-        width: 214
-        height: 185
+        y: 681
+        width: 327
+        height: 227
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Knight_Hit_5
+      name: hit_4
       rect:
         serializedVersion: 2
-        x: 214
-        y: 740
-        width: 214
-        height: 185
+        x: 327
+        y: 681
+        width: 327
+        height: 227
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Knight_Hit_6
+      name: hit_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 555
-        width: 214
-        height: 185
+        x: 654
+        y: 681
+        width: 327
+        height: 227
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Knight_Hit_7
-      rect:
-        serializedVersion: 2
-        x: 214
-        y: 555
-        width: 214
-        height: 185
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Knight_Hit_8
+      name: hit_6
       rect:
         serializedVersion: 2
         x: 0
-        y: 370
-        width: 214
-        height: 185
+        y: 454
+        width: 327
+        height: 227
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Knight_Hit_9
+      name: hit_7
       rect:
         serializedVersion: 2
-        x: 214
-        y: 370
-        width: 214
-        height: 185
+        x: 327
+        y: 454
+        width: 327
+        height: 227
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Knight_Hit_10
+      name: hit_8
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 454
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hit_9
       rect:
         serializedVersion: 2
         x: 0
-        y: 185
-        width: 214
-        height: 185
+        y: 227
+        width: 327
+        height: 227
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Knight_Hit_11
+      name: hit_10
       rect:
         serializedVersion: 2
-        x: 214
-        y: 185
-        width: 214
-        height: 185
+        x: 327
+        y: 227
+        width: 327
+        height: 227
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Knight_Hit_12
+      name: hit_11
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 227
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hit_12
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 214
-        height: 185
+        width: 327
+        height: 227
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Knight_Hit_13
+      name: hit_13
       rect:
         serializedVersion: 2
-        x: 214
+        x: 327
         y: 0
-        width: 214
-        height: 185
+        width: 327
+        height: 227
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

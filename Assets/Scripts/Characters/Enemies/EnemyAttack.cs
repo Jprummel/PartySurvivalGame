@@ -33,8 +33,9 @@ public class EnemyAttack : MonoBehaviour {
     IEnumerator AttackCooldown()
     {
         _enemy.CharacterAnimator.SetInteger("AnimationState", 1);
-        yield return new WaitForSeconds(_enemy.AttackSpeed);
+        yield return new WaitForSeconds(_enemy.AttackSpeed / 2);
         ExecuteEvents.Execute<IDamageable>(_enemy.Target, null, (x, y) => x.TakeDamage(_enemy.Damage));
+        yield return new WaitForSeconds(_enemy.AttackSpeed / 2);        
         _readyToAttack = true;
         _enemy.CharacterAnimator.SetInteger("AnimationState", 0);
     }

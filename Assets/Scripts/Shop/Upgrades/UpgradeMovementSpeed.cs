@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UpgradeMovementSpeed : ShopItem, IUpgrade {
 
-    void Update()
+    void LateUpdate()
     {
         CheckIfMaxed();
     }

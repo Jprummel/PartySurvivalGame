@@ -74,8 +74,8 @@ public class Character : MonoBehaviour, IDamageable {
     {
         if(_currentHealth > 0)
         {
-            _currentHealth -= damage;
             _animator.SetTrigger("Hit");
+            _currentHealth -= damage;
         }
     }
 }
