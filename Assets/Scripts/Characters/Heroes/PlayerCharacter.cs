@@ -8,6 +8,7 @@ public class PlayerCharacter : Character {
     [SerializeField]protected int _playerID;
 
     private GameObject  _hitBox;
+    private string      _color;
     protected float     _gold;
     protected int       _score;
 
@@ -44,6 +45,12 @@ public class PlayerCharacter : Character {
     {
         get { return _playerID; }
         set { _playerID = value; }
+    }
+
+    public string Color
+    {
+        get { return _color; }
+        set { _color = value; }
     }
 
     public float Gold

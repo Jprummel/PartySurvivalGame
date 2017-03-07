@@ -9,6 +9,7 @@ public class PlayerHud : MonoBehaviour {
     private int _hudID;
     [SerializeField]private Image _portrait;
     [SerializeField]private Text _gold;
+    [SerializeField]private Text _score;
     [SerializeField]private Image _healthBar;
 
     public int HUDId
@@ -16,14 +17,21 @@ public class PlayerHud : MonoBehaviour {
         get { return _hudID; }
         set { _hudID = value; }
     }
-	// Use this for initialization
+
+    public PlayerCharacter Player
+    {
+        get { return _player; }
+        set { _player = value; }
+    }
+
 	void Start () {
-		
+		_portrait = Resources.Load("Art/Sprites/UI/Portraits/" + _player.Name + "_" + _player.Color) as Image;  //Get image by player characters name and color variation
 	}
 	
-	// Update is called once per frame
 	void Update () {
-
+        DisplayGold();
+        DisplayHealthBar();
+        DisplayScore();
 	}
 
     void DisplayGold()
@@ -34,5 +42,10 @@ public class PlayerHud : MonoBehaviour {
     void DisplayHealthBar()
     {
         _healthBar.fillAmount = _player.CurrentHealth / _player.MaxHealth;
+    }
+
+    void DisplayScore()
+    {
+        _score.text = _player.Score.ToString();
     }
 }

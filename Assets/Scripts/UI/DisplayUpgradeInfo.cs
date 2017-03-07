@@ -26,7 +26,7 @@ public class DisplayUpgradeInfo : MonoBehaviour {
     {
         if (!_upgradeType.MaxedOut)
         {
-            _costText.text = "Cost : " + _upgradeType.Cost.ToString();
+            _costText.text = _upgradeType.Cost.ToString();
         }
         else
         {
