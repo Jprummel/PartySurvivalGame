@@ -25,7 +25,7 @@ public class PlayerHud : MonoBehaviour {
     }
 
 	void Start () {
-		_portrait = Resources.Load("Art/Sprites/UI/Portraits/" + _player.Name + "_" + _player.Color) as Image;
+		_portrait = Resources.Load("Art/Sprites/UI/Portraits/" + _player.Name + "_" + _player.Color) as Image;  //Get image by player characters name and color variation
 	}
 	
 	void Update () {

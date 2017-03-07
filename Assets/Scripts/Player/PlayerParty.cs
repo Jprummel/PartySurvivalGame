@@ -7,7 +7,6 @@ public class PlayerParty : MonoBehaviour {
     [SerializeField]public static List<GameObject>      Players             = new List<GameObject>();
     [SerializeField]public static List<PlayerCharacter> PlayerCharacters    = new List<PlayerCharacter>();
 
-	// Use this for initialization
 	void Start () {
         AddPlayers();
         AddCharacters();
