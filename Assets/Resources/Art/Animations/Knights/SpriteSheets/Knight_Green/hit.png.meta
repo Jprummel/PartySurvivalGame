@@ -1,14 +1,23 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: d865268be69540a45be69834d1226b1f
-timeCreated: 1488440606
-=======
-guid: 40d75bb2aba57bb44ae40daab11283fa
-timeCreated: 1488440851
->>>>>>> origin/master
+guid: 239282794421c7849882b68afb005875
+timeCreated: 1488902035
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: hit_0
+    21300002: hit_1
+    21300004: hit_2
+    21300006: hit_3
+    21300008: hit_4
+    21300010: hit_5
+    21300012: hit_6
+    21300014: hit_7
+    21300016: hit_8
+    21300018: hit_9
+    21300020: hit_10
+    21300022: hit_11
+    21300024: hit_12
+    21300026: hit_13
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -39,7 +48,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -63,9 +72,199 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: hit_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 908
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hit_1
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 908
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hit_2
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 908
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hit_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 681
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hit_4
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 681
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hit_5
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 681
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hit_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 454
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hit_7
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 454
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hit_8
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 454
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hit_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 227
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hit_10
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 227
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hit_11
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 227
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hit_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hit_13
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 0
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 

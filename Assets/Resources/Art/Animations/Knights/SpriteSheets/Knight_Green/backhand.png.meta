@@ -1,14 +1,27 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 4e22026a198f160438291b8158bbff9f
-timeCreated: 1488440592
-=======
-guid: 5dc43c50f958af543ba5c07bc3fce6af
-timeCreated: 1488440853
->>>>>>> origin/master
+guid: 1bc948cd4bdb43640bb93a42db28c840
+timeCreated: 1488902021
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: backhand_0
+    21300002: backhand_1
+    21300004: backhand_2
+    21300006: backhand_3
+    21300008: backhand_4
+    21300010: backhand_5
+    21300012: backhand_6
+    21300014: backhand_7
+    21300016: backhand_8
+    21300018: backhand_9
+    21300020: backhand_10
+    21300022: backhand_11
+    21300024: backhand_12
+    21300026: backhand_13
+    21300028: backhand_14
+    21300030: backhand_15
+    21300032: backhand_16
+    21300034: backhand_17
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -39,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -63,9 +76,251 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: backhand_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 454
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: backhand_1
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 454
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: backhand_2
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 454
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: backhand_3
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 454
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: backhand_4
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 454
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: backhand_5
+      rect:
+        serializedVersion: 2
+        x: 1635
+        y: 454
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: backhand_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 227
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: backhand_7
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 227
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: backhand_8
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 227
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: backhand_9
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 227
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: backhand_10
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 227
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: backhand_11
+      rect:
+        serializedVersion: 2
+        x: 1635
+        y: 227
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: backhand_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: backhand_13
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 0
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: backhand_14
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 0
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: backhand_15
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 0
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: backhand_16
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 0
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: backhand_17
+      rect:
+        serializedVersion: 2
+        x: 1635
+        y: 0
+        width: 327
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
