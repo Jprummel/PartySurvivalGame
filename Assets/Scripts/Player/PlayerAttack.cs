@@ -8,12 +8,10 @@ public class PlayerAttack : MonoBehaviour {
     SlashCollider _slashCollider;
 
     [SerializeField]private GameObject _hitbox;
-    private Animator _anim;
     private bool _readyToAttack = true;
 
     void Awake()
-    {
-        _anim = GetComponent<Animator>();
+    {  
         _playerCharacter = GetComponent<PlayerCharacter>();
         _slashCollider = _hitbox.GetComponent<SlashCollider>();
     }
@@ -32,9 +30,9 @@ public class PlayerAttack : MonoBehaviour {
 
     IEnumerator AttackState()
     {
-        _anim.SetInteger("AttackState", 1);
+        _playerCharacter.CharacterAnimator.SetInteger("AttackState", 1);
         yield return new WaitForSeconds(0.01f);
-        _anim.SetInteger("AttackState", 0);
+        _playerCharacter.CharacterAnimator.SetInteger("AttackState", 0);
     }
 
     IEnumerator Cooldown(float cd)

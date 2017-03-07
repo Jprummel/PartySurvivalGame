@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
 
-    private Animator _anim;
     private PlayerCharacter _player;
     private Rigidbody2D _rgb2d;
     private Quaternion _rotation;
@@ -13,7 +12,6 @@ public class PlayerMovement : MonoBehaviour {
 
     void Awake()
     {
-        _anim = GetComponent<Animator>();
         _player = GetComponent<PlayerCharacter>();
     }
 
@@ -44,11 +42,11 @@ public class PlayerMovement : MonoBehaviour {
     {
         if(dir != Vector2.zero)
         {
-            _anim.SetBool("IsMoving", true);
+            _player.CharacterAnimator.SetBool("IsMoving", true);
         }
         else
         {
-            _anim.SetBool("IsMoving", false);
+            _player.CharacterAnimator.SetBool("IsMoving", false);
         }
     }
 }

@@ -26,7 +26,6 @@ public class Enemy : Character, IDamageable{
     {
         _enemySpawner = GameObject.FindGameObjectWithTag(Tags.ENEMYSPAWNER).GetComponent<EnemySpawner>();
         _players = PlayerParty.Players;
-        //StartCoroutine(DeathRoutine());
     }
 
     void Update()
@@ -59,9 +58,10 @@ public class Enemy : Character, IDamageable{
             if (_distToPlayer < ClosestDistance)
             {
                 ClosestDistance = _distToPlayer;
-                closestTarget = _players[i].transform.position;
                 _target = _players[i].gameObject;
+                closestTarget = _target.transform.position;
             }
         }
+        _distToPlayer = Vector2.Distance(transform.position, closestTarget);
     }
 }

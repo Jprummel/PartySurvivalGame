@@ -19,7 +19,8 @@ public class EnemyAttack : MonoBehaviour {
 
     void Attack()
     {
-        if (_enemy.DistToPlayer <= _enemy.AttackRange)
+        float distance = Vector2.Distance(transform.position, _enemy.Target.transform.position);
+        if (distance <= _enemy.AttackRange)
         {
             if (_readyToAttack)
             {

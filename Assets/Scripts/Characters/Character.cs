@@ -14,7 +14,8 @@ public class Character : MonoBehaviour, IDamageable {
 
     [SerializeField]protected float _currentHealth;
     protected Character _damageSource;
-    
+    protected Animator _animator;
+
     //Getters & Setters
     public string Name
     {
@@ -57,17 +58,16 @@ public class Character : MonoBehaviour, IDamageable {
         get { return _attackSpeed; }
     }
 
-    protected Animator _animator;
     public Animator CharacterAnimator
     {
         get { return _animator; }
         set { _animator = value; }
     }
 
-    void Awake()
+    protected virtual void Awake()
     {
-        _animator = GetComponent<Animator>();   //Gets the characters animator
-        _currentHealth = _maxHealth;            //Sets the characters current health to its max health on spawn
+        _animator = GetComponent<Animator>();    //Gets the characters animator
+        _currentHealth = _maxHealth;             //Sets the characters current health to its max health on spawn
     }
 
     public void TakeDamage(float damage)
@@ -75,6 +75,7 @@ public class Character : MonoBehaviour, IDamageable {
         if(_currentHealth > 0)
         {
             _currentHealth -= damage;
+            _animator.SetTrigger("Hit");
         }
     }
 }

@@ -58,21 +58,15 @@ public class PlayerCharacter : Character {
         set { _score = value; }
     }
 
-    void Awake()
+    protected override void Awake()
     {
         _hitBox = transform.GetChild(0).gameObject;
+        base.Awake();
     }
 
-    void Death()
+    void Update()
     {
-        _animator.SetBool("isDead", true);
-        _currentState = PlayerState.DEAD;
-    }
-
-    void TakeDamage(Character character)
-    {
-        _currentHealth -= character.Damage;
-        if (_currentHealth <= 0)
+        if(CurrentHealth <= 0)
         {
             StartCoroutine(DeathRoutine());
         }
@@ -80,10 +74,10 @@ public class PlayerCharacter : Character {
 
     IEnumerator DeathRoutine()
     {
-        Debug.Log("ded");
-        _animator.SetBool("isDead", true);
+        _animator.SetBool("IsDead", true);
         _currentState = PlayerState.DEAD;
         yield return new WaitForSeconds(1);
+        gameObject.SetActive(false);
     }
 
     void BecomeEnemy()
