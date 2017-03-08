@@ -4,28 +4,28 @@ using UnityEngine;
 
 public class PlayerParty : MonoBehaviour {
 
-    [SerializeField]public static List<GameObject>      Players             = new List<GameObject>();
-    [SerializeField]public static List<PlayerCharacter> PlayerCharacters    = new List<PlayerCharacter>();
+    public static List<GameObject>      Players             = new List<GameObject>();
+    public static List<PlayerCharacter> PlayerCharacters    = new List<PlayerCharacter>();
 
 	void Start () {
         AddPlayers();
-        AddCharacters();
+        //AddCharacters();
 	}
 
     void AddPlayers()
     {
-        foreach (GameObject player in GameObject.FindGameObjectsWithTag(Tags.PLAYER))
+        for (int i = 0; i < Players.Count; i++)
         {
-            Players.Add(player);
+            GameObject Player = Instantiate(Players[i]);
         }
     }
 
-    void AddCharacters()
+    /*void AddCharacters()
     {
         for (int i = 0; i < Players.Count; i++)
         {
             PlayerCharacter characterToAdd = Players[i].GetComponent<PlayerCharacter>();
             PlayerCharacters.Add(characterToAdd);                       
         }
-    }
+    }*/
 }

@@ -31,10 +31,12 @@ public class PlayerMovement : MonoBehaviour {
         if (moveDir.x < 0)
         {
             _rotation.y = 180;
+            Debug.Log("Yeaaah boiiii");
         }
         else if (moveDir.x > 0)
         {
             _rotation.y = 0;
+            Debug.Log("Nooooh boooii");
         }
     }
 
