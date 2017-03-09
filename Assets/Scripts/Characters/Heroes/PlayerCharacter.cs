@@ -1,16 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class PlayerCharacter : Character {
 
     [SerializeField]protected int _playerID;
+    [SerializeField]protected Image _portrait;
 
     private GameObject  _hitBox;
-    private string      _color;
     protected float     _gold;
-    protected int       _score;
 
     private float _currrentDamageCost = 500;
     private float _currentHealthCost = 500;
@@ -47,22 +47,16 @@ public class PlayerCharacter : Character {
         set { _playerID = value; }
     }
 
-    public string Color
+    public Image Portrait
     {
-        get { return _color; }
-        set { _color = value; }
+        get { return _portrait; }
+        set { _portrait = value; }
     }
 
     public float Gold
     {
         get { return _gold; }
         set { _gold = value; }
-    }
-
-    public int Score
-    {
-        get { return _score; }
-        set { _score = value; }
     }
 
     protected override void Awake()

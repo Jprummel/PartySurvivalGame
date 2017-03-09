@@ -25,13 +25,12 @@ public class PlayerHud : MonoBehaviour {
     }
 
 	void Start () {
-		_portrait = Resources.Load("Art/Sprites/UI/Portraits/" + _player.Name + "_" + _player.Color) as Image;  //Get image by player characters name and color variation
+		_portrait = _player.Portrait;  //Get image by player characters name and color variation
 	}
 	
 	void Update () {
         DisplayGold();
         DisplayHealthBar();
-        DisplayScore();
 	}
 
     void DisplayGold()
@@ -42,10 +41,5 @@ public class PlayerHud : MonoBehaviour {
     void DisplayHealthBar()
     {
         _healthBar.fillAmount = _player.CurrentHealth / _player.MaxHealth;
-    }
-
-    void DisplayScore()
-    {
-        _score.text = _player.Score.ToString();
     }
 }

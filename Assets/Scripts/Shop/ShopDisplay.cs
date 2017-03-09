@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class ShopDisplay : MonoBehaviour {
 
     //Shop panel
     [SerializeField]private GameObject  _shopPanel;
+    [SerializeField]private Image _portrait;
     
     //Shop time variables
     [SerializeField]private float       _maxTimeToShop;
@@ -90,6 +92,7 @@ public class ShopDisplay : MonoBehaviour {
                 if (PlayerParty.PlayerCharacters[i].PlayerID == _shopTurns.PlayerToShop)
                 {
                     _matchingPlayer = PlayerParty.PlayerCharacters[i];
+                    _portrait = _matchingPlayer.Portrait;
                 }
             }
         /*if (PlayerParty.PlayerCharacters[_playerToShop].PlayerID == _shopTurns.PlayerToShop)
