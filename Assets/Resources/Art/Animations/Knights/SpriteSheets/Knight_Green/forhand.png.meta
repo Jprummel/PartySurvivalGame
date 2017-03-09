@@ -1,11 +1,7 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: c85aa9c4d3272dc4299e3bed751e067d
-timeCreated: 1488902031
-licenseType: Free
-=======
 guid: bd61306fa9b810443832b2d1b3a497ea
->>>>>>> 65edbad9f1cecdb564a5f6404f8a79ab2f1f7cf9
+timeCreated: 1489006062
+licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: forhand_0
@@ -84,8 +80,6 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-<<<<<<< HEAD
-=======
   - buildTarget: Android
     maxTextureSize: 2048
     textureFormat: -1
@@ -94,7 +88,6 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
->>>>>>> 65edbad9f1cecdb564a5f6404f8a79ab2f1f7cf9
   spriteSheet:
     serializedVersion: 2
     sprites:

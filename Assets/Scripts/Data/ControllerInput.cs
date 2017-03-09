@@ -50,7 +50,8 @@ public class ControllerInput : MonoBehaviour {
             {
                 float x = Input.GetAxis(InputAxes.LEFT_JOYSTICK_X + _player.PlayerID);
                 float y = Input.GetAxis(InputAxes.LEFT_JOYSTICK_Y + _player.PlayerID);
-                _playerMovement.Move(new Vector2(x, y));
+                Vector2 moveDir = new Vector2(x, y);
+                _playerMovement.Move(moveDir.normalized);
             }
             else
             {

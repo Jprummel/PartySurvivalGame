@@ -42,6 +42,7 @@ public class Enemy : Character, IDamageable{
     IEnumerator DeathRoutine()
     {
         _animator.SetInteger("AnimationState", 3);
+        _isDead = true;
         _enemySpawner.spawnedEnemies.Remove(this.gameObject);
         yield return new WaitForSeconds(0.1f);
         Destroy(this.gameObject);
@@ -49,19 +50,22 @@ public class Enemy : Character, IDamageable{
 
     void CalculateDist()
     {
-        float ClosestDistance = 420;
-
-        for (int i = 0; i < _players.Count; i++)
+        if (!_isDead)
         {
-            _distToPlayer = Vector2.Distance(transform.position, _players[i].transform.position);
+            float ClosestDistance = 420;
 
-            if (_distToPlayer < ClosestDistance)
+            for (int i = 0; i < _players.Count; i++)
             {
-                ClosestDistance = _distToPlayer;
-                _target = _players[i].gameObject;
-                closestTarget = _target.transform.position;
+                _distToPlayer = Vector2.Distance(transform.position, _players[i].transform.position);
+
+                if (_distToPlayer < ClosestDistance)
+                {
+                    ClosestDistance = _distToPlayer;
+                    _target = _players[i].gameObject;
+                    closestTarget = _target.transform.position;
+                }
             }
+            _distToPlayer = Vector2.Distance(transform.position, closestTarget);
         }
-        _distToPlayer = Vector2.Distance(transform.position, closestTarget);
     }
 }

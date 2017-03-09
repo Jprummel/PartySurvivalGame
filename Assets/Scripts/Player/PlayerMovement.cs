@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour {
     void Awake()
     {
         _player = GetComponent<PlayerCharacter>();
+        Debug.Log(_player.PlayerID);
     }
 
 	void Start () {

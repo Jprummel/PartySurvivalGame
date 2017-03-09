@@ -13,7 +13,7 @@ public class WaveController : MonoBehaviour
     private int _enemiesSpawned;
     private float _jeMoeder = 1.2f;//_enemyAmountModifier
     private float timer;//enemy respawn timer
-    private bool _isCombatPhase = false;
+    private bool _isCombatPhase = true;
 
     public bool IsCombatPhase
     {
@@ -24,6 +24,7 @@ public class WaveController : MonoBehaviour
     void Start()
     {
         _enemySpawner = GameObject.FindWithTag("EnemySpawner").GetComponent<EnemySpawner>();
+        Debug.Log(_isCombatPhase);
     }
 
     void Update()

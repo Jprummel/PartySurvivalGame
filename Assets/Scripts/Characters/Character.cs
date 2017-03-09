@@ -11,6 +11,7 @@ public class Character : MonoBehaviour, IDamageable {
     [SerializeField]protected float     _damage;
     [SerializeField]protected float     _attackRange;
     [SerializeField]protected float     _attackSpeed;
+    protected bool _isDead;
 
     [SerializeField]protected float _currentHealth;
     protected Character _damageSource;
@@ -75,7 +76,7 @@ public class Character : MonoBehaviour, IDamageable {
         if(_currentHealth > 0)
         {
             _animator.SetTrigger("Hit");
-            _currentHealth -= damage;
+            _currentHealth -= damage;   //Reduces currenthealth by the amount of damage the source of damage has
         }
     }
 }
