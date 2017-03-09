@@ -16,20 +16,14 @@ public class EnemyAttack : MonoBehaviour {
 	}
 	
 	void Update () {
-        Attack();
+        if (!_enemy.IsDead)
+        {
+            Attack();
+        }
 	}
 
     void Attack()
     {
-        /*float distance = Vector2.Distance(transform.position, _enemy.Target.transform.position);
-        if (distance <= _enemy.AttackRange)
-        {
-            if (_readyToAttack)
-            {
-                _readyToAttack = false;
-                StartCoroutine(AttackCooldown());
-            }
-        }*/
         if(_enemyTargetting.Target != null)
         {
             float distance = Vector2.Distance(transform.position, _enemyTargetting.Target.transform.position);
@@ -49,7 +43,7 @@ public class EnemyAttack : MonoBehaviour {
     {
         _enemy.CharacterAnimator.SetInteger("AnimationState", 1);
         yield return new WaitForSeconds(_enemy.AttackSpeed / 2);
-        ExecuteEvents.Execute<IDamageable>(_enemyTargetting.Target, null, (x, y) => x.TakeDamage(_enemy.Damage));
+        ExecuteEvents.Execute<IDamageable>(_enemyTargetting.Target, null, (x, y) => x.TakeDamage(_enemy));
         yield return new WaitForSeconds(_enemy.AttackSpeed / 2);        
         _readyToAttack = true;
         _enemy.CharacterAnimator.SetInteger("AnimationState", 0);

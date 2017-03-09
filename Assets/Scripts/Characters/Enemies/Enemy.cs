@@ -6,9 +6,13 @@ using UnityEngine;
 public class Enemy : Character, IDamageable{
 
     private List<GameObject> _players;
-    [SerializeField]protected int _scoreValue;
     [SerializeField]protected int _goldValue;
     private EnemySpawner _enemySpawner;
+
+    public int GoldValue
+    {
+        get { return _goldValue; }
+    }
 
     void Start()
     {
@@ -21,17 +25,15 @@ public class Enemy : Character, IDamageable{
         if (_currentHealth <= 0)
         {
             StartCoroutine(DeathRoutine());
-            //player.Gold += _goldValue;
-            //player.Score += _scoreValue;
         }
     }
 
     IEnumerator DeathRoutine()
     {
-        _animator.SetInteger("AnimationState", 3);
+        _animator.SetBool("IsDead", true);
         _isDead = true;
         _enemySpawner.spawnedEnemies.Remove(this.gameObject);
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(1f);
         Destroy(this.gameObject);
     }
 }

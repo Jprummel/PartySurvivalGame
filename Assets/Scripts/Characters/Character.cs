@@ -14,7 +14,6 @@ public class Character : MonoBehaviour, IDamageable {
     protected bool _isDead;
 
     [SerializeField]protected float _currentHealth;
-    protected Character _damageSource;
     protected Animator _animator;
 
     //Getters & Setters
@@ -59,6 +58,12 @@ public class Character : MonoBehaviour, IDamageable {
         get { return _attackSpeed; }
     }
 
+    public bool IsDead
+    {
+        get { return _isDead; }
+        set { _isDead = value; }
+    }
+
     public Animator CharacterAnimator
     {
         get { return _animator; }
@@ -71,12 +76,26 @@ public class Character : MonoBehaviour, IDamageable {
         _currentHealth = _maxHealth;             //Sets the characters current health to its max health on spawn
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(Character damageSource)
     {
         if(_currentHealth > 0)
         {
             _animator.SetTrigger("Hit");
-            _currentHealth -= damage;   //Reduces currenthealth by the amount of damage the source of damage has
+            if(this.gameObject.tag == Tags.PLAYER & damageSource.gameObject.tag == Tags.ENEMY)
+            {
+                _currentHealth -= damageSource.Damage;   //Reduces currenthealth by the amount of damage the source of damage has
+            }
+            if(this.gameObject.tag == Tags.ENEMY && damageSource.gameObject.tag == Tags.PLAYER)
+            {
+                _currentHealth -= damageSource.Damage;   //Reduces currenthealth by the amount of damage the source of damage has
+                if(_currentHealth <= 0)
+                {
+                    PlayerCharacter source = damageSource.GetComponent<PlayerCharacter>();
+                    Enemy enemy = GetComponent<Enemy>();
+                    source.Gold += enemy.GoldValue;
+                    Debug.Log(source.Name);
+                }
+            }
         }
     }
 }

@@ -25,7 +25,7 @@ public class PlayerHud : MonoBehaviour {
     }
 
 	void Start () {
-		_portrait = _player.Portrait;  //Get image by player characters name and color variation
+
 	}
 	
 	void Update () {

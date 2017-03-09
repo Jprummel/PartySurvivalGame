@@ -7,7 +7,6 @@ using UnityEngine.EventSystems;
 public class PlayerCharacter : Character {
 
     [SerializeField]protected int _playerID;
-    [SerializeField]protected Image _portrait;
 
     private GameObject  _hitBox;
     protected float     _gold;
@@ -45,12 +44,6 @@ public class PlayerCharacter : Character {
     {
         get { return _playerID; }
         set { _playerID = value; }
-    }
-
-    public Image Portrait
-    {
-        get { return _portrait; }
-        set { _portrait = value; }
     }
 
     public float Gold
@@ -113,7 +106,7 @@ public class PlayerCharacter : Character {
         yield return new WaitForSeconds(0.15f);
         for (int i = 0; i < target.Count; i++)
         {
-            ExecuteEvents.Execute<IDamageable>(target[i], null, (x, y) => x.TakeDamage(Damage));
+            ExecuteEvents.Execute<IDamageable>(target[i], null, (x, y) => x.TakeDamage(this));
         }
     }
 }
