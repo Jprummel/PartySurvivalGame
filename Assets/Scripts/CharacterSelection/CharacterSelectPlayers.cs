@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharacterSelectPlayers : MonoBehaviour {
 
+    [SerializeField]private GameObject _startText;
     public List<CharacterSelect> _players = new List<CharacterSelect>();
     private int _activePlayers;
     private int _readyPlayers;
@@ -37,10 +38,12 @@ public class CharacterSelectPlayers : MonoBehaviour {
         {
             //able to start game
             _readyToStart = true;
+            _startText.SetActive(true);
         }
         else
         {
             _readyToStart = false;
+            _startText.SetActive(false);
         }
     }
 }

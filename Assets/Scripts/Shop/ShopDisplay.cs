@@ -11,6 +11,7 @@ public class ShopDisplay : MonoBehaviour {
     //Shop time variables
     [SerializeField]private float       _maxTimeToShop;
                     private float       _timeToShop;
+                    private int         _playerToShop = 0;
     //
     private ShopPhaseTurns _shopTurns;
     private GetUpgradeCosts _upgradeCosts;
@@ -37,7 +38,7 @@ public class ShopDisplay : MonoBehaviour {
 
     void Update()
     {
-        FindingNemo();
+        //FindingNemo();
         ShopPhase();
     }
 
@@ -65,11 +66,13 @@ public class ShopDisplay : MonoBehaviour {
     {
         if (_shopTurns.PlayerToShop < PlayerParty.PlayerCharacters.Count)
         {
+            _playerToShop++;
             _shopTurns.PlayerToShop++; //If the current player shopping isnt the last one in the list go to the next one
         }
         else if (_shopTurns.PlayerToShop == PlayerParty.PlayerCharacters.Count)
         {
             //Sets everything up for re-use after the next wave
+            _playerToShop = 0;
             _shopTurns.PlayerToShop = 1;
             _waveController.IsCombatPhase = true;
             _shopPanel.SetActive(false);
@@ -89,5 +92,12 @@ public class ShopDisplay : MonoBehaviour {
                     _matchingPlayer = PlayerParty.PlayerCharacters[i];
                 }
             }
+        /*if (PlayerParty.PlayerCharacters[_playerToShop].PlayerID == _shopTurns.PlayerToShop)
+        {
+            _matchingPlayer = PlayerParty.PlayerCharacters[_playerToShop];
+        }
+        while(PlayerParty.PlayerCharacters[_playerToShop].PlayerID != _shopTurns.PlayerToShop){
+            _playerToShop++;
+        }*/
     }
 }

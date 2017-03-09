@@ -8,6 +8,8 @@ public class CharacterSelect : MonoBehaviour {
     [SerializeField]private List<GameObject> _selectionPortraits = new List<GameObject>();
     [SerializeField]private List<GameObject> _selectionNames = new List<GameObject>();
     [SerializeField]private List<GameObject> _characters = new List<GameObject>();
+    [SerializeField]private GameObject _joinGameImage;
+    [SerializeField]private GameObject _readyText;
     [SerializeField]private int _playerID;
     private CharacterSelectPlayers _characterSelectPlayers;
     private int _selectedCharacterNumber = 0;
@@ -29,14 +31,20 @@ public class CharacterSelect : MonoBehaviour {
     void Start()
     {
         _characterSelectPlayers = GameObject.FindGameObjectWithTag(Tags.CHARACTERSELECTOBJECT).GetComponent<CharacterSelectPlayers>();
-        SelectedCharacterVisuals();
+        for (int i = 0; i < _selectionPortraits.Count; i++)
+        {
+            _selectionPortraits[i].SetActive(false);
+            _selectionNames[i].SetActive(false);
+        }
+
+        //SelectedCharacterVisuals();
     }
 
     void Update()
     {
         JoinGame();
         LeaveGame();
-        if (_playerIsActive)
+        if (_playerIsActive && !_ready)
         {
             NextCharacter();
             PreviousCharacter();
@@ -83,9 +91,11 @@ public class CharacterSelect : MonoBehaviour {
     {
         if (!_playerIsActive && Input.GetButtonDown(InputAxes.XBOX_A + _playerID))
         {
+            _joinGameImage.SetActive(false);
             _characterSelectPlayers._players.Add(this);
             _playerIsActive = true;
             _characterSelectPlayers.ActivePlayers++;
+            SelectedCharacterVisuals();
             _inputDelay = _inputDelayMaxTime;
         }
     }
@@ -98,14 +108,23 @@ public class CharacterSelect : MonoBehaviour {
         {
             if (_playerIsActive && _ready)
             {
+                _readyText.SetActive(false);
                 _ready = false;
                 _characterSelectPlayers.ReadyPlayers--;
             }
             else if (_playerIsActive && !_ready)
             {
+                _joinGameImage.SetActive(true); //Shows the "Join Game" image
                 _playerIsActive = false;
-                _characterSelectPlayers.ActivePlayers--;
-                _characterSelectPlayers._players.Remove(this);
+                _characterSelectPlayers.ActivePlayers--;        //Reduces the active players
+                _characterSelectPlayers._players.Remove(this);  //Removes this player from the character selection player list
+                //Deactivates the portraits and names and if the player wants to rejoin he starts on the knight again
+                for (int i = 0; i < _selectionPortraits.Count; i++)
+                {
+                    _selectionPortraits[i].SetActive(false);
+                    _selectionNames[i].SetActive(false);
+                    _selectedCharacterNumber = 0;
+                }
             }
         }
     }
@@ -164,6 +183,7 @@ public class CharacterSelect : MonoBehaviour {
             PlayerParty.PlayerCharacters.Add(playerCharacter);
             playerCharacter.PlayerID = _playerID; //Sets selected characters id equal to the players id who selected him
             _ready = true;
+            _readyText.SetActive(true);
             _characterSelectPlayers.ReadyPlayers++;
             _inputDelay = _inputDelayMaxTime;
         }
