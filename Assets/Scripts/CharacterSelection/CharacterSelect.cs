@@ -5,18 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class CharacterSelect : MonoBehaviour {
 
+    [SerializeField]private int _playerID;
+    //Lists
     [SerializeField]private List<GameObject> _selectionPortraits = new List<GameObject>();
     [SerializeField]private List<GameObject> _selectionNames = new List<GameObject>();
     [SerializeField]private List<GameObject> _characters = new List<GameObject>();
+    //UI
     [SerializeField]private GameObject _joinGameImage;
-    [SerializeField]private GameObject _readyText;
-    [SerializeField]private int _playerID;
-    private CharacterSelectPlayers _characterSelectPlayers;
-    private int _selectedCharacterNumber = 0;
+    [SerializeField]private GameObject _readyText;    
+    
     private bool _playerIsActive;
     private bool _ready;
+    //Inputs
     private float _inputDelay;
     private float _inputDelayMaxTime = 0.2f;
+    //Selecter Character
+    private CharacterSelectPlayers _characterSelectPlayers;
+    private int _selectedCharacterNumber = 0;
+    private GameObject _selectedCharacterPrefab;
+    private PlayerCharacter _selectedCharacter;
 
     public bool PlayerIsActive
     {
@@ -36,8 +43,6 @@ public class CharacterSelect : MonoBehaviour {
             _selectionPortraits[i].SetActive(false);
             _selectionNames[i].SetActive(false);
         }
-
-        //SelectedCharacterVisuals();
     }
 
     void Update()
@@ -108,6 +113,8 @@ public class CharacterSelect : MonoBehaviour {
         {
             if (_playerIsActive && _ready)
             {
+                PlayerParty.Players.Remove(_selectedCharacterPrefab);
+                PlayerParty.PlayerCharacters.Remove(_selectedCharacter);
                 _readyText.SetActive(false);
                 _ready = false;
                 _characterSelectPlayers.ReadyPlayers--;
@@ -178,10 +185,11 @@ public class CharacterSelect : MonoBehaviour {
     {
         if (Input.GetButtonDown(InputAxes.XBOX_A + _playerID) && _inputDelay <= 0)
         {
-            PlayerParty.Players.Add(_characters[_selectedCharacterNumber]);
-            PlayerCharacter playerCharacter = _characters[_selectedCharacterNumber].GetComponent<PlayerCharacter>();
-            PlayerParty.PlayerCharacters.Add(playerCharacter);
-            playerCharacter.PlayerID = _playerID; //Sets selected characters id equal to the players id who selected him
+            _selectedCharacterPrefab = _characters[_selectedCharacterNumber];
+            PlayerParty.Players.Add(_selectedCharacterPrefab);
+            _selectedCharacter = _characters[_selectedCharacterNumber].GetComponent<PlayerCharacter>();
+            PlayerParty.PlayerCharacters.Add(_selectedCharacter);
+            _selectedCharacter.PlayerID = _playerID; //Sets selected characters id equal to the players id who selected him
             _ready = true;
             _readyText.SetActive(true);
             _characterSelectPlayers.ReadyPlayers++;

@@ -93,7 +93,6 @@ public class Character : MonoBehaviour, IDamageable {
                     PlayerCharacter source = damageSource.GetComponent<PlayerCharacter>();
                     Enemy enemy = GetComponent<Enemy>();
                     source.Gold += enemy.GoldValue;
-                    Debug.Log(source.Name);
                 }
             }
         }

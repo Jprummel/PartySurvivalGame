@@ -87,12 +87,13 @@ public class ShopDisplay : MonoBehaviour {
     void FindingNemo()
     {
         for (int i = 0; i < PlayerParty.PlayerCharacters.Count; i++)
+        {
+            if (i == _shopTurns.PlayerToShop)
             {
-                if (PlayerParty.PlayerCharacters[i].PlayerID == _shopTurns.PlayerToShop)
-                {
-                    _matchingPlayer = PlayerParty.PlayerCharacters[i];
-                }
+                _matchingPlayer = PlayerParty.PlayerCharacters[i];
             }
+        }
+
         /*if (PlayerParty.PlayerCharacters[_playerToShop].PlayerID == _shopTurns.PlayerToShop)
         {
             _matchingPlayer = PlayerParty.PlayerCharacters[_playerToShop];
