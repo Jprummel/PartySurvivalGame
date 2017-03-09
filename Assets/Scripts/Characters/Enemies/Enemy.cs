@@ -6,18 +6,6 @@ using UnityEngine;
 public class Enemy : Character, IDamageable{
 
     private List<GameObject> _players;
-    [HideInInspector]public Vector2 closestTarget;
-    private float _distToPlayer;
-    public float DistToPlayer
-    {
-        get { return _distToPlayer; }
-    }
-    private GameObject _target;
-    public GameObject Target
-    {
-        get { return _target; }
-    }
-
     [SerializeField]protected int _scoreValue;
     [SerializeField]protected int _goldValue;
     private EnemySpawner _enemySpawner;
@@ -36,7 +24,6 @@ public class Enemy : Character, IDamageable{
             //player.Gold += _goldValue;
             //player.Score += _scoreValue;
         }
-        CalculateDist();
     }
 
     IEnumerator DeathRoutine()
@@ -46,26 +33,5 @@ public class Enemy : Character, IDamageable{
         _enemySpawner.spawnedEnemies.Remove(this.gameObject);
         yield return new WaitForSeconds(0.1f);
         Destroy(this.gameObject);
-    }
-
-    void CalculateDist()
-    {
-        if (!_isDead)
-        {
-            float ClosestDistance = 420;
-
-            for (int i = 0; i < _players.Count; i++)
-            {
-                _distToPlayer = Vector2.Distance(transform.position, _players[i].transform.position);
-
-                if (_distToPlayer < ClosestDistance)
-                {
-                    ClosestDistance = _distToPlayer;
-                    _target = _players[i].gameObject;
-                    closestTarget = _target.transform.position;
-                }
-            }
-            _distToPlayer = Vector2.Distance(transform.position, closestTarget);
-        }
     }
 }

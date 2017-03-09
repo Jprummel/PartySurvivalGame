@@ -7,10 +7,12 @@ using UnityEngine.EventSystems;
 public class EnemyAttack : MonoBehaviour {
 
     Enemy _enemy;
+    EnemyTargetting _enemyTargetting;
     private bool _readyToAttack = true;
 
 	void Awake () {
         _enemy = GetComponent<Enemy>();
+        _enemyTargetting = GetComponentInChildren<EnemyTargetting>();
 	}
 	
 	void Update () {
@@ -19,7 +21,7 @@ public class EnemyAttack : MonoBehaviour {
 
     void Attack()
     {
-        float distance = Vector2.Distance(transform.position, _enemy.Target.transform.position);
+        /*float distance = Vector2.Distance(transform.position, _enemy.Target.transform.position);
         if (distance <= _enemy.AttackRange)
         {
             if (_readyToAttack)
@@ -27,14 +29,27 @@ public class EnemyAttack : MonoBehaviour {
                 _readyToAttack = false;
                 StartCoroutine(AttackCooldown());
             }
+        }*/
+        if(_enemyTargetting.Target != null)
+        {
+            float distance = Vector2.Distance(transform.position, _enemyTargetting.Target.transform.position);
+            if (distance <= _enemy.AttackRange)
+            {
+                if (_readyToAttack)
+                {
+                    _readyToAttack = false;
+                    StartCoroutine(AttackCooldown());
+                }
+            }
         }
+
     }
 
     IEnumerator AttackCooldown()
     {
         _enemy.CharacterAnimator.SetInteger("AnimationState", 1);
         yield return new WaitForSeconds(_enemy.AttackSpeed / 2);
-        ExecuteEvents.Execute<IDamageable>(_enemy.Target, null, (x, y) => x.TakeDamage(_enemy.Damage));
+        ExecuteEvents.Execute<IDamageable>(_enemyTargetting.Target, null, (x, y) => x.TakeDamage(_enemy.Damage));
         yield return new WaitForSeconds(_enemy.AttackSpeed / 2);        
         _readyToAttack = true;
         _enemy.CharacterAnimator.SetInteger("AnimationState", 0);

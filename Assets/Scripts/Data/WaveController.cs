@@ -24,7 +24,6 @@ public class WaveController : MonoBehaviour
     void Start()
     {
         _enemySpawner = GameObject.FindWithTag("EnemySpawner").GetComponent<EnemySpawner>();
-        Debug.Log(_isCombatPhase);
     }
 
     void Update()
