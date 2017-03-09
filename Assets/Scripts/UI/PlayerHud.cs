@@ -23,10 +23,6 @@ public class PlayerHud : MonoBehaviour {
         get { return _player; }
         set { _player = value; }
     }
-
-	void Start () {
-
-	}
 	
 	void Update () {
         DisplayGold();
