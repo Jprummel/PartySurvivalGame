@@ -92,7 +92,7 @@ public class PlayerCharacter : Character {
     {
         if (!_hitBox.active)
         {
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.15f);
             _hitBox.SetActive(true);
             yield return new WaitForSeconds(duration);
             _hitBox.SetActive(false);
@@ -103,10 +103,11 @@ public class PlayerCharacter : Character {
     {
         //float damage = Damage * multiplier;
         //hitbox duration
-        yield return new WaitForSeconds(0.15f);
+        yield return new WaitForSeconds(0.2f);
         for (int i = 0; i < target.Count; i++)
         {
             ExecuteEvents.Execute<IDamageable>(target[i], null, (x, y) => x.TakeDamage(this));
         }
+        target.Clear();
     }
 }

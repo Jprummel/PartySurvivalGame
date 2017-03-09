@@ -10,4 +10,5 @@ public class Tags : MonoBehaviour {
     public const string WAVEMANAGER = "WaveManager";
     public const string SHOPMANAGER = "ShopManager";
     public const string CHARACTERSELECTOBJECT = "CharacterSelectObject";
+    public const string PLAYERPARTY = "PlayerParty";
 }

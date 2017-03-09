@@ -78,9 +78,9 @@ public class Character : MonoBehaviour, IDamageable {
 
     public void TakeDamage(Character damageSource)
     {
-        if(_currentHealth > 0)
+        StartCoroutine(PlayAnim());
+        if (_currentHealth > 0)
         {
-            _animator.SetTrigger("Hit");
             if(this.gameObject.tag == Tags.PLAYER & damageSource.gameObject.tag == Tags.ENEMY)
             {
                 _currentHealth -= damageSource.Damage;   //Reduces currenthealth by the amount of damage the source of damage has
@@ -97,5 +97,12 @@ public class Character : MonoBehaviour, IDamageable {
                 }
             }
         }
+    }
+
+    IEnumerator PlayAnim()
+    {
+        _animator.SetBool("Hit", true);
+        yield return new WaitForSeconds(0.2f);
+        _animator.SetBool("Hit", false);
     }
 }

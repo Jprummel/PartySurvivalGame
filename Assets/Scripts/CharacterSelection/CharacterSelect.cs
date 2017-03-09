@@ -193,7 +193,7 @@ public class CharacterSelect : MonoBehaviour {
     {
         if (Input.GetButtonDown(InputAxes.START + _playerID))
         {
-            SceneManager.LoadScene("Jordi");
+            SceneManager.LoadScene("Lorenzo");
         }
     }
 }
