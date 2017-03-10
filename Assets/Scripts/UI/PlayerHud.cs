@@ -5,37 +5,25 @@ using UnityEngine.UI;
 
 public class PlayerHud : MonoBehaviour {
 
-    private PlayerCharacter _player;
-    private int _hudID;
+    private PlayerCharacter _playerCharacter;
+    public PlayerCharacter PlayerCharacter
+    {
+        get{ return _playerCharacter; }
+        set{ _playerCharacter = value; }
+    }
+
+    [SerializeField]private Image _healthBar;
     [SerializeField]private Image _portrait;
     [SerializeField]private Text _gold;
-    [SerializeField]private Text _score;
-    [SerializeField]private Image _healthBar;
 
-    public int HUDId
+
+    void Awake()
     {
-        get { return _hudID; }
-        set { _hudID = value; }
+        //_portrait.sprite = PlayerCharacter.Portrait;
     }
 
-    public PlayerCharacter Player
+    void Update()
     {
-        get { return _player; }
-        set { _player = value; }
-    }
-	
-	void Update () {
-        DisplayGold();
-        DisplayHealthBar();
-	}
-
-    void DisplayGold()
-    {
-        _gold.text = _player.Gold.ToString();
-    }
-
-    void DisplayHealthBar()
-    {
-        _healthBar.fillAmount = _player.CurrentHealth / _player.MaxHealth;
+        _portrait.sprite = PlayerCharacter.Portrait;
     }
 }

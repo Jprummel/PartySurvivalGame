@@ -11,10 +11,11 @@ public class InstantiateHuds : MonoBehaviour {
     void Awake () {
         for (int i = 0; i < PlayerParty.Players.Count; i++)
         {
-            Debug.Log("ay");
             GameObject hud = Instantiate(_hud);
             hud.transform.position = _hudPositions[i].position;
             hud.transform.SetParent(_canvasParent.transform);
+            hud.GetComponent<PlayerHud>().PlayerCharacter = PlayerParty.PlayerCharacters[i];
+            Debug.Log(hud.GetComponent<PlayerHud>().PlayerCharacter);
         }
     }
 }

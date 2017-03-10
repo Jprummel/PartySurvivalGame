@@ -8,12 +8,19 @@ public class PlayerCharacter : Character {
 
     [SerializeField]protected int _playerID;
 
+    [SerializeField]protected Sprite _portrait;
+
     private GameObject  _hitBox;
     protected float     _gold;
 
     private float _currrentDamageCost = 500;
     private float _currentHealthCost = 500;
     private float _currentMoveSpeedCost = 500;
+
+    public Sprite Portrait
+    {
+        get { return _portrait; }
+    }
 
     public float CurrentDamageCost 
     {
