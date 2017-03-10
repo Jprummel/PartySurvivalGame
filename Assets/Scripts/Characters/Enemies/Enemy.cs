@@ -11,6 +11,7 @@ public class Enemy : Character, IDamageable{
     private EnemySpawner _enemySpawner;
     private Image _healthBar;
     private float _healthOffset;
+    [SerializeField]private Sprite[] _healthBars;
 
     public int GoldValue
     {
@@ -45,6 +46,23 @@ public class Enemy : Character, IDamageable{
 
     void UpdateHealthbar()
     {
-        _healthBar.fillAmount = CurrentHealth / MaxHealth;
+        _healthBar.fillAmount = _currentHealth / _maxHealth;
+        ChangeHealthColor();
+
+    }
+
+    void ChangeHealthColor()
+    {
+        float percentage = _currentHealth / _maxHealth * 100;
+        if(percentage > 50)
+        {
+            _healthBar.sprite = _healthBars[0];
+        }else if(percentage >= 25 && percentage <= 50)
+        {
+            _healthBar.sprite = _healthBars[1];
+        }else
+        {
+            _healthBar.sprite = _healthBars[2];
+        }
     }
 }
