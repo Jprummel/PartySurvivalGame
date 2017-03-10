@@ -78,10 +78,10 @@ public class Character : MonoBehaviour, IDamageable {
 
     public void TakeDamage(Character damageSource)
     {
-        StartCoroutine(PlayAnim());
         if (_currentHealth > 0)
         {
-            if(this.gameObject.tag == Tags.PLAYER & damageSource.gameObject.tag == Tags.ENEMY)
+            StartCoroutine(PlayAnim());
+            if (this.gameObject.tag == Tags.PLAYER & damageSource.gameObject.tag == Tags.ENEMY)
             {
                 _currentHealth -= damageSource.Damage;   //Reduces currenthealth by the amount of damage the source of damage has
             }

@@ -1,27 +1,43 @@
 fileFormatVersion: 2
-guid: b1811c170e2d4284194214642f73e84e
-timeCreated: 1488545280
+guid: 5c4115b0c9c9f374d93096634e3ea53c
+timeCreated: 1489070968
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: death_0
-    21300002: death_1
-    21300004: death_2
-    21300006: death_3
-    21300008: death_4
-    21300010: death_5
-    21300012: death_6
-    21300014: death_7
-    21300016: death_8
-    21300018: death_9
-    21300020: death_10
-    21300022: death_11
-    21300024: death_12
-    21300026: death_13
-    21300028: death_14
-    21300030: death_15
-    21300032: death_16
-    21300034: death_17
+    21300000: death 1_0
+    21300002: death 1_1
+    21300004: death 1_2
+    21300006: death 1_3
+    21300008: death 1_4
+    21300010: death 1_5
+    21300012: death 1_6
+    21300014: death 1_7
+    21300016: death 1_8
+    21300018: death 1_9
+    21300020: death 1_10
+    21300022: death 1_11
+    21300024: death 1_12
+    21300026: death 1_13
+    21300028: death 1_14
+    21300030: death 1_15
+    21300032: death 1_16
+    21300034: death 1_17
+    21300036: death 1_18
+    21300038: death 1_19
+    21300040: death 1_20
+    21300042: death 1_21
+    21300044: death 1_22
+    21300046: death 1_23
+    21300048: death 1_24
+    21300050: death 1_25
+    21300052: death 1_26
+    21300054: death 1_27
+    21300056: death 1_28
+    21300058: death 1_29
+    21300060: death 1_30
+    21300062: death 1_31
+    21300064: death 1_32
+    21300066: death 1_33
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -84,19 +100,11 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-  - buildTarget: Android
-    maxTextureSize: 2048
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: death_0
+      name: death 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -109,7 +117,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: death_1
+      name: death 1_1
       rect:
         serializedVersion: 2
         x: 273
@@ -122,7 +130,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: death_2
+      name: death 1_2
       rect:
         serializedVersion: 2
         x: 546
@@ -135,7 +143,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: death_3
+      name: death 1_3
       rect:
         serializedVersion: 2
         x: 0
@@ -148,7 +156,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: death_4
+      name: death 1_4
       rect:
         serializedVersion: 2
         x: 273
@@ -161,7 +169,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: death_5
+      name: death 1_5
       rect:
         serializedVersion: 2
         x: 546
@@ -174,7 +182,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: death_6
+      name: death 1_6
       rect:
         serializedVersion: 2
         x: 0
@@ -187,7 +195,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: death_7
+      name: death 1_7
       rect:
         serializedVersion: 2
         x: 273
@@ -200,7 +208,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: death_8
+      name: death 1_8
       rect:
         serializedVersion: 2
         x: 546
@@ -213,7 +221,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: death_9
+      name: death 1_9
       rect:
         serializedVersion: 2
         x: 0
@@ -226,7 +234,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: death_10
+      name: death 1_10
       rect:
         serializedVersion: 2
         x: 273
@@ -239,7 +247,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: death_11
+      name: death 1_11
       rect:
         serializedVersion: 2
         x: 546
@@ -252,7 +260,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: death_12
+      name: death 1_12
       rect:
         serializedVersion: 2
         x: 0
@@ -265,7 +273,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: death_13
+      name: death 1_13
       rect:
         serializedVersion: 2
         x: 273
@@ -278,7 +286,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: death_14
+      name: death 1_14
       rect:
         serializedVersion: 2
         x: 546
@@ -291,7 +299,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: death_15
+      name: death 1_15
       rect:
         serializedVersion: 2
         x: 0
@@ -304,7 +312,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: death_16
+      name: death 1_16
       rect:
         serializedVersion: 2
         x: 273
@@ -317,7 +325,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: death_17
+      name: death 1_17
       rect:
         serializedVersion: 2
         x: 546
