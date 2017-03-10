@@ -5,6 +5,7 @@ using UnityEngine;
 public class ControllerInput : MonoBehaviour {
 
     private WaveController  _waveController;
+    private PauseGame       _pauseGame;
     private PlayerCharacter _player;
     private PlayerMovement  _playerMovement;
     private PlayerAttack    _playerAttack;
@@ -12,6 +13,7 @@ public class ControllerInput : MonoBehaviour {
     void Awake()
     {
         _waveController = GameObject.FindGameObjectWithTag(Tags.WAVEMANAGER).GetComponent<WaveController>();
+        _pauseGame      = GetComponent<PauseGame>();
         _player         = GetComponent<PlayerCharacter>();
         _playerMovement = GetComponent<PlayerMovement>();
         _playerAttack   = GetComponent<PlayerAttack>();
@@ -56,6 +58,11 @@ public class ControllerInput : MonoBehaviour {
             else
             {
                 _playerMovement.Move(new Vector2(0, 0));
+            }
+
+            if (Input.GetButtonDown(InputAxes.START + _player.PlayerID))
+            {
+                _pauseGame.TogglePause();
             }
         }
     }
