@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class WaveDisplay : MonoBehaviour {
 
-    [SerializeField]private Text _text;
+    [SerializeField]private Text _waveNumber;
     public delegate void UpdateWave();
     public static UpdateWave updateWave;
     
@@ -20,6 +20,6 @@ public class WaveDisplay : MonoBehaviour {
 
     void DisplayWaveNumber()
     {
-        _text.text = "Wave: " +  GameInformation.Wave.ToString();
+        _waveNumber.text = "Wave: " +  GameInformation.Wave.ToString();
     }
 }

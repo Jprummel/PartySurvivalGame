@@ -66,7 +66,7 @@ public class PlayerCharacter : Character {
             PlayerParty.PlayerCharacters.Remove(this);
             Debug.Log(PlayerParty.Players.Count);
             Debug.Log(PlayerParty.PlayerCharacters.Count);
-            Debug.Log(PlayerParty.PlayerCharacters[1].Name);
+            Debug.Log(PlayerParty.PlayerCharacters[1].name);
             StartCoroutine(DeathRoutine());
         }
     }
