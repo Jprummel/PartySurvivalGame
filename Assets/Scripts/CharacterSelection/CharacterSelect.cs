@@ -144,7 +144,6 @@ public class CharacterSelect : MonoBehaviour {
             if (_selectedCharacterNumber < _selectionPortraits.Count-1)
             {
                 _selectedCharacterNumber++;
-                Debug.Log(_selectedCharacterNumber);
             }
             else if (_selectedCharacterNumber  == _selectionPortraits.Count-1)
             {
@@ -201,7 +200,7 @@ public class CharacterSelect : MonoBehaviour {
     {
         if (Input.GetButtonDown(InputAxes.START + _playerID))
         {
-            SceneManager.LoadScene("Lorenzo");
+            SceneManager.LoadScene("Jordi");
         }
     }
 }

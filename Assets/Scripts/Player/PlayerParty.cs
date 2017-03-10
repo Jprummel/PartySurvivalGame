@@ -10,7 +10,6 @@ public class PlayerParty : MonoBehaviour {
 
 	void Start () {
         AddPlayers();
-        //AddCharacters();
 	}
 
     void AddPlayers()
@@ -21,13 +20,4 @@ public class PlayerParty : MonoBehaviour {
             Player.transform.position = _spawnPoints[i].position;
         }
     }
-
-    /*void AddCharacters()
-    {
-        for (int i = 0; i < Players.Count; i++)
-        {
-            PlayerCharacter characterToAdd = Players[i].GetComponent<PlayerCharacter>();
-            PlayerCharacters.Add(characterToAdd);                       
-        }
-    }*/
 }

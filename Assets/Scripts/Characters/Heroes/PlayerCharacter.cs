@@ -62,6 +62,11 @@ public class PlayerCharacter : Character {
     {
         if(CurrentHealth <= 0)
         {
+            PlayerParty.Players.Remove(this.gameObject);
+            PlayerParty.PlayerCharacters.Remove(this);
+            Debug.Log(PlayerParty.Players.Count);
+            Debug.Log(PlayerParty.PlayerCharacters.Count);
+            Debug.Log(PlayerParty.PlayerCharacters[1].Name);
             StartCoroutine(DeathRoutine());
         }
     }
@@ -71,8 +76,6 @@ public class PlayerCharacter : Character {
         _animator.SetBool("IsDead", true);
         _currentState = PlayerState.DEAD;
         yield return new WaitForSeconds(1);
-        PlayerParty.Players.Remove(this.gameObject);
-        PlayerParty.PlayerCharacters.Remove(this);
         gameObject.SetActive(false);
     }
 

@@ -39,7 +39,6 @@ public class ShopDisplay : MonoBehaviour {
 
     void Update()
     {
-        //FindingNemo();
         ShopPhase();
     }
 
@@ -65,16 +64,14 @@ public class ShopDisplay : MonoBehaviour {
 
     void NextPlayerShopTurn()
     {
-        if (_shopTurns.PlayerToShop < PlayerParty.PlayerCharacters.Count)
+        if (_playerToShop < PlayerParty.PlayerCharacters.Count-1)
         {
-            _playerToShop++;
-            _shopTurns.PlayerToShop++; //If the current player shopping isnt the last one in the list go to the next one
+            _playerToShop++; //If the current player shopping isnt the last one in the list go to the next one
         }
-        else if (_shopTurns.PlayerToShop == PlayerParty.PlayerCharacters.Count)
+        else if (_playerToShop == PlayerParty.PlayerCharacters.Count-1)
         {
             //Sets everything up for re-use after the next wave
             _playerToShop = 0;
-            _shopTurns.PlayerToShop = 1;
             _waveController.IsCombatPhase = true;
             _shopPanel.SetActive(false);
         }
@@ -86,20 +83,7 @@ public class ShopDisplay : MonoBehaviour {
 
     void FindingNemo()
     {
-        for (int i = 0; i < PlayerParty.PlayerCharacters.Count; i++)
-        {
-            if (i == _shopTurns.PlayerToShop)
-            {
-                _matchingPlayer = PlayerParty.PlayerCharacters[i];
-            }
-        }
-
-        /*if (PlayerParty.PlayerCharacters[_playerToShop].PlayerID == _shopTurns.PlayerToShop)
-        {
-            _matchingPlayer = PlayerParty.PlayerCharacters[_playerToShop];
-        }
-        while(PlayerParty.PlayerCharacters[_playerToShop].PlayerID != _shopTurns.PlayerToShop){
-            _playerToShop++;
-        }*/
+        _matchingPlayer = PlayerParty.PlayerCharacters[_playerToShop];
+        _shopTurns.PlayerToShop = _matchingPlayer.PlayerID;
     }
 }
