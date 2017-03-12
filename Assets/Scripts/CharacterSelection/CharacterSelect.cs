@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class CharacterSelect : MonoBehaviour {
 
-    [SerializeField]private int _playerID;
-    //Lists
-    [SerializeField]private List<GameObject> _selectionPortraits = new List<GameObject>();
-    [SerializeField]private List<GameObject> _selectionNames = new List<GameObject>();
+    //Script imports
+    private CharacterSelectPlayers _characterSelectPlayers;
+    private CharacterSelectUI _characterSelectUI;
+    private CharacterSelectInput _input;
+
+    //List of selectable characters
     [SerializeField]private List<GameObject> _characters = new List<GameObject>();
     //UI
     [SerializeField]private GameObject _joinGameImage;
@@ -19,188 +21,98 @@ public class CharacterSelect : MonoBehaviour {
     //Inputs
     private float _inputDelay;
     private float _inputDelayMaxTime = 0.2f;
-    //Selecter Character
-    private CharacterSelectPlayers _characterSelectPlayers;
+    //Selected Character    
     private int _selectedCharacterNumber = 0;
     private GameObject _selectedCharacterPrefab;
     private PlayerCharacter _selectedCharacter;
-
-    public bool PlayerIsActive
+    public int SelectedCharacterNumber
     {
-        get { return _playerIsActive; }
-    }
-
-    public bool PlayerIsReady
-    {
-        get { return _ready; }
+        get { return _selectedCharacterNumber; }
+        set { _selectedCharacterNumber = value; }
     }
 
     void Start()
     {
         _characterSelectPlayers = GameObject.FindGameObjectWithTag(Tags.CHARACTERSELECTOBJECT).GetComponent<CharacterSelectPlayers>();
-        for (int i = 0; i < _selectionPortraits.Count; i++)
-        {
-            _selectionPortraits[i].SetActive(false);
-            _selectionNames[i].SetActive(false);
-        }
+        _characterSelectUI = GetComponent<CharacterSelectUI>();
+        _input = GetComponent<CharacterSelectInput>();
     }
 
     void Update()
     {
-        JoinGame();
-        LeaveGame();
-        if (_playerIsActive && !_ready)
+        _input.JoinGame();
+        _input.LeaveGame();
+        if (_playerIsActive && !_ready && _inputDelay <= 0) // If player is active but not ready & input delay timer is zero
         {
-            NextCharacter();
-            PreviousCharacter();
-            SelectCharacter();
+            _input.NextCharacter();
+            _input.PreviousCharacter();
+            _input.SelectCharacter();
         }
         if (_characterSelectPlayers.ReadyToStart)
         {
-            StartGame();
+            _input.StartGame();
         }
         InputDelayTimer();
     }
 
-    void SelectedCharacterVisuals()
+    public void JoinGame()
     {
-        //If i is equal to _selectedCharacterNumber activate the fitting name and portrait
-        //If it is not equal, de-activate it
-        for (int i = 0; i < _selectionPortraits.Count; i++)
-        {
-            if (i == _selectedCharacterNumber)
-            { 
-                _selectionPortraits[i].SetActive(true); 
-            }
-            else
-            {
-                _selectionPortraits[i].SetActive(false);
-            }
-            
-        }
-
-        for (int i = 0; i < _selectionNames.Count; i++)
-        {
-            if (i == _selectedCharacterNumber)
-            {
-                _selectionNames[i].SetActive(true);
-            }
-            else
-            {
-                _selectionNames[i].SetActive(false);
-            }
-        }
-    }
-
-    void JoinGame()
-    {
-        if (!_playerIsActive && Input.GetButtonDown(InputAxes.XBOX_A + _playerID))
+        if (!_playerIsActive)
         {
             _joinGameImage.SetActive(false);
             _characterSelectPlayers._players.Add(this);
             _playerIsActive = true;
             _characterSelectPlayers.ActivePlayers++;
-            SelectedCharacterVisuals();
+            _characterSelectUI.SelectedCharacterVisuals();
             _inputDelay = _inputDelayMaxTime;
         }
     }
 
-    void LeaveGame()
+    public void LeaveGame()
     {
-        //If player is active and ready , unready
-        //If player is active but not ready , set inactive
-        if (Input.GetButtonDown(InputAxes.XBOX_B + _playerID))
+        if (_playerIsActive && _ready) //If player is active and ready , unready
         {
-            if (_playerIsActive && _ready)
-            {
-                PlayerParty.Players.Remove(_selectedCharacterPrefab);
-                PlayerParty.PlayerCharacters.Remove(_selectedCharacter);
-                _readyText.SetActive(false);
-                _ready = false;
-                _characterSelectPlayers.ReadyPlayers--;
-            }
-            else if (_playerIsActive && !_ready)
-            {
-                _joinGameImage.SetActive(true); //Shows the "Join Game" image
-                _playerIsActive = false;
-                _characterSelectPlayers.ActivePlayers--;        //Reduces the active players
-                _characterSelectPlayers._players.Remove(this);  //Removes this player from the character selection player list
-                //Deactivates the portraits and names and if the player wants to rejoin he starts on the knight again
-                for (int i = 0; i < _selectionPortraits.Count; i++)
-                {
-                    _selectionPortraits[i].SetActive(false);
-                    _selectionNames[i].SetActive(false);
-                    _selectedCharacterNumber = 0;
-                }
-            }
+            PlayerParty.Players.Remove(_selectedCharacterPrefab);
+            PlayerParty.PlayerCharacters.Remove(_selectedCharacter);
+            _readyText.SetActive(false);
+            _ready = false;
+            _characterSelectPlayers.ReadyPlayers--;
         }
+        else if (_playerIsActive && !_ready) //If player is active but not ready , set inactive
+        {
+            _joinGameImage.SetActive(true); //Shows the "Join Game" image
+            _playerIsActive = false; //Sets player inactive
+            _characterSelectPlayers.ActivePlayers--;        //Reduces the active players
+            _characterSelectPlayers._players.Remove(this);  //Removes this player from the character selection player list
+            _selectedCharacterNumber = 0; //if player wants to rejoing, start on knight character again
+            _characterSelectUI.DisablePortraitsAndNames(); //Deactivates the portraits and names
+
+        }        
     }
 
-    void NextCharacter()
+    public void ChangePortraitAndName()
     {
-        //if dpad right go to next character
-        if (Input.GetAxis(InputAxes.DPAD_X + _playerID) > 0 && _inputDelay <= 0)
-        {
-            if (_selectedCharacterNumber < _selectionPortraits.Count-1)
-            {
-                _selectedCharacterNumber++;
-            }
-            else if (_selectedCharacterNumber  == _selectionPortraits.Count-1)
-            {
-                _selectedCharacterNumber = 0;
-            }
-            SelectedCharacterVisuals();
-            _inputDelay = _inputDelayMaxTime;
-        }
-    }
-
-    void PreviousCharacter()
-    {
-        //if dpad left go to previous character
-        if (Input.GetAxis(InputAxes.DPAD_X + _playerID) < 0 && _inputDelay <= 0)
-        {
-            if (_selectedCharacterNumber > 0)
-            {
-                _selectedCharacterNumber--;
-            }
-            else if (_selectedCharacterNumber == 0)
-            {
-                _selectedCharacterNumber = _selectionPortraits.Count-1;
-            }
-            SelectedCharacterVisuals();
-            _inputDelay = _inputDelayMaxTime;
-        }
+        _characterSelectUI.SelectedCharacterVisuals(); //Changes portrait and nameplate
+        _inputDelay = _inputDelayMaxTime; //resets the input delay
     }
 
     void InputDelayTimer()
     {
-        if (_inputDelay > 0)
+        if (_inputDelay > 0) //Input delay timer to prevent weird things happening with inputs
         {
             _inputDelay -= Time.deltaTime;
         }
     }
 
-    void SelectCharacter()
+    public void SelectCharacter()
     {
-        if (Input.GetButtonDown(InputAxes.XBOX_A + _playerID) && _inputDelay <= 0)
-        {
-            _selectedCharacterPrefab = _characters[_selectedCharacterNumber];
-            PlayerParty.Players.Add(_selectedCharacterPrefab);
-            _selectedCharacter = _characters[_selectedCharacterNumber].GetComponent<PlayerCharacter>();
-            PlayerParty.PlayerCharacters.Add(_selectedCharacter);
-            _selectedCharacter.PlayerID = _playerID; //Sets selected characters id equal to the players id who selected him
-            _ready = true;
-            _readyText.SetActive(true);
-            _characterSelectPlayers.ReadyPlayers++;
-            _inputDelay = _inputDelayMaxTime;
-        }
-    }
-
-    void StartGame()
-    {
-        if (Input.GetButtonDown(InputAxes.START + _playerID))
-        {
-            SceneManager.LoadScene("Jordi");
-        }
+        _selectedCharacterPrefab = _characters[_selectedCharacterNumber];
+        PlayerParty.Players.Add(_selectedCharacterPrefab);
+        _selectedCharacter = _characters[_selectedCharacterNumber].GetComponent<PlayerCharacter>();
+        _selectedCharacter.PlayerID = _input.PlayerID; //Sets selected characters id equal to the players id who selected him
+        _ready = true;
+        _readyText.SetActive(true);
+        _characterSelectPlayers.ReadyPlayers++;
+        _inputDelay = _inputDelayMaxTime;
     }
 }

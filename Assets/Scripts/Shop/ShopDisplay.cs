@@ -44,9 +44,8 @@ public class ShopDisplay : MonoBehaviour {
 
     void ShopPhase()
     {
-        if(!_waveController.IsCombatPhase){
-            //shows the shop panel
-            _shopPanel.SetActive(true);
+        if(!_waveController.IsCombatPhase){ //If its not the combat phase, shopping will begin
+            _shopPanel.SetActive(true);//shows the shop panel
             _shopTurns.SetShopInputs();
             ShopTurnTimer(); //Runs the timer
         }
@@ -77,13 +76,14 @@ public class ShopDisplay : MonoBehaviour {
         }
         FindingNemo();
         _shopTurns.SetShopInputs();
-        _upgradeCosts.ShowPlayerUpgradeCosts();
-        _timeToShop = _maxTimeToShop;
+        _upgradeCosts.ShowPlayerUpgradeCosts(); //Shows the cost of all upgrades of the current player
+        _timeToShop = _maxTimeToShop; //resets the shop timer
     }
 
     void FindingNemo()
     {
         _matchingPlayer = PlayerParty.PlayerCharacters[_playerToShop];
         _shopTurns.PlayerToShop = _matchingPlayer.PlayerID;
+        _shopTurns.ShowPlayerToShop();
     }
 }

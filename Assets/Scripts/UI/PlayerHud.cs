@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerHud : MonoBehaviour {
 
     private PlayerCharacter _playerCharacter;
-    public PlayerCharacter PlayerCharacter
+    public PlayerCharacter Character
     {
         get{ return _playerCharacter; }
         set{ _playerCharacter = value; }
@@ -15,15 +15,23 @@ public class PlayerHud : MonoBehaviour {
     [SerializeField]private Image _healthBar;
     [SerializeField]private Image _portrait;
     [SerializeField]private Text _gold;
+    public Image Portrait
+    { 
+        get {return _portrait;}
+        set {_portrait = value; }
+    }
 
 
-    void Awake()
+    void Start()
     {
-        //_portrait.sprite = PlayerCharacter.Portrait;
+        Character.HUD = this;
     }
 
     void Update()
     {
-        _portrait.sprite = PlayerCharacter.Portrait;
+        if (Character != null)
+        {
+            _portrait.sprite = Character.Portrait;
+        }
     }
 }

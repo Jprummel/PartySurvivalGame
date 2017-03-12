@@ -7,12 +7,9 @@ using UnityEngine.EventSystems;
 public class PlayerCharacter : Character {
 
     [SerializeField]protected int _playerID;
-
     [SerializeField]protected Sprite _portrait;
-
     private GameObject  _hitBox;
     protected float     _gold;
-
     private float _currrentDamageCost = 500;
     private float _currentHealthCost = 500;
     private float _currentMoveSpeedCost = 500;
@@ -21,6 +18,8 @@ public class PlayerCharacter : Character {
     {
         get { return _portrait; }
     }
+
+    public PlayerHud HUD { get; set; }
 
     public float CurrentDamageCost 
     {
@@ -61,6 +60,7 @@ public class PlayerCharacter : Character {
 
     protected override void Awake()
     {
+        PlayerParty.PlayerCharacters.Add(this);
         _hitBox = transform.GetChild(0).gameObject;
         base.Awake();
     }
@@ -69,11 +69,6 @@ public class PlayerCharacter : Character {
     {
         if(CurrentHealth <= 0)
         {
-            PlayerParty.Players.Remove(this.gameObject);
-            PlayerParty.PlayerCharacters.Remove(this);
-            Debug.Log(PlayerParty.Players.Count);
-            Debug.Log(PlayerParty.PlayerCharacters.Count);
-            Debug.Log(PlayerParty.PlayerCharacters[1].name);
             StartCoroutine(DeathRoutine());
         }
     }
@@ -82,6 +77,7 @@ public class PlayerCharacter : Character {
     {
         _animator.SetBool("IsDead", true);
         _currentState = PlayerState.DEAD;
+        PlayerParty.PlayerCharacters.Remove(this);
         yield return new WaitForSeconds(1);
         gameObject.SetActive(false);
     }
@@ -112,8 +108,7 @@ public class PlayerCharacter : Character {
     IEnumerator AttackTargets(List<GameObject> target)
     {
         //float damage = Damage * multiplier;
-        //hitbox duration
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.2f);//hitbox duration
         for (int i = 0; i < target.Count; i++)
         {
             ExecuteEvents.Execute<IDamageable>(target[i], null, (x, y) => x.TakeDamage(this));

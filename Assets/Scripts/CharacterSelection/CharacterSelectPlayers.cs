@@ -22,11 +22,7 @@ public class CharacterSelectPlayers : MonoBehaviour {
         set { _readyPlayers = value; }
     }
 
-    public bool ReadyToStart
-    {
-        get { return _readyToStart; }
-        set { _readyToStart = value; }
-    }
+    public bool ReadyToStart { get { return _readyToStart; }}
 	
 	void Update () {
         CheckForStart();
