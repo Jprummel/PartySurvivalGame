@@ -29,9 +29,26 @@ public class PlayerHud : MonoBehaviour {
 
     void Update()
     {
+        SetPortrait();
+        SetHealthBar();
+        SetGold();
+    }
+
+    void SetPortrait()
+    {
         if (Character != null)
         {
             _portrait.sprite = Character.Portrait;
         }
+    }
+
+    void SetHealthBar()
+    {
+        _healthBar.fillAmount = Character.CurrentHealth / Character.MaxHealth;
+    }
+
+    void SetGold()
+    {
+        _gold.text = Character.Gold.ToString();
     }
 }
