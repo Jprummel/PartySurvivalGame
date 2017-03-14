@@ -15,6 +15,10 @@ public class Character : MonoBehaviour, IDamageable {
 
     [SerializeField]protected float _currentHealth;
     protected Animator _animator;
+    protected SpriteRenderer _spriteRenderer;
+    protected float _hitEffectSpeed = 5;
+    protected Color _defaultColor;
+    protected Color _hitColor;
 
     //Getters & Setters
     public string Name
@@ -72,6 +76,9 @@ public class Character : MonoBehaviour, IDamageable {
 
     protected virtual void Awake()
     {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _defaultColor = _spriteRenderer.color;
+        _hitColor = new Color(1,0.6f,0.6f);
         _animator = GetComponent<Animator>();    //Gets the characters animator
         _currentHealth = _maxHealth;             //Sets the characters current health to its max health on spawn
     }
@@ -80,7 +87,8 @@ public class Character : MonoBehaviour, IDamageable {
     {
         if (_currentHealth > 0)
         {
-            StartCoroutine(PlayAnim());
+            //StartCoroutine(PlayAnim());
+            StartCoroutine(HitEffect());
             if (this.gameObject.tag == Tags.PLAYER & damageSource.gameObject.tag == Tags.ENEMY)
             {
                 _currentHealth -= damageSource.Damage;   //Reduces currenthealth by the amount of damage the source of damage has
@@ -98,10 +106,38 @@ public class Character : MonoBehaviour, IDamageable {
         }
     }
 
-    IEnumerator PlayAnim()
+
+    IEnumerator HitEffect()
+    {
+        float duration = 1;
+        float smoothness = 0.01f;
+
+        float _progress = 0;
+
+        //_spriteRenderer.color = Color.Lerp(_defaultColor,_hitColor,Time.deltaTime * 5);
+
+        //yield return null;
+        while (_progress < 1)
+        {
+            _spriteRenderer.color = Color.Lerp(_defaultColor, _hitColor,_progress * 5);
+            Debug.Log(_spriteRenderer.color);
+            _progress += Time.deltaTime;
+            yield return new WaitForSeconds(smoothness);
+        }/*
+
+        yield return new WaitForSeconds(0.02f);
+        while(_progress > 0)
+        {
+            _spriteRenderer.color = Color.Lerp(_hitColor, _defaultColor, _progress * 5);
+            _progress -= Time.deltaTime;
+            yield return new WaitForSeconds(smoothness);
+        }*/
+    }
+
+    /*IEnumerator PlayAnim()
     {
         _animator.SetBool("Hit", true);
         yield return new WaitForSeconds(0.2f);
         _animator.SetBool("Hit", false);
-    }
+    }*/
 }
