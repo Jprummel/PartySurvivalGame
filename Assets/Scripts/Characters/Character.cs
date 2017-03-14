@@ -88,14 +88,11 @@ public class Character : MonoBehaviour, IDamageable {
     {
         if (_currentHealth > 0)
         {
-<<<<<<< HEAD
-            StartCoroutine(PlayAnim());
+            //StartCoroutine(PlayAnim());
 
             //attack checks for collision with player or enemy
-=======
             //StartCoroutine(PlayAnim());
             StartCoroutine(HitEffect());
->>>>>>> origin/master
             if (this.gameObject.tag == Tags.PLAYER & damageSource.gameObject.tag == Tags.ENEMY)
             {
                 _currentHealth -= damageSource.Damage;   //Reduces currenthealth by the amount of damage the source of damage has
@@ -117,7 +114,6 @@ public class Character : MonoBehaviour, IDamageable {
         }
     }
 
-<<<<<<< HEAD
     void KnockBack(float power, Character source)
     {
         Vector2 forcePos = transform.position - source.transform.position;
@@ -127,8 +123,6 @@ public class Character : MonoBehaviour, IDamageable {
         _rgb2d.AddForce(power * (clampedPos), ForceMode2D.Impulse);
     }
 
-    IEnumerator PlayAnim()
-=======
 
     IEnumerator HitEffect()
     {
@@ -158,20 +152,15 @@ public class Character : MonoBehaviour, IDamageable {
     }
 
     /*IEnumerator PlayAnim()
->>>>>>> origin/master
     {
         _animator.SetBool("Hit", true);
         yield return new WaitForSeconds(0.2f);
         _animator.SetBool("Hit", false);
-<<<<<<< HEAD
-    }
+    }*/
 
     IEnumerator RemoveVelocity()
     {
         yield return new WaitForSeconds(0.05f);
         _rgb2d.velocity = Vector2.zero;
     }
-=======
-    }*/
->>>>>>> origin/master
 }
