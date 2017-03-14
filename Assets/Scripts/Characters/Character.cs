@@ -88,11 +88,13 @@ public class Character : MonoBehaviour, IDamageable {
     {
         if (_currentHealth > 0)
         {
-            //StartCoroutine(PlayAnim());
-
             //attack checks for collision with player or enemy
             //StartCoroutine(PlayAnim());
-            StartCoroutine(HitEffect());
+            if(_spriteRenderer.color == _defaultColor)
+            {
+                StartCoroutine(HitEffect());
+            }
+
             if (this.gameObject.tag == Tags.PLAYER & damageSource.gameObject.tag == Tags.ENEMY)
             {
                 _currentHealth -= damageSource.Damage;   //Reduces currenthealth by the amount of damage the source of damage has
@@ -117,9 +119,9 @@ public class Character : MonoBehaviour, IDamageable {
     void KnockBack(float power, Character source)
     {
         Vector2 forcePos = transform.position - source.transform.position;
-        Vector2 clampedPos = forcePos;
-        clampedPos = new Vector2(Mathf.Clamp(clampedPos.x, -0.75f, 0.75f), Mathf.Clamp(clampedPos.y, -0.75f, 0.75f));
-
+        Vector2 clampedPos = forcePos.normalized;
+        clampedPos = new Vector2(Mathf.Clamp(clampedPos.x, -0.5f, 0.5f), Mathf.Clamp(clampedPos.y, -0.5f, 0.5f));
+        //set min/max value to prevent charachter being knocked back to china.
         _rgb2d.AddForce(power * (clampedPos), ForceMode2D.Impulse);
     }
 
@@ -128,27 +130,24 @@ public class Character : MonoBehaviour, IDamageable {
     {
         float duration = 1;
         float smoothness = 0.01f;
-
         float _progress = 0;
 
-        //_spriteRenderer.color = Color.Lerp(_defaultColor,_hitColor,Time.deltaTime * 5);
-
-        //yield return null;
-        while (_progress < 1)
+        if(_spriteRenderer.color == _defaultColor)
         {
-            _spriteRenderer.color = Color.Lerp(_defaultColor, _hitColor,_progress * 5);
-            Debug.Log(_spriteRenderer.color);
-            _progress += Time.deltaTime;
-            yield return new WaitForSeconds(smoothness);
-        }/*
-
-        yield return new WaitForSeconds(0.02f);
-        while(_progress > 0)
-        {
-            _spriteRenderer.color = Color.Lerp(_hitColor, _defaultColor, _progress * 5);
-            _progress -= Time.deltaTime;
-            yield return new WaitForSeconds(smoothness);
-        }*/
+            while (_progress < duration)
+            {
+                _spriteRenderer.color = Color.Lerp(_defaultColor, _hitColor, _progress * 5);
+                _progress += Time.deltaTime;
+                yield return new WaitForSeconds(smoothness);
+            }
+            //go back to standard color when the player is at the end of the hit color animation
+            while (_progress >= duration)
+            {
+                _spriteRenderer.color = Color.Lerp(_hitColor, _defaultColor, _progress * 5);
+                _progress -= duration;
+                yield return new WaitForSeconds(smoothness);
+            }
+        }
     }
 
     /*IEnumerator PlayAnim()
@@ -160,6 +159,7 @@ public class Character : MonoBehaviour, IDamageable {
 
     IEnumerator RemoveVelocity()
     {
+        //stop the character from knockback
         yield return new WaitForSeconds(0.05f);
         _rgb2d.velocity = Vector2.zero;
     }

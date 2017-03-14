@@ -82,6 +82,11 @@ public class PlayerCharacter : Character {
         gameObject.SetActive(false);
     }
 
+    public void RestoreHealth()
+    {
+        CurrentHealth = Mathf.Lerp(CurrentHealth, MaxHealth, 2f);
+    }
+
     void BecomeEnemy()
     {
         _currentState = PlayerState.ENEMY;
@@ -90,25 +95,13 @@ public class PlayerCharacter : Character {
 
     public void DealDamage(float multiplier, List<GameObject> target)
     {
-        StartCoroutine(EnableHitbox(0.2f));
+        //damage multiplier for heavy/combo attacks
         StartCoroutine(AttackTargets(target));
-    }
-
-    IEnumerator EnableHitbox(float duration)
-    {
-        if (!_hitBox.active)
-        {
-            yield return new WaitForSeconds(0.15f);
-            _hitBox.SetActive(true);
-            yield return new WaitForSeconds(duration);
-            _hitBox.SetActive(false);
-        }
     }
 
     IEnumerator AttackTargets(List<GameObject> target)
     {
-        //float damage = Damage * multiplier;
-        yield return new WaitForSeconds(0.2f);//hitbox duration
+       yield return new WaitForSeconds(0.2f);//hitbox duration
         for (int i = 0; i < target.Count; i++)
         {
             ExecuteEvents.Execute<IDamageable>(target[i], null, (x, y) => x.TakeDamage(this));

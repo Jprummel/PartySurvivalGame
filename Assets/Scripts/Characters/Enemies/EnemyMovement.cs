@@ -35,9 +35,7 @@ public class EnemyMovement : MonoBehaviour {
 
             if (distance > _enemy.AttackRange)
             {
-                Debug.Log("keep moving");
                 Vector2 dir = (_enemyTargetting.Target.transform.position - transform.position).normalized * _moveSpeed;
-                //transform.position = Vector2.MoveTowards(transform.position, _enemyTargetting.Target.transform.position, _moveSpeed * Time.deltaTime);
                 _rgb2d.velocity = dir;
                 if (transform.position.x > _enemyTargetting.Target.transform.position.x)
                 {

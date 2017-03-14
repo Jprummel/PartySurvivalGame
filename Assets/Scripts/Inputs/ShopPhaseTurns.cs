@@ -53,6 +53,7 @@ public class ShopPhaseTurns : MonoBehaviour {
         for (int i = 0; i < PlayerParty.PlayerCharacters.Count; i++)
         {
             PlayerParty.PlayerCharacters[i].HUD.Portrait.color = _defaultColor;
+            PlayerParty.PlayerCharacters[i].RestoreHealth();
         }
     }
 }
