@@ -21,7 +21,7 @@ public class ShopPhaseTurns : MonoBehaviour {
     {
         _shopDisplay = GetComponent<ShopDisplay>();
         _defaultColor = new Color(255,255,255,1);
-        _inActiveColor = new Color(20, 20, 20, 1);
+        _inActiveColor = new Color(0.20f, 0.20f, 0.20f, 1);
     }
 
     public void SetShopInputs()
@@ -39,7 +39,6 @@ public class ShopPhaseTurns : MonoBehaviour {
         {
             if (PlayerParty.PlayerCharacters[i] == _shopDisplay.MatchingPlayer)
             {
-                Debug.Log(PlayerParty.PlayerCharacters[i].HUD.Portrait);
                 PlayerParty.PlayerCharacters[i].HUD.Portrait.color = _defaultColor;
             }
             else

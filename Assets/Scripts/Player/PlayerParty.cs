@@ -9,9 +9,9 @@ public class PlayerParty : MonoBehaviour {
     public static List<GameObject>      Players             = new List<GameObject>();
     public static List<PlayerCharacter> PlayerCharacters    = new List<PlayerCharacter>();
 
-	void Start () {
+	void Awake () {
         SortPlayerLists();
-        AddPlayers();        
+        AddPlayers();   
 	}
 
     void AddPlayers()

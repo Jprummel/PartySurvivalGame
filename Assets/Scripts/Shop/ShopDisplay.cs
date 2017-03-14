@@ -47,6 +47,7 @@ public class ShopDisplay : MonoBehaviour {
         if(!_waveController.IsCombatPhase){ //If its not the combat phase, shopping will begin
             _shopPanel.SetActive(true);//shows the shop panel
             _shopTurns.SetShopInputs();
+            FindingNemo();
             ShopTurnTimer(); //Runs the timer
         }
     }
@@ -72,6 +73,7 @@ public class ShopDisplay : MonoBehaviour {
             //Sets everything up for re-use after the next wave
             _playerToShop = 0;
             _waveController.IsCombatPhase = true;
+            _shopTurns.ResetPortraitColors();
             _shopPanel.SetActive(false);
         }
         FindingNemo();
@@ -84,6 +86,9 @@ public class ShopDisplay : MonoBehaviour {
     {
         _matchingPlayer = PlayerParty.PlayerCharacters[_playerToShop];
         _shopTurns.PlayerToShop = _matchingPlayer.PlayerID;
-        _shopTurns.ShowPlayerToShop();
+        if (!_waveController.IsCombatPhase)
+        {
+            _shopTurns.ShowPlayerToShop();
+        }
     }
 }
