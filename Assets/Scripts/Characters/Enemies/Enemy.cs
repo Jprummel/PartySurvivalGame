@@ -13,11 +13,6 @@ public class Enemy : Character, IDamageable{
     private float _healthOffset;
     [SerializeField]private Sprite[] _healthBars;
 
-    public int GoldValue
-    {
-        get { return _goldValue; }
-    }
-
     void Start()
     {
         _enemySpawner = GameObject.FindGameObjectWithTag(Tags.ENEMYSPAWNER).GetComponent<EnemySpawner>();

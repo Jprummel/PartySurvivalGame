@@ -1,13 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class AttackCollider : MonoBehaviour {
 
-    public List<GameObject> Target = new List<GameObject>();
+    PlayerCharacter _source;
+
+    void Start()
+    {
+        _source = GetComponentInParent<PlayerCharacter>();
+    }
 
     void OnTriggerEnter2D(Collider2D target)
     {
-        Target.Add(target.gameObject);
+        ExecuteEvents.Execute<IDamageable>(target.gameObject, null, (x, y) => x.TakeDamage(_source));
     }
 }

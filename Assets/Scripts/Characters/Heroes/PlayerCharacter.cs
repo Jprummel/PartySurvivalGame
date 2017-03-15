@@ -6,9 +6,9 @@ using UnityEngine.EventSystems;
 
 public class PlayerCharacter : Character {
 
+    private Sprite _startSprite;
     [SerializeField]protected int _playerID;
     [SerializeField]protected Sprite _portrait;
-    private GameObject  _hitBox;
     protected float     _gold;
     private float _currrentDamageCost = 500;
     private float _currentHealthCost = 500;
@@ -61,13 +61,14 @@ public class PlayerCharacter : Character {
     protected override void Awake()
     {
         PlayerParty.PlayerCharacters.Add(this);
-        _hitBox = transform.GetChild(0).gameObject;
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _startSprite = _spriteRenderer.sprite;
         base.Awake();
     }
 
     void Update()
     {
-        if(CurrentHealth <= 0)
+        if(CurrentHealth <= 0 && !_isDead)
         {
             StartCoroutine(DeathRoutine());
         }
@@ -75,37 +76,26 @@ public class PlayerCharacter : Character {
 
     IEnumerator DeathRoutine()
     {
+        _isDead = true;
         _animator.SetBool("IsDead", true);
         _currentState = PlayerState.DEAD;
         PlayerParty.PlayerCharacters.Remove(this);
-        yield return new WaitForSeconds(1);
+        Respawn.deadPlayers.Add(this);
+        BecomeEnemy();
+        yield return new WaitForSeconds(1.5f);
+        _spriteRenderer.sprite = _startSprite;
         gameObject.SetActive(false);
     }
 
     public void RestoreHealth()
     {
         CurrentHealth = Mathf.Lerp(CurrentHealth, MaxHealth, 2f);
+        _isDead = false;
     }
 
     void BecomeEnemy()
     {
         _currentState = PlayerState.ENEMY;
         this.tag = Tags.ENEMY;
-    }
-
-    public void DealDamage(float multiplier, List<GameObject> target)
-    {
-        //damage multiplier for heavy/combo attacks
-        StartCoroutine(AttackTargets(target));
-    }
-
-    IEnumerator AttackTargets(List<GameObject> target)
-    {
-       yield return new WaitForSeconds(0.2f);//hitbox duration
-        for (int i = 0; i < target.Count; i++)
-        {
-            ExecuteEvents.Execute<IDamageable>(target[i], null, (x, y) => x.TakeDamage(this));
-        }
-        target.Clear();
     }
 }

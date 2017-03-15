@@ -1,19 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerAttack : MonoBehaviour {
 
     PlayerCharacter _playerCharacter;
-    AttackCollider _attackCollider;
 
-    [SerializeField]private GameObject _hitbox;
     private bool _readyToAttack = true;
 
     void Awake()
     {  
         _playerCharacter = GetComponent<PlayerCharacter>();
-        _attackCollider = _hitbox.GetComponent<AttackCollider>();
     }
 
     public void Attack()
@@ -21,8 +19,6 @@ public class PlayerAttack : MonoBehaviour {
         if (_readyToAttack)
         {
             StartCoroutine(AttackState());
-            //dealdamage(multilpier) for later on heavy and maybe combo attacks;
-            _playerCharacter.DealDamage(1f, _attackCollider.Target);
             _readyToAttack = false;
             StartCoroutine(Cooldown(0.6f));
         }

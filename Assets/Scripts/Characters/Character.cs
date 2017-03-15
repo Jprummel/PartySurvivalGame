@@ -11,9 +11,11 @@ public class Character : MonoBehaviour, IDamageable {
     [SerializeField]protected float     _damage;
     [SerializeField]protected float     _attackRange;
     [SerializeField]protected float     _attackSpeed;
+    [SerializeField]protected float     _goldValue;
+    [SerializeField]protected float     _currentHealth;
+
     protected bool _isDead;
     private Rigidbody2D _rgb2d;
-    [SerializeField]protected float _currentHealth;
     protected Animator _animator;
     protected SpriteRenderer _spriteRenderer;
     protected float _hitEffectSpeed = 5;
@@ -21,6 +23,12 @@ public class Character : MonoBehaviour, IDamageable {
     protected Color _hitColor;
 
     //Getters & Setters
+    public float GoldValue
+    {
+        get { return _goldValue; }
+        set { _goldValue = value; }
+    }
+
     public string Name
     {
         get { return _name; }
@@ -89,19 +97,15 @@ public class Character : MonoBehaviour, IDamageable {
         if (_currentHealth > 0)
         {
             //attack checks for collision with player or enemy
-            //StartCoroutine(PlayAnim());
-            if(_spriteRenderer.color == _defaultColor)
-            {
-                StartCoroutine(HitEffect());
-            }
-
             if (this.gameObject.tag == Tags.PLAYER & damageSource.gameObject.tag == Tags.ENEMY)
             {
+                StartCoroutine(HitEffect());
                 _currentHealth -= damageSource.Damage;   //Reduces currenthealth by the amount of damage the source of damage has
                 KnockBack(5, damageSource);
             }
             if(this.gameObject.tag == Tags.ENEMY && damageSource.gameObject.tag == Tags.PLAYER)
             {
+                StartCoroutine(HitEffect());
                 _currentHealth -= damageSource.Damage;   //Reduces currenthealth by the amount of damage the source of damage has
                 KnockBack(20, damageSource);
                 if (_currentHealth <= 0)
@@ -109,8 +113,7 @@ public class Character : MonoBehaviour, IDamageable {
                     //give gold
                     StartCoroutine(RemoveVelocity());
                     PlayerCharacter source = damageSource.GetComponent<PlayerCharacter>();
-                    Enemy enemy = GetComponent<Enemy>();
-                    source.Gold += enemy.GoldValue;
+                    source.Gold += this.GoldValue;
                 }
             }
         }
@@ -128,7 +131,7 @@ public class Character : MonoBehaviour, IDamageable {
 
     IEnumerator HitEffect()
     {
-        float duration = 1;
+        float duration = 0.33f;
         float smoothness = 0.01f;
         float _progress = 0;
 
@@ -149,13 +152,6 @@ public class Character : MonoBehaviour, IDamageable {
             }
         }
     }
-
-    /*IEnumerator PlayAnim()
-    {
-        _animator.SetBool("Hit", true);
-        yield return new WaitForSeconds(0.2f);
-        _animator.SetBool("Hit", false);
-    }*/
 
     IEnumerator RemoveVelocity()
     {

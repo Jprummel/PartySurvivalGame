@@ -8,6 +8,9 @@ public class WaveController : MonoBehaviour
 
     EnemySpawner _enemySpawner;
 
+    public delegate void NewWaveMessage();
+    public static NewWaveMessage newWave;
+
     private int _enemiesToSpawn = 10;
     private int _maxEnemies = 15;
     private int _enemiesSpawned;
@@ -27,9 +30,15 @@ public class WaveController : MonoBehaviour
     }
 
     void Update()
-    {//if there are less enemies spawned than supposed to
+    {
+        if (newWave != null)
+        {
+            newWave = null;
+        }   
+        //if there are less enemies spawned than supposed to
         if (_enemiesSpawned < _enemiesToSpawn && _isCombatPhase)
-        {//wait 0.5s before spawning another enemy
+        {
+            //wait 0.5s before spawning another enemy
             timer += Time.deltaTime;
             if (timer >= 0.5)
             {
@@ -60,7 +69,7 @@ public class WaveController : MonoBehaviour
         _enemiesSpawned = 0;
         float newEnemyAmount = _enemiesToSpawn;
         GameInformation.Wave++;
-        WaveDisplay.updateWave += ResetWave;
+        newWave += ResetWave;
         switch (GameInformation.Wave)
         {
             case 10:

@@ -6,15 +6,12 @@ using UnityEngine.UI;
 public class WaveDisplay : MonoBehaviour {
 
     [SerializeField]private Text _waveNumber;
-    public delegate void UpdateWave();
-    public static UpdateWave updateWave;
     
     void Update()
     {
-        if(updateWave != null)
+        if(WaveController.newWave != null)
         {
             DisplayWaveNumber();
-            updateWave = null;
         }
     }
 
