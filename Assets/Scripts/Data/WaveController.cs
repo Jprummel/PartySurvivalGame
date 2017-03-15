@@ -6,14 +6,11 @@ using UnityEngine;
 public class WaveController : MonoBehaviour
 {
     EnemySpawner _enemySpawner;
-<<<<<<< HEAD
 
     public delegate void NewWaveMessage();
     public static NewWaveMessage newWave;
 
-=======
     ShopDisplay _shop;
->>>>>>> origin/master
     private int _enemiesToSpawn = 10;
     private int _maxEnemies = 15;
     private int _enemiesSpawned;
