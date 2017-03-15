@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ControllerInput : MonoBehaviour {
 
+    private WalkParticle    _walkParticle;
     private WaveController  _waveController;
     private PauseGame       _pauseGame;
     private PlayerCharacter _player;
@@ -12,6 +13,7 @@ public class ControllerInput : MonoBehaviour {
 
     void Awake()
     {
+        _walkParticle   = GetComponentInChildren<WalkParticle>();
         _waveController = GameObject.FindGameObjectWithTag(Tags.WAVEMANAGER).GetComponent<WaveController>();
         _pauseGame      = GetComponent<PauseGame>();
         _player         = GetComponent<PlayerCharacter>();
@@ -54,10 +56,12 @@ public class ControllerInput : MonoBehaviour {
                 float y = Input.GetAxis(InputAxes.LEFT_JOYSTICK_Y + _player.PlayerID);
                 Vector2 moveDir = new Vector2(x, y);
                 _playerMovement.Move(moveDir.normalized);
+                _walkParticle.ShowParticle();
             }
             else
             {
                 _playerMovement.Move(new Vector2(0, 0));
+                _walkParticle.DisableParticle();
             }            
         }
         

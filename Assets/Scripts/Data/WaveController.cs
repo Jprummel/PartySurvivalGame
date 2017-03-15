@@ -5,12 +5,15 @@ using UnityEngine;
 
 public class WaveController : MonoBehaviour
 {
-
     EnemySpawner _enemySpawner;
+<<<<<<< HEAD
 
     public delegate void NewWaveMessage();
     public static NewWaveMessage newWave;
 
+=======
+    ShopDisplay _shop;
+>>>>>>> origin/master
     private int _enemiesToSpawn = 10;
     private int _maxEnemies = 15;
     private int _enemiesSpawned;
@@ -26,7 +29,8 @@ public class WaveController : MonoBehaviour
 
     void Start()
     {
-        _enemySpawner = GameObject.FindWithTag("EnemySpawner").GetComponent<EnemySpawner>();
+        _enemySpawner = GameObject.FindWithTag(Tags.ENEMYSPAWNER).GetComponent<EnemySpawner>();
+        _shop = GameObject.FindGameObjectWithTag(Tags.SHOPMANAGER).GetComponent<ShopDisplay>();
     }
 
     void Update()
@@ -65,7 +69,8 @@ public class WaveController : MonoBehaviour
 
     void ResetWave()
     {
-        _isCombatPhase = false;
+        _shop.TimeTillOpening = _shop.MaxTimeTilleOpening;
+        _isCombatPhase = false;        
         _enemiesSpawned = 0;
         float newEnemyAmount = _enemiesToSpawn;
         GameInformation.Wave++;

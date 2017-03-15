@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: e56edb72aff84664488b24a65e548d65
-timeCreated: 1489395631
+timeCreated: 1489578918
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -29,6 +29,8 @@ TextureImporter:
     21300044: slash_22
     21300046: slash_23
     21300048: slash_24
+    21300050: slash_25
+    21300052: slash_26
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -107,7 +109,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1840
+        y: 2300
         width: 700
         height: 460
       alignment: 0
@@ -120,7 +122,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 700
-        y: 1840
+        y: 2300
         width: 700
         height: 460
       alignment: 0
@@ -133,7 +135,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1400
-        y: 1840
+        y: 2300
         width: 700
         height: 460
       alignment: 0
@@ -146,7 +148,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2100
-        y: 1840
+        y: 2300
         width: 700
         height: 460
       alignment: 0
@@ -159,7 +161,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2800
-        y: 1840
+        y: 2300
         width: 700
         height: 460
       alignment: 0
@@ -172,7 +174,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1380
+        y: 1840
         width: 700
         height: 460
       alignment: 0
@@ -185,7 +187,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 700
-        y: 1380
+        y: 1840
         width: 700
         height: 460
       alignment: 0
@@ -198,7 +200,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1400
-        y: 1380
+        y: 1840
         width: 700
         height: 460
       alignment: 0
@@ -211,7 +213,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2100
-        y: 1380
+        y: 1840
         width: 700
         height: 460
       alignment: 0
@@ -224,7 +226,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2800
-        y: 1380
+        y: 1840
         width: 700
         height: 460
       alignment: 0
@@ -237,7 +239,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 920
+        y: 1380
         width: 700
         height: 460
       alignment: 0
@@ -250,7 +252,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 700
-        y: 920
+        y: 1380
         width: 700
         height: 460
       alignment: 0
@@ -263,7 +265,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1400
-        y: 920
+        y: 1380
         width: 700
         height: 460
       alignment: 0
@@ -276,7 +278,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2100
-        y: 920
+        y: 1380
         width: 700
         height: 460
       alignment: 0
@@ -289,7 +291,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2800
-        y: 920
+        y: 1380
         width: 700
         height: 460
       alignment: 0
@@ -302,7 +304,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 460
+        y: 920
         width: 700
         height: 460
       alignment: 0
@@ -315,7 +317,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 700
-        y: 460
+        y: 920
         width: 700
         height: 460
       alignment: 0
@@ -328,7 +330,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1400
-        y: 460
+        y: 920
         width: 700
         height: 460
       alignment: 0
@@ -341,7 +343,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2100
-        y: 460
+        y: 920
         width: 700
         height: 460
       alignment: 0
@@ -354,7 +356,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2800
-        y: 460
+        y: 920
         width: 700
         height: 460
       alignment: 0
@@ -367,7 +369,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 460
         width: 700
         height: 460
       alignment: 0
@@ -380,7 +382,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 700
-        y: 0
+        y: 460
         width: 700
         height: 460
       alignment: 0
@@ -393,7 +395,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1400
-        y: 0
+        y: 460
         width: 700
         height: 460
       alignment: 0
@@ -406,7 +408,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2100
-        y: 0
+        y: 460
         width: 700
         height: 460
       alignment: 0
@@ -419,6 +421,32 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2800
+        y: 460
+        width: 700
+        height: 460
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: slash_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 700
+        height: 460
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: slash_26
+      rect:
+        serializedVersion: 2
+        x: 700
         y: 0
         width: 700
         height: 460
