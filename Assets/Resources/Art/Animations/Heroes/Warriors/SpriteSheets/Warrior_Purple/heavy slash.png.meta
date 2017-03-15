@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 9df65bdeffee5624c83c4b36a379e3bf
-timeCreated: 1489409102
+timeCreated: 1489579813
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -20,6 +20,7 @@ TextureImporter:
     21300026: heavy slash_13
     21300028: heavy slash_14
     21300030: heavy slash_15
+    21300032: heavy slash_16
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -98,7 +99,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 3220
+        y: 1380
         width: 700
         height: 460
       alignment: 0
@@ -111,7 +112,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 700
-        y: 3220
+        y: 1380
         width: 700
         height: 460
       alignment: 0
@@ -123,8 +124,8 @@ TextureImporter:
       name: heavy slash_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2760
+        x: 1400
+        y: 1380
         width: 700
         height: 460
       alignment: 0
@@ -136,8 +137,8 @@ TextureImporter:
       name: heavy slash_3
       rect:
         serializedVersion: 2
-        x: 700
-        y: 2760
+        x: 2100
+        y: 1380
         width: 700
         height: 460
       alignment: 0
@@ -149,8 +150,8 @@ TextureImporter:
       name: heavy slash_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 2300
+        x: 2800
+        y: 1380
         width: 700
         height: 460
       alignment: 0
@@ -162,8 +163,8 @@ TextureImporter:
       name: heavy slash_5
       rect:
         serializedVersion: 2
-        x: 700
-        y: 2300
+        x: 0
+        y: 920
         width: 700
         height: 460
       alignment: 0
@@ -175,8 +176,8 @@ TextureImporter:
       name: heavy slash_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1840
+        x: 700
+        y: 920
         width: 700
         height: 460
       alignment: 0
@@ -188,8 +189,8 @@ TextureImporter:
       name: heavy slash_7
       rect:
         serializedVersion: 2
-        x: 700
-        y: 1840
+        x: 1400
+        y: 920
         width: 700
         height: 460
       alignment: 0
@@ -201,8 +202,8 @@ TextureImporter:
       name: heavy slash_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1380
+        x: 2100
+        y: 920
         width: 700
         height: 460
       alignment: 0
@@ -214,8 +215,8 @@ TextureImporter:
       name: heavy slash_9
       rect:
         serializedVersion: 2
-        x: 700
-        y: 1380
+        x: 2800
+        y: 920
         width: 700
         height: 460
       alignment: 0
@@ -228,7 +229,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 920
+        y: 460
         width: 700
         height: 460
       alignment: 0
@@ -241,7 +242,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 700
-        y: 920
+        y: 460
         width: 700
         height: 460
       alignment: 0
@@ -253,7 +254,7 @@ TextureImporter:
       name: heavy slash_12
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1400
         y: 460
         width: 700
         height: 460
@@ -266,7 +267,7 @@ TextureImporter:
       name: heavy slash_13
       rect:
         serializedVersion: 2
-        x: 700
+        x: 2100
         y: 460
         width: 700
         height: 460
@@ -279,6 +280,19 @@ TextureImporter:
       name: heavy slash_14
       rect:
         serializedVersion: 2
+        x: 2800
+        y: 460
+        width: 700
+        height: 460
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: heavy slash_15
+      rect:
+        serializedVersion: 2
         x: 0
         y: 0
         width: 700
@@ -289,7 +303,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: heavy slash_15
+      name: heavy slash_16
       rect:
         serializedVersion: 2
         x: 700

@@ -6,6 +6,24 @@ using UnityEngine.EventSystems;
 
 public class ShopDisplay : MonoBehaviour {
 
+    //Shop opening
+    [SerializeField]private GameObject _shopOpeningHUD;
+    [SerializeField]private Text _shopOpeningText;
+    private float _maxTimeTillOpening = 5;
+    private float _timeTillOpening;
+    private bool _shopIsOpen;
+
+    public float TimeTillOpening
+    {
+        get { return _timeTillOpening; }
+        set { _timeTillOpening = value; }
+    }
+
+    public float MaxTimeTilleOpening
+    {
+        get { return _maxTimeTillOpening; }
+    }
+
     //Shop panel
     [SerializeField]private GameObject  _shopPanel;
     
@@ -13,7 +31,7 @@ public class ShopDisplay : MonoBehaviour {
     [SerializeField]private float       _maxTimeToShop;
                     private float       _timeToShop;
                     private int         _playerToShop = 0;
-    //
+    //Scripts
     private ShopPhaseTurns _shopTurns;
     private GetUpgradeCosts _upgradeCosts;
     private WaveController  _waveController;
@@ -45,10 +63,37 @@ public class ShopDisplay : MonoBehaviour {
     void ShopPhase()
     {
         if(!_waveController.IsCombatPhase){ //If its not the combat phase, shopping will begin
-            _shopPanel.SetActive(true);//shows the shop panel
-            _shopTurns.SetShopInputs();
-            FindingNemo();
-            ShopTurnTimer(); //Runs the timer
+
+            ShopOpeningCountdown();
+            if (_shopIsOpen)
+            {
+                _shopPanel.SetActive(true);//shows the shop panel
+                _shopTurns.SetShopInputs();
+                FindingNemo();
+                ShopTurnTimer(); //Runs the timer
+            }
+        }
+    }
+
+    void ShopOpeningCountdown()
+    {
+        //_timeTillOpening = _maxTimeTillOpening;
+        if (!_shopIsOpen)
+        {
+            if (_timeTillOpening >= 0)
+            {
+                _timeTillOpening -= Time.deltaTime;
+            }
+            if (_timeTillOpening <= 0)
+            {
+                _shopIsOpen = true;
+            }
+            _shopOpeningHUD.SetActive(true);
+            _shopOpeningText.text = "Wave cleared. Shop opening in" + "\n" + Mathf.Round(_timeTillOpening);
+        }
+        else if (_shopIsOpen)
+        {
+            _shopOpeningHUD.SetActive(false);
         }
     }
 
@@ -72,9 +117,10 @@ public class ShopDisplay : MonoBehaviour {
         {
             //Sets everything up for re-use after the next wave
             _playerToShop = 0;
-            _waveController.IsCombatPhase = true;
             _shopTurns.ResetPortraitColors();
             _shopPanel.SetActive(false);
+            _shopIsOpen = false;
+            _waveController.IsCombatPhase = true;
         }
         FindingNemo();
         _shopTurns.SetShopInputs();

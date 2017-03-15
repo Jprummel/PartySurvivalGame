@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: b62a6ec8a140c104db2683d7eb5a8c49
-timeCreated: 1489336993
+timeCreated: 1489582416
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -20,6 +20,15 @@ TextureImporter:
     21300026: run_13
     21300028: run_14
     21300030: run_15
+    21300032: run_16
+    21300034: run_17
+    21300036: run_18
+    21300038: run_19
+    21300040: run_20
+    21300042: run_21
+    21300044: run_22
+    21300046: run_23
+    21300048: run_24
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -98,7 +107,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1200
+        y: 2400
         width: 500
         height: 400
       alignment: 0
@@ -111,7 +120,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 500
-        y: 1200
+        y: 2400
         width: 500
         height: 400
       alignment: 0
@@ -124,7 +133,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1000
-        y: 1200
+        y: 2400
         width: 500
         height: 400
       alignment: 0
@@ -137,7 +146,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1500
-        y: 1200
+        y: 2400
         width: 500
         height: 400
       alignment: 0
@@ -150,7 +159,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 800
+        y: 2000
         width: 500
         height: 400
       alignment: 0
@@ -163,7 +172,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 500
-        y: 800
+        y: 2000
         width: 500
         height: 400
       alignment: 0
@@ -176,7 +185,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1000
-        y: 800
+        y: 2000
         width: 500
         height: 400
       alignment: 0
@@ -189,7 +198,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1500
-        y: 800
+        y: 2000
         width: 500
         height: 400
       alignment: 0
@@ -202,7 +211,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 400
+        y: 1600
         width: 500
         height: 400
       alignment: 0
@@ -215,7 +224,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 500
-        y: 400
+        y: 1600
         width: 500
         height: 400
       alignment: 0
@@ -228,7 +237,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1000
-        y: 400
+        y: 1600
         width: 500
         height: 400
       alignment: 0
@@ -241,7 +250,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1500
-        y: 400
+        y: 1600
         width: 500
         height: 400
       alignment: 0
@@ -254,7 +263,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 1200
         width: 500
         height: 400
       alignment: 0
@@ -267,7 +276,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 500
-        y: 0
+        y: 1200
         width: 500
         height: 400
       alignment: 0
@@ -280,7 +289,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1000
-        y: 0
+        y: 1200
         width: 500
         height: 400
       alignment: 0
@@ -293,6 +302,123 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1500
+        y: 1200
+        width: 500
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: run_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 800
+        width: 500
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: run_17
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 800
+        width: 500
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: run_18
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 800
+        width: 500
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: run_19
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 800
+        width: 500
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: run_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 500
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: run_21
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 400
+        width: 500
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: run_22
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 400
+        width: 500
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: run_23
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 400
+        width: 500
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: run_24
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 0
         width: 500
         height: 400
