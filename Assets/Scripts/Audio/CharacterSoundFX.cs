@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterSoundFX : MonoBehaviour {
 
     private AudioSource _audio;
-    [SerializeField]private AudioClip _hitSound;
+    [SerializeField]private List<AudioClip> _hitSounds = new List<AudioClip>();
     [SerializeField]private AudioClip _deathSound;
     [SerializeField]private AudioClip _walkSound;
     [SerializeField]private AudioClip _lightAttackSound;
@@ -19,7 +19,12 @@ public class CharacterSoundFX : MonoBehaviour {
 
     public void PlayHitAudio()
     {
-        _audio.PlayOneShot(_hitSound);
+        int playSoundChance = Random.Range(0, 100);
+        if (playSoundChance <= 33)
+        {
+            int randomHitSound = Random.Range(0, _hitSounds.Count);
+            _audio.PlayOneShot(_hitSounds[randomHitSound]);
+        }
     }
 
     public void PlayDeathSound()

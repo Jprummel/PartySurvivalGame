@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaveController : MonoBehaviour
-{
+public class WaveController : MonoBehaviour{
+
+    private GameSoundFX _soundeffect;
     EnemySpawner _enemySpawner;
 
     public delegate void NewWaveMessage();
@@ -26,6 +27,7 @@ public class WaveController : MonoBehaviour
 
     void Start()
     {
+        _soundeffect = GetComponent<GameSoundFX>();
         _enemySpawner = GameObject.FindWithTag(Tags.ENEMYSPAWNER).GetComponent<EnemySpawner>();
         _shop = GameObject.FindGameObjectWithTag(Tags.SHOPMANAGER).GetComponent<ShopDisplay>();
     }
@@ -34,6 +36,7 @@ public class WaveController : MonoBehaviour
     {
         if (newWave != null)
         {
+            _soundeffect.PlayStartWaveSound();
             newWave = null;
         }   
         //if there are less enemies spawned than supposed to
