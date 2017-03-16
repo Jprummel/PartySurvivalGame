@@ -6,14 +6,13 @@ public class Respawn : MonoBehaviour {
 
     public static List<PlayerCharacter> deadPlayers = new List<PlayerCharacter>();
 
-    public void RespawnPlayers()
+    void RespawnPlayers()
     {
         for (int i = 0; i < deadPlayers.Count; i++)
         {
             deadPlayers[i].RestoreHealth();
             deadPlayers[i].CharacterAnimator.SetBool("IsDead", false);
             deadPlayers[i].gameObject.SetActive(true);
-            Debug.Log(deadPlayers.Count);
         }
     }
 
@@ -22,6 +21,7 @@ public class Respawn : MonoBehaviour {
         if(WaveController.newWave != null)
         {
             RespawnPlayers();
+            WaveController.newWave = null;
         }
     }
 }

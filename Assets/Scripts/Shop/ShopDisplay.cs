@@ -87,6 +87,7 @@ public class ShopDisplay : MonoBehaviour {
             if (_timeTillOpening <= 0)
             {
                 _shopIsOpen = true;
+                WaveController.newWave += ShopPhase;
             }
             _shopOpeningHUD.SetActive(true);
             _shopOpeningText.text = "Wave cleared. Shop opening in" + "\n" + Mathf.Round(_timeTillOpening);

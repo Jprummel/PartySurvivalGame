@@ -37,8 +37,7 @@ public class WaveController : MonoBehaviour{
         if (newWave != null)
         {
             _soundeffect.PlayStartWaveSound();
-            newWave = null;
-        }   
+        }
         //if there are less enemies spawned than supposed to
         if (_enemiesSpawned < _enemiesToSpawn && _isCombatPhase)
         {
@@ -74,7 +73,6 @@ public class WaveController : MonoBehaviour{
         _enemiesSpawned = 0;
         float newEnemyAmount = _enemiesToSpawn;
         GameInformation.Wave++;
-        newWave += ResetWave;
         switch (GameInformation.Wave)
         {
             case 10:

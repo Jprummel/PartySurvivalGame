@@ -1,0 +1,496 @@
+fileFormatVersion: 2
+guid: 382ae7c3a0570eb43b1f4b00c75d74a8
+timeCreated: 1489664588
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: skull_spritesheet_0
+    21300002: skull_spritesheet_1
+    21300004: skull_spritesheet_2
+    21300006: skull_spritesheet_3
+    21300008: skull_spritesheet_4
+    21300010: skull_spritesheet_5
+    21300012: skull_spritesheet_6
+    21300014: skull_spritesheet_7
+    21300016: skull_spritesheet_8
+    21300018: skull_spritesheet_9
+    21300020: skull_spritesheet_10
+    21300022: skull_spritesheet_11
+    21300024: skull_spritesheet_12
+    21300026: skull_spritesheet_13
+    21300028: skull_spritesheet_14
+    21300030: skull_spritesheet_15
+    21300032: skull_spritesheet_16
+    21300034: skull_spritesheet_17
+    21300036: skull_spritesheet_18
+    21300038: skull_spritesheet_19
+    21300040: skull_spritesheet_20
+    21300042: skull_spritesheet_21
+    21300044: skull_spritesheet_22
+    21300046: skull_spritesheet_23
+    21300048: skull_spritesheet_24
+    21300050: skull_spritesheet_25
+    21300052: skull_spritesheet_26
+    21300054: skull_spritesheet_27
+    21300056: skull_spritesheet_28
+    21300058: skull_spritesheet_29
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: skull_spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1550
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skull_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 1550
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skull_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 1440
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skull_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 1440
+        width: 96
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skull_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1330
+        width: 96
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skull_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 1330
+        width: 96
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skull_spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 1220
+        width: 96
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skull_spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 1220
+        width: 96
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skull_spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 1109
+        width: 98
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skull_spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 1109
+        width: 98
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skull_spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 999
+        width: 98
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skull_spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 999
+        width: 98
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skull_spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 889
+        width: 98
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skull_spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 889
+        width: 100
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skull_spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 778
+        width: 100
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skull_spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 778
+        width: 100
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skull_spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 669
+        width: 99
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skull_spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 669
+        width: 98
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skull_spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 559
+        width: 98
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skull_spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 559
+        width: 98
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skull_spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 449
+        width: 98
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skull_spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 450
+        width: 97
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skull_spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 340
+        width: 96
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skull_spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 340
+        width: 96
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skull_spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 230
+        width: 96
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skull_spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 230
+        width: 96
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skull_spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 120
+        width: 96
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skull_spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 120
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skull_spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 10
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: skull_spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 10
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
