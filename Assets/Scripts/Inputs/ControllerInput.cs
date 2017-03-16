@@ -80,5 +80,12 @@ public class ControllerInput : MonoBehaviour {
         {
             _pauseGame.TogglePause();
         }
+
+        if (!_waveController.IsCombatPhase)
+        {
+            _soundEffects.StopWalkSound();
+            _walkParticle.DisableParticle();
+            _playerMovement.Move(new Vector2(0,0));
+        }
     }
 }

@@ -11,6 +11,7 @@ public class Respawn : MonoBehaviour {
         for (int i = 0; i < deadPlayers.Count; i++)
         {
             deadPlayers[i].RestoreHealth();
+            deadPlayers[i].CharacterAnimator.SetBool("IsDead", false);
             deadPlayers[i].gameObject.SetActive(true);
             Debug.Log(deadPlayers.Count);
         }

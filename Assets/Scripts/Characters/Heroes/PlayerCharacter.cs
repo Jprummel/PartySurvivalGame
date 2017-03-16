@@ -78,6 +78,7 @@ public class PlayerCharacter : Character {
     {
         _isDead = true;
         _animator.SetBool("IsDead", true);
+        _animator.SetInteger("AttackState", 0);
         _currentState = PlayerState.DEAD;
         PlayerParty.PlayerCharacters.Remove(this);
         Respawn.deadPlayers.Add(this);
