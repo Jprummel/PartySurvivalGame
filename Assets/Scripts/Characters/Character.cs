@@ -15,6 +15,7 @@ public class Character : MonoBehaviour, IDamageable {
     [SerializeField]protected float     _currentHealth;
 
     protected bool _isDead;
+    protected CharacterSoundFX _soundEffects;
     private Rigidbody2D _rgb2d;
     protected Animator _animator;
     protected SpriteRenderer _spriteRenderer;
@@ -85,11 +86,12 @@ public class Character : MonoBehaviour, IDamageable {
     protected virtual void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _defaultColor = _spriteRenderer.color;
-        _hitColor = new Color(1,0.6f,0.6f);
-        _animator = GetComponent<Animator>();    //Gets the characters animator
-        _currentHealth = _maxHealth;             //Sets the characters current health to its max health on spawn
-        _rgb2d = GetComponent<Rigidbody2D>();
+        _soundEffects   = GetComponent<CharacterSoundFX>();
+        _animator       = GetComponent<Animator>();    //Gets the characters animator
+        _rgb2d          = GetComponent<Rigidbody2D>();
+        _defaultColor   = _spriteRenderer.color;
+        _hitColor       = new Color(1,0.6f,0.6f);        
+        _currentHealth  = _maxHealth;             //Sets the characters current health to its max health on spawn
     }
 
     public void TakeDamage(Character damageSource)
@@ -100,12 +102,14 @@ public class Character : MonoBehaviour, IDamageable {
             if (this.gameObject.tag == Tags.PLAYER & damageSource.gameObject.tag == Tags.ENEMY)
             {
                 StartCoroutine(HitEffect());
+                _soundEffects.PlayHitAudio();
                 _currentHealth -= damageSource.Damage;   //Reduces currenthealth by the amount of damage the source of damage has
                 KnockBack(5, damageSource);
             }
             if(this.gameObject.tag == Tags.ENEMY && damageSource.gameObject.tag == Tags.PLAYER)
             {
                 StartCoroutine(HitEffect());
+                _soundEffects.PlayHitAudio();
                 _currentHealth -= damageSource.Damage;   //Reduces currenthealth by the amount of damage the source of damage has
                 KnockBack(20, damageSource);
                 if (_currentHealth <= 0)

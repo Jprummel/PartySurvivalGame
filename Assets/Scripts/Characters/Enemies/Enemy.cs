@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class Enemy : Character, IDamageable{
 
     private List<GameObject> _players;
-    [SerializeField]protected int _goldValue;
     private EnemySpawner _enemySpawner;
     private Image _healthBar;
     private float _healthOffset;

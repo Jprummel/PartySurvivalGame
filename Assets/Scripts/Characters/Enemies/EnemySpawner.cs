@@ -23,7 +23,7 @@ public class EnemySpawner : MonoBehaviour {
 
     public void SpawnEnemy()
     {
-        int randomEnemy = Random.Range(0, _enemyTypeCount);
+        int randomEnemy = Random.Range(0, _enemyTypes.Count);
         GameObject spawnedEnemy = Instantiate(_enemyTypes[randomEnemy]);
         spawnedEnemies.Add(spawnedEnemy);
         spawnedEnemy.transform.position = _spawnpoints[Random.Range(0, _spawnpoints.Count)].position;

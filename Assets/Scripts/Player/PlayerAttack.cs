@@ -18,21 +18,33 @@ public class PlayerAttack : MonoBehaviour {
     {
         if (_readyToAttack)
         {
-            StartCoroutine(AttackState());
+            StartCoroutine(AttackState(1));
             _readyToAttack = false;
+            
             StartCoroutine(Cooldown(0.6f));
         }
     }
 
-    IEnumerator AttackState()
+    public void HeavyAttack()
     {
-        _playerCharacter.CharacterAnimator.SetInteger("AttackState", 1);
+        if (_readyToAttack)
+        {
+            StartCoroutine(AttackState(3));
+            _readyToAttack = false;
+            StartCoroutine(Cooldown(1));
+        }
+    }
+
+    IEnumerator AttackState(int animationAttackState)
+    {
+        _playerCharacter.CharacterAnimator.SetInteger("AttackState", animationAttackState);
         yield return new WaitForSeconds(0.01f);
         _playerCharacter.CharacterAnimator.SetInteger("AttackState", 0);
     }
 
     IEnumerator Cooldown(float cd)
-    {       
+    {
+        //AnimatorStateInfo currAnimLength = _playerCharacter.CharacterAnimator.GetCurrentAnimatorStateInfo(0);
         yield return new WaitForSeconds(cd);
         _readyToAttack = true;
     }

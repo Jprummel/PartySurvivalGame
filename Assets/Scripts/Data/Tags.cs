@@ -9,7 +9,7 @@ public class Tags : MonoBehaviour {
     public const string ENEMYSPAWNER = "EnemySpawner";
     public const string WAVEMANAGER = "WaveManager";
     public const string SHOPMANAGER = "ShopManager";
-    public const string PAUSESCREEN = "PauseScreen";
+    public const string PAUSEOBJECT = "PauseObject";
     public const string CHARACTERSELECTOBJECT = "CharacterSelectObject";
     public const string PLAYERPARTY = "PlayerParty";
 }
