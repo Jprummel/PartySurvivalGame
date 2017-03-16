@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 2fd033e523fa642439ffbd90ce4c93f1
-timeCreated: 1488901907
+timeCreated: 1489653527
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -92,9 +92,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 454
-        width: 327
-        height: 227
+        y: 1400
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -104,10 +104,10 @@ TextureImporter:
       name: backhand_1
       rect:
         serializedVersion: 2
-        x: 327
-        y: 454
-        width: 327
-        height: 227
+        x: 500
+        y: 1400
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,10 +117,10 @@ TextureImporter:
       name: backhand_2
       rect:
         serializedVersion: 2
-        x: 654
-        y: 454
-        width: 327
-        height: 227
+        x: 1000
+        y: 1400
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,10 +130,10 @@ TextureImporter:
       name: backhand_3
       rect:
         serializedVersion: 2
-        x: 981
-        y: 454
-        width: 327
-        height: 227
+        x: 1500
+        y: 1400
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,10 +143,10 @@ TextureImporter:
       name: backhand_4
       rect:
         serializedVersion: 2
-        x: 1308
-        y: 454
-        width: 327
-        height: 227
+        x: 0
+        y: 1050
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,10 +156,10 @@ TextureImporter:
       name: backhand_5
       rect:
         serializedVersion: 2
-        x: 1635
-        y: 454
-        width: 327
-        height: 227
+        x: 500
+        y: 1050
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -169,10 +169,10 @@ TextureImporter:
       name: backhand_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 227
-        width: 327
-        height: 227
+        x: 1000
+        y: 1050
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,10 +182,10 @@ TextureImporter:
       name: backhand_7
       rect:
         serializedVersion: 2
-        x: 327
-        y: 227
-        width: 327
-        height: 227
+        x: 1500
+        y: 1050
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,10 +195,10 @@ TextureImporter:
       name: backhand_8
       rect:
         serializedVersion: 2
-        x: 654
-        y: 227
-        width: 327
-        height: 227
+        x: 0
+        y: 700
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,10 +208,10 @@ TextureImporter:
       name: backhand_9
       rect:
         serializedVersion: 2
-        x: 981
-        y: 227
-        width: 327
-        height: 227
+        x: 500
+        y: 700
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,10 +221,10 @@ TextureImporter:
       name: backhand_10
       rect:
         serializedVersion: 2
-        x: 1308
-        y: 227
-        width: 327
-        height: 227
+        x: 1000
+        y: 700
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,10 +234,10 @@ TextureImporter:
       name: backhand_11
       rect:
         serializedVersion: 2
-        x: 1635
-        y: 227
-        width: 327
-        height: 227
+        x: 1500
+        y: 700
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,9 +248,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 327
-        height: 227
+        y: 350
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -260,10 +260,10 @@ TextureImporter:
       name: backhand_13
       rect:
         serializedVersion: 2
-        x: 327
-        y: 0
-        width: 327
-        height: 227
+        x: 500
+        y: 350
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -273,10 +273,10 @@ TextureImporter:
       name: backhand_14
       rect:
         serializedVersion: 2
-        x: 654
-        y: 0
-        width: 327
-        height: 227
+        x: 1000
+        y: 350
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -286,10 +286,10 @@ TextureImporter:
       name: backhand_15
       rect:
         serializedVersion: 2
-        x: 981
-        y: 0
-        width: 327
-        height: 227
+        x: 1500
+        y: 350
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -299,10 +299,10 @@ TextureImporter:
       name: backhand_16
       rect:
         serializedVersion: 2
-        x: 1308
+        x: 0
         y: 0
-        width: 327
-        height: 227
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -312,10 +312,10 @@ TextureImporter:
       name: backhand_17
       rect:
         serializedVersion: 2
-        x: 1635
+        x: 500
         y: 0
-        width: 327
-        height: 227
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
