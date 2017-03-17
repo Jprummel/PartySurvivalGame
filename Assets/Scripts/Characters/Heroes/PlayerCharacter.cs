@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 
 public class PlayerCharacter : Character {
 
+    Respawn _respawn;
+
     private Sprite _startSprite;
     [SerializeField]protected int _playerID;
     [SerializeField]protected Sprite _portrait;
@@ -14,8 +16,7 @@ public class PlayerCharacter : Character {
     private float _currrentDamageCost = 500;
     private float _currentHealthCost = 500;
     private float _currentMoveSpeedCost = 500;
-    [SerializeField]
-    private GameObject _deadIndicator;
+    [SerializeField]private GameObject _deadIndicator;
 
     public Sprite Portrait
     {
@@ -73,6 +74,7 @@ public class PlayerCharacter : Character {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _startSprite = _spriteRenderer.sprite;
         base.Awake();
+        _respawn = GameObject.FindWithTag("PlayerParty").GetComponent<Respawn>();
     }
 
     void Update()
@@ -90,7 +92,7 @@ public class PlayerCharacter : Character {
         _animator.SetInteger("AttackState", 0);
         _currentState = PlayerState.DEAD;
         PlayerParty.PlayerCharacters.Remove(this);
-        Respawn.deadPlayers.Add(this);
+        _respawn.deadPlayers.Add(this);
         yield return new WaitForSeconds(1.5f);
         BecomeEnemy();
         _spriteRenderer.sprite = _startSprite;
