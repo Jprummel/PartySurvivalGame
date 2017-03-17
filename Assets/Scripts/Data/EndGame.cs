@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class EndGame : MonoBehaviour {
 
+    [SerializeField]private Ranking _ranking;
     [SerializeField]private GameObject _gameOverScreen;
+
 
 	void Update () {
         //Keeps checking if all players are dead, if so then show the gameover screen
@@ -17,6 +19,7 @@ public class EndGame : MonoBehaviour {
     void GameOver()
     {
         _gameOverScreen.SetActive(true);
+        _ranking.ShowFinalRankings();
     }
 
     public void BackToMenu()

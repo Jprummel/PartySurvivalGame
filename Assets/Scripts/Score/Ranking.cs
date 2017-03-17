@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class Ranking : MonoBehaviour {
 
-    [SerializeField]private Text _finalRankingText;
+    [SerializeField]private List<GameObject> _rankingObjects = new List<GameObject>();
+    [SerializeField]private List<Image> _playerPortraits = new List<Image>();
     private List<PlayerCharacter> _players = new List<PlayerCharacter>();
 
 	void Start () {
@@ -38,7 +39,19 @@ public class Ranking : MonoBehaviour {
 
     public void ShowFinalRankings()
     {
-        
+        for (int i = 0; i < _players.Count; i++) //this loop disables the portraits and texts for ranks that shouldnt be there
+        {
+            if (_players[i] != null)
+            {
+                _rankingObjects[i].SetActive(true);
+            }
+        }
+
+        for (int i = 0; i < _players.Count; i++)
+        {
+            Debug.Log(_players[i].HUD.Portrait.name);
+            _playerPortraits[i].sprite = _players[i].Portrait;
+        }
     }
 
     void GetPlayers()
