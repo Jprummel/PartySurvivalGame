@@ -32,7 +32,7 @@ public class ControllerInput : MonoBehaviour {
 
     void ControllerInputs()
     {
-        if (_waveController.IsCombatPhase && !_pauseGame.GameIsPaused)
+        if (_waveController.IsCombatPhase && !_pauseGame.GameIsPaused && !_player.IsDead)
         {
             if (Input.GetButtonDown(InputAxes.XBOX_A + _player.PlayerID))
             {
@@ -46,13 +46,13 @@ public class ControllerInput : MonoBehaviour {
                 //_soundEffects.PlaySFX();
             }
 
-            if (Input.GetButtonDown(InputAxes.XBOX_X + _player.PlayerID))
+            if (Input.GetButtonDown(InputAxes.XBOX_X + _player.PlayerID) && _playerAttack.ReadyToAttack)
             {
                 _playerAttack.Attack();
                 _soundEffects.PlayLightAttackAudio(); //Basic Attack (miss) sound
             }
 
-            if (Input.GetButtonDown(InputAxes.XBOX_Y + _player.PlayerID))
+            if (Input.GetButtonDown(InputAxes.XBOX_Y + _player.PlayerID) && _playerAttack.ReadyToAttack)
             {
                 //Heavy Attack
                 _soundEffects.PlayHeavyAttackAudio(); // Heavy Attack (miss) sound

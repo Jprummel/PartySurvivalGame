@@ -8,6 +8,10 @@ public class PlayerAttack : MonoBehaviour {
     PlayerCharacter _playerCharacter;
 
     private bool _readyToAttack = true;
+    public bool ReadyToAttack
+    {
+        get { return _readyToAttack; }
+    }
 
     void Awake()
     {  

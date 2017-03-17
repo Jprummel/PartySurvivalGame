@@ -36,7 +36,7 @@ public class WaveController : MonoBehaviour{
     {
         if (newWave != null)
         {
-            _soundeffect.PlayStartWaveSound();
+            //_soundeffect.PlayStartWaveSound();
         }
         //if there are less enemies spawned than supposed to
         if (_enemiesSpawned < _enemiesToSpawn && _isCombatPhase)
