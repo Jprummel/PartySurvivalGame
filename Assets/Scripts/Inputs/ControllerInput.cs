@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ControllerInput : MonoBehaviour {
 
+    private ShopDisplay         _shopDisplay;
     private GameObject          _pauseGameObject;
     private WalkParticle        _walkParticle;
     private CharacterSoundFX    _soundEffects;
@@ -15,6 +16,7 @@ public class ControllerInput : MonoBehaviour {
 
     void Awake()
     {
+        _shopDisplay    = GameObject.FindGameObjectWithTag(Tags.SHOPMANAGER).GetComponent<ShopDisplay>();
         _pauseGameObject = GameObject.FindGameObjectWithTag(Tags.PAUSEOBJECT);
         _walkParticle   = GetComponentInChildren<WalkParticle>();
         _soundEffects   = GetComponent<CharacterSoundFX>();
@@ -83,9 +85,15 @@ public class ControllerInput : MonoBehaviour {
 
         if (!_waveController.IsCombatPhase)
         {
+            if (Input.GetButtonDown(InputAxes.XBOX_B + _player.PlayerID))
+            {
+                _shopDisplay.NextPlayerShopTurn();
+            }
+
             _soundEffects.StopWalkSound();
             _walkParticle.DisableParticle();
             _playerMovement.Move(new Vector2(0,0));
         }
+
     }
 }
