@@ -108,7 +108,7 @@ public class ShopDisplay : MonoBehaviour {
         }
     }
 
-    void NextPlayerShopTurn()
+    public void NextPlayerShopTurn()
     {
         if (_playerToShop < PlayerParty.PlayerCharacters.Count-1)
         {
