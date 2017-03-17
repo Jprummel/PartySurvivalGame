@@ -10,6 +10,7 @@ public class PlayerCharacter : Character {
     [SerializeField]protected int _playerID;
     [SerializeField]protected Sprite _portrait;
     protected float     _gold;
+    protected float     _totalGoldEarned;
     private float _currrentDamageCost = 500;
     private float _currentHealthCost = 500;
     private float _currentMoveSpeedCost = 500;
@@ -56,6 +57,12 @@ public class PlayerCharacter : Character {
     {
         get { return _gold; }
         set { _gold = value; }
+    }
+
+    public float TotalGoldEarned
+    {
+        get { return _totalGoldEarned; }
+        set { _totalGoldEarned = value; }
     }
 
     protected override void Awake()

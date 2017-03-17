@@ -15,16 +15,37 @@ public class PlayerHud : MonoBehaviour {
     [SerializeField]private Image _healthBar;
     [SerializeField]private Image _portrait;
     [SerializeField]private Text _gold;
+    [SerializeField]private Text _rankText;
     public Image Portrait
     { 
         get {return _portrait;}
         set {_portrait = value; }
     }
 
+    public Text RankText
+    {
+        get { return _rankText; }
+        set { _rankText = value; }
+    }
+
+    private Color _defaultColor = new Color();
+    private Color _inactiveColor = new Color();
+
+    public Color DefaultColor
+    {
+        get { return _defaultColor; }
+    }
+
+    public Color InactiveColor
+    {
+        get { return _defaultColor; }
+    }
 
     void Start()
     {
         Character.HUD = this;
+        _defaultColor = new Color(255, 255, 255, 1);
+        _inactiveColor = new Color(0.20f, 0.20f, 0.20f, 1);
     }
 
     void Update()

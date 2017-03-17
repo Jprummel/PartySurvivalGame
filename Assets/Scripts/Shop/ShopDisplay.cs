@@ -9,7 +9,7 @@ public class ShopDisplay : MonoBehaviour {
     //Shop opening
     [SerializeField]private GameObject _shopOpeningHUD;
     [SerializeField]private Text _shopOpeningText;
-    private float _maxTimeTillOpening = 5;
+    private float _maxTimeTillOpening = 3;
     private float _timeTillOpening;
     private bool _shopIsOpen;
 

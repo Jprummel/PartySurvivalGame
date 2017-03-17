@@ -12,4 +12,5 @@ public class Tags : MonoBehaviour {
     public const string PAUSEOBJECT = "PauseObject";
     public const string CHARACTERSELECTOBJECT = "CharacterSelectObject";
     public const string PLAYERPARTY = "PlayerParty";
+    public const string RANKTRACKER = "RankTracker";
 }

@@ -4,8 +4,4 @@ using UnityEngine;
 
 public class Warrior : PlayerCharacter {
 
-    void Start()
-    {
-        Gold = 30000;
-    }
 }

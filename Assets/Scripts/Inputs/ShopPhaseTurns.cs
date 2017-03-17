@@ -39,11 +39,11 @@ public class ShopPhaseTurns : MonoBehaviour {
         {
             if (PlayerParty.PlayerCharacters[i] == _shopDisplay.MatchingPlayer)
             {
-                PlayerParty.PlayerCharacters[i].HUD.Portrait.color = _defaultColor;
+                PlayerParty.PlayerCharacters[i].HUD.Portrait.color = PlayerParty.PlayerCharacters[i].HUD.DefaultColor;
             }
             else
             {
-                PlayerParty.PlayerCharacters[i].HUD.Portrait.color = _inActiveColor;
+                PlayerParty.PlayerCharacters[i].HUD.Portrait.color = PlayerParty.PlayerCharacters[i].HUD.InactiveColor;
             }
         }
     }

@@ -13,6 +13,9 @@ public class GameSoundFX : MonoBehaviour {
 	
     public void PlayStartWaveSound()
     {
-        _audio.PlayOneShot(_warhorn);
+        if (!_audio.isPlaying)
+        {
+            _audio.PlayOneShot(_warhorn);
+        }
     }
 }

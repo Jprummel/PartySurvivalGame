@@ -15,6 +15,7 @@ public class Character : MonoBehaviour, IDamageable {
     [SerializeField]protected float     _currentHealth;
 
     protected bool _isDead;
+    protected Ranking _ranking;
     protected CharacterSoundFX _soundEffects;
     private Rigidbody2D _rgb2d;
     protected Animator _animator;
@@ -85,6 +86,7 @@ public class Character : MonoBehaviour, IDamageable {
 
     protected virtual void Awake()
     {
+        _ranking        = GameObject.FindGameObjectWithTag(Tags.RANKTRACKER).GetComponent<Ranking>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _soundEffects   = GetComponent<CharacterSoundFX>();
         _animator       = GetComponent<Animator>();    //Gets the characters animator
@@ -118,6 +120,8 @@ public class Character : MonoBehaviour, IDamageable {
                     StartCoroutine(RemoveVelocity());
                     PlayerCharacter source = damageSource.GetComponent<PlayerCharacter>();
                     source.Gold += this.GoldValue;
+                    source.TotalGoldEarned += this.GoldValue;
+                    _ranking.UpdateRanks();
                 }
             }
         }

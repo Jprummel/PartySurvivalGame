@@ -8,6 +8,7 @@ public class UpgradeHealth : ShopItem, IUpgrade {
     {
         if (_cost <= _display.MatchingPlayer.Gold)
         {
+            _soundEffects.PlayBuySound();
             _display.MatchingPlayer.MaxHealth = Mathf.Round(_display.MatchingPlayer.MaxHealth * 1.1f);
             _display.MatchingPlayer.Gold -= _cost;
             DetermineNewCost();
