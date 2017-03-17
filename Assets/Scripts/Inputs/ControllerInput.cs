@@ -34,7 +34,7 @@ public class ControllerInput : MonoBehaviour {
 
     void ControllerInputs()
     {
-        if (_waveController.IsCombatPhase && !_pauseGame.GameIsPaused && !_player.IsDead)
+        if (_waveController.IsCombatPhase && !_pauseGame.GameIsPaused && _player.CanMove)
         {
             if (Input.GetButtonDown(InputAxes.XBOX_A + _player.PlayerID))
             {
@@ -85,7 +85,7 @@ public class ControllerInput : MonoBehaviour {
 
         if (!_waveController.IsCombatPhase)
         {
-            if (Input.GetButtonDown(InputAxes.XBOX_B + _player.PlayerID))
+            if (Input.GetButtonDown(InputAxes.XBOX_B + _player.PlayerID) && _shopDisplay.MatchingPlayer == _player)
             {
                 _shopDisplay.NextPlayerShopTurn();
             }

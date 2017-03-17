@@ -8,18 +8,18 @@ public class EndGame : MonoBehaviour {
     [SerializeField]private GameObject _gameOverScreen;
 
 
-	void Update () {
-        //Keeps checking if all players are dead, if so then show the gameover screen
+    void Update()
+    {
+        GameOver();
+    }
+
+    public void GameOver()
+    {
         if (PlayerParty.PlayerCharacters.Count <= 0)
         {
-            GameOver();
+            _gameOverScreen.SetActive(true);
+            _ranking.ShowFinalRankings();
         }
-	}
-
-    void GameOver()
-    {
-        _gameOverScreen.SetActive(true);
-        _ranking.ShowFinalRankings();
     }
 
     public void BackToMenu()
