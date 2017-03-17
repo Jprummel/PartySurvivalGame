@@ -69,6 +69,7 @@ public class PlayerCharacter : Character {
 
     protected override void Awake()
     {
+        _gold = 1500;
         PlayerParty.PlayerCharacters.Add(this);
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _startSprite = _spriteRenderer.sprite;
