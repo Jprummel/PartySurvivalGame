@@ -42,7 +42,7 @@ public class PlayerAttack : MonoBehaviour {
     IEnumerator AttackState(int animationAttackState)
     {
         _playerCharacter.CharacterAnimator.SetInteger("AttackState", animationAttackState);
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.25f);
         _playerCharacter.CharacterAnimator.SetInteger("AttackState", 0);
     }
 
