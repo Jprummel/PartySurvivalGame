@@ -26,7 +26,6 @@ public class EndGame : MonoBehaviour {
     {
         PlayerParty.Players.Clear(); //Clears the players list so there wont be duplicate characters the next round
         PlayerParty.PlayerCharacters.Clear();
-        Respawn.deadPlayers.Clear();
         GameInformation.Wave = 1;
         SceneLoader.LoadScene("MainMenu");        
     }
@@ -35,7 +34,6 @@ public class EndGame : MonoBehaviour {
     {
         PlayerParty.Players.Clear();//Clears the players list so there wont be duplicate characters the next round
         PlayerParty.PlayerCharacters.Clear();
-        Respawn.deadPlayers.Clear();
         GameInformation.Wave = 1;
         SceneLoader.LoadScene("CharacterSelection");
     }
