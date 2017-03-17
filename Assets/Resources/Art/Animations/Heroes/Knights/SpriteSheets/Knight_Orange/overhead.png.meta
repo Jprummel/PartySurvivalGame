@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 7ed63c7c82cfb6045a2f042e3ffd1d66
-timeCreated: 1488878502
+timeCreated: 1489742237
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -15,6 +15,7 @@ TextureImporter:
     21300016: overhead_8
     21300018: overhead_9
     21300020: overhead_10
+    21300022: overhead_11
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -85,9 +86,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 227
-        width: 327
-        height: 227
+        y: 700
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -97,10 +98,10 @@ TextureImporter:
       name: overhead_1
       rect:
         serializedVersion: 2
-        x: 327
-        y: 227
-        width: 327
-        height: 227
+        x: 500
+        y: 700
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -110,10 +111,10 @@ TextureImporter:
       name: overhead_2
       rect:
         serializedVersion: 2
-        x: 654
-        y: 227
-        width: 327
-        height: 227
+        x: 1000
+        y: 700
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -123,10 +124,10 @@ TextureImporter:
       name: overhead_3
       rect:
         serializedVersion: 2
-        x: 981
-        y: 227
-        width: 327
-        height: 227
+        x: 1500
+        y: 700
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -136,10 +137,10 @@ TextureImporter:
       name: overhead_4
       rect:
         serializedVersion: 2
-        x: 1308
-        y: 227
-        width: 327
-        height: 227
+        x: 0
+        y: 350
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,10 +150,10 @@ TextureImporter:
       name: overhead_5
       rect:
         serializedVersion: 2
-        x: 1635
-        y: 227
-        width: 327
-        height: 227
+        x: 500
+        y: 350
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,10 +163,10 @@ TextureImporter:
       name: overhead_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 327
-        height: 227
+        x: 1000
+        y: 350
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,10 +176,10 @@ TextureImporter:
       name: overhead_7
       rect:
         serializedVersion: 2
-        x: 327
-        y: 0
-        width: 327
-        height: 227
+        x: 1500
+        y: 350
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,10 +189,10 @@ TextureImporter:
       name: overhead_8
       rect:
         serializedVersion: 2
-        x: 654
+        x: 0
         y: 0
-        width: 327
-        height: 227
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -201,10 +202,10 @@ TextureImporter:
       name: overhead_9
       rect:
         serializedVersion: 2
-        x: 981
+        x: 500
         y: 0
-        width: 327
-        height: 227
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,10 +215,23 @@ TextureImporter:
       name: overhead_10
       rect:
         serializedVersion: 2
-        x: 1308
+        x: 1000
         y: 0
-        width: 327
-        height: 227
+        width: 500
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: overhead_11
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 0
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

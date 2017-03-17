@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: fa5e4f135c2dee043a5848e605d51b23
-timeCreated: 1488902064
+timeCreated: 1489744005
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -88,9 +88,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 908
-        width: 327
-        height: 227
+        y: 1050
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -100,10 +100,10 @@ TextureImporter:
       name: forhand_1
       rect:
         serializedVersion: 2
-        x: 327
-        y: 908
-        width: 327
-        height: 227
+        x: 500
+        y: 1050
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -113,10 +113,10 @@ TextureImporter:
       name: forhand_2
       rect:
         serializedVersion: 2
-        x: 654
-        y: 908
-        width: 327
-        height: 227
+        x: 1000
+        y: 1050
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -126,10 +126,10 @@ TextureImporter:
       name: forhand_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 681
-        width: 327
-        height: 227
+        x: 1500
+        y: 1050
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,10 +139,10 @@ TextureImporter:
       name: forhand_4
       rect:
         serializedVersion: 2
-        x: 327
-        y: 681
-        width: 327
-        height: 227
+        x: 0
+        y: 700
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,10 +152,10 @@ TextureImporter:
       name: forhand_5
       rect:
         serializedVersion: 2
-        x: 654
-        y: 681
-        width: 327
-        height: 227
+        x: 500
+        y: 700
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,10 +165,10 @@ TextureImporter:
       name: forhand_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 454
-        width: 327
-        height: 227
+        x: 1000
+        y: 700
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,10 +178,10 @@ TextureImporter:
       name: forhand_7
       rect:
         serializedVersion: 2
-        x: 327
-        y: 454
-        width: 327
-        height: 227
+        x: 1500
+        y: 700
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,10 +191,10 @@ TextureImporter:
       name: forhand_8
       rect:
         serializedVersion: 2
-        x: 654
-        y: 454
-        width: 327
-        height: 227
+        x: 0
+        y: 350
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,10 +204,10 @@ TextureImporter:
       name: forhand_9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 227
-        width: 327
-        height: 227
+        x: 500
+        y: 350
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,10 +217,10 @@ TextureImporter:
       name: forhand_10
       rect:
         serializedVersion: 2
-        x: 327
-        y: 227
-        width: 327
-        height: 227
+        x: 1000
+        y: 350
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -230,10 +230,10 @@ TextureImporter:
       name: forhand_11
       rect:
         serializedVersion: 2
-        x: 654
-        y: 227
-        width: 327
-        height: 227
+        x: 1500
+        y: 350
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,8 +245,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 327
-        height: 227
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,10 +256,10 @@ TextureImporter:
       name: forhand_13
       rect:
         serializedVersion: 2
-        x: 327
+        x: 500
         y: 0
-        width: 327
-        height: 227
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

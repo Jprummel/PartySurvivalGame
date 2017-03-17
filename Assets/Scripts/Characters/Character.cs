@@ -108,7 +108,7 @@ public class Character : MonoBehaviour, IDamageable {
                 _currentHealth -= damageSource.Damage;   //Reduces currenthealth by the amount of damage the source of damage has
                 KnockBack(5, damageSource);
             }
-            if(this.gameObject.tag == Tags.ENEMY && damageSource.gameObject.tag == Tags.PLAYER)
+            if (this.gameObject.tag == Tags.ENEMY && damageSource.gameObject.tag == Tags.PLAYER)
             {
                 StartCoroutine(HitEffect());
                 _soundEffects.PlayHitAudio();
@@ -117,7 +117,6 @@ public class Character : MonoBehaviour, IDamageable {
                 if (_currentHealth <= 0)
                 {
                     //give gold
-                    StartCoroutine(RemoveVelocity());
                     PlayerCharacter source = damageSource.GetComponent<PlayerCharacter>();
                     source.Gold += this.GoldValue;
                     source.TotalGoldEarned += this.GoldValue;
@@ -134,6 +133,7 @@ public class Character : MonoBehaviour, IDamageable {
         clampedPos = new Vector2(Mathf.Clamp(clampedPos.x, -0.5f, 0.5f), Mathf.Clamp(clampedPos.y, -0.5f, 0.5f));
         //set min/max value to prevent charachter being knocked back to china.
         _rgb2d.AddForce(power * (clampedPos), ForceMode2D.Impulse);
+        StartCoroutine(RemoveVelocity());
     }
 
 

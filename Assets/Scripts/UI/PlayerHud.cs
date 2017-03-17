@@ -12,6 +12,7 @@ public class PlayerHud : MonoBehaviour {
         set{ _playerCharacter = value; }
     }
 
+    [SerializeField]private Image _enemyHealthBar;
     [SerializeField]private Image _healthBar;
     [SerializeField]private Image _portrait;
     [SerializeField]private Text _gold;
@@ -20,6 +21,12 @@ public class PlayerHud : MonoBehaviour {
     { 
         get {return _portrait;}
         set {_portrait = value; }
+    }
+
+    public Image HealthBar
+    {
+        get { return _healthBar; }
+        set { _healthBar = value; }
     }
 
     public Text RankText
@@ -71,5 +78,10 @@ public class PlayerHud : MonoBehaviour {
     void SetGold()
     {
         _gold.text = Character.Gold.ToString();
+    }
+
+    public void SetNewHealthBar()
+    {
+        _healthBar.sprite = _enemyHealthBar.sprite;
     }
 }

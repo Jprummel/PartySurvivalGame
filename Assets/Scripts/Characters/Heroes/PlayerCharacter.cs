@@ -91,8 +91,8 @@ public class PlayerCharacter : Character {
         _currentState = PlayerState.DEAD;
         PlayerParty.PlayerCharacters.Remove(this);
         Respawn.deadPlayers.Add(this);
-        BecomeEnemy();
         yield return new WaitForSeconds(1.5f);
+        BecomeEnemy();
         _spriteRenderer.sprite = _startSprite;
         gameObject.SetActive(false);
     }
@@ -108,5 +108,6 @@ public class PlayerCharacter : Character {
         _currentState = PlayerState.ENEMY;
         this.tag = Tags.ENEMY;
         _deadIndicator.SetActive(true);
+        HUD.SetNewHealthBar();
     }
 }

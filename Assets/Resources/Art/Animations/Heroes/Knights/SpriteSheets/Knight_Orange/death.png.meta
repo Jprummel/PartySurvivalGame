@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 75b671b9f8dd6e144be3e259454da061
-timeCreated: 1488878468
+timeCreated: 1489742180
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -99,9 +99,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1816
-        width: 327
-        height: 227
+        y: 2100
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,10 +111,10 @@ TextureImporter:
       name: death_1
       rect:
         serializedVersion: 2
-        x: 327
-        y: 1816
-        width: 327
-        height: 227
+        x: 500
+        y: 2100
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,10 +124,10 @@ TextureImporter:
       name: death_2
       rect:
         serializedVersion: 2
-        x: 654
-        y: 1816
-        width: 327
-        height: 227
+        x: 1000
+        y: 2100
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,10 +137,10 @@ TextureImporter:
       name: death_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1589
-        width: 327
-        height: 227
+        x: 1500
+        y: 2100
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,10 +150,10 @@ TextureImporter:
       name: death_4
       rect:
         serializedVersion: 2
-        x: 327
-        y: 1589
-        width: 327
-        height: 227
+        x: 0
+        y: 1750
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,10 +163,10 @@ TextureImporter:
       name: death_5
       rect:
         serializedVersion: 2
-        x: 654
-        y: 1589
-        width: 327
-        height: 227
+        x: 500
+        y: 1750
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,10 +176,10 @@ TextureImporter:
       name: death_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1362
-        width: 327
-        height: 227
+        x: 1000
+        y: 1750
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,10 +189,10 @@ TextureImporter:
       name: death_7
       rect:
         serializedVersion: 2
-        x: 327
-        y: 1362
-        width: 327
-        height: 227
+        x: 1500
+        y: 1750
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,10 +202,10 @@ TextureImporter:
       name: death_8
       rect:
         serializedVersion: 2
-        x: 654
-        y: 1362
-        width: 327
-        height: 227
+        x: 0
+        y: 1400
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,10 +215,10 @@ TextureImporter:
       name: death_9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1135
-        width: 327
-        height: 227
+        x: 500
+        y: 1400
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -228,10 +228,10 @@ TextureImporter:
       name: death_10
       rect:
         serializedVersion: 2
-        x: 327
-        y: 1135
-        width: 327
-        height: 227
+        x: 1000
+        y: 1400
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,10 +241,10 @@ TextureImporter:
       name: death_11
       rect:
         serializedVersion: 2
-        x: 654
-        y: 1135
-        width: 327
-        height: 227
+        x: 1500
+        y: 1400
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,9 +255,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 908
-        width: 327
-        height: 227
+        y: 1050
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,10 +267,10 @@ TextureImporter:
       name: death_13
       rect:
         serializedVersion: 2
-        x: 327
-        y: 908
-        width: 327
-        height: 227
+        x: 500
+        y: 1050
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -280,10 +280,10 @@ TextureImporter:
       name: death_14
       rect:
         serializedVersion: 2
-        x: 654
-        y: 908
-        width: 327
-        height: 227
+        x: 1000
+        y: 1050
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -293,10 +293,10 @@ TextureImporter:
       name: death_15
       rect:
         serializedVersion: 2
-        x: 0
-        y: 681
-        width: 327
-        height: 227
+        x: 1500
+        y: 1050
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -306,10 +306,10 @@ TextureImporter:
       name: death_16
       rect:
         serializedVersion: 2
-        x: 327
-        y: 681
-        width: 327
-        height: 227
+        x: 0
+        y: 700
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -319,10 +319,10 @@ TextureImporter:
       name: death_17
       rect:
         serializedVersion: 2
-        x: 654
-        y: 681
-        width: 327
-        height: 227
+        x: 500
+        y: 700
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,10 +332,10 @@ TextureImporter:
       name: death_18
       rect:
         serializedVersion: 2
-        x: 0
-        y: 454
-        width: 327
-        height: 227
+        x: 1000
+        y: 700
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -345,10 +345,10 @@ TextureImporter:
       name: death_19
       rect:
         serializedVersion: 2
-        x: 327
-        y: 454
-        width: 327
-        height: 227
+        x: 1500
+        y: 700
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -358,10 +358,10 @@ TextureImporter:
       name: death_20
       rect:
         serializedVersion: 2
-        x: 654
-        y: 454
-        width: 327
-        height: 227
+        x: 0
+        y: 350
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -371,10 +371,10 @@ TextureImporter:
       name: death_21
       rect:
         serializedVersion: 2
-        x: 0
-        y: 227
-        width: 327
-        height: 227
+        x: 500
+        y: 350
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -384,10 +384,10 @@ TextureImporter:
       name: death_22
       rect:
         serializedVersion: 2
-        x: 327
-        y: 227
-        width: 327
-        height: 227
+        x: 1000
+        y: 350
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -397,10 +397,10 @@ TextureImporter:
       name: death_23
       rect:
         serializedVersion: 2
-        x: 654
-        y: 227
-        width: 327
-        height: 227
+        x: 1500
+        y: 350
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -412,8 +412,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 327
-        height: 227
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

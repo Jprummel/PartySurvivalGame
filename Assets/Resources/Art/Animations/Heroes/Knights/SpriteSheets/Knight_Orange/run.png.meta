@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: ae7f1a8de3f9b054294905ef25c04638
-timeCreated: 1488878518
+timeCreated: 1489742250
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -107,9 +107,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1135
-        width: 327
-        height: 227
+        y: 3500
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,10 +119,10 @@ TextureImporter:
       name: run_1
       rect:
         serializedVersion: 2
-        x: 327
-        y: 1135
-        width: 327
-        height: 227
+        x: 500
+        y: 3500
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,10 +132,10 @@ TextureImporter:
       name: run_2
       rect:
         serializedVersion: 2
-        x: 654
-        y: 1135
-        width: 327
-        height: 227
+        x: 0
+        y: 3150
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,10 +145,10 @@ TextureImporter:
       name: run_3
       rect:
         serializedVersion: 2
-        x: 981
-        y: 1135
-        width: 327
-        height: 227
+        x: 500
+        y: 3150
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,10 +158,10 @@ TextureImporter:
       name: run_4
       rect:
         serializedVersion: 2
-        x: 1308
-        y: 1135
-        width: 327
-        height: 227
+        x: 0
+        y: 2800
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,10 +171,10 @@ TextureImporter:
       name: run_5
       rect:
         serializedVersion: 2
-        x: 1635
-        y: 1135
-        width: 327
-        height: 227
+        x: 500
+        y: 2800
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,9 +185,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 908
-        width: 327
-        height: 227
+        y: 2450
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,10 +197,10 @@ TextureImporter:
       name: run_7
       rect:
         serializedVersion: 2
-        x: 327
-        y: 908
-        width: 327
-        height: 227
+        x: 500
+        y: 2450
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,10 +210,10 @@ TextureImporter:
       name: run_8
       rect:
         serializedVersion: 2
-        x: 654
-        y: 908
-        width: 327
-        height: 227
+        x: 0
+        y: 2100
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,10 +223,10 @@ TextureImporter:
       name: run_9
       rect:
         serializedVersion: 2
-        x: 981
-        y: 908
-        width: 327
-        height: 227
+        x: 500
+        y: 2100
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,10 +236,10 @@ TextureImporter:
       name: run_10
       rect:
         serializedVersion: 2
-        x: 1308
-        y: 908
-        width: 327
-        height: 227
+        x: 0
+        y: 1750
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -249,10 +249,10 @@ TextureImporter:
       name: run_11
       rect:
         serializedVersion: 2
-        x: 1635
-        y: 908
-        width: 327
-        height: 227
+        x: 500
+        y: 1750
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,9 +263,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 681
-        width: 327
-        height: 227
+        y: 1400
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,10 +275,10 @@ TextureImporter:
       name: run_13
       rect:
         serializedVersion: 2
-        x: 327
-        y: 681
-        width: 327
-        height: 227
+        x: 500
+        y: 1400
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,10 +288,10 @@ TextureImporter:
       name: run_14
       rect:
         serializedVersion: 2
-        x: 654
-        y: 681
-        width: 327
-        height: 227
+        x: 0
+        y: 1050
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -301,10 +301,10 @@ TextureImporter:
       name: run_15
       rect:
         serializedVersion: 2
-        x: 981
-        y: 681
-        width: 327
-        height: 227
+        x: 500
+        y: 1050
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -314,10 +314,10 @@ TextureImporter:
       name: run_16
       rect:
         serializedVersion: 2
-        x: 1308
-        y: 681
-        width: 327
-        height: 227
+        x: 0
+        y: 700
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -327,10 +327,10 @@ TextureImporter:
       name: run_17
       rect:
         serializedVersion: 2
-        x: 1635
-        y: 681
-        width: 327
-        height: 227
+        x: 500
+        y: 700
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -341,9 +341,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 454
-        width: 327
-        height: 227
+        y: 350
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -353,10 +353,10 @@ TextureImporter:
       name: run_19
       rect:
         serializedVersion: 2
-        x: 327
-        y: 454
-        width: 327
-        height: 227
+        x: 500
+        y: 350
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -366,166 +366,10 @@ TextureImporter:
       name: run_20
       rect:
         serializedVersion: 2
-        x: 654
-        y: 454
-        width: 327
-        height: 227
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: run_21
-      rect:
-        serializedVersion: 2
-        x: 981
-        y: 454
-        width: 327
-        height: 227
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: run_22
-      rect:
-        serializedVersion: 2
-        x: 1308
-        y: 454
-        width: 327
-        height: 227
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: run_23
-      rect:
-        serializedVersion: 2
-        x: 1635
-        y: 454
-        width: 327
-        height: 227
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: run_24
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 227
-        width: 327
-        height: 227
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: run_25
-      rect:
-        serializedVersion: 2
-        x: 327
-        y: 227
-        width: 327
-        height: 227
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: run_26
-      rect:
-        serializedVersion: 2
-        x: 654
-        y: 227
-        width: 327
-        height: 227
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: run_27
-      rect:
-        serializedVersion: 2
-        x: 981
-        y: 227
-        width: 327
-        height: 227
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: run_28
-      rect:
-        serializedVersion: 2
-        x: 1308
-        y: 227
-        width: 327
-        height: 227
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: run_29
-      rect:
-        serializedVersion: 2
-        x: 1635
-        y: 227
-        width: 327
-        height: 227
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: run_30
-      rect:
-        serializedVersion: 2
         x: 0
         y: 0
-        width: 327
-        height: 227
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: run_31
-      rect:
-        serializedVersion: 2
-        x: 327
-        y: 0
-        width: 327
-        height: 227
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: run_32
-      rect:
-        serializedVersion: 2
-        x: 654
-        y: 0
-        width: 327
-        height: 227
+        width: 500
+        height: 350
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

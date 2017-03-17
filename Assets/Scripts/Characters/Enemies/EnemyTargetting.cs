@@ -25,6 +25,7 @@ public class EnemyTargetting : MonoBehaviour {
 
     void Update()
     {
+        Debug.Log(_players.Count);
         CalculateTarget();
     }
 
@@ -32,12 +33,15 @@ public class EnemyTargetting : MonoBehaviour {
     {
         for (int i = 0; i < _players.Count; i++)
         {
-            float newDist = Vector2.Distance(transform.position, _players[i].transform.position);
-            if(newDist < _oldDist)
+            if (_players[i].active)
             {
-                _target = _players[i];
+                float newDist = Vector2.Distance(transform.position, _players[i].transform.position);
+                if (newDist < _oldDist)
+                {
+                    _target = _players[i];
+                }
+                _oldDist = newDist;
             }
-            _oldDist = newDist;
         }
     }
 }
