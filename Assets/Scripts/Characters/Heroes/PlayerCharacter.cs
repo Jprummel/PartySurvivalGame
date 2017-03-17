@@ -13,6 +13,8 @@ public class PlayerCharacter : Character {
     private float _currrentDamageCost = 500;
     private float _currentHealthCost = 500;
     private float _currentMoveSpeedCost = 500;
+    [SerializeField]
+    private GameObject _deadIndicator;
 
     public Sprite Portrait
     {
@@ -98,5 +100,6 @@ public class PlayerCharacter : Character {
     {
         _currentState = PlayerState.ENEMY;
         this.tag = Tags.ENEMY;
+        _deadIndicator.SetActive(true);
     }
 }
