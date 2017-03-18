@@ -6,7 +6,7 @@ using UnityEngine;
 public class WaveController : MonoBehaviour{
 
     private GameSoundFX _soundeffect;
-    EnemySpawner _enemySpawner;
+    private EnemySpawner _enemySpawner;
 
     public delegate void NewWaveMessage();
     public static NewWaveMessage newWave;
@@ -72,11 +72,9 @@ public class WaveController : MonoBehaviour{
         switch (GameInformation.Wave)
         {
             case 10:
-                Debug.Log("wave 10");
                 _jeMoeder = 1.10f;
                 break;
             case 20:
-                Debug.Log("wave 20");
                 _jeMoeder = 1.05f;
                 break;
         }

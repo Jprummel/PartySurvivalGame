@@ -9,10 +9,7 @@ public class WaveDisplay : MonoBehaviour {
     
     void Update()
     {
-        //if(WaveController.newWave != null)
-        //{
-            DisplayWaveNumber();
-        //}
+        DisplayWaveNumber();
     }
 
     void DisplayWaveNumber()

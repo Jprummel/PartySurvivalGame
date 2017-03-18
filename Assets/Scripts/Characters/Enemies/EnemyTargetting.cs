@@ -25,7 +25,6 @@ public class EnemyTargetting : MonoBehaviour {
 
     void Update()
     {
-        Debug.Log(_players.Count);
         CalculateTarget();
     }
 

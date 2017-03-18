@@ -13,4 +13,5 @@ public class Tags : MonoBehaviour {
     public const string CHARACTERSELECTOBJECT = "CharacterSelectObject";
     public const string PLAYERPARTY = "PlayerParty";
     public const string RANKTRACKER = "RankTracker";
+    public const string PLAYERHUDS = "PlayerHUDs";
 }

@@ -49,7 +49,6 @@ public class Ranking : MonoBehaviour {
 
         for (int i = 0; i < _players.Count; i++)
         {
-            Debug.Log(_players[i].HUD.Portrait.name);
             _playerPortraits[i].sprite = _players[i].Portrait;
         }
     }

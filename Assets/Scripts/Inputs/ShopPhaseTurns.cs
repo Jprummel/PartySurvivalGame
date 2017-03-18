@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class ShopPhaseTurns : MonoBehaviour {
 
     [SerializeField]private StandaloneInputModule _inputs;
+    private ChangePortraitColor _playerPortrait;
     private ShopDisplay _shopDisplay;
 
     private int _playerToShop = 1;
@@ -14,14 +15,11 @@ public class ShopPhaseTurns : MonoBehaviour {
         get { return _playerToShop; }
         set { _playerToShop = value; }
     }
-    private Color _inActiveColor;
-    private Color _defaultColor;
 
     void Awake()
     {
+        _playerPortrait = GameObject.FindGameObjectWithTag(Tags.PLAYERHUDS).GetComponent<ChangePortraitColor>();
         _shopDisplay = GetComponent<ShopDisplay>();
-        _defaultColor = new Color(255,255,255,1);
-        _inActiveColor = new Color(0.20f, 0.20f, 0.20f, 1);
     }
 
     public void SetShopInputs()
@@ -39,11 +37,11 @@ public class ShopPhaseTurns : MonoBehaviour {
         {
             if (PlayerParty.PlayerCharacters[i] == _shopDisplay.MatchingPlayer)
             {
-                PlayerParty.PlayerCharacters[i].HUD.Portrait.color = _defaultColor;
+                _playerPortrait.SetPortraitActive(PlayerParty.PlayerCharacters[i].HUD.Portrait);
             }
             else
             {
-                PlayerParty.PlayerCharacters[i].HUD.Portrait.color = _inActiveColor;
+                _playerPortrait.SetPortraitInactive(PlayerParty.PlayerCharacters[i].HUD.Portrait);
             }
         }
     }
@@ -52,7 +50,7 @@ public class ShopPhaseTurns : MonoBehaviour {
     {
         for (int i = 0; i < PlayerParty.PlayerCharacters.Count; i++)
         {
-            PlayerParty.PlayerCharacters[i].HUD.Portrait.color = _defaultColor;
+            _playerPortrait.SetPortraitActive(PlayerParty.PlayerCharacters[i].HUD.Portrait);
             PlayerParty.PlayerCharacters[i].RestoreHealth();
         }
     }

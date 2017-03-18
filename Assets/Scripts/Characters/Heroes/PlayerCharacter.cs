@@ -6,24 +6,25 @@ using UnityEngine.EventSystems;
 
 public class PlayerCharacter : Character {
 
-    Respawn _respawn;
-
-    private Sprite _startSprite;
-    [SerializeField]protected int _playerID;
+    //Visuals
     [SerializeField]protected Sprite _portrait;
+    [SerializeField]private GameObject _deadIndicator;
+    private Sprite _startSprite;
+
+    public Sprite Portrait { get { return _portrait; } }
+
+    public PlayerHud HUD { get; set; }
+
+    //Script imports
+    private Respawn     _respawn;
+    private ChangePortraitColor _portraitColor;
+
+    //Gold
     protected float     _gold;
     protected float     _totalGoldEarned;
     private float _currrentDamageCost = 500;
     private float _currentHealthCost = 500;
-    private float _currentMoveSpeedCost = 500;
-    [SerializeField]private GameObject _deadIndicator;
-
-    public Sprite Portrait
-    {
-        get { return _portrait; }
-    }
-
-    public PlayerHud HUD { get; set; }
+    private float _currentMoveSpeedCost = 500;    
 
     public float CurrentDamageCost 
     {
@@ -41,21 +42,6 @@ public class PlayerCharacter : Character {
         set { _currentMoveSpeedCost = value; }
     }
 
-    protected enum PlayerState
-    {
-        ALIVE,
-        DEAD,
-        ENEMY
-    }
-
-    protected PlayerState _currentState;
-
-    public int PlayerID
-    {
-        get { return _playerID; }
-        set { _playerID = value; }
-    }
-
     public float Gold
     {
         get { return _gold; }
@@ -68,10 +54,19 @@ public class PlayerCharacter : Character {
         set { _totalGoldEarned = value; }
     }
 
+    //Player ID
+    [SerializeField]protected int _playerID;
+    public int PlayerID
+    {
+        get { return _playerID; }
+        set { _playerID = value; }
+    }
+
     protected override void Awake()
     {
         _gold = 1500;
         PlayerParty.PlayerCharacters.Add(this);
+        _portraitColor = GameObject.FindGameObjectWithTag(Tags.PLAYERHUDS).GetComponent<ChangePortraitColor>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _startSprite = _spriteRenderer.sprite;
         base.Awake();
@@ -91,10 +86,9 @@ public class PlayerCharacter : Character {
         _isDead = true;
         _animator.SetBool("IsDead", true);
         _animator.SetInteger("AttackState", 0);
-        _currentState = PlayerState.DEAD;
+        yield return new WaitForSeconds(1.5f);
         PlayerParty.PlayerCharacters.Remove(this);
         _respawn.deadPlayers.Add(this);
-        yield return new WaitForSeconds(1.5f);
         BecomeEnemy();
         _spriteRenderer.sprite = _startSprite;
         gameObject.SetActive(false);
@@ -108,8 +102,8 @@ public class PlayerCharacter : Character {
 
     void BecomeEnemy()
     {
-        _currentState = PlayerState.ENEMY;
         this.tag = Tags.ENEMY;
+        _portraitColor.SetPortraitHostile(HUD.Portrait);
         _deadIndicator.SetActive(true);
         HUD.SetNewHealthBar();
     }

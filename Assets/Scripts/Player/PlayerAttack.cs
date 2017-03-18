@@ -48,7 +48,6 @@ public class PlayerAttack : MonoBehaviour {
 
     IEnumerator Cooldown(float cd)
     {
-        //AnimatorStateInfo currAnimLength = _playerCharacter.CharacterAnimator.GetCurrentAnimatorStateInfo(0);
         yield return new WaitForSeconds(cd);
         _readyToAttack = true;
     }
