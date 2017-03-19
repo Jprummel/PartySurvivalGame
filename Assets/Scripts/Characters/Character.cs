@@ -117,7 +117,7 @@ public class Character : MonoBehaviour, IDamageable {
                 _currentHealth -= damageSource.Damage;   //Reduces currenthealth by the amount of damage the source of damage has
                 KnockBack(5, damageSource);
             }
-            if (this.gameObject.tag == Tags.ENEMY && damageSource.gameObject.tag == Tags.PLAYER)
+            if (this.gameObject.tag == Tags.ENEMY & damageSource.gameObject.tag == Tags.PLAYER)
             {
                 StartCoroutine(HitEffect());
                 _soundEffects.PlayHitAudio();

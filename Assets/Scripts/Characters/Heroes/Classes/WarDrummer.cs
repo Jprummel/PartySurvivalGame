@@ -6,6 +6,7 @@ public class WarDrummer : PlayerCharacter{
 
     void Start()
     {
+        _abilityOne = new HealingDrums();
         Name = "Wardrummer";
     }
 }

@@ -7,12 +7,14 @@ public class CharacterSelectInput : MonoBehaviour {
     [SerializeField]private int _playerID;
     private CharacterSelect _characterSelect;
     private CharacterSelectUI _characterSelectUI;
+    private ShowCharacterInfo _characterInfo;
 
     public int PlayerID { get { return _playerID; } }
 
 	void Start () {
         _characterSelect = GetComponent<CharacterSelect>();
         _characterSelectUI = GetComponent<CharacterSelectUI>();
+        _characterInfo = GetComponent<ShowCharacterInfo>();
 	}
 
     public void JoinGame()
@@ -28,6 +30,14 @@ public class CharacterSelectInput : MonoBehaviour {
         if (Input.GetButtonDown(InputAxes.XBOX_A + _playerID))
         {
             _characterSelect.SelectCharacter();
+        }
+    }
+
+    public void ShowPlayerInfo()
+    {
+        if (Input.GetButtonDown(InputAxes.XBOX_Y + _playerID))
+        {
+            _characterInfo.ToggleDescription();
         }
     }
 
@@ -48,7 +58,7 @@ public class CharacterSelectInput : MonoBehaviour {
 
     public void NextCharacter()
     {
-        if (Input.GetAxis(InputAxes.DPAD_X + _playerID) > 0)
+        if (Input.GetAxis(InputAxes.DPAD_X + _playerID) > 0 || Input.GetAxis(InputAxes.LEFT_JOYSTICK_X + _playerID) > 0)
         {
             if(_characterSelect.SelectedCharacterNumber < _characterSelectUI.SelectionPortraits.Count - 1)
             {
@@ -59,12 +69,13 @@ public class CharacterSelectInput : MonoBehaviour {
                 _characterSelect.SelectedCharacterNumber = 0;
             }
             _characterSelect.ChangePortraitAndName();
+            _characterInfo.CharacterDescription(_characterSelect.SelectedCharacterNumber);
         }
     }
 
     public void PreviousCharacter()
     {
-        if (Input.GetAxis(InputAxes.DPAD_X + _playerID) < 0)
+        if (Input.GetAxis(InputAxes.DPAD_X + _playerID) < 0 || Input.GetAxis(InputAxes.LEFT_JOYSTICK_X + _playerID) < 0)
         {
             if (_characterSelect.SelectedCharacterNumber > 0)
             {
@@ -75,6 +86,7 @@ public class CharacterSelectInput : MonoBehaviour {
                 _characterSelect.SelectedCharacterNumber = _characterSelectUI.SelectionPortraits.Count - 1; //If at the last character go back to the first one
             }
             _characterSelect.ChangePortraitAndName();
+            _characterInfo.CharacterDescription(_characterSelect.SelectedCharacterNumber);
         }
     }
 }

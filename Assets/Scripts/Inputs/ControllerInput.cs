@@ -39,6 +39,10 @@ public class ControllerInput : MonoBehaviour {
             if (Input.GetButtonDown(InputAxes.XBOX_A + _player.PlayerID))
             {
                 //Ability 1
+                if (_player.AbilityOne != null && _player.AbilityOne.AbilityIsReady)
+                {
+                    _player.AbilityOne.UseAbility();
+                }
                 //_soundEffects.PlaySFX();
             }
 
@@ -68,7 +72,10 @@ public class ControllerInput : MonoBehaviour {
                 Vector2 moveDir = new Vector2(x, y);
                 _playerMovement.Move(moveDir.normalized);
                 _soundEffects.PlayWalkAudio();
-                _walkParticle.ShowParticle();
+                if (x != 0)
+                {
+                    _walkParticle.ShowParticle(); // only show particle when player isnt running straight up or down
+                }
             }
             else
             {
@@ -85,9 +92,9 @@ public class ControllerInput : MonoBehaviour {
 
         if (!_waveController.IsCombatPhase)
         {
-            if (Input.GetButtonDown(InputAxes.XBOX_B + _player.PlayerID) && _shopDisplay.MatchingPlayer == _player)
+            if (Input.GetButtonDown(InputAxes.XBOX_B + _player.PlayerID) && _shopDisplay.MatchingPlayer == _player && _shopDisplay.ShopIsOpen) //If player presses B while its his turn and the shop is open
             {
-                _shopDisplay.NextPlayerShopTurn();
+                _shopDisplay.NextPlayerShopTurn(); // Skip turn
             }
 
             _soundEffects.StopWalkSound();

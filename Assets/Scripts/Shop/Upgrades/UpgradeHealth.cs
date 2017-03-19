@@ -18,11 +18,11 @@ public class UpgradeHealth : ShopItem, IUpgrade {
     public void DetermineNewCost()
     {
         _cost = Mathf.Round(_cost * 1.15f);
-        _display.MatchingPlayer.CurrentHealthCost = _cost;
+        _display.MatchingPlayer.UpgradeCosts.CurrentHealthCost = _cost;
     }
 
     public void GetCurrentCost()
     {
-        _cost = _display.MatchingPlayer.CurrentHealthCost;
+        _cost = _display.MatchingPlayer.UpgradeCosts.CurrentHealthCost;
     }
 }

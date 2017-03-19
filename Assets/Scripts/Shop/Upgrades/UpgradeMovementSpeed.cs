@@ -35,11 +35,11 @@ public class UpgradeMovementSpeed : ShopItem, IUpgrade {
     public void DetermineNewCost()
     {
         _cost = Mathf.Round(_cost * 1.5f);
-        _display.MatchingPlayer.CurrentMoveSpeedCost = _cost;
+        _display.MatchingPlayer.UpgradeCosts.CurrentMoveSpeedCost = _cost;
     }
 
     public void GetCurrentCost()
     {
-        _cost = _display.MatchingPlayer.CurrentMoveSpeedCost;
+        _cost = _display.MatchingPlayer.UpgradeCosts.CurrentMoveSpeedCost;
     }
 }

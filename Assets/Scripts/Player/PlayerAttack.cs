@@ -34,6 +34,7 @@ public class PlayerAttack : MonoBehaviour {
         if (_readyToAttack)
         {
             StartCoroutine(AttackState(3));
+            StartCoroutine(HeavyAttackRoutine(2));
             _readyToAttack = false;
             StartCoroutine(Cooldown(1));
         }
@@ -50,5 +51,18 @@ public class PlayerAttack : MonoBehaviour {
     {
         yield return new WaitForSeconds(cd);
         _readyToAttack = true;
+    }
+
+    IEnumerator HeavyAttackRoutine(float modifier)
+    {
+        float defaultDamage = _playerCharacter.Damage;
+
+        _playerCharacter.CanMove = false;
+        _playerCharacter.Damage = _playerCharacter.Damage * modifier;
+        Debug.Log(_playerCharacter.Damage);
+        yield return new WaitForSeconds(1);
+        _playerCharacter.Damage = defaultDamage;
+        _playerCharacter.CanMove = true;
+        Debug.Log(_playerCharacter.Damage);
     }
 }

@@ -24,6 +24,11 @@ public class ShopDisplay : MonoBehaviour {
         get { return _maxTimeTillOpening; }
     }
 
+    public bool ShopIsOpen
+    {
+        get { return _shopIsOpen; }
+    }
+
     //Shop panel
     [SerializeField]private GameObject  _shopPanel;
     

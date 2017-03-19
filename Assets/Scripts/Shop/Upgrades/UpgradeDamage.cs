@@ -17,12 +17,12 @@ public class UpgradeDamage : ShopItem, IUpgrade {
 
     public void DetermineNewCost()
     {
-        _cost = Mathf.Round(_cost * 1.1f);
-        _display.MatchingPlayer.CurrentDamageCost = _cost;
+        _cost = Mathf.Round(_cost * 1.1f); //increase price by 10%
+        _display.MatchingPlayer.UpgradeCosts.CurrentDamageCost = _cost; //Saves the new cost
     }
 
     public void GetCurrentCost()
     {
-        _cost = _display.MatchingPlayer.CurrentDamageCost;
+        _cost = _display.MatchingPlayer.UpgradeCosts.CurrentDamageCost; //Gets the current cost
     }
 }

@@ -6,41 +6,29 @@ using UnityEngine.EventSystems;
 
 public class PlayerCharacter : Character {
 
+    //Ability
+    protected Ability _abilityOne;
+    protected Ability _abilityTwo;
+
+    public Ability AbilityOne { get { return _abilityOne; }}
+    public Ability AbilityTwo { get { return _abilityTwo; }}
     //Visuals
     [SerializeField]protected Sprite _portrait;
     [SerializeField]private GameObject _deadIndicator;
     private Sprite _startSprite;
 
-    public Sprite Portrait { get { return _portrait; } }
-
+    public Sprite Portrait { get { return _portrait; }}
     public PlayerHud HUD { get; set; }
 
-    //Script imports
+    //Script/Component imports
     private Respawn     _respawn;
     private ChangePortraitColor _portraitColor;
+    private PlayerUpgradeCosts _upgradeCosts;
+    public PlayerUpgradeCosts UpgradeCosts { get { return _upgradeCosts; }}
 
     //Gold
     protected float     _gold;
     protected float     _totalGoldEarned;
-    private float _currrentDamageCost = 500;
-    private float _currentHealthCost = 500;
-    private float _currentMoveSpeedCost = 500;    
-
-    public float CurrentDamageCost 
-    {
-        get { return _currrentDamageCost; }
-        set { _currrentDamageCost = value; }
-    }
-    public float CurrentHealthCost 
-    {
-        get { return _currentHealthCost; }
-        set { _currentHealthCost = value; }
-    }
-    public float CurrentMoveSpeedCost
-    {
-        get { return _currentMoveSpeedCost; }
-        set { _currentMoveSpeedCost = value; }
-    }
 
     public float Gold
     {
@@ -67,6 +55,7 @@ public class PlayerCharacter : Character {
         _gold = 1500;
         PlayerParty.PlayerCharacters.Add(this);
         _portraitColor = GameObject.FindGameObjectWithTag(Tags.PLAYERHUDS).GetComponent<ChangePortraitColor>();
+        _upgradeCosts = GetComponent<PlayerUpgradeCosts>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _startSprite = _spriteRenderer.sprite;
         base.Awake();

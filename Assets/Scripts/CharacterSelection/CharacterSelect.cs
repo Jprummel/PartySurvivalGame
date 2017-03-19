@@ -7,6 +7,7 @@ public class CharacterSelect : MonoBehaviour {
 
     //Script imports
     private CharacterSelectPlayers _characterSelectPlayers;
+    private ShowCharacterInfo _characterInfo;
     private CharacterSelectUI _characterSelectUI;
     private CharacterSelectInput _input;
 
@@ -33,9 +34,12 @@ public class CharacterSelect : MonoBehaviour {
 
     void Start()
     {
+        _characterInfo = GetComponent<ShowCharacterInfo>();
         _characterSelectPlayers = GameObject.FindGameObjectWithTag(Tags.CHARACTERSELECTOBJECT).GetComponent<CharacterSelectPlayers>();
         _characterSelectUI = GetComponent<CharacterSelectUI>();
         _input = GetComponent<CharacterSelectInput>();
+
+        _characterInfo.CharacterDescription(0);
     }
 
     void Update()
@@ -47,9 +51,11 @@ public class CharacterSelect : MonoBehaviour {
             _input.NextCharacter();
             _input.PreviousCharacter();
             _input.SelectCharacter();
+            _input.ShowPlayerInfo();
         }
         if (_characterSelectPlayers.ReadyToStart)
         {
+            _input.ShowPlayerInfo();
             _input.StartGame();
         }
         InputDelayTimer();
