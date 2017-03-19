@@ -5,7 +5,8 @@ using System.Collections.Generic;
 
 public class DisplayStats : MonoBehaviour {
 
-    [SerializeField]private Text _playerName;
+    [SerializeField]private Image _portrait;
+    [SerializeField]private Text _playerNumberText;
     [SerializeField]private Text _statDisplayText;
     [SerializeField]private Text _statValuesText;
     [SerializeField]private Text _availableGold;
@@ -21,6 +22,7 @@ public class DisplayStats : MonoBehaviour {
 	
 	void Update () {
         if(_display.MatchingPlayer != null){
+            DisplayPortrait();
             DisplayStatValues();
             DisplayAvailableGold();
             DisplayTotalEarnedGold();
@@ -28,17 +30,29 @@ public class DisplayStats : MonoBehaviour {
         }
     }
 
+    void DisplayPortrait()
+    {
+        _portrait.sprite = _display.MatchingPlayer.Portrait;
+        Debug.Log(_portrait.sprite.name);
+    }
+
+    void DisplayPlayerNumber()
+    {
+        _playerNumberText.text = "Player " + _display.MatchingPlayer.PlayerID;
+    }
+
     void DisplayStatNames()
     {
-            _playerName.text = _display.MatchingPlayer.Name;
-            _statDisplayText.text = "Damage" + "\n" +
-                                    "Health" + "\n" +
-                                    "Move Speed";   
+        _statDisplayText.text = "Class" + "\n" +
+                                "Damage" + "\n" +
+                                "Health" + "\n" +
+                                "Move Speed";   
     }
 
     void DisplayStatValues()
     {
-        _statValuesText.text =  _display.MatchingPlayer.Damage + "\n" +
+        _statValuesText.text =  _display.MatchingPlayer.Name + "\n" +
+                                _display.MatchingPlayer.Damage + "\n" +
                                 _display.MatchingPlayer.MaxHealth + "\n" +
                                 _display.MatchingPlayer.MovementSpeed;
     }

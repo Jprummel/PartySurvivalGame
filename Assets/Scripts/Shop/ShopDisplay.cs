@@ -33,9 +33,7 @@ public class ShopDisplay : MonoBehaviour {
     [SerializeField]private GameObject  _shopPanel;
     
     //Shop time variables
-    [SerializeField]private float       _maxTimeToShop;
-                    private float       _timeToShop;
-                    private int         _playerToShop = 0;
+    private int         _playerToShop = 0;
     //Scripts
     private ShopPhaseTurns _shopTurns;
     private GetUpgradeCosts _upgradeCosts;
@@ -46,13 +44,9 @@ public class ShopDisplay : MonoBehaviour {
         get { return _matchingPlayer; }
         set { _matchingPlayer = value; }
     }
-    public float TimeToShop
-    {
-        get { return _timeToShop; }
-    }
+
 
 	void Start () {
-        _timeToShop = _maxTimeToShop;
         _waveController = GameObject.FindGameObjectWithTag(Tags.WAVEMANAGER).GetComponent<WaveController>();
         _shopTurns = GetComponent<ShopPhaseTurns>();
         _upgradeCosts = GetComponent<GetUpgradeCosts>();
@@ -75,7 +69,6 @@ public class ShopDisplay : MonoBehaviour {
                 _shopPanel.SetActive(true);//shows the shop panel
                 _shopTurns.SetShopInputs();
                 FindingNemo();
-                ShopTurnTimer(); //Runs the timer
             }
         }
     }
@@ -103,16 +96,6 @@ public class ShopDisplay : MonoBehaviour {
         }
     }
 
-    void ShopTurnTimer()
-    {
-        _timeToShop -= Time.deltaTime;  //Counts down time
-        if (_timeToShop <= 0)
-        {
-            //If timer reaches 0 give turn to next player and reset time
-            NextPlayerShopTurn();
-        }
-    }
-
     public void NextPlayerShopTurn()
     {
         if (_playerToShop < PlayerParty.PlayerCharacters.Count-1)
@@ -131,7 +114,6 @@ public class ShopDisplay : MonoBehaviour {
         FindingNemo();
         _shopTurns.SetShopInputs();
         _upgradeCosts.ShowPlayerUpgradeCosts(); //Shows the cost of all upgrades of the current player
-        _timeToShop = _maxTimeToShop; //resets the shop timer
     }
 
     void FindingNemo()

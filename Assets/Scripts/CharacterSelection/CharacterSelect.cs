@@ -46,12 +46,15 @@ public class CharacterSelect : MonoBehaviour {
     {
         _input.JoinGame();
         _input.LeaveGame();
-        if (_playerIsActive && !_ready && _inputDelay <= 0) // If player is active but not ready & input delay timer is zero
+        if (_playerIsActive && _inputDelay <= 0) // If player is active but not ready & input delay timer is zero
         {
-            _input.NextCharacter();
-            _input.PreviousCharacter();
-            _input.SelectCharacter();
             _input.ShowPlayerInfo();
+            if (!_ready)
+            {
+                _input.NextCharacter();
+                _input.PreviousCharacter();
+                _input.SelectCharacter();
+            }            
         }
         if (_characterSelectPlayers.ReadyToStart)
         {
