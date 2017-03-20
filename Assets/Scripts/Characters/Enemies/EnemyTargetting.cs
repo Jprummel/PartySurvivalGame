@@ -23,8 +23,18 @@ public class EnemyTargetting : MonoBehaviour {
         }
     }
 
+    void CheckForObstacles()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, 50f);
+        if(hit.collider != null)
+        {
+            Debug.Log(hit.collider.gameObject.name);
+        }
+    }
+
     void Update()
     {
+        CheckForObstacles();
         CalculateTarget();
     }
 

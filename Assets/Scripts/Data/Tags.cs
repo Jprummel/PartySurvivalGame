@@ -14,4 +14,5 @@ public class Tags : MonoBehaviour {
     public const string PLAYERPARTY = "PlayerParty";
     public const string RANKTRACKER = "RankTracker";
     public const string PLAYERHUDS = "PlayerHUDs";
+    public const string OBSTACLE = "Obstacle";
 }
