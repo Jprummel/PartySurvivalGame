@@ -33,7 +33,6 @@ public class DisplayStats : MonoBehaviour {
     void DisplayPortrait()
     {
         _portrait.sprite = _display.MatchingPlayer.Portrait;
-        Debug.Log(_portrait.sprite.name);
     }
 
     void DisplayPlayerNumber()

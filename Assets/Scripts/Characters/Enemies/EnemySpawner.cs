@@ -15,15 +15,32 @@ public class EnemySpawner : MonoBehaviour {
 
     void Awake()
     {
+        AddEnemyTypes();
         foreach (Transform child in transform)
         {
             _spawnpoints.Add(child);
         }
     }
 
+    public void AddEnemyTypes()
+    {
+        switch (GameInformation.Wave)
+        {
+            case 1:
+                _enemyTypeCount = 2; //2 types of peasants
+                break;
+            case 3:
+                _enemyTypeCount = 3; //Adds last type of peasant
+                break;
+            case 5:
+                _enemyTypeCount = 4; //Adds Militia
+                break;
+        }
+    }
+
     public void SpawnEnemy()
     {
-        int randomEnemy = Random.Range(0, _enemyTypes.Count);
+        int randomEnemy = Random.Range(0, _enemyTypeCount);
         GameObject spawnedEnemy = Instantiate(_enemyTypes[randomEnemy]);
         spawnedEnemies.Add(spawnedEnemy);
         spawnedEnemy.transform.position = _spawnpoints[Random.Range(0, _spawnpoints.Count)].position;

@@ -69,6 +69,7 @@ public class WaveController : MonoBehaviour{
         _enemiesSpawned = 0;
         float newEnemyAmount = _enemiesToSpawn;
         GameInformation.Wave++;
+        _enemySpawner.AddEnemyTypes();
         switch (GameInformation.Wave)
         {
             case 10:

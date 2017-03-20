@@ -17,11 +17,9 @@ public class Enemy : Character, IDamageable{
 
     protected override void Awake()
     {
-        _maxHealth = Mathf.RoundToInt(_maxHealth + Mathf.Pow(GameInformation.Wave, _healthGrowFactor)); //Scales max health with wave
-        _damage = _damage + Mathf.Pow(GameInformation.Wave, _damageGrowFactor); //Scales damage with wave
-        _goldValue = Mathf.RoundToInt(_goldValue + Mathf.Pow(GameInformation.Wave, _goldValueGrowFactor));
-        Debug.Log(_maxHealth);
-        Debug.Log(_currentHealth);
+        _maxHealth = Mathf.RoundToInt(_maxHealth + Mathf.Pow(GameInformation.Wave, _healthGrowFactor)); //Scales max health with wave and growth factor
+        _damage = _damage + Mathf.Pow(GameInformation.Wave, _damageGrowFactor); //Scales damage with wave and growth factor
+        _goldValue = Mathf.RoundToInt(_goldValue + Mathf.Pow(GameInformation.Wave, _goldValueGrowFactor)); //Scales gold value with wave and growth factor
 
         _enemySpawner = GameObject.FindGameObjectWithTag(Tags.ENEMYSPAWNER).GetComponent<EnemySpawner>();
         _players = PlayerParty.Players;
