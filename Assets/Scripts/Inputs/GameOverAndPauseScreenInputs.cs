@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class GameOverScreenInputs : MonoBehaviour {
+public class GameOverAndPauseScreenInputs : MonoBehaviour {
 
     [SerializeField]private StandaloneInputModule _inputs;
     private PlayerCharacter _playerInControl;
