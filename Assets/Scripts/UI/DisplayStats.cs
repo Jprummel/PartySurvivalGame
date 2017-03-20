@@ -23,6 +23,7 @@ public class DisplayStats : MonoBehaviour {
 	void Update () {
         if(_display.MatchingPlayer != null){
             DisplayPortrait();
+            DisplayPlayerNumber();
             DisplayStatValues();
             DisplayAvailableGold();
             DisplayTotalEarnedGold();

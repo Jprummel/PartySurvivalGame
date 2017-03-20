@@ -13,6 +13,7 @@ public class Respawn : MonoBehaviour {
             deadPlayers[i].RestoreHealth();
             deadPlayers[i].CharacterAnimator.SetBool("IsDead", false);
             deadPlayers[i].gameObject.SetActive(true);
+            deadPlayers[i].CanMove = true;
         }
     }
 

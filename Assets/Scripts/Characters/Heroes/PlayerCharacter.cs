@@ -73,6 +73,7 @@ public class PlayerCharacter : Character {
     IEnumerator DeathRoutine()
     {
         _isDead = true;
+        _canMove = false;
         _animator.SetBool("IsDead", true);
         _animator.SetInteger("AttackState", 0);
         yield return new WaitForSeconds(1.5f);

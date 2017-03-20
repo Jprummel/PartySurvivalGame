@@ -50,7 +50,6 @@ public class ShopDisplay : MonoBehaviour {
         _waveController = GameObject.FindGameObjectWithTag(Tags.WAVEMANAGER).GetComponent<WaveController>();
         _shopTurns = GetComponent<ShopPhaseTurns>();
         _upgradeCosts = GetComponent<GetUpgradeCosts>();
-        FindingNemo();
         _shopTurns.SetShopInputs();
     }
 
@@ -113,16 +112,18 @@ public class ShopDisplay : MonoBehaviour {
         }
         FindingNemo();
         _shopTurns.SetShopInputs();
-        _upgradeCosts.ShowPlayerUpgradeCosts(); //Shows the cost of all upgrades of the current player
+        //_upgradeCosts.ShowPlayerUpgradeCosts();
     }
 
     void FindingNemo()
     {
         _matchingPlayer = PlayerParty.PlayerCharacters[_playerToShop];
+        Debug.Log(_matchingPlayer.Name);
         _shopTurns.PlayerToShop = _matchingPlayer.PlayerID;
         if (!_waveController.IsCombatPhase)
         {
             _shopTurns.ShowPlayerToShop();
+            _upgradeCosts.ShowPlayerUpgradeCosts(); //Shows the cost of all upgrades of the current player
         }
     }
 }
