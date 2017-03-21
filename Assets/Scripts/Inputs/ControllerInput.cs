@@ -39,7 +39,7 @@ public class ControllerInput : MonoBehaviour {
             if (Input.GetButtonDown(InputAxes.XBOX_A + _player.PlayerID))
             {
                 //Ability 1
-                if (_player.AbilityOne != null && _player.AbilityOne.AbilityIsReady)
+                if (_player.AbilityOne != null)
                 {
                     _player.AbilityOne.UseAbility();
                 }

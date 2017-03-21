@@ -28,7 +28,7 @@ public class EnemyTargetting : MonoBehaviour {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, 50f);
         if(hit.collider != null)
         {
-            Debug.Log(hit.collider.gameObject.name);
+            //Debug.Log(hit.collider.gameObject.name);
         }
     }
 

@@ -6,7 +6,7 @@ public class WarDrummer : PlayerCharacter{
 
     void Start()
     {
-        _abilityOne = new HealingDrums();
+        _abilityOne = GetComponent<HealingDrums>();
         Name = "Wardrummer";
     }
 }

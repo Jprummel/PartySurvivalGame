@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class Ability : MonoBehaviour {
 
-    protected string _abilityName;
-    protected Image _abilityImage;
-    protected bool _abilityIsReady;
-    protected float _maxCooldown;
+    [SerializeField]protected string _abilityName;
+    [SerializeField]protected float _maxCooldown;
+    [SerializeField]protected Image _abilityImage;
+    protected bool _abilityIsReady;    
     protected float _cooldown;
     protected float _damageModifier;
 
@@ -25,6 +25,7 @@ public class Ability : MonoBehaviour {
             _cooldown -= Time.deltaTime;
             if (_cooldown <= 0)
             {
+                Debug.Log("Ready");
                 _abilityIsReady = true;
             }
         }
