@@ -18,7 +18,6 @@ public class HealingDrums : Ability {
 
 	void Start () {
         _abilityIsReady = true;
-        Debug.Log(AbilityIsReady);
 	}
 	
     public override void UseAbility()
@@ -26,9 +25,10 @@ public class HealingDrums : Ability {
         StartDrumRhythm();
     }
 
-    void Update()
+    protected override void Update()
     {
-        if (_drumming)
+        base.Update();
+        if (_usingAbility)
         {
             if (_mustPressLeftTrigger || _mustPressRightTrigger)
             {
@@ -51,7 +51,7 @@ public class HealingDrums : Ability {
             HealPlayers();
         }
 
-        if (!_drumming)
+        if (!_usingAbility)
         {
             StopDrumming(); //Stop using ability
         }
@@ -59,8 +59,10 @@ public class HealingDrums : Ability {
 
     void StartDrumRhythm()
     {
+        _player.CharacterAnimator.SetBool("IsMoving", false);
+        _player.CharacterAnimator.SetBool("UseAbility",true);
         _player.CanMove = false; //Player can't move while drumming
-        _drumming = true;
+        _usingAbility = true;
         _abilityIsReady = false;
         _timeToPress = _maxTimeToPress;
         ChooseRandomButton();
@@ -96,7 +98,7 @@ public class HealingDrums : Ability {
             }
             if (Input.GetAxis(InputAxes.TRIGGER + _player.PlayerID) > 0) //If wrong trigger is pressed
             {
-                _drumming = false; //Stop using ability
+                _usingAbility = false; //Stop using ability
             }
         }
         if (_mustPressRightTrigger)
@@ -110,7 +112,7 @@ public class HealingDrums : Ability {
             }
             if (Input.GetAxis(InputAxes.TRIGGER + _player.PlayerID) < 0)
             {
-                _drumming = false;
+                _usingAbility = false;
             }
         }
     }
@@ -133,6 +135,7 @@ public class HealingDrums : Ability {
     void StopDrumming()
     {
         _cooldown = _maxCooldown; //Resets cooldown
+        _player.CharacterAnimator.SetBool("UseAbility",false);
         _player.CanMove = true; //Player can move again
         _abilityIsReady = false; //Ability not ready
         _leftTrigger.SetActive(false); //Disable button indicators

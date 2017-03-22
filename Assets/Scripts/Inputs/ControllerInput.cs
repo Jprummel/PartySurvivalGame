@@ -34,12 +34,12 @@ public class ControllerInput : MonoBehaviour {
 
     void ControllerInputs()
     {
-        if (_waveController.IsCombatPhase && !_pauseGame.GameIsPaused && _player.CanMove)
+        if (_waveController.IsCombatPhase && !_pauseGame.GameIsPaused)
         {
             if (Input.GetButtonDown(InputAxes.XBOX_A + _player.PlayerID))
             {
                 //Ability 1
-                if (_player.Ability != null && _player.Ability.AbilityIsReady)
+                if (_player.Ability != null)
                 {
                     _player.Ability.UseAbility();
                 }
@@ -68,25 +68,27 @@ public class ControllerInput : MonoBehaviour {
                 _soundEffects.PlayHeavyAttackAudio(); // Heavy Attack (miss) sound
                 _playerAttack.HeavyAttack();
             }
-
-            if (Input.GetAxis(InputAxes.LEFT_JOYSTICK_X + _player.PlayerID) != 0 || Input.GetAxis(InputAxes.LEFT_JOYSTICK_Y + _player.PlayerID) != 0)
+            if (_player.CanMove)
             {
-                float x = Input.GetAxis(InputAxes.LEFT_JOYSTICK_X + _player.PlayerID);
-                float y = Input.GetAxis(InputAxes.LEFT_JOYSTICK_Y + _player.PlayerID);
-                Vector2 moveDir = new Vector2(x, y);
-                _playerMovement.Move(moveDir.normalized);
-                _soundEffects.PlayWalkAudio();
-                if (x != 0)
+                if (Input.GetAxis(InputAxes.LEFT_JOYSTICK_X + _player.PlayerID) != 0 || Input.GetAxis(InputAxes.LEFT_JOYSTICK_Y + _player.PlayerID) != 0)
                 {
-                    _walkParticle.ShowParticle(); // only show particle when player isnt running straight up or down
+                    float x = Input.GetAxis(InputAxes.LEFT_JOYSTICK_X + _player.PlayerID);
+                    float y = Input.GetAxis(InputAxes.LEFT_JOYSTICK_Y + _player.PlayerID);
+                    Vector2 moveDir = new Vector2(x, y);
+                    _playerMovement.Move(moveDir.normalized);
+                    _soundEffects.PlayWalkAudio();
+                    if (x != 0)
+                    {
+                        _walkParticle.ShowParticle(); // only show particle when player isnt running straight up or down
+                    }
+                }
+                else
+                {
+                    _playerMovement.Move(new Vector2(0, 0));
+                    _walkParticle.DisableParticle();
+                    _soundEffects.StopWalkSound();
                 }
             }
-            else
-            {
-                _playerMovement.Move(new Vector2(0, 0));
-                _walkParticle.DisableParticle();
-                _soundEffects.StopWalkSound();
-            }            
         }
         
         if (Input.GetButtonDown(InputAxes.START + _player.PlayerID))

@@ -29,7 +29,7 @@ public class Ability : MonoBehaviour {
         get { return _abilityIsReady; }
     }
 
-    void Update()
+    protected virtual void Update()
     {
         if (!_abilityIsReady)
         {
