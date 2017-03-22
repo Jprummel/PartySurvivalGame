@@ -37,6 +37,7 @@ public class EnemyTargetting : MonoBehaviour {
         RaycastHit2D hit = Physics2D.CircleCast(transform.position, 1f, Vector2.zero);
         if (hit.collider != null)
         {
+<<<<<<< HEAD
             if (hit.collider.tag == Tags.OBSTACLE)
             {
                 _target = null;
@@ -46,6 +47,9 @@ public class EnemyTargetting : MonoBehaviour {
         {
             _oldDist = 420;
             CalculateTarget();
+=======
+            //Debug.Log(hit.collider.gameObject.name);
+>>>>>>> origin/master
         }
     }
 

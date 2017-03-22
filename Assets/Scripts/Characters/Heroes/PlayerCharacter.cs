@@ -95,6 +95,7 @@ public class PlayerCharacter : Character {
         this.tag = Tags.ENEMY;
         _portraitColor.SetPortraitHostile(HUD.Portrait);
         _deadIndicator.SetActive(true);
+        _movementSpeed = 4;
         HUD.SetNewHealthBar();
     }
 }

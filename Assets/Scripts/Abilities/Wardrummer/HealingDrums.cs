@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class HealingDrums : Ability {
 
-	// Use this for initialization
+    private bool _keepDrumming;
+    private bool _mustPressLeftTrigger;
+    private bool _mustPressRightTrigger;
+
 	void Start () {
         _abilityIsReady = true;
-        _maxCooldown = 20;
 	}
 	
     public override void UseAbility()
@@ -15,5 +17,10 @@ public class HealingDrums : Ability {
         Debug.Log("Feel da healing beat");
         _cooldown = _maxCooldown;
         _abilityIsReady = false;
+    }
+
+    void StartDrumRhythm()
+    {
+
     }
 }
