@@ -12,6 +12,12 @@ public class Ability : MonoBehaviour {
     protected bool _abilityIsReady;    
     protected float _cooldown;
     protected float _damageModifier;
+    protected bool _usingAbility;
+
+    public bool UsingAbility
+    {
+        get { return _usingAbility; }
+    }
 
     void Awake()
     {
@@ -38,6 +44,11 @@ public class Ability : MonoBehaviour {
     }
 
     public virtual void UseAbility()
+    {
+
+    }
+
+    public virtual void CancelAbility()
     {
 
     }

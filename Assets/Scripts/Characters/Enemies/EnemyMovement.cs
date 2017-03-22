@@ -22,7 +22,7 @@ public class EnemyMovement : MonoBehaviour {
         {
             MoveToPlayer();
             transform.rotation = _rotation;
-        }else
+        }else if(!_enemy.IsDead && _enemyTargetting.Target == null)
         {
             MoveDown();
         }
