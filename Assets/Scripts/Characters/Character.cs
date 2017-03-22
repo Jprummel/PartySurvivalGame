@@ -13,6 +13,7 @@ public class Character : MonoBehaviour, IDamageable {
     [SerializeField]protected float     _attackSpeed;
     [SerializeField]protected float     _goldValue;
     [SerializeField]protected float     _currentHealth;
+    private float _defaultDamage;
 
     protected bool _isDead;
     protected bool _canMove;
@@ -103,6 +104,7 @@ public class Character : MonoBehaviour, IDamageable {
         _hitColor       = new Color(1,0.6f,0.6f);
         _canMove        = true;
         _currentHealth  = _maxHealth;             //Sets the characters current health to its max health on spawn
+        _defaultDamage = Damage;
     }
 
     public void TakeDamage(Character damageSource)

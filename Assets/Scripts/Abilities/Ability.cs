@@ -52,4 +52,13 @@ public class Ability : MonoBehaviour {
     {
 
     }
+
+    protected IEnumerator SpecialAttackDamage(float modifier, float time)
+    {
+        float defaultDamage = _player.Damage;
+
+        _player.Damage = _player.Damage * modifier;
+        yield return new WaitForSeconds(time);
+        _player.Damage = defaultDamage;
+    }
 }
