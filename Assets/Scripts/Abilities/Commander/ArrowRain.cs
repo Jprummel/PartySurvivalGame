@@ -9,7 +9,10 @@ public class ArrowRain : Ability {
 
     public override void UseAbility()
     {
-        StartTargeting();
+        if (!_usingAbility)
+        {
+            StartTargeting();
+        }
     }
 
     public override void CancelAbility()
@@ -24,15 +27,26 @@ public class ArrowRain : Ability {
 
     void Update()
     {
-        if(_circle != null)
+        if (Input.GetAxis(InputAxes.RIGHT_JOYSTICK_X + _player.PlayerID) != 0 || Input.GetAxis(InputAxes.RIGHT_JOYSTICK_Y + _player.PlayerID) != 0)
         {
-            Debug.Log("circle is active");
+            float x = Input.GetAxis(InputAxes.RIGHT_JOYSTICK_X + _player.PlayerID);
+            float y = Input.GetAxis(InputAxes.RIGHT_JOYSTICK_Y + _player.PlayerID);
+            Vector2 moveDir = new Vector2(x, y).normalized;
+            _circle.transform.Translate(moveDir);
         }
     }
 
     void StartTargeting()
     {
-        Vector2 circlePos = new Vector2(transform.position.x + 3, transform.position.y);
+        //distance from circle to player
+        float Offset = 3;
+        if(transform.rotation.y > 0)
+        {
+            //make the circle match the direction the player is facing
+            Offset = -Offset;
+        }
+        //set the position of the targeting circle
+        Vector2 circlePos = new Vector2(transform.position.x + Offset, transform.position.y);
         _circle = Instantiate(_landingCircle, circlePos, Quaternion.identity, this.transform);
         _usingAbility = true;
     }
