@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class HealingDrums : Ability {
 
-    //Visual button indicators
+    //Visuals
     [SerializeField]private GameObject _leftTrigger;
     [SerializeField]private GameObject _rightTrigger;
+    [SerializeField]private GameObject _healingCircle;
+    [SerializeField]private Transform _circleSpawnPosition;
+    private GameObject _circle;
     //Ability variables
     [SerializeField]private float _maxTimeToPress;
     [SerializeField]private float _maxTimeTillNextButton;
-    private bool _drumming;
     private bool _mustPressLeftTrigger;
     private bool _mustPressRightTrigger;
     private float _timeToPress;
@@ -38,7 +40,7 @@ public class HealingDrums : Ability {
 
             if (_mustPressLeftTrigger && _timeToPress <= 0 || _mustPressRightTrigger && _timeToPress <= 0) //If player should press a trigger and time reaches 0
             {
-                _drumming = false; //Stop drumming
+                _usingAbility = false; //Stop drumming
             }
             if (!_mustPressLeftTrigger && !_mustPressRightTrigger)
             {
@@ -48,7 +50,7 @@ public class HealingDrums : Ability {
                     ChooseRandomButton();
                 }
             }
-            HealPlayers();
+            //HealPlayers();
         }
 
         if (!_usingAbility)
@@ -59,13 +61,20 @@ public class HealingDrums : Ability {
 
     void StartDrumRhythm()
     {
+        SpawnHealingCircle();
         _player.CharacterAnimator.SetBool("IsMoving", false);
         _player.CharacterAnimator.SetBool("UseAbility",true);
         _player.CanMove = false; //Player can't move while drumming
         _usingAbility = true;
         _abilityIsReady = false;
-        _timeToPress = _maxTimeToPress;
+        _timeToPress = 1.5f;
         ChooseRandomButton();
+    }
+
+    void SpawnHealingCircle()
+    {
+        _circle = Instantiate(_healingCircle, this.transform);
+        _circle.transform.position = _circleSpawnPosition.position;
     }
 
     void ChooseRandomButton()
@@ -74,13 +83,11 @@ public class HealingDrums : Ability {
         if (randomButton == 0) // 0 = left trigger
         {
             _mustPressLeftTrigger = true;
-            Debug.Log("Left Trigger");
             _leftTrigger.SetActive(true);
         }
         else if (randomButton == 1) // 1 = right trigger
         {
             _mustPressRightTrigger = true;
-            Debug.Log("Right Trigger");
             _rightTrigger.SetActive(true);
         }
         _timeToPress = _maxTimeToPress; // sets the time to press to the max time to press
@@ -117,28 +124,26 @@ public class HealingDrums : Ability {
         }
     }
 
-    void HealPlayers()
+    public void Heal(Character character)
     {
-        if (this.gameObject.tag == Tags.PLAYER) //If the wardrummer is still in the player team heal all players
-        {
-            foreach (PlayerCharacter player in PlayerParty.PlayerCharacters)
-            {
-                float healthPercentage = player.MaxHealth / 40; //2.5% of the characters health
-                if (player.CurrentHealth < player.MaxHealth)
-                {
-                    player.CurrentHealth += healthPercentage * Time.deltaTime; //Heals every player for 1% of their hp
-                }
-            }
-        }
+        float healthPercentage = character.MaxHealth / 40;
+        character.CurrentHealth += healthPercentage * Time.deltaTime;
+        _player.Gold = Mathf.Round(_player.Gold + 2 * Time.deltaTime);
     }
 
     void StopDrumming()
     {
+        DestroyImmediate(_circle);
         _cooldown = _maxCooldown; //Resets cooldown
         _player.CharacterAnimator.SetBool("UseAbility",false);
         _player.CanMove = true; //Player can move again
         _abilityIsReady = false; //Ability not ready
         _leftTrigger.SetActive(false); //Disable button indicators
         _rightTrigger.SetActive(false);
+    }
+
+    public override void CancelAbility()
+    {
+        StopDrumming();
     }
 }

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 3e8209650c4186b46888a8b12020237c
-timeCreated: 1489335526
+timeCreated: 1490196637
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -44,6 +44,16 @@ TextureImporter:
     21300074: drum_37
     21300076: drum_38
     21300078: drum_39
+    21300080: drum_40
+    21300082: drum_41
+    21300084: drum_42
+    21300086: drum_43
+    21300088: drum_44
+    21300090: drum_45
+    21300092: drum_46
+    21300094: drum_47
+    21300096: drum_48
+    21300098: drum_49
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -122,7 +132,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1600
+        y: 2400
         width: 500
         height: 400
       alignment: 0
@@ -135,7 +145,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 500
-        y: 1600
+        y: 2400
         width: 500
         height: 400
       alignment: 0
@@ -148,7 +158,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1000
-        y: 1600
+        y: 2400
         width: 500
         height: 400
       alignment: 0
@@ -161,7 +171,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1500
-        y: 1600
+        y: 2400
         width: 500
         height: 400
       alignment: 0
@@ -174,7 +184,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2000
-        y: 1600
+        y: 2400
         width: 500
         height: 400
       alignment: 0
@@ -187,7 +197,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2500
-        y: 1600
+        y: 2400
         width: 500
         height: 400
       alignment: 0
@@ -200,7 +210,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3000
-        y: 1600
+        y: 2400
         width: 500
         height: 400
       alignment: 0
@@ -213,7 +223,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3500
-        y: 1600
+        y: 2400
         width: 500
         height: 400
       alignment: 0
@@ -226,7 +236,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 1200
+        y: 2000
         width: 500
         height: 400
       alignment: 0
@@ -239,7 +249,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 500
-        y: 1200
+        y: 2000
         width: 500
         height: 400
       alignment: 0
@@ -252,7 +262,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1000
-        y: 1200
+        y: 2000
         width: 500
         height: 400
       alignment: 0
@@ -265,7 +275,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1500
-        y: 1200
+        y: 2000
         width: 500
         height: 400
       alignment: 0
@@ -278,7 +288,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2000
-        y: 1200
+        y: 2000
         width: 500
         height: 400
       alignment: 0
@@ -291,7 +301,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2500
-        y: 1200
+        y: 2000
         width: 500
         height: 400
       alignment: 0
@@ -304,7 +314,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3000
-        y: 1200
+        y: 2000
         width: 500
         height: 400
       alignment: 0
@@ -317,7 +327,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3500
-        y: 1200
+        y: 2000
         width: 500
         height: 400
       alignment: 0
@@ -330,7 +340,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 800
+        y: 1600
         width: 500
         height: 400
       alignment: 0
@@ -343,7 +353,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 500
-        y: 800
+        y: 1600
         width: 500
         height: 400
       alignment: 0
@@ -356,7 +366,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1000
-        y: 800
+        y: 1600
         width: 500
         height: 400
       alignment: 0
@@ -369,7 +379,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1500
-        y: 800
+        y: 1600
         width: 500
         height: 400
       alignment: 0
@@ -382,7 +392,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2000
-        y: 800
+        y: 1600
         width: 500
         height: 400
       alignment: 0
@@ -395,7 +405,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2500
-        y: 800
+        y: 1600
         width: 500
         height: 400
       alignment: 0
@@ -408,7 +418,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3000
-        y: 800
+        y: 1600
         width: 500
         height: 400
       alignment: 0
@@ -421,7 +431,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3500
-        y: 800
+        y: 1600
         width: 500
         height: 400
       alignment: 0
@@ -434,7 +444,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 400
+        y: 1200
         width: 500
         height: 400
       alignment: 0
@@ -447,7 +457,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 500
-        y: 400
+        y: 1200
         width: 500
         height: 400
       alignment: 0
@@ -460,7 +470,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1000
-        y: 400
+        y: 1200
         width: 500
         height: 400
       alignment: 0
@@ -473,7 +483,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1500
-        y: 400
+        y: 1200
         width: 500
         height: 400
       alignment: 0
@@ -486,7 +496,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2000
-        y: 400
+        y: 1200
         width: 500
         height: 400
       alignment: 0
@@ -499,7 +509,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2500
-        y: 400
+        y: 1200
         width: 500
         height: 400
       alignment: 0
@@ -512,7 +522,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3000
-        y: 400
+        y: 1200
         width: 500
         height: 400
       alignment: 0
@@ -525,7 +535,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3500
-        y: 400
+        y: 1200
         width: 500
         height: 400
       alignment: 0
@@ -538,7 +548,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 800
         width: 500
         height: 400
       alignment: 0
@@ -551,7 +561,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 500
-        y: 0
+        y: 800
         width: 500
         height: 400
       alignment: 0
@@ -564,7 +574,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1000
-        y: 0
+        y: 800
         width: 500
         height: 400
       alignment: 0
@@ -577,7 +587,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1500
-        y: 0
+        y: 800
         width: 500
         height: 400
       alignment: 0
@@ -590,7 +600,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2000
-        y: 0
+        y: 800
         width: 500
         height: 400
       alignment: 0
@@ -603,7 +613,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2500
-        y: 0
+        y: 800
         width: 500
         height: 400
       alignment: 0
@@ -616,7 +626,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3000
-        y: 0
+        y: 800
         width: 500
         height: 400
       alignment: 0
@@ -629,6 +639,136 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3500
+        y: 800
+        width: 500
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: drum_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 500
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: drum_41
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 400
+        width: 500
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: drum_42
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 400
+        width: 500
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: drum_43
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 400
+        width: 500
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: drum_44
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 400
+        width: 500
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: drum_45
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 400
+        width: 500
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: drum_46
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 400
+        width: 500
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: drum_47
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 400
+        width: 500
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: drum_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 500
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: drum_49
+      rect:
+        serializedVersion: 2
+        x: 500
         y: 0
         width: 500
         height: 400

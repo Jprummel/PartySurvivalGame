@@ -47,6 +47,13 @@ public class PlayerCharacter : Character {
         set { _playerID = value; }
     }
 
+    private bool _rotated;
+    public bool Rotated
+    {
+        get { return _rotated; }
+        set { _rotated = value; }
+    }
+
     protected override void Awake()
     {
         _gold = 1500;
