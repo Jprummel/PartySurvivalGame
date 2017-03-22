@@ -32,7 +32,7 @@ public class EnemyAttack : MonoBehaviour {
                 if (_readyToAttack)
                 {
                     _readyToAttack = false;
-                    StartCoroutine(AttackCooldown());
+                    StartCoroutine(AttackCooldown());  
                 }
             }
         }
@@ -42,10 +42,8 @@ public class EnemyAttack : MonoBehaviour {
     IEnumerator AttackCooldown()
     {
         _enemy.CharacterAnimator.SetInteger("AnimationState", 1);
-        yield return new WaitForSeconds(_enemy.AttackSpeed / 2);
-        ExecuteEvents.Execute<IDamageable>(_enemyTargetting.Target, null, (x, y) => x.TakeDamage(_enemy));
-        yield return new WaitForSeconds(_enemy.AttackSpeed / 2);        
-        _readyToAttack = true;
+        yield return new WaitForSeconds(_enemy.AttackSpeed);
         _enemy.CharacterAnimator.SetInteger("AnimationState", 0);
+        _readyToAttack = true;
     }
 }
