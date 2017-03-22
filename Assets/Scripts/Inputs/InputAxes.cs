@@ -10,6 +10,7 @@ public class InputAxes : MonoBehaviour {
     public const string LEFT_JOYSTICK_Y = "Left_JoystickY_P";
     public const string RIGHT_JOYSTICK_X = "Right_JoystickX_P";
     public const string RIGHT_JOYSTICK_Y = "Right_JoystickY_P";
+    public const string TRIGGER = "Triggers_P";
     public const string XBOX_A = "A_P";
     public const string XBOX_X = "X_P";
     public const string XBOX_Y = "Y_P";

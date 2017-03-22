@@ -8,9 +8,15 @@ public class Ability : MonoBehaviour {
     [SerializeField]protected string _abilityName;
     [SerializeField]protected float _maxCooldown;
     [SerializeField]protected Image _abilityImage;
+    protected PlayerCharacter _player;
     protected bool _abilityIsReady;    
     protected float _cooldown;
     protected float _damageModifier;
+
+    void Awake()
+    {
+        _player = GetComponent<PlayerCharacter>();
+    }
 
     public bool AbilityIsReady
     {
