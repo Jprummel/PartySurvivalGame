@@ -7,7 +7,7 @@ public class HealingDrums : Ability {
     //Visual button indicators
     [SerializeField]private GameObject _leftTrigger;
     [SerializeField]private GameObject _rightTrigger;
-
+    //Ability variables
     [SerializeField]private float _maxTimeToPress;
     [SerializeField]private float _maxTimeTillNextButton;
     private bool _drumming;
@@ -18,7 +18,6 @@ public class HealingDrums : Ability {
 
 	void Start () {
         _abilityIsReady = true;
-        _timeToPress = _maxTimeToPress;
 	}
 	
     public override void UseAbility()
@@ -40,6 +39,15 @@ public class HealingDrums : Ability {
             {
                 _drumming = false; //Stop drumming
             }
+            if (!_mustPressLeftTrigger && !_mustPressRightTrigger)
+            {
+                _timeTillNextButton -= Time.deltaTime;
+                if (_timeTillNextButton <= 0)
+                {
+                    ChooseRandomButton();
+                }
+            }
+            HealPlayers();
         }
 
         if (!_drumming)
@@ -50,18 +58,16 @@ public class HealingDrums : Ability {
 
     void StartDrumRhythm()
     {
+        _player.CanMove = false; //Player can't move while drumming
         _drumming = true;
-        //_timeTillNextButton = _maxTimeTillNextButton;
+        _abilityIsReady = false;
         _timeToPress = _maxTimeToPress;
-        //if (_timeTillNextButton <= 0)
-        //{
-            ChooseRandomButton();
-        //}
+        ChooseRandomButton();
     }
 
     void ChooseRandomButton()
     {
-        int randomButton = Random.Range(0, 1); //Gets random value 0 or 1
+        int randomButton = Random.Range(0, 2); //Gets random value 0 or 1
         if (randomButton == 0) // 0 = left trigger
         {
             _mustPressLeftTrigger = true;
@@ -81,34 +87,29 @@ public class HealingDrums : Ability {
     {
         if (_mustPressLeftTrigger)
         {
-            if (Input.GetAxis(InputAxes.TRIGGER + _player.PlayerID) <= -0.5f) //If correct trigger is pressed
+            if (Input.GetAxis(InputAxes.TRIGGER + _player.PlayerID) < 0) //If correct trigger is pressed
             {
-                Debug.Log("LT Pressed");
                 _mustPressLeftTrigger = false;
                 _leftTrigger.SetActive(false);
-                HealPlayers();
                 _timeTillNextButton = _maxTimeTillNextButton; //Sets timer for the next button
             }
-            if (Input.GetAxis(InputAxes.TRIGGER + _player.PlayerID) >= 0.5f) //If wrong trigger is pressed
+            if (Input.GetAxis(InputAxes.TRIGGER + _player.PlayerID) > 0) //If wrong trigger is pressed
             {
                 _drumming = false; //Stop using ability
-                Debug.Log("Stop drumming");
             }
         }
         if (_mustPressRightTrigger)
         {
-            if (Input.GetAxis(InputAxes.TRIGGER + _player.PlayerID) >= 0.5f)
+            if (Input.GetAxis(InputAxes.TRIGGER + _player.PlayerID) > 0)
             {
-                Debug.Log("RT Pressed");
+                Debug.Log("Pressed RT");
                 _mustPressRightTrigger = false;
                 _rightTrigger.SetActive(false);
-                HealPlayers();
                 _timeTillNextButton = _maxTimeTillNextButton;
             }
-            if (Input.GetAxis(InputAxes.TRIGGER + _player.PlayerID) <= -0.5f)
+            if (Input.GetAxis(InputAxes.TRIGGER + _player.PlayerID) < 0)
             {
                 _drumming = false;
-                Debug.Log("Stop");
             }
         }
     }
@@ -119,12 +120,10 @@ public class HealingDrums : Ability {
         {
             foreach (PlayerCharacter player in PlayerParty.PlayerCharacters)
             {
-                float healthPercentage = player.MaxHealth / 100; //1% of the characters health
+                float healthPercentage = player.MaxHealth / 40; //2.5% of the characters health
                 if (player.CurrentHealth < player.MaxHealth)
                 {
-                    Debug.Log(player.CurrentHealth + " " + player.Name + " before healing");
                     player.CurrentHealth += healthPercentage * Time.deltaTime; //Heals every player for 1% of their hp
-                    Debug.Log(player.CurrentHealth + " " + player.Name + "After healing");
                 }
             }
         }
@@ -133,6 +132,7 @@ public class HealingDrums : Ability {
     void StopDrumming()
     {
         _cooldown = _maxCooldown; //Resets cooldown
+        _player.CanMove = true; //Player can move again
         _abilityIsReady = false; //Ability not ready
         _leftTrigger.SetActive(false); //Disable button indicators
         _rightTrigger.SetActive(false);
