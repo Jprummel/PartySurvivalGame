@@ -7,11 +7,8 @@ using UnityEngine.EventSystems;
 public class PlayerCharacter : Character {
 
     //Ability
-    protected Ability _abilityOne;
-    protected Ability _abilityTwo;
-
-    public Ability AbilityOne { get { return _abilityOne; }}
-    public Ability AbilityTwo { get { return _abilityTwo; }}
+    protected Ability _ability;
+    public Ability Ability { get { return _ability; }}
     //Visuals
     [SerializeField]protected Sprite _portrait;
     [SerializeField]private GameObject _deadIndicator;

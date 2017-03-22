@@ -10,8 +10,7 @@ public class CharacterSoundFX : MonoBehaviour {
     [SerializeField]private AudioClip _walkSound;
     [SerializeField]private AudioClip _lightAttackSound;
     [SerializeField]private AudioClip _heavyAttackSound;
-    [SerializeField]private AudioClip _abilityOneSound;
-    [SerializeField]private AudioClip _abilityTwoSound;
+    [SerializeField]private AudioClip _abilitySound;
 
 	void Start () {
         _audio = GetComponent<AudioSource>();

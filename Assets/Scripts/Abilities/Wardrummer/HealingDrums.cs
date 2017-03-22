@@ -18,6 +18,7 @@ public class HealingDrums : Ability {
 
 	void Start () {
         _abilityIsReady = true;
+        Debug.Log(AbilityIsReady);
 	}
 	
     public override void UseAbility()

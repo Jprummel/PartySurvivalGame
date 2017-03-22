@@ -7,7 +7,7 @@ public class Commander : PlayerCharacter {
     void Start()
     {
         Name = "Commander";
-        _abilityOne = GetComponent<ArrowRain>();
+        _ability = GetComponent<ArrowRain>();
     }
 
 }

@@ -39,18 +39,18 @@ public class ControllerInput : MonoBehaviour {
             if (Input.GetButtonDown(InputAxes.XBOX_A + _player.PlayerID))
             {
                 //Ability 1
-                if (_player.AbilityOne != null && _player.AbilityOne.AbilityIsReady)
+                if (_player.Ability != null && _player.Ability.AbilityIsReady)
                 {
-                    _player.AbilityOne.UseAbility();
+                    _player.Ability.UseAbility();
                 }
                 //_soundEffects.PlaySFX();
             }
 
             if (Input.GetButtonDown(InputAxes.XBOX_B + _player.PlayerID))
             {
-                if (_player.AbilityOne.UsingAbility)
+                if (_player.Ability.UsingAbility)
                 {
-                    _player.AbilityOne.CancelAbility();
+                    _player.Ability.CancelAbility();
                 }
                 //Ability 2
                 //_soundEffects.PlaySFX();
