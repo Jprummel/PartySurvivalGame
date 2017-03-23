@@ -10,7 +10,7 @@ public class PauseGame : MonoBehaviour {
     {
         get { return _gameIsPaused; }
     }
-    
+
     public void TogglePause()
     {
         if (Time.timeScale == 1)

@@ -11,6 +11,7 @@ public class EnemySpawner : MonoBehaviour {
     [HideInInspector]public List<GameObject> spawnedEnemies = new List<GameObject>();
     private List<Transform> _spawnpoints = new List<Transform>();
 
+    private int _minEnemyType;
     private int _enemyTypeCount;
 
     void Awake()
@@ -27,6 +28,7 @@ public class EnemySpawner : MonoBehaviour {
         switch (GameInformation.Wave)
         {
             case 1:
+                _minEnemyType = 0;
                 _enemyTypeCount = 2; //2 types of peasants
                 break;
             case 3:
@@ -35,12 +37,23 @@ public class EnemySpawner : MonoBehaviour {
             case 5:
                 _enemyTypeCount = 4; //Adds Militia
                 break;
+            case 8:
+                _minEnemyType = 2; //Removes first 2 peasants
+                _enemyTypeCount = 6; //Adds 2 blacksmiths
+                break;
+            case 10:
+                _minEnemyType = 3; //Removes last peasant
+                _enemyTypeCount = 7; //Adds last blacksmith
+                break;
+            case 15:
+                _enemyTypeCount = 10; //Adds soldiers
+                break;
         }
     }
 
     public void SpawnEnemy()
     {
-        int randomEnemy = Random.Range(0, _enemyTypeCount);
+        int randomEnemy = Random.Range(_minEnemyType, _enemyTypeCount);
         GameObject spawnedEnemy = Instantiate(_enemyTypes[randomEnemy]);
         spawnedEnemies.Add(spawnedEnemy);
         spawnedEnemy.transform.position = _spawnpoints[Random.Range(0, _spawnpoints.Count)].position;
