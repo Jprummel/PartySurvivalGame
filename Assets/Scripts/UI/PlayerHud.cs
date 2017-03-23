@@ -17,6 +17,7 @@ public class PlayerHud : MonoBehaviour {
     [SerializeField]private Image _portrait;
     [SerializeField]private Text _gold;
     [SerializeField]private Text _rankText;
+    [SerializeField]private Image _abilityImage;
     public Image Portrait
     { 
         get {return _portrait;}
@@ -33,6 +34,12 @@ public class PlayerHud : MonoBehaviour {
     {
         get { return _rankText; }
         set { _rankText = value; }
+    }
+
+    public Image AbilityImage
+    {
+        get { return _abilityImage; }
+        set { _abilityImage = value; }
     }
 
     private Color _defaultColor = new Color();
@@ -77,7 +84,7 @@ public class PlayerHud : MonoBehaviour {
 
     void SetGold()
     {
-        _gold.text = Character.Gold.ToString();
+        _gold.text = Character.Gold.ToString("N0");
     }
 
     public void SetNewHealthBar()

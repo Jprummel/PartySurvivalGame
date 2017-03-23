@@ -35,6 +35,7 @@ public class ShopDisplay : MonoBehaviour {
     //Shop time variables
     private int         _playerToShop = 0;
     //Scripts
+    private ShopSoundFX _soundEffects;
     private ShopPhaseTurns _shopTurns;
     private GetUpgradeCosts _upgradeCosts;
     private WaveController  _waveController;
@@ -48,6 +49,7 @@ public class ShopDisplay : MonoBehaviour {
 
 	void Start () {
         _waveController = GameObject.FindGameObjectWithTag(Tags.WAVEMANAGER).GetComponent<WaveController>();
+        _soundEffects = GetComponent<ShopSoundFX>();
         _shopTurns = GetComponent<ShopPhaseTurns>();
         _upgradeCosts = GetComponent<GetUpgradeCosts>();
         _shopTurns.SetShopInputs();
@@ -109,6 +111,7 @@ public class ShopDisplay : MonoBehaviour {
             _shopPanel.SetActive(false);
             _shopIsOpen = false;
             _waveController.IsCombatPhase = true;
+            _soundEffects.PlayWarhorn();
         }
         FindingNemo();
         _shopTurns.SetShopInputs();

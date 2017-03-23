@@ -49,6 +49,10 @@ public class CharacterSoundFX : MonoBehaviour {
         _audio.PlayOneShot(_heavyAttackSound);
     }
 
+    public void PlayAbilitySound()
+    {
+        _audio.PlayOneShot(_abilitySound);
+    }
 
     public void StopWalkSound()
     {

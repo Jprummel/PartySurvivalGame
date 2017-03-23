@@ -35,7 +35,7 @@ public class ArrowRain : Ability {
 
     void Start()
     {
-        _abilityIsReady = true;
+        //_abilityIsReady = true;
         //upper left screen position
         _leftPos = Camera.main.ViewportToWorldPoint(new Vector2(0f, 1.1f));
         //upper right screen position
@@ -93,11 +93,11 @@ public class ArrowRain : Ability {
     {
         if (_circle.transform.position.x < transform.position.x)
         {//make the arrows come from the left if the circle is on the left side of the commander
-            _arrowLocation = _leftPos;
+            _arrowLocation = _rightPos;
         }
         else
         {//make the arrows come from the right side if the circle is on the right side of the commander
-            _arrowLocation = _rightPos;
+            _arrowLocation = _leftPos;
         }
         StartCoroutine(StartRain());
         CancelTargeting(false);

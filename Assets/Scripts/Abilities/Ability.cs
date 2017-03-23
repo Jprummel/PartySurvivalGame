@@ -22,6 +22,7 @@ public class Ability : MonoBehaviour {
     void Awake()
     {
         _player = GetComponent<PlayerCharacter>();
+        _abilityIsReady = true;
     }
 
     public bool AbilityIsReady

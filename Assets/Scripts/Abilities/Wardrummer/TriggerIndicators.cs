@@ -16,13 +16,13 @@ public class TriggerIndicators : MonoBehaviour {
 
         if (_player.Rotated)
         {
-            transform.Rotate(0, 180, 0);
-            Debug.Log("Rotated");
+            //transform.Rotate(0, 180, 0);
+            //Debug.Log("Rotated");
         }
         else if (!_player.Rotated)
         {
-            transform.Rotate(0, 0, 0);
-            Debug.Log("Not rotated");
+            //transform.Rotate(0, 0, 0);
+            //Debug.Log("Not rotated");
         }
 	}
 }

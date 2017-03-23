@@ -19,12 +19,15 @@ public class HealingDrums : Ability {
     private float _timeTillNextButton;
 
 	void Start () {
-        _abilityIsReady = true;
+        //_abilityIsReady = true;
 	}
 	
     public override void UseAbility()
     {
-        StartDrumRhythm();
+        if (!_usingAbility)
+        {
+            StartDrumRhythm();
+        }
     }
 
     protected override void Update()
@@ -32,15 +35,17 @@ public class HealingDrums : Ability {
         base.Update();
         if (_usingAbility)
         {
+            _player.CanMove = false;
+            Heal(_player);
             if (_mustPressLeftTrigger || _mustPressRightTrigger)
             {
                 _timeToPress -= Time.deltaTime; //Time goes down
                 CheckForButtonPress();
             }
-
-            if (_mustPressLeftTrigger && _timeToPress <= 0 || _mustPressRightTrigger && _timeToPress <= 0) //If player should press a trigger and time reaches 0
+            if (_timeToPress <= 0)
             {
-                _usingAbility = false; //Stop drumming
+                CancelAbility();
+                //StopDrumming();
             }
             if (!_mustPressLeftTrigger && !_mustPressRightTrigger)
             {
@@ -50,24 +55,17 @@ public class HealingDrums : Ability {
                     ChooseRandomButton();
                 }
             }
-            //HealPlayers();
-        }
-
-        if (!_usingAbility)
-        {
-            StopDrumming(); //Stop using ability
         }
     }
-
+    
     void StartDrumRhythm()
     {
         SpawnHealingCircle();
         _player.CharacterAnimator.SetBool("IsMoving", false);
         _player.CharacterAnimator.SetBool("UseAbility",true);
-        _player.CanMove = false; //Player can't move while drumming
         _usingAbility = true;
         _abilityIsReady = false;
-        _timeToPress = 1.5f;
+        //_timeTillNextButton = 3;
         ChooseRandomButton();
     }
 
@@ -97,53 +95,53 @@ public class HealingDrums : Ability {
     {
         if (_mustPressLeftTrigger)
         {
-            if (Input.GetAxis(InputAxes.TRIGGER + _player.PlayerID) < 0) //If correct trigger is pressed
+            if (Input.GetAxis(InputAxes.TRIGGER + _player.PlayerID) < -0.5f) //If correct trigger is pressed
             {
                 _mustPressLeftTrigger = false;
                 _leftTrigger.SetActive(false);
                 _timeTillNextButton = _maxTimeTillNextButton; //Sets timer for the next button
             }
-            if (Input.GetAxis(InputAxes.TRIGGER + _player.PlayerID) > 0) //If wrong trigger is pressed
+            if (Input.GetAxis(InputAxes.TRIGGER + _player.PlayerID) > 0.5f) //If wrong trigger is pressed
             {
-                _usingAbility = false; //Stop using ability
+                CancelAbility();
+                //StopDrumming(); //Stop using ability
             }
         }
         if (_mustPressRightTrigger)
         {
-            if (Input.GetAxis(InputAxes.TRIGGER + _player.PlayerID) > 0)
+            if (Input.GetAxis(InputAxes.TRIGGER + _player.PlayerID) > 0.5f)
             {
-                Debug.Log("Pressed RT");
                 _mustPressRightTrigger = false;
                 _rightTrigger.SetActive(false);
                 _timeTillNextButton = _maxTimeTillNextButton;
             }
-            if (Input.GetAxis(InputAxes.TRIGGER + _player.PlayerID) < 0)
+            if (Input.GetAxis(InputAxes.TRIGGER + _player.PlayerID) < -0.5f)
             {
-                _usingAbility = false;
+                CancelAbility();
+                //StopDrumming();
             }
         }
     }
 
     public void Heal(Character character)
     {
-        float healthPercentage = character.MaxHealth / 40;
-        character.CurrentHealth += healthPercentage * Time.deltaTime;
-        _player.Gold = Mathf.Round(_player.Gold + 2 * Time.deltaTime);
-    }
-
-    void StopDrumming()
-    {
-        DestroyImmediate(_circle);
-        _cooldown = _maxCooldown; //Resets cooldown
-        _player.CharacterAnimator.SetBool("UseAbility",false);
-        _player.CanMove = true; //Player can move again
-        _abilityIsReady = false; //Ability not ready
-        _leftTrigger.SetActive(false); //Disable button indicators
-        _rightTrigger.SetActive(false);
+        if(character.CurrentHealth < character.MaxHealth){
+            float healthPercentage = character.MaxHealth / 20; //2.5%
+            character.CurrentHealth += healthPercentage * Time.deltaTime;
+            _player.Gold = _player.Gold + 10 * Time.deltaTime;    
+        }
+        
     }
 
     public override void CancelAbility()
     {
-        StopDrumming();
+        DestroyImmediate(_circle);
+        _cooldown = _maxCooldown; //Resets cooldown
+        _player.CharacterAnimator.SetBool("UseAbility", false);
+        _usingAbility = false;
+        _player.CanMove = true; //Player can move again
+        _abilityIsReady = false; //Ability not ready
+        _leftTrigger.SetActive(false); //Disable button indicators
+        _rightTrigger.SetActive(false);
     }
 }

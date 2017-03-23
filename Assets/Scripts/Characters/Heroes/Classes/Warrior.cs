@@ -4,4 +4,8 @@ using UnityEngine;
 
 public class Warrior : PlayerCharacter {
 
+    void Start()
+    {
+        _ability = GetComponent<Whirlwind>();
+    }
 }

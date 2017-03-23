@@ -34,26 +34,22 @@ public class ControllerInput : MonoBehaviour {
 
     void ControllerInputs()
     {
-        if (_waveController.IsCombatPhase && !_pauseGame.GameIsPaused)
+        if (_waveController.IsCombatPhase && !_pauseGame.GameIsPaused && !_player.IsDead)
         {
-            if (Input.GetButtonDown(InputAxes.XBOX_A + _player.PlayerID))
+            if (_player.Ability != null)
             {
-                //Ability 1
-                if (_player.Ability != null)
+                if (Input.GetButtonDown(InputAxes.XBOX_A + _player.PlayerID))
                 {
                     _player.Ability.UseAbility();
                 }
-                //_soundEffects.PlaySFX();
-            }
 
-            if (Input.GetButtonDown(InputAxes.XBOX_B + _player.PlayerID))
-            {
-                if (_player.Ability.UsingAbility)
+                if (Input.GetButtonDown(InputAxes.XBOX_B + _player.PlayerID) && _player.Ability.UsingAbility)
                 {
-                    _player.Ability.CancelAbility();
+                    if (_player.Ability.UsingAbility)
+                    {
+                        _player.Ability.CancelAbility();
+                    }
                 }
-                //Ability 2
-                //_soundEffects.PlaySFX();
             }
 
             if (Input.GetButtonDown(InputAxes.XBOX_X + _player.PlayerID) && _playerAttack.ReadyToAttack)

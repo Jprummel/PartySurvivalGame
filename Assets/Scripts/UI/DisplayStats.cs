@@ -59,7 +59,7 @@ public class DisplayStats : MonoBehaviour {
 
     void DisplayAvailableGold()
     {
-        _availableGold.text = "Gold : " + _display.MatchingPlayer.Gold;
+        _availableGold.text = "Gold : " + _display.MatchingPlayer.Gold.ToString("N0");
     }
 
     void DisplayTotalEarnedGold()

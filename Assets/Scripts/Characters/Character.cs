@@ -93,6 +93,12 @@ public class Character : MonoBehaviour, IDamageable {
         set { _animator = value; }
     }
 
+    public CharacterSoundFX SoundEffects
+    {
+        get { return _soundEffects; }
+        set { _soundEffects = value; }
+    }
+
     protected virtual void Awake()
     {
         _ranking        = GameObject.FindGameObjectWithTag(Tags.RANKTRACKER).GetComponent<Ranking>();
