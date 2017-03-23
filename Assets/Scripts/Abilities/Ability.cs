@@ -7,7 +7,7 @@ public class Ability : MonoBehaviour {
 
     [SerializeField]protected string _abilityName;
     [SerializeField]protected float _maxCooldown;
-    [SerializeField]protected Image _abilityImage;
+    [SerializeField]protected Sprite _abilityImage;
     protected PlayerCharacter _player;
     protected bool _abilityIsReady;    
     protected float _cooldown;
@@ -17,6 +17,16 @@ public class Ability : MonoBehaviour {
     public bool UsingAbility
     {
         get { return _usingAbility; }
+    }
+
+    public Sprite AbilityImage
+    {
+        get { return _abilityImage; }
+    }
+
+    public float Cooldown
+    {
+        get { return _cooldown; }
     }
 
     void Awake()
@@ -34,11 +44,9 @@ public class Ability : MonoBehaviour {
     {
         if (!_abilityIsReady)
         {
-            Debug.Log("Not ready");
             _cooldown -= Time.deltaTime;
             if (_cooldown <= 0)
             {
-                Debug.Log("Ready");
                 _abilityIsReady = true;
             }
         }

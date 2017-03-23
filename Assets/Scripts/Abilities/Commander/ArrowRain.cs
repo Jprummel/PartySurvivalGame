@@ -62,6 +62,7 @@ public class ArrowRain : Ability {
     void StartTargeting()
     {
         _player.CanMove = false;
+        _player.CharacterAnimator.SetBool("IsMoving",false);
         //distance from circle to player
         float Offset = 3;
         if(transform.rotation.y > 0)
@@ -91,12 +92,13 @@ public class ArrowRain : Ability {
 
     void ConfirmTarget()
     {
+        //Makes the arrows appear from behind the commander
         if (_circle.transform.position.x < transform.position.x)
-        {//make the arrows come from the left if the circle is on the left side of the commander
+        {
             _arrowLocation = _rightPos;
         }
         else
-        {//make the arrows come from the right side if the circle is on the right side of the commander
+        {
             _arrowLocation = _leftPos;
         }
         StartCoroutine(StartRain());
@@ -112,7 +114,7 @@ public class ArrowRain : Ability {
         //activate the collider so that it can deal damage
         StartCoroutine(SpecialAttackDamage(3f, 0.15f));
         ExecuteEvents.Execute<HandleCollider>(_circle, null, (x, y) => x.SwitchCollider(true));
-        //leavve the collider on for a split second
+        //leave the collider on for a split second
         yield return new WaitForSeconds(0.25f);
         DestroyImmediate(_circle);
     }

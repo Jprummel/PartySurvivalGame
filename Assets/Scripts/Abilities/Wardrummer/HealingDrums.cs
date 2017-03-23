@@ -18,13 +18,9 @@ public class HealingDrums : Ability {
     private float _timeToPress;
     private float _timeTillNextButton;
 
-	void Start () {
-        //_abilityIsReady = true;
-	}
-	
     public override void UseAbility()
     {
-        if (!_usingAbility)
+        if (!_usingAbility && _abilityIsReady)
         {
             StartDrumRhythm();
         }
@@ -39,13 +35,12 @@ public class HealingDrums : Ability {
             Heal(_player);
             if (_mustPressLeftTrigger || _mustPressRightTrigger)
             {
-                _timeToPress -= Time.deltaTime; //Time goes down
-                CheckForButtonPress();
+                _timeToPress -= Time.deltaTime; //Time to press the correct button goes down
+                CheckForButtonPress(); //Checks if player presses one of the triggers
             }
             if (_timeToPress <= 0)
             {
                 CancelAbility();
-                //StopDrumming();
             }
             if (!_mustPressLeftTrigger && !_mustPressRightTrigger)
             {
@@ -64,8 +59,6 @@ public class HealingDrums : Ability {
         _player.CharacterAnimator.SetBool("IsMoving", false);
         _player.CharacterAnimator.SetBool("UseAbility",true);
         _usingAbility = true;
-        _abilityIsReady = false;
-        //_timeTillNextButton = 3;
         ChooseRandomButton();
     }
 
@@ -104,7 +97,6 @@ public class HealingDrums : Ability {
             if (Input.GetAxis(InputAxes.TRIGGER + _player.PlayerID) > 0.5f) //If wrong trigger is pressed
             {
                 CancelAbility();
-                //StopDrumming(); //Stop using ability
             }
         }
         if (_mustPressRightTrigger)
@@ -118,7 +110,6 @@ public class HealingDrums : Ability {
             if (Input.GetAxis(InputAxes.TRIGGER + _player.PlayerID) < -0.5f)
             {
                 CancelAbility();
-                //StopDrumming();
             }
         }
     }
@@ -136,10 +127,10 @@ public class HealingDrums : Ability {
     public override void CancelAbility()
     {
         DestroyImmediate(_circle);
+        _player.CharacterAnimator.SetBool("UseAbility", false); //Stops the ability animation
         _cooldown = _maxCooldown; //Resets cooldown
-        _player.CharacterAnimator.SetBool("UseAbility", false);
-        _usingAbility = false;
         _player.CanMove = true; //Player can move again
+        _usingAbility = false; //Player stops using ability
         _abilityIsReady = false; //Ability not ready
         _leftTrigger.SetActive(false); //Disable button indicators
         _rightTrigger.SetActive(false);

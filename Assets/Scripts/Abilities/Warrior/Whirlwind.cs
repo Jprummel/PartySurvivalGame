@@ -22,9 +22,11 @@ public class Whirlwind : Ability {
 
     IEnumerator WhirlwindRoutine()
     {
+        _usingAbility = true;
         _player.CharacterAnimator.SetBool("UseAbility",true);
         yield return new WaitForSeconds(1);
         _player.CharacterAnimator.SetBool("UseAbility", false);
+        _cooldown = _maxCooldown;
     }
 
 

@@ -18,6 +18,7 @@ public class PlayerHud : MonoBehaviour {
     [SerializeField]private Text _gold;
     [SerializeField]private Text _rankText;
     [SerializeField]private Image _abilityImage;
+    [SerializeField]private Text _abilityCooldownText;
     public Image Portrait
     { 
         get {return _portrait;}
@@ -67,6 +68,8 @@ public class PlayerHud : MonoBehaviour {
         SetPortrait();
         SetHealthBar();
         SetGold();
+        SetAbilityImage();
+        ShowAbilityCooldown();
     }
 
     void SetPortrait()
@@ -77,9 +80,26 @@ public class PlayerHud : MonoBehaviour {
         }
     }
 
+    void SetAbilityImage()
+    {
+        _abilityImage.sprite = _playerCharacter.Ability.AbilityImage; //Sets ability image in HUD to fit the one passed into the ability script
+    }
+
     void SetHealthBar()
     {
         _healthBar.fillAmount = Character.CurrentHealth / Character.MaxHealth;
+    }
+
+    void ShowAbilityCooldown()
+    {
+        if (_playerCharacter.Ability.Cooldown > 0)
+        {
+            _abilityCooldownText.text = _playerCharacter.Ability.Cooldown.ToString("N0"); //Shows player abilities cooldown (without decimals)
+        }
+        else if (_playerCharacter.Ability.Cooldown <= 0)
+        {
+            _abilityCooldownText.text = ""; //If ability is not on cooldown dont show text
+        }
     }
 
     void SetGold()

@@ -46,7 +46,6 @@ public class ShopDisplay : MonoBehaviour {
         set { _matchingPlayer = value; }
     }
 
-
 	void Start () {
         _waveController = GameObject.FindGameObjectWithTag(Tags.WAVEMANAGER).GetComponent<WaveController>();
         _soundEffects = GetComponent<ShopSoundFX>();
@@ -76,7 +75,6 @@ public class ShopDisplay : MonoBehaviour {
 
     void ShopOpeningCountdown()
     {
-        //_timeTillOpening = _maxTimeTillOpening;
         if (!_shopIsOpen)
         {
             if (_timeTillOpening >= 0)
@@ -107,7 +105,7 @@ public class ShopDisplay : MonoBehaviour {
         {
             //Sets everything up for re-use after the next wave
             _playerToShop = 0;
-            _shopTurns.ResetPortraitColors();
+            _shopTurns.RestorePlayerHealth();
             _shopPanel.SetActive(false);
             _shopIsOpen = false;
             _waveController.IsCombatPhase = true;
@@ -115,7 +113,6 @@ public class ShopDisplay : MonoBehaviour {
         }
         FindingNemo();
         _shopTurns.SetShopInputs();
-        //_upgradeCosts.ShowPlayerUpgradeCosts();
     }
 
     void FindingNemo()
@@ -125,7 +122,6 @@ public class ShopDisplay : MonoBehaviour {
         _shopTurns.PlayerToShop = _matchingPlayer.PlayerID;
         if (!_waveController.IsCombatPhase)
         {
-            _shopTurns.ShowPlayerToShop();
             _upgradeCosts.ShowPlayerUpgradeCosts(); //Shows the cost of all upgrades of the current player
         }
     }
