@@ -7,7 +7,6 @@ public class HandleCollider : MonoBehaviour, IEventSystemHandler {
 
     private CapsuleCollider2D _collider;
 
-	// Use this for initialization
 	void Start () {
         _collider = GetComponent<CapsuleCollider2D>();
 	}

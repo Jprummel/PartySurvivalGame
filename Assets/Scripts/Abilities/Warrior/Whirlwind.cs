@@ -27,6 +27,7 @@ public class Whirlwind : Ability {
         yield return new WaitForSeconds(1);
         _player.CharacterAnimator.SetBool("UseAbility", false);
         _cooldown = _maxCooldown;
+        _abilityIsReady = false;
     }
 
 

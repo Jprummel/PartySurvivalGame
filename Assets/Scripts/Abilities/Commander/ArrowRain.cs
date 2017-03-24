@@ -109,7 +109,7 @@ public class ArrowRain : Ability {
     {
         //instantiate arrows with targeting circle as parent
         GameObject arrows = Instantiate(_arrows, _arrowLocation, Quaternion.identity, _circle.transform);
-        //wait for ~traveltime
+        //wait for traveltime
         yield return new WaitForSeconds(_travelTime);
         //activate the collider so that it can deal damage
         StartCoroutine(SpecialAttackDamage(3f, 0.15f));
