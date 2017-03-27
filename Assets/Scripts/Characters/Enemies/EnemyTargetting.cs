@@ -11,13 +11,13 @@ public class EnemyTargetting : MonoBehaviour {
     private GameObject _target;
     public GameObject Target
     {
-        get{ return _target; }
-        set{ _target = value; }
+        get { return _target; }
+        set { _target = value; }
     }
 
     void OnCollisionStay2D(Collision2D coll)
     {
-        if(coll.gameObject.tag == Tags.OBSTACLE)
+        if (coll.gameObject.tag == Tags.OBSTACLE)
         {
             _target = null;
             _oldDist = 420;
