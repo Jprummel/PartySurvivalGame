@@ -12,17 +12,20 @@ public class Whirlwind : Ability {
 	// Update is called once per frame
 	protected override void Update () {
         base.Update();
-        
 	}
 
     public override void UseAbility()
     {
-        StartCoroutine(WhirlwindRoutine());
+        if (_abilityIsReady)
+        {
+            StartCoroutine(WhirlwindRoutine());
+        }
     }
 
     IEnumerator WhirlwindRoutine()
     {
         _usingAbility = true;
+        StartCoroutine(SpecialAttackDamage(1,1));
         _player.CharacterAnimator.SetBool("UseAbility",true);
         yield return new WaitForSeconds(1);
         _player.CharacterAnimator.SetBool("UseAbility", false);
