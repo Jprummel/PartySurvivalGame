@@ -30,7 +30,7 @@ public class Ranking : MonoBehaviour {
                 case 2:
                     _players[i].HUD.RankText.text = "3rd";
                     break;
-                case 4:
+                case 3:
                     _players[i].HUD.RankText.text = "4th";
                     break;
             }
