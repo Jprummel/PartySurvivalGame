@@ -134,6 +134,11 @@ public class Character : MonoBehaviour, IDamageable {
                 if (_currentHealth <= 0)
                 {
                     //give gold
+                    foreach (PlayerCharacter player in PlayerParty.PlayerCharacters)
+                    {
+                        player.Gold += this.GoldValue;
+                        player.TotalGoldEarned += this.GoldValue;
+                    }
                     PlayerCharacter source = damageSource.GetComponent<PlayerCharacter>();
                     source.Gold += this.GoldValue;
                     source.TotalGoldEarned += this.GoldValue;
