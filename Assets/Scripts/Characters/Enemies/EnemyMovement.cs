@@ -35,7 +35,7 @@ public class EnemyMovement : MonoBehaviour {
         {
             xDir = -xDir;
         }
-        Vector2 dir = new Vector2(-xDir / 2,-3);
+        Vector2 dir = new Vector2(/*-xDir / 2*/ 0,-2f);
         _rgb2d.velocity = dir;
     }
 
