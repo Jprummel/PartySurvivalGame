@@ -6,6 +6,7 @@ public class Knight : PlayerCharacter {
 
     void Start()
     {
+        _ability = GetComponent<Charge>();
         Name = "Knight";
     }
 }

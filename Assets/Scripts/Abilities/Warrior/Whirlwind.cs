@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class Whirlwind : Ability {
 
-	// Use this for initialization
 	void Start () {
         _abilityIsReady = true;
 	}
 	
-	// Update is called once per frame
 	protected override void Update () {
         base.Update();
 	}
@@ -25,13 +23,11 @@ public class Whirlwind : Ability {
     IEnumerator WhirlwindRoutine()
     {
         _usingAbility = true;
-        StartCoroutine(SpecialAttackDamage(1,1));
+        StartCoroutine(SpecialAttackDamage(0.75f,1));
         _player.CharacterAnimator.SetBool("UseAbility",true);
         yield return new WaitForSeconds(1);
         _player.CharacterAnimator.SetBool("UseAbility", false);
         _cooldown = _maxCooldown;
         _abilityIsReady = false;
     }
-
-
 }

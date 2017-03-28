@@ -120,17 +120,19 @@ public class Character : MonoBehaviour, IDamageable {
             //attack checks for collision with player or enemy
             if (this.gameObject.tag == Tags.PLAYER & damageSource.gameObject.tag == Tags.ENEMY)
             {
+                StartCoroutine(HitRoutine());
                 StartCoroutine(HitEffect());
                 _soundEffects.PlayHitAudio();
                 _currentHealth -= damageSource.Damage;   //Reduces currenthealth by the amount of damage the source of damage has
-                KnockBack(5, damageSource);
+                KnockBack(10, damageSource);
             }
             if (this.gameObject.tag == Tags.ENEMY & damageSource.gameObject.tag == Tags.PLAYER)
             {
+                StartCoroutine(HitRoutine());
                 StartCoroutine(HitEffect());
                 _soundEffects.PlayHitAudio();
                 _currentHealth -= damageSource.Damage;   //Reduces currenthealth by the amount of damage the source of damage has
-                KnockBack(20, damageSource);
+                KnockBack(40, damageSource);
                 if (_currentHealth <= 0)
                 {
                     //give gold
@@ -152,7 +154,7 @@ public class Character : MonoBehaviour, IDamageable {
     {
         Vector2 forcePos = transform.position - source.transform.position;
         Vector2 clampedPos = forcePos.normalized;
-        clampedPos = new Vector2(Mathf.Clamp(clampedPos.x, -0.5f, 0.5f), Mathf.Clamp(clampedPos.y, -0.5f, 0.5f));
+        clampedPos = new Vector2(Mathf.Clamp(clampedPos.x, -1f, 1f), Mathf.Clamp(clampedPos.y, -0.5f, 0.5f));
         //set min/max value to prevent character being knocked back to china.
         _rgb2d.AddForce(power * (clampedPos), ForceMode2D.Impulse);
         StartCoroutine(RemoveVelocity());
@@ -181,6 +183,15 @@ public class Character : MonoBehaviour, IDamageable {
                 yield return new WaitForSeconds(smoothness);
             }
         }
+    }
+
+    IEnumerator HitRoutine()
+    {
+        _animator.SetBool("Hit", true);
+        _canMove = false;
+        yield return new WaitForSeconds(1);
+        _canMove = true;
+        _animator.SetBool("Hit",false);
     }
 
     IEnumerator RemoveVelocity()

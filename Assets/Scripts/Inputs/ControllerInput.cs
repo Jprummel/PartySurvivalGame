@@ -104,6 +104,5 @@ public class ControllerInput : MonoBehaviour {
             _walkParticle.DisableParticle();
             _playerMovement.Move(new Vector2(0,0));
         }
-
     }
 }
