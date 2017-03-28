@@ -36,6 +36,7 @@ public class ControllerInput : MonoBehaviour {
     {
         if (_waveController.IsCombatPhase && !_pauseGame.GameIsPaused && !_player.IsDead)
         {
+            Debug.Log(_player.Ability);
             if (_player.Ability != null)
             {
                 if (Input.GetButtonDown(InputAxes.XBOX_A + _player.PlayerID))

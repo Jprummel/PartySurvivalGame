@@ -35,7 +35,6 @@ public class ArrowRain : Ability {
 
     void Start()
     {
-        //_abilityIsReady = true;
         //upper left screen position
         _leftPos = Camera.main.ViewportToWorldPoint(new Vector2(0f, 1.1f));
         //upper right screen position
