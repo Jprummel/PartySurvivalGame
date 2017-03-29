@@ -99,6 +99,11 @@ public class Character : MonoBehaviour, IDamageable {
         set { _soundEffects = value; }
     }
 
+    public Rigidbody2D RGB2D
+    {
+        get { return _rgb2d; }
+    }
+
     protected virtual void Awake()
     {
         _ranking        = GameObject.FindGameObjectWithTag(Tags.RANKTRACKER).GetComponent<Ranking>();
