@@ -125,7 +125,6 @@ public class Character : MonoBehaviour, IDamageable {
             //attack checks for collision with player or enemy
             if (this.gameObject.tag == Tags.PLAYER & damageSource.gameObject.tag == Tags.ENEMY)
             {
-                StartCoroutine(HitRoutine());
                 StartCoroutine(HitEffect());
                 _soundEffects.PlayHitAudio();
                 _currentHealth -= damageSource.Damage;   //Reduces currenthealth by the amount of damage the source of damage has
