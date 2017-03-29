@@ -194,7 +194,7 @@ public class Character : MonoBehaviour, IDamageable {
     {
         _animator.SetBool("Hit", true);
         _canMove = false;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.7f);
         _canMove = true;
         _animator.SetBool("Hit",false);
     }
