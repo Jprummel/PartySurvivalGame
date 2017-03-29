@@ -74,12 +74,14 @@ public class Charge : Ability {
         _player.CharacterAnimator.SetBool("WindUp",true);
         //start charge
         _charging = true;
+        _player.Invincible = true;
         yield return new WaitForSeconds(_windUpTime);
         _player.CharacterAnimator.SetBool("WindUp", false);
 
         _player.CharacterAnimator.SetBool("Charge",true);
         yield return new WaitForSeconds(_chargeTime);
         _charging = false;
+        _player.Invincible = false;
         //end charge
         _player.CharacterAnimator.SetBool("Charge", false);
 

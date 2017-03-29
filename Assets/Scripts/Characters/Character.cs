@@ -27,6 +27,7 @@ public class Character : MonoBehaviour, IDamageable {
     protected SpriteRenderer _spriteRenderer;
     protected Color _defaultColor;
     protected Color _hitColor;
+    protected bool _invincible;
 
     //Getters & Setters
     public float GoldValue
@@ -81,6 +82,12 @@ public class Character : MonoBehaviour, IDamageable {
         set { _isDead = value; }
     }
 
+    public bool Invincible
+    {
+        get { return _invincible; }
+        set { _invincible = value; }
+    }
+
     public bool CanMove
     {
         get { return _canMove; }
@@ -123,7 +130,7 @@ public class Character : MonoBehaviour, IDamageable {
         if (_currentHealth > 0)
         {
             //attack checks for collision with player or enemy
-            if (this.gameObject.tag == Tags.PLAYER & damageSource.gameObject.tag == Tags.ENEMY)
+            if (this.gameObject.tag == Tags.PLAYER & damageSource.gameObject.tag == Tags.ENEMY & !_invincible)
             {
                 StartCoroutine(HitEffect());
                 _soundEffects.PlayHitAudio();
@@ -136,7 +143,8 @@ public class Character : MonoBehaviour, IDamageable {
                 StartCoroutine(HitEffect());
                 _soundEffects.PlayHitAudio();
                 _currentHealth -= damageSource.Damage;   //Reduces currenthealth by the amount of damage the source of damage has
-                KnockBack(40, damageSource);
+                //knockback value/1000
+                KnockBack(0.004f, damageSource);
                 if (_currentHealth <= 0)
                 {
                     //give gold
