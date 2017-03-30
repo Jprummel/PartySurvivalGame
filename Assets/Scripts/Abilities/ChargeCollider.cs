@@ -17,7 +17,9 @@ public class ChargeCollider : MonoBehaviour {
 	// Update is called once per frame
 	void OnCollisionEnter2D(Collision2D target)
     {
-        Debug.Log("charge hit");
-        ExecuteEvents.Execute<IDamageable>(target.gameObject, null, (x, y) => x.TakeDamage(_source));
+        if(target.gameObject.tag == Tags.ENEMY)
+        {
+            ExecuteEvents.Execute<IDamageable>(target.gameObject, null, (x, y) => x.TakeDamage(_source));
+        }
     }
 }
