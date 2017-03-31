@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Ability : MonoBehaviour {
 
+    protected CharacterSoundFX _sound;
     [SerializeField]protected string _abilityName;
     [SerializeField]protected float _maxCooldown;
     [SerializeField]protected Sprite _abilityImage;
@@ -31,6 +32,7 @@ public class Ability : MonoBehaviour {
 
     void Awake()
     {
+        _sound = GetComponent<CharacterSoundFX>();
         _player = GetComponent<PlayerCharacter>();
         _abilityIsReady = true;
     }

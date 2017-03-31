@@ -11,7 +11,7 @@ public class ArrowRain : Ability {
     private Vector2 _arrowLocation;
     private Vector2 _leftPos;
     private Vector2 _rightPos;
-    private float _travelTime = 0.55f;
+    private float _travelTime = 1f;
 
     public override void UseAbility()
     {
@@ -48,10 +48,10 @@ public class ArrowRain : Ability {
         //make the player able to move the targeting circle if its there
         if(_circle != null && _usingAbility)
         {
-            if (Input.GetAxis(InputAxes.RIGHT_JOYSTICK_X + _player.PlayerID) != 0 || Input.GetAxis(InputAxes.RIGHT_JOYSTICK_Y + _player.PlayerID) != 0)
+            if (Input.GetAxis(InputAxes.LEFT_JOYSTICK_X + _player.PlayerID) != 0 || Input.GetAxis(InputAxes.LEFT_JOYSTICK_Y + _player.PlayerID) != 0)
             {
-                float x = Input.GetAxis(InputAxes.RIGHT_JOYSTICK_X + _player.PlayerID);
-                float y = Input.GetAxis(InputAxes.RIGHT_JOYSTICK_Y + _player.PlayerID);
+                float x = Input.GetAxis(InputAxes.LEFT_JOYSTICK_X + _player.PlayerID);
+                float y = Input.GetAxis(InputAxes.LEFT_JOYSTICK_Y + _player.PlayerID);
                 Vector2 moveDir = new Vector2(x, y).normalized;
                 _circle.transform.Translate(moveDir * 0.35f);
             }
@@ -82,8 +82,8 @@ public class ArrowRain : Ability {
         if (cancel)
         {
             DestroyImmediate(_circle);//remove targeting circle
+            _player.CanMove = true;
         }
-        _player.CanMove = true;//player is able to move again
         _usingAbility = false;// player is not using ability anymore
         _abilityIsReady = false;//make the ability cooldown
         _cooldown = _maxCooldown;//reset cooldown time
@@ -92,11 +92,11 @@ public class ArrowRain : Ability {
     void ConfirmTarget()
     {
         //Makes the arrows appear from behind the commander
-        if (_circle.transform.position.x < transform.position.x)
+        if (transform.rotation.y == 1)
         {
             _arrowLocation = _rightPos;
         }
-        else
+        else if(transform.rotation.y == 0)
         {
             _arrowLocation = _leftPos;
         }
@@ -106,8 +106,10 @@ public class ArrowRain : Ability {
 
     IEnumerator StartRain()
     {
+        StartCoroutine(StartAnimation());
         //instantiate arrows with targeting circle as parent
         GameObject arrows = Instantiate(_arrows, _arrowLocation, Quaternion.identity, _circle.transform);
+        _sound.PlayAbilitySound();
         //wait for traveltime
         yield return new WaitForSeconds(_travelTime);
         //activate the collider so that it can deal damage
@@ -116,5 +118,13 @@ public class ArrowRain : Ability {
         //leave the collider on for a split second
         yield return new WaitForSeconds(0.25f);
         DestroyImmediate(_circle);
+    }
+
+    IEnumerator StartAnimation()
+    {
+        _player.CharacterAnimator.SetBool("CommandArchers", true);
+        yield return new WaitForSeconds(0.75f);
+        _player.CharacterAnimator.SetBool("CommandArchers", false);
+        _player.CanMove = true;
     }
 }

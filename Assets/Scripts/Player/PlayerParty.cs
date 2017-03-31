@@ -6,13 +6,23 @@ using System.Linq;
 public class PlayerParty : MonoBehaviour {
 
     [SerializeField]private List<Transform> _spawnPoints = new List<Transform>();
+    [SerializeField]private List<Transform> _deadPlayerSpawnPoints = new List<Transform>();
     public static List<GameObject>      Players             = new List<GameObject>();
     public static List<PlayerCharacter> PlayerCharacters    = new List<PlayerCharacter>();
+    private List<GameObject> _ingamePlayers = new List<GameObject>();
 
 	void Awake () {
         SortPlayerLists();
         AddPlayers();   
 	}
+
+    void Update()
+    {
+        if(WaveController.newWave != null)
+        {
+            SetPosition();
+        }
+    }
 
     void AddPlayers()
     {
@@ -21,6 +31,22 @@ public class PlayerParty : MonoBehaviour {
         {
             GameObject Player = Instantiate(Players[i]);
             Player.transform.position = _spawnPoints[i].position;
+            _ingamePlayers.Add(Player);
+        }
+    }
+
+    void SetPosition()
+    {
+        for (int i = 0; i < Players.Count; i++)
+        {
+            if (_ingamePlayers[i].gameObject.tag == Tags.PLAYER)
+            {
+                _ingamePlayers[i].transform.position = _spawnPoints[i].position;
+            }
+            else
+            {
+                _ingamePlayers[i].transform.position = _deadPlayerSpawnPoints[i].position;
+            }
         }
     }
 

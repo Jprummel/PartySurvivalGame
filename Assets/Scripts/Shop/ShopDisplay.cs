@@ -118,7 +118,6 @@ public class ShopDisplay : MonoBehaviour {
     void FindingNemo()
     {
         _matchingPlayer = PlayerParty.PlayerCharacters[_playerToShop];
-        Debug.Log(_matchingPlayer.Name);
         _shopTurns.PlayerToShop = _matchingPlayer.PlayerID;
         if (!_waveController.IsCombatPhase)
         {
