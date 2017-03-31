@@ -5,6 +5,8 @@ using UnityEngine;
 public class CharacterSelectInput : MonoBehaviour {
 
     [SerializeField]private int _playerID;
+    [SerializeField]private MapSelection _mapSelection;
+    private SceneLoader _sceneLoader;
     private CharacterSelect _characterSelect;
     private CharacterSelectUI _characterSelectUI;
     private ShowCharacterInfo _characterInfo;
@@ -12,6 +14,7 @@ public class CharacterSelectInput : MonoBehaviour {
     public int PlayerID { get { return _playerID; } }
 
 	void Start () {
+        _sceneLoader = GameObject.FindGameObjectWithTag(Tags.SCENELOADER).GetComponent<SceneLoader>();
         _characterSelect = GetComponent<CharacterSelect>();
         _characterSelectUI = GetComponent<CharacterSelectUI>();
         _characterInfo = GetComponent<ShowCharacterInfo>();
@@ -45,7 +48,7 @@ public class CharacterSelectInput : MonoBehaviour {
     {
         if (Input.GetButtonDown(InputAxes.START + _playerID))
         {
-            SceneLoader.LoadScene("Jordi");
+            _sceneLoader.ChangeScene(_mapSelection.SelectedMap);
         }
     }
     public void LeaveGame()

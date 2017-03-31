@@ -44,7 +44,6 @@ public class PlayerHud : MonoBehaviour {
     }
 
     private Color _defaultColor = new Color();
-    private Color _inactiveColor = new Color();
 
     public Color DefaultColor
     {
@@ -60,7 +59,6 @@ public class PlayerHud : MonoBehaviour {
     {
         Character.HUD = this;
         _defaultColor = new Color(255, 255, 255, 1);
-        _inactiveColor = new Color(0.20f, 0.20f, 0.20f, 1);
     }
 
     void Update()

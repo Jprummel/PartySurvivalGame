@@ -32,6 +32,9 @@ public class CharacterSelect : MonoBehaviour {
         set { _selectedCharacterNumber = value; }
     }
 
+    [SerializeField]private GameObject _mapSelectionScreen;
+    [SerializeField]private GameObject _characterSelectionScreen;
+
     void Start()
     {
         _characterInfo = GetComponent<ShowCharacterInfo>();
@@ -95,8 +98,13 @@ public class CharacterSelect : MonoBehaviour {
             _characterSelectPlayers._players.Remove(this);  //Removes this player from the character selection player list
             _selectedCharacterNumber = 0; //if player wants to rejoing, start on knight character again
             _characterSelectUI.DisablePortraitsAndNames(); //Deactivates the portraits and names
+        }
 
-        }        
+        if (_characterSelectPlayers.ActivePlayers <= 0)
+        {
+            _mapSelectionScreen.SetActive(true);
+            _characterSelectionScreen.SetActive(false);
+        }
     }
 
     public void ChangePortraitAndName()

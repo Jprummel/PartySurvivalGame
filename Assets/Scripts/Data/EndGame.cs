@@ -6,7 +6,12 @@ public class EndGame : MonoBehaviour {
 
     [SerializeField]private Ranking _ranking;
     [SerializeField]private GameObject _gameOverScreen;
+    private SceneLoader _sceneLoader;
 
+    void Awake()
+    {
+        _sceneLoader = GameObject.FindGameObjectWithTag(Tags.SCENELOADER).GetComponent<SceneLoader>();
+    }
 
     void Update()
     {
@@ -27,7 +32,7 @@ public class EndGame : MonoBehaviour {
         PlayerParty.Players.Clear(); //Clears the players list so there wont be duplicate characters the next round
         PlayerParty.PlayerCharacters.Clear();
         GameInformation.Wave = 1;
-        SceneLoader.LoadScene("MainMenu");        
+        _sceneLoader.ChangeScene("MainMenu");      
     }
 
     public void BackToCharacterSelect()
@@ -35,6 +40,6 @@ public class EndGame : MonoBehaviour {
         PlayerParty.Players.Clear();//Clears the players list so there wont be duplicate characters the next round
         PlayerParty.PlayerCharacters.Clear();
         GameInformation.Wave = 1;
-        SceneLoader.LoadScene("CharacterSelection");
+        _sceneLoader.ChangeScene("CharacterSelection");
     }
 }
