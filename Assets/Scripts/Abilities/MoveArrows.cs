@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveArrows : MonoBehaviour {
 
     private float time = 0;
-    private float timeToReachTarget = 1;
+    private float timeToReachTarget = 0.5f;
     private Vector2 _targetLocation;
     private Vector2 _startingLocation;
 

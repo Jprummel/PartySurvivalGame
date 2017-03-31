@@ -133,7 +133,7 @@ public class Character : MonoBehaviour, IDamageable {
                 StartCoroutine(HitEffect());
                 _soundEffects.PlayHitAudio();
                 _currentHealth -= damageSource.Damage;   //Reduces currenthealth by the amount of damage the source of damage has
-                KnockBack(10, damageSource);
+                KnockBack(10, damageSource, 0.1f);
             }
             if (this.gameObject.tag == Tags.ENEMY & damageSource.gameObject.tag == Tags.PLAYER)
             {
@@ -142,7 +142,7 @@ public class Character : MonoBehaviour, IDamageable {
                 _soundEffects.PlayHitAudio();
                 _currentHealth -= damageSource.Damage;   //Reduces currenthealth by the amount of damage the source of damage has
                 //knockback value/1000
-                KnockBack(0.002f, damageSource);
+                KnockBack(0.002f, damageSource, 0.25f);
                 if (_currentHealth <= 0)
                 {
                     //give gold
@@ -160,7 +160,7 @@ public class Character : MonoBehaviour, IDamageable {
         }
     }
 
-    void KnockBack(float power, Character source)
+    void KnockBack(float power, Character source, float stunTime)
     {
         _canMove = false;
         Vector2 forcePos = transform.position - source.transform.position;
@@ -168,7 +168,7 @@ public class Character : MonoBehaviour, IDamageable {
         clampedPos = new Vector2(Mathf.Clamp(clampedPos.x, -1f, 1f), Mathf.Clamp(clampedPos.y, -0.5f, 0.5f));
         //set min/max value to prevent character being knocked back to china.
         _rgb2d.AddForce(power * (clampedPos), ForceMode2D.Impulse);
-        StartCoroutine(RemoveVelocity());
+        StartCoroutine(RemoveVelocity(stunTime));
     }
 
 
@@ -205,12 +205,12 @@ public class Character : MonoBehaviour, IDamageable {
         _animator.SetBool("Hit",false);
     }
 
-    IEnumerator RemoveVelocity()
+    IEnumerator RemoveVelocity(float stunTime)
     {
         //stop the character from knockback
         yield return new WaitForSeconds(0.08f);
         _rgb2d.velocity = Vector2.zero;
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(stunTime);
         _canMove = true;
     }
 }

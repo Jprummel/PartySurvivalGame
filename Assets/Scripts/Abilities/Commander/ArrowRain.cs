@@ -12,7 +12,7 @@ public class ArrowRain : Ability {
     private Vector2 _arrowLocation;
     private Vector2 _leftPos;
     private Vector2 _rightPos;
-    private float _travelTime = 1f;
+    private float _travelTime = 0.5f;
 
     public override void UseAbility()
     {
