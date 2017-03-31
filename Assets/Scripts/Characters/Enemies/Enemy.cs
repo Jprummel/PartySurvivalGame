@@ -39,8 +39,10 @@ public class Enemy : Character, IDamageable{
 
     IEnumerator DeathRoutine()
     {
-        _animator.SetBool("IsDead", true);
         _isDead = true;
+        CapsuleCollider2D collider = GetComponent<CapsuleCollider2D>();
+        collider.enabled = false;
+        _animator.SetBool("IsDead", true);
         _enemySpawner.spawnedEnemies.Remove(this.gameObject);
         yield return new WaitForSeconds(1f);
         Destroy(this.gameObject);

@@ -18,11 +18,11 @@ public class EnemyMovement : MonoBehaviour {
     }
 
 	void Update () {
-        if (!_enemy.IsDead && _enemyTargetting.Target != null)
+        if (!_enemy.IsDead && _enemyTargetting.Target != null && _enemy.CanMove)
         {
             MoveToPlayer();
             transform.rotation = _rotation;
-        }else if(!_enemy.IsDead && _enemyTargetting.Target == null)
+        }else if(!_enemy.IsDead && _enemyTargetting.Target == null && _enemy.CanMove)
         {
             MoveDown();
         }

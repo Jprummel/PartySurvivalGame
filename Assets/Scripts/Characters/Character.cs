@@ -19,7 +19,7 @@ public class Character : MonoBehaviour, IDamageable {
     protected bool _canMove;
     protected Ranking _ranking;
     protected CharacterSoundFX _soundEffects;
-    private Rigidbody2D _rgb2d;
+    protected Rigidbody2D _rgb2d;
 
     //Visuals
     protected Animator _animator;
@@ -144,7 +144,7 @@ public class Character : MonoBehaviour, IDamageable {
                 _soundEffects.PlayHitAudio();
                 _currentHealth -= damageSource.Damage;   //Reduces currenthealth by the amount of damage the source of damage has
                 //knockback value/1000
-                KnockBack(0.004f, damageSource);
+                KnockBack(0.002f, damageSource);
                 if (_currentHealth <= 0)
                 {
                     //give gold
@@ -164,6 +164,7 @@ public class Character : MonoBehaviour, IDamageable {
 
     void KnockBack(float power, Character source)
     {
+        _canMove = false;
         Vector2 forcePos = transform.position - source.transform.position;
         Vector2 clampedPos = forcePos.normalized;
         clampedPos = new Vector2(Mathf.Clamp(clampedPos.x, -1f, 1f), Mathf.Clamp(clampedPos.y, -0.5f, 0.5f));
@@ -201,7 +202,7 @@ public class Character : MonoBehaviour, IDamageable {
     {
         _animator.SetBool("Hit", true);
         _canMove = false;
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(0.5f);
         _canMove = true;
         _animator.SetBool("Hit",false);
     }
@@ -209,7 +210,8 @@ public class Character : MonoBehaviour, IDamageable {
     IEnumerator RemoveVelocity()
     {
         //stop the character from knockback
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.03f);
         _rgb2d.velocity = Vector2.zero;
+        _canMove = true;
     }
 }
