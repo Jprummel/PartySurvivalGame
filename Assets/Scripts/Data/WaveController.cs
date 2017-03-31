@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class WaveController : MonoBehaviour{
 
-    private GameSoundFX _soundeffect;
     private EnemySpawner _enemySpawner;
 
     public delegate void NewWaveMessage();
@@ -27,7 +26,6 @@ public class WaveController : MonoBehaviour{
 
     void Start()
     {
-        _soundeffect = GetComponent<GameSoundFX>();
         _enemySpawner = GameObject.FindWithTag(Tags.ENEMYSPAWNER).GetComponent<EnemySpawner>();
         _shop = GameObject.FindGameObjectWithTag(Tags.SHOPMANAGER).GetComponent<ShopDisplay>();
     }

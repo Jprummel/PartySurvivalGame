@@ -5,6 +5,7 @@ using UnityEngine.EventSystems;
 
 public class ArrowRain : Ability {
 
+    private Quaternion _rotation;
     [SerializeField]private GameObject _landingCircle;
     [SerializeField]private GameObject _arrows;
     private GameObject _circle;
@@ -48,12 +49,23 @@ public class ArrowRain : Ability {
         //make the player able to move the targeting circle if its there
         if(_circle != null && _usingAbility)
         {
+            _player.CanMove = false;
             if (Input.GetAxis(InputAxes.LEFT_JOYSTICK_X + _player.PlayerID) != 0 || Input.GetAxis(InputAxes.LEFT_JOYSTICK_Y + _player.PlayerID) != 0)
             {
                 float x = Input.GetAxis(InputAxes.LEFT_JOYSTICK_X + _player.PlayerID);
                 float y = Input.GetAxis(InputAxes.LEFT_JOYSTICK_Y + _player.PlayerID);
                 Vector2 moveDir = new Vector2(x, y).normalized;
                 _circle.transform.Translate(moveDir * 0.35f);
+                //face player targetting side
+                if(_circle.transform.position.x < transform.position.x)
+                {
+                    _rotation.y = 180;
+                }
+                else if(_circle.transform.position.x > transform.position.x)
+                {
+                    _rotation.y = 0;
+                }
+                transform.rotation = _rotation;
             }
         }
     }
@@ -108,7 +120,7 @@ public class ArrowRain : Ability {
     {
         StartCoroutine(StartAnimation());
         //instantiate arrows with targeting circle as parent
-        GameObject arrows = Instantiate(_arrows, _arrowLocation, Quaternion.identity, _circle.transform);
+        Instantiate(_arrows, _arrowLocation, Quaternion.identity, _circle.transform);
         _sound.PlayAbilitySound();
         //wait for traveltime
         yield return new WaitForSeconds(_travelTime);

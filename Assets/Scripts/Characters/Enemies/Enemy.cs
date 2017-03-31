@@ -9,10 +9,8 @@ public class Enemy : Character, IDamageable{
     [SerializeField]protected float _damageGrowFactor;
     [SerializeField]protected float _healthGrowFactor;
     [SerializeField]protected float _goldValueGrowFactor;
-    private List<GameObject> _players;
     private EnemySpawner _enemySpawner;
     private Image _healthBar;
-    private float _healthOffset;
     [SerializeField]private Sprite[] _healthBars;
 
     protected override void Awake()
@@ -22,9 +20,7 @@ public class Enemy : Character, IDamageable{
         _goldValue = Mathf.RoundToInt(_goldValue + Mathf.Pow(GameInformation.Wave, _goldValueGrowFactor)); //Scales gold value with wave and growth factor
 
         _enemySpawner = GameObject.FindGameObjectWithTag(Tags.ENEMYSPAWNER).GetComponent<EnemySpawner>();
-        _players = PlayerParty.Players;
         _healthBar = GetComponentInChildren<Image>();
-        _healthOffset = _maxHealth;
         base.Awake();
     }
 

@@ -13,7 +13,6 @@ public class Character : MonoBehaviour, IDamageable {
     [SerializeField]protected float     _attackSpeed;
     [SerializeField]protected float     _goldValue;
     [SerializeField]protected float     _currentHealth;
-    private float _defaultDamage;
 
     protected bool _isDead;
     protected bool _canMove;
@@ -122,7 +121,6 @@ public class Character : MonoBehaviour, IDamageable {
         _hitColor       = new Color(1,0.6f,0.6f);
         _canMove        = true;
         _currentHealth  = _maxHealth;             //Sets the characters current health to its max health on spawn
-        _defaultDamage = Damage;
     }
 
     public void TakeDamage(Character damageSource)
@@ -210,8 +208,9 @@ public class Character : MonoBehaviour, IDamageable {
     IEnumerator RemoveVelocity()
     {
         //stop the character from knockback
-        yield return new WaitForSeconds(0.03f);
+        yield return new WaitForSeconds(0.08f);
         _rgb2d.velocity = Vector2.zero;
+        yield return new WaitForSeconds(0.25f);
         _canMove = true;
     }
 }
