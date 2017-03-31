@@ -2,38 +2,50 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneLoader : MonoBehaviour {
 
     [SerializeField]private float _waitingTime;
-    [SerializeField]private GameObject _fadeScreen;
+    [SerializeField]private Image _fadeScreen;
     private AsyncOperation _async = null;
+    private Color _fadeScreenColor;
 
-    void Update()
+    void Awake()
     {
-        if(_async != null){
-            _fadeScreen.SetActive(true);
-        }
+        _fadeScreenColor = _fadeScreen.color;
+        StartCoroutine(FadeIn());
     }
+
 
     public void ChangeScene(string sceneName)
     {
-        _async = SceneManager.LoadSceneAsync(sceneName);
-
-        //StartCoroutine(ChangeSceneRoutine(sceneName));
+        StartCoroutine(ChangeSceneRoutine(sceneName));
     }
 
     IEnumerator ChangeSceneRoutine(string sceneName)
     {
-        AsyncOperation async = SceneManager.LoadSceneAsync(sceneName);
-        yield return _async;
-        
-        //SceneManager.LoadScene(sceneName);
-
+        float elapsedTime = 0.0f;
+        _fadeScreen.gameObject.SetActive(true);
+        _async = SceneManager.LoadSceneAsync(sceneName);
+        while (!_async.isDone)
+        {            
+            elapsedTime += Time.deltaTime;
+            _fadeScreenColor.a = Mathf.Clamp01(elapsedTime/ 1.5f);
+            _fadeScreen.color = _fadeScreenColor;
+            yield return null;
+        }
     }
 
-    /*public static void LoadScene(string sceneName)
+    IEnumerator FadeIn()
     {
-        SceneManager.LoadScene(sceneName);
-    }*/
+        float elapsedTime = 1.5f;
+        while (elapsedTime > 0)
+        {
+            elapsedTime -= Time.deltaTime;
+            _fadeScreenColor.a = Mathf.Clamp01(elapsedTime / 1.5f);
+            _fadeScreen.color = _fadeScreenColor;
+            yield return null;
+        }
+    }
 }
