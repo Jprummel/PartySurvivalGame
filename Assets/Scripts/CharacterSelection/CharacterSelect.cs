@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class CharacterSelect : MonoBehaviour {
 
     //Script imports
+    [SerializeField]private SelectionScreen _selectionScreen;
     private CharacterSelectPlayers _characterSelectPlayers;
     private ShowCharacterInfo _characterInfo;
     private CharacterSelectUI _characterSelectUI;
@@ -15,8 +16,9 @@ public class CharacterSelect : MonoBehaviour {
     [SerializeField]private List<GameObject> _characters = new List<GameObject>();
     //UI
     [SerializeField]private GameObject _joinGameImage;
-    [SerializeField]private GameObject _readyText;    
-    
+    [SerializeField]private GameObject _readyText;
+
+    private bool _characterSelectState;
     private bool _playerIsActive;
     private bool _ready;
     //Inputs
@@ -35,6 +37,12 @@ public class CharacterSelect : MonoBehaviour {
     [SerializeField]private GameObject _mapSelectionScreen;
     [SerializeField]private GameObject _characterSelectionScreen;
 
+    public bool CharacterSelectState
+    {
+        get { return _characterSelectState; }
+        set { _characterSelectState = value; }
+    }
+
     void Start()
     {
         _characterInfo = GetComponent<ShowCharacterInfo>();
@@ -47,24 +55,27 @@ public class CharacterSelect : MonoBehaviour {
 
     void Update()
     {
-        _input.JoinGame();
-        _input.LeaveGame();
-        if (_playerIsActive && _inputDelay <= 0) // If player is active but not ready & input delay timer is zero
+        if (_characterSelectState)
         {
-            _input.ShowPlayerInfo();
-            if (!_ready)
+            _input.JoinGame();
+            _input.LeaveGame();
+            if (_playerIsActive && _inputDelay <= 0) // If player is active but not ready & input delay timer is zero
             {
-                _input.NextCharacter();
-                _input.PreviousCharacter();
-                _input.SelectCharacter();
-            }            
+                _input.ShowPlayerInfo();
+                if (!_ready)
+                {
+                    _input.NextCharacter();
+                    _input.PreviousCharacter();
+                    _input.SelectCharacter();
+                }
+            }
+            if (_characterSelectPlayers.ReadyToStart)
+            {
+                _input.ShowPlayerInfo();
+                _input.StartGame();
+            }
+            InputDelayTimer();
         }
-        if (_characterSelectPlayers.ReadyToStart)
-        {
-            _input.ShowPlayerInfo();
-            _input.StartGame();
-        }
-        InputDelayTimer();
     }
 
     public void JoinGame()
@@ -102,8 +113,7 @@ public class CharacterSelect : MonoBehaviour {
 
         if (_characterSelectPlayers.ActivePlayers <= 0)
         {
-            _mapSelectionScreen.SetActive(true);
-            _characterSelectionScreen.SetActive(false);
+            StartCoroutine(_selectionScreen.SwitchToMapSelect());
         }
     }
 

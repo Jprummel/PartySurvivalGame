@@ -16,6 +16,6 @@ public class Tags : MonoBehaviour {
     public const string PLAYERHUDS = "PlayerHUDs";
     public const string OBSTACLE = "Obstacle";
     public const string SCENELOADER = "SceneLoader";
-    public const string FADEPANEL = "FadePanel";
+    public const string FADEROBJECT = "FaderObject";
     public const string MAPSELECTION = "MapSelection";
 }

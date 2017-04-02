@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class UpgradeDamage : ShopItem, IUpgrade {
-    
+
     public void Upgrade()
     {
         if (_cost <= _display.MatchingPlayer.Gold)
