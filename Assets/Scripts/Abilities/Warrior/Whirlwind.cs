@@ -14,7 +14,7 @@ public class Whirlwind : Ability {
 
     public override void UseAbility()
     {
-        if (_abilityIsReady)
+        if (_abilityIsReady && !_usingAbility)
         {
             StartCoroutine(WhirlwindRoutine());
         }
@@ -29,6 +29,7 @@ public class Whirlwind : Ability {
         yield return new WaitForSeconds(1);
         _player.CharacterAnimator.SetBool("UseAbility", false);
         _cooldown = _maxCooldown;
+        _usingAbility = false;
         _abilityIsReady = false;
     }
 }

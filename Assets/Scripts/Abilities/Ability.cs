@@ -30,6 +30,11 @@ public class Ability : MonoBehaviour {
         get { return _cooldown; }
     }
 
+    public float MaxCooldown
+    {
+        get { return _maxCooldown; }
+    }
+
     void Awake()
     {
         _sound = GetComponent<CharacterSoundFX>();

@@ -94,5 +94,6 @@ public class PlayerCharacter : Character {
         _deadIndicator.SetActive(true);
         _movementSpeed = 4;
         HUD.SetNewHealthBar();
+        this.gameObject.layer = LayerMask.NameToLayer("DeadPlayer");
     }
 }
