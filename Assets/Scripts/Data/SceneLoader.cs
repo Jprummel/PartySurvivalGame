@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class SceneLoader : MonoBehaviour {
 
     [SerializeField]private float _waitingTime;
+    [SerializeField]private Image _fadeScreen;
     private Fades _fades;
     private AsyncOperation _async = null;
 
@@ -19,7 +20,6 @@ public class SceneLoader : MonoBehaviour {
     public void ChangeScene(string sceneName)
     {
         _async = SceneManager.LoadSceneAsync(sceneName);
-        StartCoroutine(_fades.FadeOut(true,1.5f));
-        //_fades.FadeOut(false);
+        StartCoroutine(_fades.FadeOut(_fadeScreen,true,1.5f));
     }
 }

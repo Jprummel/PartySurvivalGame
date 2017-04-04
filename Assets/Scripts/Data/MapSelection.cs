@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class MapSelection : MonoBehaviour {
 
     [SerializeField]private SelectionScreen _selectionScreen;
+    [SerializeField]private CharacterSelect _characterSelect;
     [SerializeField]private GameObject _characterSelectionScreen;
     [SerializeField]private GameObject _mapSelectionScreen;
     [SerializeField]private GameObject _returnToMenuScreen;
@@ -26,6 +27,11 @@ public class MapSelection : MonoBehaviour {
         _sceneLoader = GameObject.FindGameObjectWithTag(Tags.SCENELOADER).GetComponent<SceneLoader>();
     }
 
+    void Update()
+    {
+        EnableReturnToMenuScreen();
+    }
+
     public void SelectMap(string levelToLoad)
     {
         _selectedMap = levelToLoad;
@@ -35,10 +41,13 @@ public class MapSelection : MonoBehaviour {
 
     void EnableReturnToMenuScreen()
     {
-        if (Input.GetButtonDown(InputAxes.XBOX_B + "1"))
+        if (!_characterSelect.CharacterSelectState)
         {
-            _eventSystem.SetActive(false);
-            _returnToMenuScreen.SetActive(true);
+            if (Input.GetButtonDown(InputAxes.XBOX_B + "1"))
+            {
+                _eventSystem.SetActive(false);
+                _returnToMenuScreen.SetActive(true);
+            }
         }
     }
 

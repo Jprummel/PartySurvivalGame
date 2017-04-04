@@ -71,6 +71,7 @@ public class Charge : Ability {
         _usingAbility = true;
         _player.CanMove = false;   
         //start animation spaghettios
+        _sound.PlayAbilitySound();
         _player.CharacterAnimator.SetBool("WindUp",true);
         //start charge
         _charging = true;

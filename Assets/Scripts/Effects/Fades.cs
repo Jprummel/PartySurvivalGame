@@ -11,27 +11,14 @@ public class Fades : MonoBehaviour {
 
 	void Awake () {
         _fadeScreenColor = _fadeScreen.color;
-        StartCoroutine(FadeIn());
+        StartCoroutine(FadeIn(_fadeScreen));
 	}
 
-    public IEnumerator LoadingScreenFadeOut()
+    public IEnumerator FadeOut(Image fadeImage, bool isLoadingScreen, float maxFadeTime)
     {
+        Color fadeImageColor = fadeImage.color;
         float elapsedTime = 0.0f;
-        _fadeScreen.gameObject.SetActive(true);
-        _loadingObjects.SetActive(true);
-        while (elapsedTime <= 1.5f)
-        {
-            elapsedTime += Time.deltaTime;
-            _fadeScreenColor.a = Mathf.Clamp01(elapsedTime / 1.5f);
-            _fadeScreen.color = _fadeScreenColor;
-            yield return null;
-        }
-    }
-
-    public IEnumerator FadeOut(bool isLoadingScreen, float maxFadeTime)
-    {
-        float elapsedTime = 0.0f;
-        _fadeScreen.gameObject.SetActive(true);
+        fadeImage.gameObject.SetActive(true);
 
         if (isLoadingScreen)
         {
@@ -40,62 +27,23 @@ public class Fades : MonoBehaviour {
         while (elapsedTime <= 1.5f)
         {
             elapsedTime += Time.deltaTime;
-            _fadeScreenColor.a = Mathf.Clamp01(elapsedTime / maxFadeTime);
-            _fadeScreen.color = _fadeScreenColor;
+            fadeImageColor.a = Mathf.Clamp01(elapsedTime / maxFadeTime);
+            fadeImage.color = fadeImageColor;
             yield return null;
         }
     }
 
-    public IEnumerator FadeTransition()
+    public IEnumerator FadeIn(Image fadeImage)
     {
-        float elapsedTime = 0.0f;
-        _fadeScreen.gameObject.SetActive(true);
-
-        while (elapsedTime <= 1.5f)
-        {
-            elapsedTime += Time.deltaTime;
-            _fadeScreenColor.a = Mathf.Clamp01(elapsedTime / 1.5f);
-            _fadeScreen.color = _fadeScreenColor;
-        }
-        yield return new WaitForSeconds(1.5f);
-        while (elapsedTime > 0)
-        {
-            elapsedTime -= Time.deltaTime;
-            _fadeScreenColor.a = Mathf.Clamp01(elapsedTime / 1.5f);
-            _fadeScreen.color = _fadeScreenColor;
-        }
-
-    }
-
-    public IEnumerator FadeIn()
-    {
-        _fadeScreen.gameObject.SetActive(true);
+        Color fadeImageColor = fadeImage.color;
+        fadeImage.gameObject.SetActive(true);
         float elapsedTime = 1.5f;
         while (elapsedTime > 0)
         {
             elapsedTime -= Time.deltaTime;
-            _fadeScreenColor.a = Mathf.Clamp01(elapsedTime / 1.5f);
-            _fadeScreen.color = _fadeScreenColor;
+            fadeImageColor.a = Mathf.Clamp01(elapsedTime / 1.5f);
+            fadeImage.color = fadeImageColor;
             yield return null;
         }
-    }
-
-    public IEnumerator FadeTransition(bool doneFading)
-    {
-        float elapsedTime = 0.0f;
-        //bool fadeOut = true;
-        while (!doneFading)
-        {
-            elapsedTime += Time.deltaTime;
-            _fadeScreenColor.a = Mathf.Clamp01(elapsedTime / 1.5f);
-            _fadeScreen.color = _fadeScreenColor;
-        }
-        /*while (!fadeOut && elapsedTime > 0)
-        {
-            elapsedTime -= Time.deltaTime;
-            _fadeScreenColor.a = Mathf.Clamp01(elapsedTime / 1.5f);
-            _fadeScreen.color = _fadeScreenColor;
-        }*/
-        yield return null;
     }
 }

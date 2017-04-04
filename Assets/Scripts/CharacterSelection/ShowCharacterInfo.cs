@@ -30,19 +30,23 @@ public class ShowCharacterInfo : MonoBehaviour {
         {
             case 0:
                 _classRole.text = "Class Role" + "\n" + "Tank";
-                _classDescription.text = "Knights are frontline soldiers that can take a beating while protecting their allies.";
+                _classDescription.text = "Knights are frontline soldiers that can take a beating while protecting their allies." + "\n" +
+                "Ability : Charge";
                 break;
             case 1:
                 _classRole.text = "Class Role"+ "\n" + "DPS";
-                _classDescription.text = "Commanders have the power to bring a hail of arrows down on their enemies";
+                _classDescription.text = "Commanders have the power to bring a hail of arrows down on their enemies" + "\n" +
+                "Ability : Arrow Rain";
                 break;
             case 2:
                 _classRole.text = "Class Role" + "\n" + "DPS";
-                _classDescription.text = "Warriors are OP just pick this";
+                _classDescription.text = "Warriors tend to be flexible on the battlefield they can deal devastating blows while taking a few hits" + "\n" + 
+                "Ability : Whirlwind";
                 break;
             case 3:
                 _classRole.text = "Class Role" + "\n" + "Support";
-                _classDescription.text = "Wardrummers use special rhythmic techniques to heal their allies";
+                _classDescription.text = "Wardrummers use special rhythmic techniques to heal their allies" + "\n" +
+                "Ability : Healing Rhythm";
                 break;
         }
     }
