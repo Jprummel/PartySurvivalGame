@@ -31,7 +31,7 @@ public class PlayerAttack : MonoBehaviour {
 
     public void HeavyAttack()
     {
-        if (_readyToAttack)
+        if (_readyToAttack & !_playerCharacter.Ability.UsingAbility)
         {
             StartCoroutine(AttackState(3));
             StartCoroutine(HeavyAttackRoutine(2));

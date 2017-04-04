@@ -14,6 +14,8 @@ public class Character : MonoBehaviour, IDamageable {
     [SerializeField]protected float     _goldValue;
     [SerializeField]protected float     _currentHealth;
 
+    private GameObject _lastSource;
+
     protected bool _isDead;
     protected bool _canMove;
     protected Ranking _ranking;
@@ -124,39 +126,43 @@ public class Character : MonoBehaviour, IDamageable {
     }
 
     public void TakeDamage(Character damageSource)
-    {
-        if (_currentHealth > 0)
+    {   //checks if source of damage is not the last enemy/player who dealt damage
+        if(damageSource.gameObject != _lastSource)
         {
-            //attack checks for collision with player or enemy
-            if (this.gameObject.tag == Tags.PLAYER & damageSource.gameObject.tag == Tags.ENEMY & !_invincible)
+            if (_currentHealth > 0)
             {
-                StartCoroutine(HitEffect());
-                _soundEffects.PlayHitAudio();
-                _currentHealth -= damageSource.Damage;   //Reduces currenthealth by the amount of damage the source of damage has
-                KnockBack(10, damageSource, 0.1f);
-            }
-            if (this.gameObject.tag == Tags.ENEMY & damageSource.gameObject.tag == Tags.PLAYER)
-            {
-                StartCoroutine(HitRoutine());
-                StartCoroutine(HitEffect());
-                _soundEffects.PlayHitAudio();
-                _currentHealth -= damageSource.Damage;   //Reduces currenthealth by the amount of damage the source of damage has
-                //knockback value/1000
-                KnockBack(0.002f, damageSource, 0.25f);
-                if (_currentHealth <= 0)
+                //attack checks for collision with player or enemy
+                if (this.gameObject.tag == Tags.PLAYER & damageSource.gameObject.tag == Tags.ENEMY & !_invincible)
                 {
-                    //give gold
-                    foreach (PlayerCharacter player in PlayerParty.PlayerCharacters)
-                    {
-                        player.Gold += this.GoldValue;
-                        player.TotalGoldEarned += this.GoldValue;
-                    }
-                    PlayerCharacter source = damageSource.GetComponent<PlayerCharacter>();
-                    source.Gold += this.GoldValue;
-                    source.TotalGoldEarned += this.GoldValue;
-                    _ranking.UpdateRanks();
+                    StartCoroutine(HitEffect());
+                    _soundEffects.PlayHitAudio();
+                    _currentHealth -= damageSource.Damage;   //Reduces currenthealth by the amount of damage the source of damage has
+                    KnockBack(10, damageSource, 0.1f);
                 }
-            }
+                if (this.gameObject.tag == Tags.ENEMY & damageSource.gameObject.tag == Tags.PLAYER)
+                {
+                    StartCoroutine(HitRoutine());
+                    StartCoroutine(HitEffect());
+                    _soundEffects.PlayHitAudio();
+                    _currentHealth -= damageSource.Damage;   //Reduces currenthealth by the amount of damage the source of damage has
+                                                             //knockback value/1000
+                    KnockBack(0.002f, damageSource, 0.15f);
+                    if (_currentHealth <= 0)
+                    {
+                        //give gold
+                        foreach (PlayerCharacter player in PlayerParty.PlayerCharacters)
+                        {
+                            player.Gold += this.GoldValue;
+                            player.TotalGoldEarned += this.GoldValue;
+                        }
+                        PlayerCharacter source = damageSource.GetComponent<PlayerCharacter>();
+                        source.Gold += this.GoldValue;
+                        source.TotalGoldEarned += this.GoldValue;
+                        _ranking.UpdateRanks();
+                    }
+                }
+            }//wait 0.25s to be able to get hit again by the same target
+            StartCoroutine(ResetDamageSource(damageSource.gameObject));
         }
     }
 
@@ -194,6 +200,13 @@ public class Character : MonoBehaviour, IDamageable {
                 yield return new WaitForSeconds(smoothness);
             }
         }
+    }
+
+    IEnumerator ResetDamageSource(GameObject source)
+    {
+        _lastSource = source;
+        yield return new WaitForSeconds(0.3f);
+        _lastSource = null;
     }
 
     IEnumerator HitRoutine()

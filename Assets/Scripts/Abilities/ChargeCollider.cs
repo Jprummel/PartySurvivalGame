@@ -13,11 +13,19 @@ public class ChargeCollider : MonoBehaviour {
             _source = GetComponentInParent<Character>();
         }
     }
+
+    void Update()
+    {
+        if(_source.tag == Tags.ENEMY)
+        {
+            transform.gameObject.layer = LayerMask.NameToLayer("EnemyCharge");
+        }
+    }
 	
 	// Update is called once per frame
 	void OnCollisionEnter2D(Collision2D target)
     {
-        if(target.gameObject.tag == Tags.ENEMY)
+        if (_source.tag != target.gameObject.tag)
         {
             ExecuteEvents.Execute<IDamageable>(target.gameObject, null, (x, y) => x.TakeDamage(_source));
         }

@@ -18,7 +18,9 @@ public class PlayerHud : MonoBehaviour {
     [SerializeField]private Text _gold;
     [SerializeField]private Text _rankText;
     [SerializeField]private Image _abilityImage;
-    [SerializeField]private Text _abilityCooldownText;
+    //[SerializeField]private Text _abilityCooldownText;
+    [SerializeField]private Image _abilityCooldownSlider;
+
     public Image Portrait
     { 
         get {return _portrait;}
@@ -90,14 +92,21 @@ public class PlayerHud : MonoBehaviour {
 
     void ShowAbilityCooldown()
     {
-        if (_playerCharacter.Ability.Cooldown > 0)
+        float cooldown = _playerCharacter.Ability.Cooldown;
+        float maxCooldown = _playerCharacter.Ability.MaxCooldown;
+
+        if(!_playerCharacter.Ability.AbilityIsReady)
+        {
+            _abilityCooldownSlider.fillAmount = cooldown / maxCooldown; 
+        }
+        /*if (_playerCharacter.Ability.Cooldown > 0)
         {
             _abilityCooldownText.text = _playerCharacter.Ability.Cooldown.ToString("N0"); //Shows player abilities cooldown (without decimals)
         }
         else if (_playerCharacter.Ability.Cooldown <= 0)
         {
             _abilityCooldownText.text = ""; //If ability is not on cooldown dont show text
-        }
+        }*/
     }
 
     void SetGold()

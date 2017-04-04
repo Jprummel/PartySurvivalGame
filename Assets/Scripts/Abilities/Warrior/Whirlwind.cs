@@ -14,7 +14,7 @@ public class Whirlwind : Ability {
 
     public override void UseAbility()
     {
-        if (_abilityIsReady)
+        if (_abilityIsReady && !_usingAbility)
         {
             StartCoroutine(WhirlwindRoutine());
         }
@@ -23,12 +23,13 @@ public class Whirlwind : Ability {
     IEnumerator WhirlwindRoutine()
     {
         _usingAbility = true;
-        StartCoroutine(SpecialAttackDamage(0.75f,1));
+        StartCoroutine(SpecialAttackDamage(0.8f,1));
         _player.CharacterAnimator.SetBool("UseAbility",true);
         _sound.PlayAbilitySound();
         yield return new WaitForSeconds(1);
         _player.CharacterAnimator.SetBool("UseAbility", false);
         _cooldown = _maxCooldown;
+        _usingAbility = false;
         _abilityIsReady = false;
     }
 }
