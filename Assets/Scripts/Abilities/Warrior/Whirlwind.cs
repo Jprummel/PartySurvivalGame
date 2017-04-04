@@ -23,7 +23,7 @@ public class Whirlwind : Ability {
     IEnumerator WhirlwindRoutine()
     {
         _usingAbility = true;
-        StartCoroutine(SpecialAttackDamage(0.75f,1));
+        StartCoroutine(SpecialAttackDamage(0.8f,1));
         _player.CharacterAnimator.SetBool("UseAbility",true);
         _sound.PlayAbilitySound();
         yield return new WaitForSeconds(1);
