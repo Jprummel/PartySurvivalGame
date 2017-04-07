@@ -11,6 +11,7 @@ public class EnemyTargetting : MonoBehaviour {
     private GameObject _target;
     private bool _obstacle;
     private Vector3 _posRelative;
+    private GameObject _lastObstacle;
 
     public Vector3 PosRelative
     {
@@ -33,7 +34,15 @@ public class EnemyTargetting : MonoBehaviour {
     {
         if (coll.gameObject.tag == Tags.OBSTACLE)
         {
-            _posRelative = transform.InverseTransformPoint(coll.gameObject.transform.position);
+            if(_lastObstacle != null && _lastObstacle.name != coll.gameObject.name)
+            {
+                _posRelative = transform.InverseTransformPoint(coll.gameObject.transform.position);
+                _lastObstacle = coll.gameObject;
+            }
+            else if(_lastObstacle == null)
+            {
+                _lastObstacle = coll.gameObject;
+            }
             //Debug.Log(_posRelative.y);
             _target = null;
             _obstacle = true;

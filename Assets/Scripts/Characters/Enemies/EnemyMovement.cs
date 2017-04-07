@@ -9,6 +9,7 @@ public class EnemyMovement : MonoBehaviour {
     private EnemyTargetting _enemyTargetting;
     private Quaternion _rotation;
     private Rigidbody2D _rgb2d;
+    private bool _hasDirection;
 
     void Awake()
     {
@@ -24,30 +25,27 @@ public class EnemyMovement : MonoBehaviour {
             transform.rotation = _rotation;
         }else if(!_enemy.IsDead && _enemyTargetting.Target == null && _enemy.CanMove)
         {
-            Debug.Log("move around object");
             MoveAroundObject();
         }
 	}
 
     void MoveAroundObject()
     {
-        float xDir = transform.forward.magnitude;
+        /*float xDir = transform.forward.magnitude;
         if(_rotation.y == 180)
         {
             xDir = -xDir;
-        }
-        if (_enemyTargetting.PosRelative.y < 0)
-        {
-            Debug.Log("down");
-            Vector2 dir = new Vector2(0, -5);
-            _rgb2d.velocity = dir;
-        }
-        else if (_enemyTargetting.PosRelative.y > 0)
-        {
-            Debug.Log("up");
-            Vector2 dir = new Vector2(0, 5);
-            _rgb2d.velocity = dir;
-        }
+        }*/
+            if (_enemyTargetting.PosRelative.y < 0)
+            {
+                Vector2 dir = new Vector2(0, 3);
+                _rgb2d.velocity = dir;
+            }
+            else if (_enemyTargetting.PosRelative.y > 0)
+            {
+                Vector2 dir = new Vector2(0, -3);
+                _rgb2d.velocity = dir;
+            }
     }
 
 
