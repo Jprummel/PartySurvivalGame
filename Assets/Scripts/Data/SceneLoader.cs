@@ -10,6 +10,7 @@ public class SceneLoader : MonoBehaviour {
     [SerializeField]private Image _fadeScreen;
     private Fades _fades;
     private AsyncOperation _async = null;
+    private bool _isLoading;
 
     void Awake()
     {
@@ -19,7 +20,11 @@ public class SceneLoader : MonoBehaviour {
 
     public void ChangeScene(string sceneName)
     {
-        _async = SceneManager.LoadSceneAsync(sceneName);
-        StartCoroutine(_fades.FadeOut(_fadeScreen,true,1.5f));
+        if (!_isLoading)
+        {
+            _async = SceneManager.LoadSceneAsync(sceneName);
+            StartCoroutine(_fades.FadeOut(_fadeScreen, true, 1.5f));
+            _isLoading = true;
+        }
     }
 }

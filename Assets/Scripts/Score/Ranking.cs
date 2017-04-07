@@ -8,6 +8,7 @@ public class Ranking : MonoBehaviour {
 
     [SerializeField]private List<GameObject> _rankingObjects = new List<GameObject>();
     [SerializeField]private List<Image> _playerPortraits = new List<Image>();
+    [SerializeField]private List<Text> _goldEarned = new List<Text>();
     private List<PlayerCharacter> _players = new List<PlayerCharacter>();
 
 	void Start () {
@@ -50,6 +51,7 @@ public class Ranking : MonoBehaviour {
         for (int i = 0; i < _players.Count; i++)
         {
             _playerPortraits[i].sprite = _players[i].Portrait;
+            _goldEarned[i].text = "Earned" + "\n" + _players[i].TotalGoldEarned;            
         }
     }
 

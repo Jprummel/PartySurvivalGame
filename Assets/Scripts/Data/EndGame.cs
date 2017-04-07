@@ -29,16 +29,12 @@ public class EndGame : MonoBehaviour {
 
     public void BackToMenu()
     {
-        PlayerParty.Players.Clear(); //Clears the players list so there wont be duplicate characters the next round
-        PlayerParty.PlayerCharacters.Clear();
         GameInformation.Wave = 1;
         _sceneLoader.ChangeScene("MainMenu");      
     }
 
     public void BackToCharacterSelect()
     {
-        PlayerParty.Players.Clear();//Clears the players list so there wont be duplicate characters the next round
-        PlayerParty.PlayerCharacters.Clear();
         GameInformation.Wave = 1;
         _sceneLoader.ChangeScene("CharacterSelection");
     }
