@@ -24,20 +24,32 @@ public class EnemyMovement : MonoBehaviour {
             transform.rotation = _rotation;
         }else if(!_enemy.IsDead && _enemyTargetting.Target == null && _enemy.CanMove)
         {
-            MoveDown();
+            Debug.Log("move around object");
+            MoveAroundObject();
         }
 	}
 
-    void MoveDown()
+    void MoveAroundObject()
     {
         float xDir = transform.forward.magnitude;
         if(_rotation.y == 180)
         {
             xDir = -xDir;
         }
-        Vector2 dir = new Vector2(/*-xDir / 2*/ 0,-2f);
-        _rgb2d.velocity = dir;
+        if (_enemyTargetting.PosRelative.y < 0)
+        {
+            Debug.Log("down");
+            Vector2 dir = new Vector2(0, -5);
+            _rgb2d.velocity = dir;
+        }
+        else if (_enemyTargetting.PosRelative.y > 0)
+        {
+            Debug.Log("up");
+            Vector2 dir = new Vector2(0, 5);
+            _rgb2d.velocity = dir;
+        }
     }
+
 
     void MoveToPlayer()
     {
