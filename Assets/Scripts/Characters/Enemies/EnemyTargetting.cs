@@ -33,22 +33,21 @@ public class EnemyTargetting : MonoBehaviour {
     void OnCollisionStay2D(Collision2D coll)
     {
         if (coll.gameObject.tag == Tags.OBSTACLE)
-        {
-            if(_lastObstacle != null && _lastObstacle.name != coll.gameObject.name)
             {
-                _posRelative = transform.InverseTransformPoint(coll.gameObject.transform.position);
-                _lastObstacle = coll.gameObject;
+                if (_lastObstacle != null && _lastObstacle.name != coll.gameObject.name)
+                {
+                    _posRelative = transform.InverseTransformPoint(coll.gameObject.transform.position);
+                    _lastObstacle = coll.gameObject;
+                }
+                else if (_lastObstacle == null)
+                {
+                    _lastObstacle = coll.gameObject;
+                }
+                _target = null;
+                _obstacle = true;
+                _oldDist = 100;
             }
-            else if(_lastObstacle == null)
-            {
-                _lastObstacle = coll.gameObject;
-            }
-            //Debug.Log(_posRelative.y);
-            _target = null;
-            _obstacle = true;
-            _oldDist = 100;
-        }
-    }
+    }    
 
     void Start()
     {
@@ -59,17 +58,17 @@ public class EnemyTargetting : MonoBehaviour {
 
     void CalculateTarget()
     {
-        for (int i = 0; i < _players.Count; i++)
-        {
-            if (_players[i].activeSelf)
+            for (int i = 0; i < _players.Count; i++)
             {
-                float newDist = Vector2.Distance(transform.position, _players[i].transform.position);
-                if (newDist < _oldDist)
+                if (_players[i].activeSelf)
                 {
-                    _target = _players[i];
+                    float newDist = Vector2.Distance(transform.position, _players[i].transform.position);
+                    if (newDist < _oldDist)
+                    {
+                        _target = _players[i];
+                    }
+                    _oldDist = newDist;
                 }
-                _oldDist = newDist;
             }
-        }
     }
 }
