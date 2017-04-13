@@ -10,7 +10,8 @@ public class Ability : MonoBehaviour {
     [SerializeField]protected float _maxCooldown;
     [SerializeField]protected Sprite _abilityImage;
     protected PlayerCharacter _player;
-    protected bool _abilityIsReady;    
+    protected bool _abilityIsReady;
+    protected bool _canUseAbility;
     protected float _cooldown;
     protected float _damageModifier;
     protected bool _usingAbility;
@@ -40,11 +41,18 @@ public class Ability : MonoBehaviour {
         _sound = GetComponent<CharacterSoundFX>();
         _player = GetComponent<PlayerCharacter>();
         _abilityIsReady = true;
+        _canUseAbility = true;
     }
 
     public bool AbilityIsReady
     {
         get { return _abilityIsReady; }
+    }
+
+    public bool CanUseAbility
+    {
+        get { return _canUseAbility; }
+        set { _canUseAbility = value; }
     }
 
     protected virtual void Update()
@@ -55,6 +63,7 @@ public class Ability : MonoBehaviour {
             if (_cooldown <= 0)
             {
                 _abilityIsReady = true;
+                _canUseAbility = true;
             }
         }
     }

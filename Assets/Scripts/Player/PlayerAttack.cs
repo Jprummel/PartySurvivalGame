@@ -58,9 +58,11 @@ public class PlayerAttack : MonoBehaviour {
         float defaultDamage = _playerCharacter.Damage;
 
         _playerCharacter.CanMove = false;
+        _playerCharacter.Ability.CanUseAbility = false;
         _playerCharacter.Damage = _playerCharacter.Damage * modifier;
         yield return new WaitForSeconds(1);
         _playerCharacter.Damage = defaultDamage;
+        _playerCharacter.Ability.CanUseAbility = true;
         _playerCharacter.CanMove = true;
     }
 }

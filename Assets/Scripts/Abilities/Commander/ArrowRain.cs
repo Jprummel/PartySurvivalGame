@@ -16,7 +16,7 @@ public class ArrowRain : Ability {
 
     public override void UseAbility()
     {
-        if (!_usingAbility && _abilityIsReady)
+        if (!_usingAbility && _canUseAbility && _abilityIsReady)
         {
             //instantiate targeting circle
             StartTargeting();

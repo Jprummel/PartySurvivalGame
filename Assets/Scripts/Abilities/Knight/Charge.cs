@@ -35,7 +35,7 @@ public class Charge : Ability {
 
     public override void UseAbility()
     {
-        if(!_usingAbility && _abilityIsReady)
+        if(!_usingAbility && _canUseAbility && _abilityIsReady)
         {
             StartCoroutine(ChargeRoutine());
         }

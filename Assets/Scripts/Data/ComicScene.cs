@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ComicScene : MonoBehaviour {
 
     [SerializeField]private string _levelToLoad;
+    [SerializeField]private List<GameObject> _continueObjects = new List<GameObject>();
     [SerializeField]private List<Image> _comicPanels = new List<Image>();
     private Fades _fades;
     private SceneLoader _sceneLoader;
@@ -33,6 +34,10 @@ public class ComicScene : MonoBehaviour {
             }
             else if (_currentPanel == _comicPanels.Count)
             {
+                for (int i = 0; i < _continueObjects.Count; i++)
+                {
+                    _continueObjects[i].SetActive(false);
+                }
                 _sceneLoader.ChangeScene(_levelToLoad);
             }
         }

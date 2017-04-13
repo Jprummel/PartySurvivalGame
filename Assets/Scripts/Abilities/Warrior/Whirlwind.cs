@@ -14,7 +14,7 @@ public class Whirlwind : Ability {
 
     public override void UseAbility()
     {
-        if (_abilityIsReady && !_usingAbility)
+        if (_abilityIsReady && _canUseAbility && !_usingAbility)
         {
             StartCoroutine(WhirlwindRoutine());
         }
