@@ -6,6 +6,17 @@ using UnityEngine.EventSystems;
 
 public class PlayerCharacter : Character {
 
+    //Attacks
+    [SerializeField]protected int _maxLightAttackState;
+    protected int _lightAttackState = 1;
+
+    public int MaxLightAttackState { get { return _maxLightAttackState; } }
+    public int LightAttackState 
+    { 
+        get { return _lightAttackState; }
+        set { _lightAttackState = value; }
+    }
+
     //Ability
     protected Ability _ability;
     public Ability Ability { get { return _ability; }}

@@ -22,10 +22,14 @@ public class PlayerAttack : MonoBehaviour {
     {
         if (_readyToAttack)
         {
-            StartCoroutine(AttackState(1));
+            StartCoroutine(AttackState(_playerCharacter.LightAttackState));
             _readyToAttack = false;
-            
-            StartCoroutine(Cooldown(0.6f));
+            _playerCharacter.LightAttackState++;
+            if (_playerCharacter.LightAttackState > _playerCharacter.MaxLightAttackState)
+            {
+                _playerCharacter.LightAttackState = 1;
+            }
+            StartCoroutine(Cooldown(0.3f));
         }
     }
 
