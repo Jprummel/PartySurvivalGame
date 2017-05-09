@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class PlayerAttack : MonoBehaviour {
 
     PlayerCharacter _playerCharacter;
-
+    private float _comboResetTimer;
     private bool _readyToAttack = true;
     public bool ReadyToAttack
     {
@@ -18,6 +18,10 @@ public class PlayerAttack : MonoBehaviour {
         _playerCharacter = GetComponent<PlayerCharacter>();
     }
 
+    void Update(){
+        StartComboResetTimer();
+    }
+
     public void Attack()
     {
         if (_readyToAttack)
@@ -25,6 +29,7 @@ public class PlayerAttack : MonoBehaviour {
             StartCoroutine(AttackState(_playerCharacter.LightAttackState));
             _readyToAttack = false;
             _playerCharacter.LightAttackState++;
+            _comboResetTimer = 0.8f;
             if (_playerCharacter.LightAttackState > _playerCharacter.MaxLightAttackState)
             {
                 _playerCharacter.LightAttackState = 1;
@@ -49,6 +54,20 @@ public class PlayerAttack : MonoBehaviour {
         _playerCharacter.CharacterAnimator.SetInteger("AttackState", animationAttackState);
         yield return new WaitForSeconds(0.25f);
         _playerCharacter.CharacterAnimator.SetInteger("AttackState", 0);
+    }
+
+    void StartComboResetTimer()
+    {
+        if (_comboResetTimer >= 0.0f)
+        {
+            _comboResetTimer -= Time.deltaTime;
+        }
+        if (_comboResetTimer <= 0)
+        {
+            Debug.Log("Ay");
+            _comboResetTimer = 0;
+            _playerCharacter.LightAttackState = 1;
+        }
     }
 
     IEnumerator Cooldown(float cd)

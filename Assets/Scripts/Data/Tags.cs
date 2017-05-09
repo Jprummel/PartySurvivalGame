@@ -18,4 +18,5 @@ public class Tags : MonoBehaviour {
     public const string SCENELOADER = "SceneLoader";
     public const string FADEROBJECT = "FaderObject";
     public const string MAPSELECTION = "MapSelection";
+    public const string STATSDISPLAY = "StatsDisplay";
 }
