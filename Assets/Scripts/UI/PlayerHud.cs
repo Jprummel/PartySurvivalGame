@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class PlayerHud : MonoBehaviour {
 
@@ -86,7 +87,8 @@ public class PlayerHud : MonoBehaviour {
 
     void SetHealthBar()
     {
-        _healthBar.fillAmount = Character.CurrentHealth / Character.MaxHealth;
+        _healthBar.DOFillAmount(Character.CurrentHealth / Character.MaxHealth, 1);
+        //_healthBar.fillAmount = Character.CurrentHealth / Character.MaxHealth;
     }
 
     void ShowAbilityCooldown()
@@ -96,7 +98,8 @@ public class PlayerHud : MonoBehaviour {
 
         if(!_playerCharacter.Ability.AbilityIsReady)
         {
-            _abilityCooldownSlider.fillAmount = cooldown / maxCooldown; 
+            _abilityCooldownSlider.DOFillAmount(cooldown / maxCooldown,1);
+            //_abilityCooldownSlider.fillAmount = cooldown / maxCooldown; 
         }
     }
 
