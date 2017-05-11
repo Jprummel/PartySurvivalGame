@@ -6,6 +6,13 @@ public class PauseGame : MonoBehaviour {
 
     [SerializeField]private GameObject _pauseScreen;
     private bool _gameIsPaused;
+    private SceneLoader _sceneLoader;
+
+    void Awake()
+    {
+        _sceneLoader = GameObject.FindGameObjectWithTag(Tags.SCENELOADER).GetComponent<SceneLoader>();
+    }
+
     public bool GameIsPaused
     {
         get { return _gameIsPaused; }
@@ -25,5 +32,19 @@ public class PauseGame : MonoBehaviour {
             _gameIsPaused = false;
             Time.timeScale = 1;
         }
+    }
+
+    public void BackToMenu()
+    {
+        GameInformation.Wave = 1;
+        Time.timeScale = 1;
+        _sceneLoader.ChangeScene("MainMenu");
+    }
+
+    public void BackToCharacterSelect()
+    {
+        GameInformation.Wave = 1;
+        Time.timeScale = 1;
+        _sceneLoader.ChangeScene("CharacterSelection");
     }
 }
