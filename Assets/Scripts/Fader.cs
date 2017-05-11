@@ -8,7 +8,7 @@ public class Fader : MonoBehaviour {
     
     [SerializeField]private Image _fadeImage;    
 
-	void Start () 
+	void Awake () 
     {
         Fade(0,3,_fadeImage);
     }
