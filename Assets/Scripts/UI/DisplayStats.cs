@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 
 public class DisplayStats : MonoBehaviour {
 
@@ -13,6 +14,20 @@ public class DisplayStats : MonoBehaviour {
     [SerializeField]private Text _totalEarnedGold;
     [SerializeField]private PlayerCharacter _player;
     private ShopDisplay _display;
+    private float _gold = 0;
+    private float _earnedGold;
+
+    public float Gold
+    {
+        get { return _gold; }
+        set { _gold = value; }
+    }
+
+    public float EarnedGold
+    {
+        get { return _earnedGold; }
+        set { _earnedGold = value; }
+    }
 
 
     void Start () {
@@ -59,11 +74,13 @@ public class DisplayStats : MonoBehaviour {
 
     void DisplayAvailableGold()
     {
-        _availableGold.text = "Gold : " + _display.MatchingPlayer.Gold.ToString("N0");
+        DOTween.To(()=> Gold,x => Gold = x ,_display.MatchingPlayer.Gold, 0.25f);
+        _availableGold.text = "Gold : " + _gold.ToString("N0");
     }
 
     void DisplayTotalEarnedGold()
     {
-        _totalEarnedGold.text = "Total Earned : " + _display.MatchingPlayer.TotalGoldEarned;
+        DOTween.To(() => EarnedGold, x => EarnedGold = x, _display.MatchingPlayer.TotalGoldEarned, 1f);
+        _totalEarnedGold.text = "Total Earned : " + _earnedGold.ToString("N0");
     }
 }

@@ -37,6 +37,7 @@ public class PlayerCharacter : Character {
     //Gold
     protected float     _gold;
     protected float     _totalGoldEarned;
+    private float _endLerpGold;
 
     public float Gold
     {
@@ -50,6 +51,12 @@ public class PlayerCharacter : Character {
         set { _totalGoldEarned = value; }
     }
 
+    public float EndLerpGold
+    {
+        get { return _endLerpGold; }
+        set { _endLerpGold = value; }
+    }
+
     //Player ID
     [SerializeField]protected int _playerID;
     public int PlayerID
@@ -61,6 +68,7 @@ public class PlayerCharacter : Character {
     protected override void Awake()
     {
         _gold = 1500;
+        _endLerpGold = _gold;
         PlayerParty.PlayerCharacters.Add(this);
         _portraitColor = GameObject.FindGameObjectWithTag(Tags.PLAYERHUDS).GetComponent<ChangePortraitColor>();
         _upgradeCosts = GetComponent<PlayerUpgradeCosts>();

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Character : MonoBehaviour, IDamageable {
 
@@ -21,6 +22,7 @@ public class Character : MonoBehaviour, IDamageable {
     protected Ranking _ranking;
     protected CharacterSoundFX _soundEffects;
     protected Rigidbody2D _rgb2d;
+    private Sequence _giveGold = DOTween.Sequence();
 
     //Visuals
     protected Animator _animator;
@@ -152,11 +154,14 @@ public class Character : MonoBehaviour, IDamageable {
                         //give gold
                         foreach (PlayerCharacter player in PlayerParty.PlayerCharacters)
                         {
-                            player.Gold += this.GoldValue;
+                            //lerp player gold
+                            player.EndLerpGold += this.GoldValue;
+                            _giveGold.Append(DOTween.To(()=> player.Gold,x => player.Gold = x, player.EndLerpGold, 0.5f));
                             player.TotalGoldEarned += this.GoldValue;
                         }
                         PlayerCharacter source = damageSource.GetComponent<PlayerCharacter>();
-                        source.Gold += this.GoldValue;
+                        source.EndLerpGold += this.GoldValue;
+                        DOTween.To(() => source.Gold, x => source.Gold = x, source.EndLerpGold, 0.5f);
                         source.TotalGoldEarned += this.GoldValue;
                         _ranking.UpdateRanks();
                     }
