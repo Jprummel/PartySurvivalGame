@@ -64,7 +64,6 @@ public class PlayerAttack : MonoBehaviour {
         }
         if (_comboResetTimer <= 0)
         {
-            Debug.Log("Ay");
             _comboResetTimer = 0;
             _playerCharacter.LightAttackState = 1;
         }

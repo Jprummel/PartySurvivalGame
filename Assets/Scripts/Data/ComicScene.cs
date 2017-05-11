@@ -8,14 +8,14 @@ public class ComicScene : MonoBehaviour {
     [SerializeField]private string _levelToLoad;
     [SerializeField]private List<GameObject> _continueObjects = new List<GameObject>();
     [SerializeField]private List<Image> _comicPanels = new List<Image>();
-    private Fades _fades;
+    private Fader _fader;
     private SceneLoader _sceneLoader;
     private int _currentPanel = 0;
 
 	void Start () {
-        _fades = GameObject.FindGameObjectWithTag(Tags.FADEROBJECT).GetComponent<Fades>();
+        _fader = GameObject.FindGameObjectWithTag(Tags.FADEPANEL).GetComponent<Fader>();
         _sceneLoader = GameObject.FindGameObjectWithTag(Tags.SCENELOADER).GetComponent<SceneLoader>();
-        StartCoroutine(_fades.FadeOut(_comicPanels[_currentPanel],false,1.5f));
+        _fader.Fade(1,3,_comicPanels[_currentPanel]);
         _currentPanel++;
 	}
 	
@@ -29,7 +29,7 @@ public class ComicScene : MonoBehaviour {
         {
             if (_currentPanel < _comicPanels.Count)
             {
-                StartCoroutine(_fades.FadeOut(_comicPanels[_currentPanel],false,1.5f));
+                _fader.Fade(1,3,_comicPanels[_currentPanel]);
                 _currentPanel++;
             }
             else if (_currentPanel == _comicPanels.Count)

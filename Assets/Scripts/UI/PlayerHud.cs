@@ -88,7 +88,6 @@ public class PlayerHud : MonoBehaviour {
     void SetHealthBar()
     {
         _healthBar.DOFillAmount(Character.CurrentHealth / Character.MaxHealth, 1);
-        //_healthBar.fillAmount = Character.CurrentHealth / Character.MaxHealth;
     }
 
     void ShowAbilityCooldown()
@@ -98,8 +97,8 @@ public class PlayerHud : MonoBehaviour {
 
         if(!_playerCharacter.Ability.AbilityIsReady)
         {
-            _abilityCooldownSlider.DOFillAmount(cooldown / maxCooldown,1);
-            //_abilityCooldownSlider.fillAmount = cooldown / maxCooldown; 
+            //_abilityCooldownSlider.fillAmount = 1;
+            _abilityCooldownSlider.DOFillAmount(cooldown / maxCooldown,0.1f).ChangeStartValue(1);
         }
     }
 
