@@ -13,7 +13,6 @@ public class SceneLoader : MonoBehaviour {
     void Awake()
     {
         _fader = GameObject.FindGameObjectWithTag(Tags.FADEPANEL).GetComponent<Fader>();
-        //_fades = GameObject.FindGameObjectWithTag(Tags.FADEROBJECT).GetComponent<Fades>();
     }
 
     public void ChangeScene(string sceneName)
@@ -22,7 +21,6 @@ public class SceneLoader : MonoBehaviour {
         {
             _async = SceneManager.LoadSceneAsync(sceneName);
             _fader.Fade(1,3);
-            //StartCoroutine(_fades.FadeOut(_fadeScreen, true, 1.5f));
             _isLoading = true;
         }
     }

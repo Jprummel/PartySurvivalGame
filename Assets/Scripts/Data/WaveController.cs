@@ -6,7 +6,7 @@ using UnityEngine;
 public class WaveController : MonoBehaviour{
 
     private EnemySpawner _enemySpawner;
-
+    private EnemyPlayerScaling _playerScaling;
     public delegate void NewWaveMessage();
     public static NewWaveMessage newWave;
 
@@ -26,6 +26,7 @@ public class WaveController : MonoBehaviour{
 
     void Start()
     {
+        _playerScaling = GameObject.FindGameObjectWithTag(Tags.PLAYERPARTY).GetComponent<EnemyPlayerScaling>();
         _enemySpawner = GameObject.FindWithTag(Tags.ENEMYSPAWNER).GetComponent<EnemySpawner>();
         _shop = GameObject.FindGameObjectWithTag(Tags.SHOPMANAGER).GetComponent<ShopDisplay>();
     }
@@ -63,11 +64,12 @@ public class WaveController : MonoBehaviour{
     void ResetWave()
     {
         _shop.TimeTillOpening = _shop.MaxTimeTilleOpening;
-        _isCombatPhase = false;        
+        _isCombatPhase = false;
         _enemiesSpawned = 0;
         float newEnemyAmount = _enemiesToSpawn;
         GameInformation.Wave++;
         _enemySpawner.AddEnemyTypes();
+        _playerScaling.Scale();
         switch (GameInformation.Wave)
         {
             case 10:
