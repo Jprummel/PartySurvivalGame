@@ -34,10 +34,16 @@ public class PlayerCharacter : Character {
     private PlayerUpgradeCosts _upgradeCosts;
     public PlayerUpgradeCosts UpgradeCosts { get { return _upgradeCosts; }}
 
+    protected float _damageScaleFactor;
+    protected float _healthScaleFactor;
+
+    public float DamageScaleFactor { get { return _damageScaleFactor; } }
+    public float HealthScaleFactor { get { return _healthScaleFactor; } }
+
     //Gold
     protected float     _gold;
     protected float     _totalGoldEarned;
-    private float _endLerpGold;
+    private float       _endLerpGold;
 
     public float Gold
     {

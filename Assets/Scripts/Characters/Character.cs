@@ -22,7 +22,7 @@ public class Character : MonoBehaviour, IDamageable {
     protected Ranking _ranking;
     protected CharacterSoundFX _soundEffects;
     protected Rigidbody2D _rgb2d;
-    private Sequence _giveGold = DOTween.Sequence();
+    private Sequence _giveGold;
 
     //Visuals
     protected Animator _animator;
@@ -116,6 +116,7 @@ public class Character : MonoBehaviour, IDamageable {
 
     protected virtual void Awake()
     {
+        _giveGold       = DOTween.Sequence();
         _ranking        = GameObject.FindGameObjectWithTag(Tags.RANKTRACKER).GetComponent<Ranking>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _soundEffects   = GetComponent<CharacterSoundFX>();

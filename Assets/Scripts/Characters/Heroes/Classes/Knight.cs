@@ -8,5 +8,7 @@ public class Knight : PlayerCharacter {
     {
         _ability = GetComponent<Charge>();
         Name = "Knight";
+        _damageScaleFactor = 1.3f;
+        _healthScaleFactor = 1.5f;
     }
 }

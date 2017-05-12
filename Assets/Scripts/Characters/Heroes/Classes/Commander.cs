@@ -6,8 +6,11 @@ public class Commander : PlayerCharacter {
 
     void Start()
     {
-        Name = "Commander";
         _ability = GetComponent<ArrowRain>();
+        Name = "Commander";
+        _damageScaleFactor = 1.5f;
+        _healthScaleFactor = 1.3f;
+
     }
 
 }
