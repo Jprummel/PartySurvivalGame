@@ -7,6 +7,7 @@ public class PlayerAttack : MonoBehaviour {
 
     PlayerCharacter _playerCharacter;
     private float _comboResetTimer;
+    private float _delayBetweenCombos;
     private bool _readyToAttack = true;
     public bool ReadyToAttack
     {
@@ -20,11 +21,12 @@ public class PlayerAttack : MonoBehaviour {
 
     void Update(){
         StartComboResetTimer();
+        _delayBetweenCombos -= Time.deltaTime;
     }
 
     public void Attack()
     {
-        if (_readyToAttack)
+        if (_readyToAttack && _delayBetweenCombos <= 0)
         {
             StartCoroutine(AttackState(_playerCharacter.LightAttackState));
             _readyToAttack = false;
@@ -33,6 +35,7 @@ public class PlayerAttack : MonoBehaviour {
             if (_playerCharacter.LightAttackState > _playerCharacter.MaxLightAttackState)
             {
                 _playerCharacter.LightAttackState = 1;
+                _delayBetweenCombos = 0.75f;
             }
             StartCoroutine(Cooldown(0.3f));
         }

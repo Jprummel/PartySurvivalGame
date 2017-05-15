@@ -16,7 +16,6 @@ public class EnemyPlayerScaling : MonoBehaviour {
         {
             _respawn.deadPlayers[i].Damage = _respawn.deadPlayers[i].Damage * _respawn.deadPlayers[i].DamageScaleFactor;
             _respawn.deadPlayers[i].MaxHealth = _respawn.deadPlayers[i].MaxHealth * _respawn.deadPlayers[i].HealthScaleFactor;
-            Debug.Log(_respawn.deadPlayers[i].Damage + " Damage " + _respawn.deadPlayers[i].MaxHealth + " Health");
         }
     }
 }
