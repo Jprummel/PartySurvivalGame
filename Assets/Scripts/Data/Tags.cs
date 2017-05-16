@@ -19,4 +19,5 @@ public class Tags : MonoBehaviour {
     public const string FADEPANEL = "FadePanel";
     public const string MAPSELECTION = "MapSelection";
     public const string STATSDISPLAY = "StatsDisplay";
+    public const string BETRAYALWARNING = "BetrayalWarning";
 }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class Enemy : Character, IDamageable{
 
@@ -46,9 +47,9 @@ public class Enemy : Character, IDamageable{
 
     void UpdateHealthbar()
     {
-        _healthBar.fillAmount = _currentHealth / _maxHealth;
+        _healthBar.DOFillAmount(_currentHealth / _maxHealth, 0.3f);
+        //_healthBar.fillAmount = _currentHealth / _maxHealth;
         ChangeHealthColor();
-
     }
 
     void ChangeHealthColor()

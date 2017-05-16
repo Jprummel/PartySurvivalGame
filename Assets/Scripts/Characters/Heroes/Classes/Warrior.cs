@@ -8,7 +8,7 @@ public class Warrior : PlayerCharacter {
     {
         _ability = GetComponent<Whirlwind>();
         name = "Warrior";
-        _damageScaleFactor = 1.4f;
-        _healthScaleFactor = 1.4f;
+        _damageScaleFactor = 1.2f;
+        _healthScaleFactor = 1.2f;
     }
 }
