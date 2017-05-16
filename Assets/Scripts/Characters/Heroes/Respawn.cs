@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Respawn : MonoBehaviour {
 
+    [SerializeField]private EnemySpawner _enemySpawner;
+
     public List<PlayerCharacter> deadPlayers = new List<PlayerCharacter>();
 
     void RespawnPlayers()
@@ -14,6 +16,7 @@ public class Respawn : MonoBehaviour {
             deadPlayers[i].CharacterAnimator.SetBool("IsDead", false);
             deadPlayers[i].gameObject.SetActive(true);
             deadPlayers[i].CanMove = true;
+            _enemySpawner._playerEnemies.Add(deadPlayers[i].gameObject);
         }
     }
 

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour {
 
+    public List<GameObject> _playerEnemies = new List<GameObject>();
     [SerializeField]private List<GameObject> _enemyTypes = new List<GameObject>();
     [SerializeField]private Transform _enemyParentObject;
 
@@ -48,6 +49,14 @@ public class EnemySpawner : MonoBehaviour {
             case 15:
                 _enemyTypeCount = 10; //Adds soldiers
                 break;
+        }
+    }
+
+    public void AddDeadPlayers()
+    {
+        for (int i = 0; i < _playerEnemies.Count; i++)
+        {
+            spawnedEnemies.Add(_playerEnemies[i]);
         }
     }
 

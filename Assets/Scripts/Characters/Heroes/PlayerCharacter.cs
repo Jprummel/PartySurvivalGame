@@ -17,6 +17,14 @@ public class PlayerCharacter : Character {
         set { _lightAttackState = value; }
     }
 
+    private bool _isAlly = true;
+
+    public bool IsAlly
+    {
+        get { return _isAlly; }
+        set { _isAlly = value; }
+    }
+
     //Ability
     protected Ability _ability;
     public Ability Ability { get { return _ability; }}
@@ -29,6 +37,7 @@ public class PlayerCharacter : Character {
     public PlayerHud HUD { get; set; }
 
     //Script/Component imports
+    private EnemySpawner _enemySpawner;
     private Respawn     _respawn;
     private ChangePortraitColor _portraitColor;
     private PlayerUpgradeCosts _upgradeCosts;
@@ -94,6 +103,12 @@ public class PlayerCharacter : Character {
 
     IEnumerator DeathRoutine()
     {
+        if (!_isAlly)
+        {
+            _enemySpawner.spawnedEnemies.Remove(this.gameObject);
+            _enemySpawner._playerEnemies.Remove(this.gameObject);
+            _respawn.deadPlayers.Remove(this);
+        }
         _isDead = true;
         _canMove = false;
         _animator.SetBool("IsDead", true);
@@ -114,11 +129,13 @@ public class PlayerCharacter : Character {
 
     void BecomeEnemy()
     {
+        _isAlly = false;
         this.tag = Tags.ENEMY;
         _portraitColor.SetPortraitHostile(HUD.Portrait);
         _deadIndicator.SetActive(true);
         _movementSpeed = 4;
         HUD.SetNewHealthBar();
         this.gameObject.layer = LayerMask.NameToLayer("DeadPlayer");
+        _enemySpawner = GameObject.FindGameObjectWithTag(Tags.ENEMYSPAWNER).GetComponent<EnemySpawner>();
     }
 }

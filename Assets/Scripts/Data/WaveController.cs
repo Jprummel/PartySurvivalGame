@@ -17,6 +17,7 @@ public class WaveController : MonoBehaviour{
     private float _jeMoeder = 1.2f;//_enemyAmountModifier
     private float timer;//enemy respawn timer
     private bool _isCombatPhase = true;
+    private bool _spawnedPlayers;
 
     public bool IsCombatPhase
     {
@@ -33,6 +34,7 @@ public class WaveController : MonoBehaviour{
 
     void Update()
     {
+        Debug.Log(_enemySpawner.spawnedEnemies.Count);
         //if there are less enemies spawned than supposed to
         if (_enemiesSpawned < _enemiesToSpawn && _isCombatPhase)
         {
@@ -53,12 +55,22 @@ public class WaveController : MonoBehaviour{
 
     void SpawnEnemy()
     {
+        AddPlayers();
         if (_enemySpawner.spawnedEnemies.Count < _maxEnemies)
         {
             _enemySpawner.SpawnEnemy();
             _enemiesSpawned++;
         }
         timer = 0;
+    }
+
+    void AddPlayers()
+    {
+        if (!_spawnedPlayers)
+        {
+            _enemySpawner.AddDeadPlayers();
+            _spawnedPlayers = true;
+        }
     }
 
     void ResetWave()
@@ -70,6 +82,7 @@ public class WaveController : MonoBehaviour{
         GameInformation.Wave++;
         _enemySpawner.AddEnemyTypes();
         _playerScaling.Scale();
+        _spawnedPlayers = false;
         switch (GameInformation.Wave)
         {
             case 10:
