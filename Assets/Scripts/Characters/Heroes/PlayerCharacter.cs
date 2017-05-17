@@ -107,11 +107,11 @@ public class PlayerCharacter : Character {
     {
         if (!_isAlly)
         {
+            _warningPlayer.WarnPlayers();
             _enemySpawner.spawnedEnemies.Remove(this.gameObject);
             _enemySpawner._playerEnemies.Remove(this.gameObject);
             _respawn.deadPlayers.Remove(this);
         }
-        _warningPlayer.WarnPlayers();
         _isDead = true;
         _canMove = false;
         _animator.SetBool("IsDead", true);
