@@ -8,6 +8,11 @@ public class PlayerDiedWarning : MonoBehaviour {
 
     [SerializeField]private GameObject _warning;
 
+    void Awake() {
+        _warning = GameObject.Find("WarningText");
+        _warning.SetActive(false);
+    }
+
     IEnumerator WarningRoutine()
     {
         _warning.SetActive(true);

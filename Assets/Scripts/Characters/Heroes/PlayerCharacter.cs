@@ -31,6 +31,7 @@ public class PlayerCharacter : Character {
     //Visuals
     [SerializeField]protected Sprite _portrait;
     [SerializeField]private GameObject _deadIndicator;
+    [SerializeField]private PlayerDiedWarning _warningPlayer;
     private Sprite _startSprite;
 
     public Sprite Portrait { get { return _portrait; }}
@@ -86,6 +87,7 @@ public class PlayerCharacter : Character {
         _endLerpGold = _gold;
         PlayerParty.PlayerCharacters.Add(this);
         _portraitColor = GameObject.FindGameObjectWithTag(Tags.PLAYERHUDS).GetComponent<ChangePortraitColor>();
+        _warningPlayer = GetComponent<PlayerDiedWarning>();
         _upgradeCosts = GetComponent<PlayerUpgradeCosts>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _startSprite = _spriteRenderer.sprite;
@@ -109,6 +111,7 @@ public class PlayerCharacter : Character {
             _enemySpawner._playerEnemies.Remove(this.gameObject);
             _respawn.deadPlayers.Remove(this);
         }
+        _warningPlayer.WarnPlayers();
         _isDead = true;
         _canMove = false;
         _animator.SetBool("IsDead", true);
