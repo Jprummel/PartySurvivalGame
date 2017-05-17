@@ -10,7 +10,7 @@ public class PlayerDiedWarning : MonoBehaviour {
 
     void Awake() {
         _warning = GameObject.Find("WarningText");
-        StartCoroutine(Destroy());
+        _warning.SetActive(false);
     }
 
     IEnumerator WarningRoutine()
@@ -22,14 +22,5 @@ public class PlayerDiedWarning : MonoBehaviour {
 
     public void WarnPlayers(){
         StartCoroutine(WarningRoutine());
-    }
-
-    IEnumerator Destroy()
-    {
-        yield return new WaitForEndOfFrame();
-        if (_warning != null)
-        {
-            _warning.SetActive(false);
-        }
     }
 }

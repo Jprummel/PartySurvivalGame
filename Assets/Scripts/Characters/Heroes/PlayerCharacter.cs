@@ -87,7 +87,7 @@ public class PlayerCharacter : Character {
         _endLerpGold = _gold;
         PlayerParty.PlayerCharacters.Add(this);
         _portraitColor = GameObject.FindGameObjectWithTag(Tags.PLAYERHUDS).GetComponent<ChangePortraitColor>();
-        _warningPlayer = GetComponent<PlayerDiedWarning>();
+        _warningPlayer = GameObject.Find("PlayerDiedWarning").GetComponent<PlayerDiedWarning>();
         _upgradeCosts = GetComponent<PlayerUpgradeCosts>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _startSprite = _spriteRenderer.sprite;
@@ -106,8 +106,7 @@ public class PlayerCharacter : Character {
     IEnumerator DeathRoutine()
     {
         if (!_isAlly)
-        {
-            _warningPlayer.WarnPlayers();
+        { 
             _enemySpawner.spawnedEnemies.Remove(this.gameObject);
             _enemySpawner._playerEnemies.Remove(this.gameObject);
             _respawn.deadPlayers.Remove(this);
@@ -117,6 +116,10 @@ public class PlayerCharacter : Character {
         _animator.SetBool("IsDead", true);
         _animator.SetInteger("AttackState", 0);
         yield return new WaitForSeconds(1.5f);
+        if (_isAlly)
+        {
+            _warningPlayer.WarnPlayers();
+        }
         PlayerParty.PlayerCharacters.Remove(this);
         _respawn.deadPlayers.Add(this);
         BecomeEnemy();
