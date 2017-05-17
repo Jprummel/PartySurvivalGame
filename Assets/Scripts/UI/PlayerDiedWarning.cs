@@ -16,7 +16,7 @@ public class PlayerDiedWarning : MonoBehaviour {
     IEnumerator WarningRoutine()
     {
         _warning.SetActive(true);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
         _warning.SetActive(false);
     }
 
