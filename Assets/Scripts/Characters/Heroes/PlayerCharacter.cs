@@ -80,6 +80,16 @@ public class PlayerCharacter : Character {
         set { _playerID = value; }
     }
 
+    public enum MoveState
+    {
+        UP,
+        DOWN,
+        LEFT,
+        RIGHT
+    }
+
+    public MoveState moveState;
+
     protected override void Awake()
     {
         _gold = 1500;
@@ -98,6 +108,20 @@ public class PlayerCharacter : Character {
         if(CurrentHealth <= 0 && !_isDead)
         {
             StartCoroutine(DeathRoutine());
+        }
+
+        SetGoldValue();
+    }
+
+    void SetGoldValue()
+    {
+        if (this.tag == Tags.PLAYER)
+        {
+            _goldValue = 10000 + (GameInformation.Wave * 250);
+        }
+        else if (this.tag == Tags.ENEMY)
+        {
+            _goldValue = 750;
         }
     }
 

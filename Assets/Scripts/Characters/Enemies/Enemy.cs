@@ -18,8 +18,6 @@ public class Enemy : Character, IDamageable{
     {
         _maxHealth = Mathf.RoundToInt(_maxHealth + Mathf.Pow(GameInformation.Wave, _healthGrowFactor)); //Scales max health with wave and growth factor
         _damage = _damage + Mathf.Pow(GameInformation.Wave, _damageGrowFactor); //Scales damage with wave and growth factor
-        _goldValue = Mathf.RoundToInt(_goldValue + Mathf.Pow(GameInformation.Wave, _goldValueGrowFactor)); //Scales gold value with wave and growth factor
-
         _enemySpawner = GameObject.FindGameObjectWithTag(Tags.ENEMYSPAWNER).GetComponent<EnemySpawner>();
         _healthBar = GetComponentInChildren<Image>();
         base.Awake();

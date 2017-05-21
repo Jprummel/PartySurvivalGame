@@ -34,7 +34,6 @@ public class WaveController : MonoBehaviour{
 
     void Update()
     {
-        Debug.Log(_enemySpawner.spawnedEnemies.Count);
         //if there are less enemies spawned than supposed to
         if (_enemiesSpawned < _enemiesToSpawn && _isCombatPhase)
         {

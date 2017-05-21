@@ -72,6 +72,7 @@ public class ControllerInput : MonoBehaviour {
                     float y = Input.GetAxis(InputAxes.LEFT_JOYSTICK_Y + _player.PlayerID);
                     Vector2 moveDir = new Vector2(x, y);
                     _playerMovement.Move(moveDir.normalized);
+                    SetMoveState(x, y);
                     _soundEffects.PlayWalkAudio();
                     if (x != 0)
                     {
@@ -102,6 +103,29 @@ public class ControllerInput : MonoBehaviour {
             _soundEffects.StopWalkSound();
             _walkParticle.DisableParticle();
             _playerMovement.Move(new Vector2(0,0));
+        }
+    }
+
+    void SetMoveState(float x, float y)
+    {
+        //If player isnt moving on Y axis but is moving on X switch between left and right
+        //If player is moving on Y axis switch between up and down and ignore X axis
+        if (x > 0 && y == 0)
+        {
+            _player.moveState = PlayerCharacter.MoveState.RIGHT;
+        }
+        else if (x < 0 && y == 0)
+        {
+            _player.moveState = PlayerCharacter.MoveState.LEFT;
+        }
+
+        if (y > 0)
+        {
+            _player.moveState = PlayerCharacter.MoveState.UP;
+        }
+        else if (y < 0)
+        {
+            _player.moveState = PlayerCharacter.MoveState.DOWN;
         }
     }
 }
