@@ -7,6 +7,7 @@ using DG.Tweening;
 
 public class Enemy : Character, IDamageable{
 
+    [SerializeField]protected GameObject _deadBody;
     [SerializeField]protected float _damageGrowFactor;
     [SerializeField]protected float _healthGrowFactor;
     [SerializeField]protected float _goldValueGrowFactor;
@@ -40,13 +41,13 @@ public class Enemy : Character, IDamageable{
         _animator.SetBool("IsDead", true);
         _enemySpawner.spawnedEnemies.Remove(this.gameObject);
         yield return new WaitForSeconds(1f);
+        Instantiate(_deadBody, transform.position, transform.rotation);
         Destroy(this.gameObject);
     }
 
     void UpdateHealthbar()
     {
         _healthBar.DOFillAmount(_currentHealth / _maxHealth, 0.3f);
-        //_healthBar.fillAmount = _currentHealth / _maxHealth;
         ChangeHealthColor();
     }
 
@@ -64,4 +65,5 @@ public class Enemy : Character, IDamageable{
             _healthBar.sprite = _healthBars[2];
         }
     }
+
 }
