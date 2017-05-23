@@ -18,7 +18,7 @@ public class Ranking : MonoBehaviour {
     public void UpdateRanks()
     {
         _players.Sort((player1,player2) => player2.TotalGoldEarned.CompareTo(player1.TotalGoldEarned));
-        for (int i = 0; i < _players.Count; i++)
+        /*for (int i = 0; i < _players.Count; i++)
         {
             switch (i)
             {
@@ -35,7 +35,7 @@ public class Ranking : MonoBehaviour {
                     _players[i].HUD.RankText.text = "4th";
                     break;
             }
-        }
+        }*/
     }
 
     public void ShowFinalRankings()

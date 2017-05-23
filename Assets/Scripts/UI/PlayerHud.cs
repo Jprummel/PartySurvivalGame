@@ -59,7 +59,7 @@ public class PlayerHud : MonoBehaviour {
 
     void Start()
     {
-        Character.HUD = this;
+        //Character.HUD = this;
         _defaultColor = new Color(255, 255, 255, 1);
     }
 
@@ -87,7 +87,7 @@ public class PlayerHud : MonoBehaviour {
 
     void SetHealthBar()
     {
-        _healthBar.DOFillAmount(Character.CurrentHealth / Character.MaxHealth, 1);
+        //_healthBar.DOFillAmount(Character.CurrentHealth / Character.MaxHealth, 1);
     }
 
     void ShowAbilityCooldown()

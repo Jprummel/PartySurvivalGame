@@ -10,7 +10,6 @@ public class Commander : PlayerCharacter {
         Name = "Commander";
         _damageScaleFactor = 1.3f;
         _healthScaleFactor = 1.1f;
-
     }
 
 }

@@ -11,6 +11,11 @@ public class PlayerParty : MonoBehaviour {
     public static List<PlayerCharacter> PlayerCharacters    = new List<PlayerCharacter>();
     private List<GameObject> _ingamePlayers = new List<GameObject>();
 
+    public List<GameObject> InGamePlayers
+    {
+        get { return _ingamePlayers; }
+    }
+
 	void Awake () {
         SortPlayerLists();
         AddPlayers();   

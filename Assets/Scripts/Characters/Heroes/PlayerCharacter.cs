@@ -30,12 +30,11 @@ public class PlayerCharacter : Character {
     public Ability Ability { get { return _ability; }}
     //Visuals
     [SerializeField]protected Sprite _portrait;
-    [SerializeField]private GameObject _deadIndicator;
     [SerializeField]private PlayerDiedWarning _warningPlayer;
     private Sprite _startSprite;
 
     public Sprite Portrait { get { return _portrait; }}
-    public PlayerHud HUD { get; set; }
+    public NewPlayerHud HUD { get; set; }
 
     //Script/Component imports
     private EnemySpawner _enemySpawner;
@@ -90,13 +89,12 @@ public class PlayerCharacter : Character {
     }
 
     public MoveState moveState;
-
+    
     protected override void Awake()
     {
         _gold = 1500;
         _endLerpGold = _gold;
         PlayerParty.PlayerCharacters.Add(this);
-        _portraitColor = GameObject.FindGameObjectWithTag(Tags.PLAYERHUDS).GetComponent<ChangePortraitColor>();
         _warningPlayer = GameObject.Find("PlayerDiedWarning").GetComponent<PlayerDiedWarning>();
         _upgradeCosts = GetComponent<PlayerUpgradeCosts>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -161,8 +159,6 @@ public class PlayerCharacter : Character {
     {
         _isAlly = false;
         this.tag = Tags.ENEMY;
-        _portraitColor.SetPortraitHostile(HUD.Portrait);
-        _deadIndicator.SetActive(true);
         _movementSpeed = 4;
         HUD.SetNewHealthBar();
         this.gameObject.layer = LayerMask.NameToLayer("DeadPlayer");
