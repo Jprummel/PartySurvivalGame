@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class InstantiateHuds : MonoBehaviour {
 
-    [SerializeField]private GameObject _hud;
-    [SerializeField]private GameObject _canvasParent;
-    [SerializeField]private List<Transform> _hudPositions = new List<Transform>();
+    [SerializeField]private GameObject _goldDisplay;
+    [SerializeField]private GameObject _parentObject;
+    [SerializeField]private List<Transform> _goldDisplayPositions = new List<Transform>();
 
-    void Awake() {
+    void Start() {
         for (int i = 0; i < PlayerParty.PlayerCharacters.Count; i++)
         {
-            GameObject hud = Instantiate(_hud);
-            hud.transform.position = _hudPositions[i].position;
-            hud.transform.SetParent(_canvasParent.transform);
-            hud.GetComponent<PlayerHud>().Character = PlayerParty.PlayerCharacters[i];
+            Debug.Log("Ay");
+            GameObject hud = Instantiate(_goldDisplay);
+            hud.transform.position = _goldDisplayPositions[i].position;
+            hud.transform.SetParent(_parentObject.transform);
+            hud.GetComponent<GoldDisplay>().Player = PlayerParty.PlayerCharacters[i];
         }
     }
 }
