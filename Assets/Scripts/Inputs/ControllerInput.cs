@@ -88,7 +88,7 @@ public class ControllerInput : MonoBehaviour {
             }
         }
         
-        if (Input.GetButtonDown(InputAxes.START + _player.PlayerID))
+        if (Input.GetButtonDown(InputAxes.START + _player.PlayerID) && _waveController.IsCombatPhase)
         {
             _pauseGame.TogglePause();
         }
