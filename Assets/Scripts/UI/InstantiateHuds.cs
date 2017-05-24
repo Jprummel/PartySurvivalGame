@@ -11,7 +11,6 @@ public class InstantiateHuds : MonoBehaviour {
     void Start() {
         for (int i = 0; i < PlayerParty.PlayerCharacters.Count; i++)
         {
-            Debug.Log("Ay");
             GameObject hud = Instantiate(_goldDisplay);
             hud.transform.position = _goldDisplayPositions[i].position;
             hud.transform.SetParent(_parentObject.transform);
