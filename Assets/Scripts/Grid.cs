@@ -5,6 +5,7 @@ using UnityEngine;
 public class Grid : MonoBehaviour {
 
     public bool onlyDisplayPathGizmos;
+    public bool displayGridGizmos;
     public LayerMask unWalkableMask;
     public Vector2 gridWorldSize;
     public float nodeRadius;
@@ -13,7 +14,7 @@ public class Grid : MonoBehaviour {
     float nodeDiameter;
     int gridSizeX, gridSizeY;
 
-    void Start()
+    void Awake()
     {
         nodeDiameter = nodeRadius * 2;
         gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
@@ -37,7 +38,7 @@ public class Grid : MonoBehaviour {
             {
                 Vector3 worldPoint = worldBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.up * (y * nodeDiameter + nodeRadius);
                 //bool walkable = !(Physics.SphereCast(worldPoint, nodeRadius, unWalkableMask));
-                bool walkable = !(Physics2D.CircleCast(worldPoint, nodeRadius, Vector2.one, 1, unWalkableMask));
+                bool walkable = !(Physics2D.CircleCast(worldPoint, (nodeRadius), Vector2.one, 1, unWalkableMask));
                 grid[x, y] = new Node(walkable, worldPoint, x, y);
             }
         }
@@ -82,30 +83,29 @@ public class Grid : MonoBehaviour {
     }
 
     public List<Node> path;
-
     void OnDrawGizmos()
     {
-        Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, gridWorldSize.y,1));
-
+        Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, gridWorldSize.y, 1));
         if (onlyDisplayPathGizmos)
         {
-            if(path != null)
+            if (path != null)
             {
-                foreach(Node n in path)
+                foreach (Node n in path)
                 {
                     Gizmos.color = Color.black;
-                    Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - .1f));
+                    Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - 0.1f));
                 }
             }
         }
         else
         {
-            if(grid != null)
+
+            if (grid != null)
             {
                 foreach (Node n in grid)
                 {
                     Gizmos.color = (n.walkable) ? Color.white : Color.red;
-                    if (path != null)
+                    if(path != null)
                     {
                         if (path.Contains(n))
                         {
@@ -116,5 +116,5 @@ public class Grid : MonoBehaviour {
                 }
             }
         }
-    }
+     }
 }

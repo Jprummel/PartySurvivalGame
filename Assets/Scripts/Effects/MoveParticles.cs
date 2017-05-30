@@ -5,27 +5,38 @@ using UnityEngine;
 public class MoveParticles : MonoBehaviour {
 
     private ParticleSystem _particleSystem;
-    private ParticleEmitter _emitter;
     [SerializeField]private Transform _destination;
-    [SerializeField]private int _particleSpeed;
 
-	// Use this for initialization
-	void Start () {
-        _particleSystem = GetComponent<ParticleSystem>();
-        _emitter = GetComponent<ParticleEmitter>();
-	}
-	
-	public void SpawnParticles()
+    void Start()
     {
-        _particleSystem.Play();
+        _particleSystem = GetComponent<ParticleSystem>();
+    }
 
-        Particle[] particles = _emitter.particles;
+    void Update()
+    {
+        if(_particleSystem.particleCount > 0)
+        {
+            MoveTheParticles();
+        }
+    }
+
+    void MoveTheParticles()
+    {
+        ParticleSystem.Particle[] particles = new ParticleSystem.Particle[_particleSystem.particleCount];
+        _particleSystem.GetParticles(particles);
 
         for (int i = 0; i < particles.Length; i++)
         {
-            particles[i].position = Vector3.MoveTowards(_emitter.particles[i].position, _destination.position, Time.deltaTime * _particleSpeed);
+            //particles[i].position = _destination.position;
+            particles[i].position = Vector3.MoveTowards(particles[i].position, _destination.position, 20f);
         }
 
-        _emitter.particles = particles;
+        _particleSystem.SetParticles(particles, _particleSystem.particleCount);
     }
+
+    public void Emit()
+    {
+        _particleSystem.Play();
+    }
+
 }
