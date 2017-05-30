@@ -27,8 +27,7 @@ public class MoveParticles : MonoBehaviour {
 
         for (int i = 0; i < particles.Length; i++)
         {
-            //particles[i].position = _destination.position;
-            particles[i].position = Vector3.MoveTowards(particles[i].position, _destination.position, 20f);
+            particles[i].position = Vector3.MoveTowards(particles[i].position, _destination.position, 0.5f);
         }
 
         _particleSystem.SetParticles(particles, _particleSystem.particleCount);
