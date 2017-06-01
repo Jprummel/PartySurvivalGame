@@ -10,7 +10,7 @@ public class PlayerDiedWarning : MonoBehaviour {
 
     void Awake() {
         _warning = GameObject.Find("WarningText");
-        _warning.SetActive(false);
+        //_warning.SetActive(false);
     }
 
     IEnumerator WarningRoutine()
