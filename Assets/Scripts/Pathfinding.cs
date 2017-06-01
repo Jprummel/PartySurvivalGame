@@ -8,7 +8,7 @@ public class Pathfinding : MonoBehaviour {
 
     PathRequestManager requestManager;
 
-    public Transform seeker, target;
+    //public Transform seeker, target;
 
     Grid grid;
 

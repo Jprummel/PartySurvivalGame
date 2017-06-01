@@ -20,6 +20,7 @@ public class MoveArrows : MonoBehaviour {
 
     void Move()
     {
+        Debug.Log(time);
         time += Time.deltaTime / timeToReachTarget;
 
         if (transform.position != transform.parent.position)

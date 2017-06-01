@@ -12,6 +12,7 @@ public class EnemyTargetting : MonoBehaviour {
     private bool _obstacle;
     private Vector3 _posRelative;
     private GameObject _lastObstacle;
+    private Unit _AStar;
 
     public Vector3 PosRelative
     {
@@ -28,29 +29,11 @@ public class EnemyTargetting : MonoBehaviour {
     {
         get { return _target; }
         set { _target = value; }
-    }
-
-    void OnCollisionStay2D(Collision2D coll)
-    {
-        if (coll.gameObject.tag == Tags.OBSTACLE)
-            {
-                if (_lastObstacle != null && _lastObstacle.name != coll.gameObject.name)
-                {
-                    _posRelative = transform.InverseTransformPoint(coll.gameObject.transform.position);
-                    _lastObstacle = coll.gameObject;
-                }
-                else if (_lastObstacle == null)
-                {
-                    _lastObstacle = coll.gameObject;
-                }
-                _target = null;
-                _obstacle = true;
-                _oldDist = 100;
-            }
-    }    
+    }  
 
     void Start()
     {
+        _AStar = GetComponent<Unit>();
         _players.AddRange(GameObject.FindGameObjectsWithTag(Tags.PLAYER));
 
         InvokeRepeating("CalculateTarget", 1, 0.25f);
@@ -70,5 +53,6 @@ public class EnemyTargetting : MonoBehaviour {
                     _oldDist = newDist;
                 }
             }
+        _AStar.target = _target.transform;
     }
 }

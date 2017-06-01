@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour {
 
+    private bool _hasTarget;
     public Transform target;
-    float speed = 0.1f;
+    float speed = 0.06f;
     Vector3[] path;
     int targetIndex;
 
-    void Start()
+    void Update()
     {
-        PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+        if (target != null)
+        {
+            PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+        }
     }
 
     public void OnPathFound(Vector3[] newPath, bool pathSuccesful)
