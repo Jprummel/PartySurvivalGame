@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class WaveController : MonoBehaviour{
 
+
+    [SerializeField]private bool DevTest;
     private EnemySpawner _enemySpawner;
     private EnemyPlayerScaling _playerScaling;
     public delegate void NewWaveMessage();
@@ -30,6 +32,8 @@ public class WaveController : MonoBehaviour{
         _playerScaling = GameObject.FindGameObjectWithTag(Tags.PLAYERPARTY).GetComponent<EnemyPlayerScaling>();
         _enemySpawner = GameObject.FindWithTag(Tags.ENEMYSPAWNER).GetComponent<EnemySpawner>();
         _shop = GameObject.FindGameObjectWithTag(Tags.SHOPMANAGER).GetComponent<ShopDisplay>();
+        if (DevTest)
+            _enemiesToSpawn = 1;
     }
 
     void Update()
@@ -91,6 +95,11 @@ public class WaveController : MonoBehaviour{
                 _jeMoeder = 1.05f;
                 break;
         }
-        _enemiesToSpawn = Mathf.RoundToInt(newEnemyAmount * _jeMoeder);
+        if (!DevTest)
+        {
+            _enemiesToSpawn = Mathf.RoundToInt(newEnemyAmount * _jeMoeder);
+        }
+        else
+            _enemiesToSpawn = 1;
     }
 }

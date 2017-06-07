@@ -4,14 +4,25 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour {
 
+    private Rigidbody2D _rgb2d;
+    private Enemy _enemy;
+    private bool _hasTarget;
     public Transform target;
-    float speed = 0.1f;
     Vector3[] path;
     int targetIndex;
 
     void Start()
     {
-        PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+        _enemy = GetComponent<Enemy>();
+        _rgb2d = GetComponent<Rigidbody2D>();
+    }
+
+    void Update()
+    {
+        if (target != null)
+        {
+            PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+        }
     }
 
     public void OnPathFound(Vector3[] newPath, bool pathSuccesful)
@@ -27,6 +38,7 @@ public class Unit : MonoBehaviour {
     IEnumerator FollowPath()
     {
         Vector3 currentWaypoint = path[0];
+        float distance = Vector2.Distance(transform.position, target.position);
 
         while (true)
         {
@@ -39,7 +51,12 @@ public class Unit : MonoBehaviour {
                 }
                 currentWaypoint = path[targetIndex];
             }
-            transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, speed);
+            if (distance > _enemy.AttackRange)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, _enemy.MovementSpeed / 100);
+            }
+            /*Vector2 dir = (currentWaypoint - transform.position).normalized * _enemy.MovementSpeed;
+            _rgb2d.velocity = dir;*/
             yield return null;
         }
     }

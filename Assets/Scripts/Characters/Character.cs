@@ -211,7 +211,7 @@ public class Character : MonoBehaviour, IDamageable {
                     _soundEffects.PlayHitAudio();
                     _currentHealth -= damageSource.Damage;   //Reduces currenthealth by the amount of damage the source of damage has
                                                              //knockback value/1000
-                    KnockBack(0.002f, damageSource, 0.15f);
+                    KnockBack(2f, damageSource, 0.15f);
                     if (_currentHealth <= 0)
                     {
                         //give gold
