@@ -29,7 +29,9 @@ public class EnemyMovement : MonoBehaviour {
     /*void MoveToPlayer()
     {
             float distance = Vector2.Distance(transform.position, _enemyTargetting.Target.transform.position);
-
+            Vector2 dir = (_enemyTargetting.Target.transform.position - transform.position).normalized * _enemy.MovementSpeed;
+            _rgb2d.velocity = dir;
+            
             if (distance > _enemy.AttackRange)
             {          
                 if (transform.position.x > _enemyTargetting.Target.transform.position.x)
