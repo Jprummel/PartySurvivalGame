@@ -7,10 +7,11 @@ using System.Collections.Generic;
 public class SetVolumes : MonoBehaviour {
 
     [SerializeField]private AudioMixer _audioMixer;
+    private SaveLoadSettings _saveLoadSettings;
 
     void Awake()
     {
-
+        //_saveLoadSettings = GameObject.FindGameObjectWithTag(Tags.SAVELOADOBJECT).GetComponent<SaveLoadSettings>();
     }
 
 	void Update () {
@@ -27,20 +28,19 @@ public class SetVolumes : MonoBehaviour {
 
     //Call these functions from a sliders "On Value Change" function and assign that slider
     //to change the volumes
+
+    public void ChangeMasterVolume(Slider volumeSlider)
+    {
+        SettingsInformation.MasterVolume = volumeSlider.value;
+    }
+
     public void ChangeMusicVolume(Slider volumeSlider)
     {
-        //_audioMixer.SetFloat("Music", volumeSlider.value);
         SettingsInformation.MusicVolume = volumeSlider.value;
     }
 
     public void ChangeSFXVolume(Slider volumeSlider)
     {
-        //_audioMixer.SetFloat("SoundFX", volumeSlider.value);
         SettingsInformation.SoundFXVolume = volumeSlider.value;
-    }
-
-    public void SliderValue(Slider volumeslider, float value)
-    {
-        volumeslider.value = value;
     }
 }

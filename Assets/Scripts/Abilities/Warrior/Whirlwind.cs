@@ -24,10 +24,14 @@ public class Whirlwind : Ability {
     {
         _usingAbility = true;
         StartCoroutine(SpecialAttackDamage(0.8f,1));
-        _player.CharacterAnimator.SetBool("UseAbility",true);
+        _player.UpperBody.AnimationState.SetAnimation(3, SpineAnimationNames.ABILITY, false);
+        _player.LowerBody.AnimationState.SetAnimation(3, SpineAnimationNames.ABILITY, false);
+        //_player.CharacterAnimator.SetBool("UseAbility",true);
         _sound.PlayAbilitySound();
         yield return new WaitForSeconds(1);
-        _player.CharacterAnimator.SetBool("UseAbility", false);
+        _player.UpperBody.AnimationState.SetAnimation(3, SpineAnimationNames.IDLE + _player.MoveStateName, false);
+        _player.LowerBody.AnimationState.SetAnimation(3, SpineAnimationNames.IDLE + _player.MoveStateName, false);
+        //_player.CharacterAnimator.SetBool("UseAbility", false);
         _cooldown = _maxCooldown;
         _usingAbility = false;
         _abilityIsReady = false;

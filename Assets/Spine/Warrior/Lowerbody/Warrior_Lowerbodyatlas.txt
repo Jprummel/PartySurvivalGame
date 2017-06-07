@@ -1,0 +1,62 @@
+
+Warrior_Lowerbody.png
+size: 512,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Warrior_1/Assets_Warrior_1_Blue/Leg_L_1_Blue
+  rotate: false
+  xy: 67, 3
+  size: 58, 98
+  orig: 58, 98
+  offset: 0, 0
+  index: -1
+Warrior_1/Assets_Warrior_1_Blue/Leg_R_1_Blue
+  rotate: false
+  xy: 2, 2
+  size: 63, 99
+  orig: 63, 99
+  offset: 0, 0
+  index: -1
+Warrior_2/Assets_Warrior_2_Blue/Foot_L_2_Blue
+  rotate: false
+  xy: 232, 16
+  size: 39, 40
+  orig: 39, 40
+  offset: 0, 0
+  index: -1
+Warrior_2/Assets_Warrior_2_Blue/Foot_R_2_Blue
+  rotate: true
+  xy: 445, 57
+  size: 44, 47
+  orig: 44, 47
+  offset: 0, 0
+  index: -1
+Warrior_2/Assets_Warrior_2_Blue/Leg_L_2_blue
+  rotate: true
+  xy: 127, 58
+  size: 43, 108
+  orig: 43, 108
+  offset: 0, 0
+  index: -1
+Warrior_2/Assets_Warrior_2_Blue/Leg_R_2_Blue
+  rotate: true
+  xy: 237, 60
+  size: 41, 103
+  orig: 41, 103
+  offset: 0, 0
+  index: -1
+Warrior_4/Assets_Warrior_4_Blue/Leg_L_4_Blue
+  rotate: true
+  xy: 127, 13
+  size: 43, 103
+  orig: 43, 103
+  offset: 0, 0
+  index: -1
+Warrior_4/Assets_Warrior_4_Blue/Leg_R_4_Blue
+  rotate: true
+  xy: 342, 56
+  size: 45, 101
+  orig: 45, 101
+  offset: 0, 0
+  index: -1

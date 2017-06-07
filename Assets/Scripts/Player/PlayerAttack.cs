@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class PlayerAttack : MonoBehaviour {
 
-    PlayerCharacter _playerCharacter;
+    PlayerCharacter _player;
     private float _comboResetTimer;
     private float _delayBetweenCombos;
     private bool _readyToAttack = true;
@@ -13,10 +13,11 @@ public class PlayerAttack : MonoBehaviour {
     {
         get { return _readyToAttack; }
     }
+    private float _defaultDamage;
 
     void Awake()
-    {  
-        _playerCharacter = GetComponent<PlayerCharacter>();
+    {
+        _player = GetComponent<PlayerCharacter>();
     }
 
     void Update(){
@@ -28,13 +29,14 @@ public class PlayerAttack : MonoBehaviour {
     {
         if (_readyToAttack && _delayBetweenCombos <= 0)
         {
-            StartCoroutine(AttackState(_playerCharacter.LightAttackState));
+            AttackAnim(_player.LightAttackState);
+            //StartCoroutine(AttackState(_playerCharacter.LightAttackState));
             _readyToAttack = false;
-            _playerCharacter.LightAttackState++;
+            _player.LightAttackState++;
             _comboResetTimer = 0.8f;
-            if (_playerCharacter.LightAttackState > _playerCharacter.MaxLightAttackState)
+            if (_player.LightAttackState > _player.MaxLightAttackState)
             {
-                _playerCharacter.LightAttackState = 1;
+                _player.LightAttackState = 1;
                 _delayBetweenCombos = 0.75f;
             }
             StartCoroutine(Cooldown(0.3f));
@@ -43,9 +45,10 @@ public class PlayerAttack : MonoBehaviour {
 
     public void HeavyAttack()
     {
-        if (_readyToAttack & !_playerCharacter.Ability.UsingAbility)
+        if (_readyToAttack & !_player.Ability.UsingAbility)
         {
-            StartCoroutine(AttackState(3));
+            AttackAnim(3);
+            //StartCoroutine(AttackState(3));
             StartCoroutine(HeavyAttackRoutine(2));
             _readyToAttack = false;
             StartCoroutine(Cooldown(1));
@@ -54,9 +57,37 @@ public class PlayerAttack : MonoBehaviour {
 
     IEnumerator AttackState(int animationAttackState)
     {
-        _playerCharacter.CharacterAnimator.SetInteger("AttackState", animationAttackState);
-        yield return new WaitForSeconds(0.25f);
-        _playerCharacter.CharacterAnimator.SetInteger("AttackState", 0);
+        switch (animationAttackState)
+        {
+            case 1:
+                _player.UpperBody.AnimationState.SetAnimation(0, SpineAnimationNames.FOREHAND + _player.MoveStateName, false);
+                break;
+            case 2:
+                _player.UpperBody.AnimationState.SetAnimation(0, SpineAnimationNames.BACKHAND + _player.MoveStateName, false);
+                break;
+            case 3:
+                _player.UpperBody.AnimationState.SetAnimation(0, SpineAnimationNames.OVERHEAD + _player.MoveStateName, false);
+                break;
+        }
+        
+        yield return null;
+    }
+
+    void AttackAnim(int animationAttackState)
+    {
+        switch (animationAttackState)
+        {
+            case 1:
+            _player.UpperBody.AnimationState.SetAnimation(0, SpineAnimationNames.FOREHAND + _player.MoveStateName, false);
+                break;
+            case 2:
+                _player.UpperBody.AnimationState.SetAnimation(0, SpineAnimationNames.BACKHAND + _player.MoveStateName, false);
+                break;
+            case 3:
+                _player.UpperBody.AnimationState.SetAnimation(0, SpineAnimationNames.OVERHEAD + _player.MoveStateName, false);
+                break;
+        }
+        _player.UpperBody.state.Complete += IdleState;
     }
 
     void StartComboResetTimer()
@@ -68,7 +99,7 @@ public class PlayerAttack : MonoBehaviour {
         if (_comboResetTimer <= 0)
         {
             _comboResetTimer = 0;
-            _playerCharacter.LightAttackState = 1;
+            _player.LightAttackState = 1;
         }
     }
 
@@ -80,14 +111,22 @@ public class PlayerAttack : MonoBehaviour {
 
     IEnumerator HeavyAttackRoutine(float modifier)
     {
-        float defaultDamage = _playerCharacter.Damage;
+        float defaultDamage = _player.Damage;
 
-        _playerCharacter.CanMove = false;
-        _playerCharacter.Ability.CanUseAbility = false;
-        _playerCharacter.Damage = _playerCharacter.Damage * modifier;
-        yield return new WaitForSeconds(1);
-        _playerCharacter.Damage = defaultDamage;
-        _playerCharacter.Ability.CanUseAbility = true;
-        _playerCharacter.CanMove = true;
+        _player.CanMove = false;
+        _player.Ability.CanUseAbility = false;
+        _player.Damage = _player.Damage * modifier;
+        yield return new WaitForSeconds(0.5f);
+        _player.Damage = defaultDamage;
+        _player.Ability.CanUseAbility = true;
+        _player.CanMove = true;
+    }
+
+    void IdleState(Spine.TrackEntry track)
+    {
+        Debug.Log("Ayyeylmao");
+        _player.UpperBody.AnimationName = SpineAnimationNames.IDLE + _player.MoveStateName;
+        _player.CanMove = true;
+        _player.Ability.CanUseAbility = true;
     }
 }

@@ -1,4 +1,4 @@
-﻿        using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -134,12 +134,19 @@ public class CharacterSelect : MonoBehaviour {
     public void SelectCharacter()
     {
         _selectedCharacterPrefab = _characters[_selectedCharacterNumber];
-        PlayerParty.Players.Add(_selectedCharacterPrefab);
-        _selectedCharacter = _characters[_selectedCharacterNumber].GetComponent<PlayerCharacter>();
+        
+        _selectedCharacter = _selectedCharacterPrefab.GetComponent<PlayerCharacter>();
         _selectedCharacter.PlayerID = _input.PlayerID; //Sets selected characters id equal to the players id who selected him
+        PlayerParty.Players.Add(_selectedCharacterPrefab);
+        ReadyUp();
+        _inputDelay = _inputDelayMaxTime;
+    }
+
+    void ReadyUp()
+    {
+        //Sets the players state to ready in the character selection screen
         _ready = true;
         _readyText.SetActive(true);
         _characterSelectPlayers.ReadyPlayers++;
-        _inputDelay = _inputDelayMaxTime;
     }
 }

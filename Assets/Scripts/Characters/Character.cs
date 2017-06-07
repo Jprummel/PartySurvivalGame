@@ -2,8 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Spine.Unity;
 
 public class Character : MonoBehaviour, IDamageable {
+
+    //Spine values
+    [SerializeField]protected SkeletonAnimation _upperBodySkeleton;
+    [SerializeField]protected SkeletonAnimation _lowerBodySkeleton;
+    protected string _moveStateName;
+
+    public SkeletonAnimation UpperBody
+    {
+        get { return _upperBodySkeleton; }
+        set { _upperBodySkeleton = value; }
+    }
+
+    public SkeletonAnimation LowerBody
+    {
+        get { return _lowerBodySkeleton; }
+        set { _lowerBodySkeleton = value; }
+    }
+
+    public string MoveStateName
+    {
+        get { return _moveStateName; }
+        set { _moveStateName = value; }
+    }
 
     //Editor Values
     [SerializeField]protected string    _name;
@@ -114,18 +138,56 @@ public class Character : MonoBehaviour, IDamageable {
         get { return _rgb2d; }
     }
 
+    public enum MoveState
+    {
+        FRONT,
+        DOWN,
+        LEFT,
+        RIGHT
+    }
+
+    public MoveState moveState;
+
     protected virtual void Awake()
     {
+        CheckMoveState();
         _giveGold       = DOTween.Sequence();
         _ranking        = GameObject.FindGameObjectWithTag(Tags.RANKTRACKER).GetComponent<Ranking>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _soundEffects   = GetComponent<CharacterSoundFX>();
         _animator       = GetComponent<Animator>();    //Gets the characters animator
         _rgb2d          = GetComponent<Rigidbody2D>();
-        _defaultColor   = _spriteRenderer.color;
         _hitColor       = new Color(1,0.6f,0.6f);
         _canMove        = true;
         _currentHealth  = _maxHealth;             //Sets the characters current health to its max health on spawn
+       
+    }
+
+    protected virtual void Update()
+    {
+        CheckMoveState();
+    }
+
+    void CheckMoveState()
+    {
+        switch (moveState)
+        {
+            case MoveState.DOWN:
+                _moveStateName = "Front";
+                break;
+            case MoveState.FRONT:
+                _moveStateName = "Back";
+                break;
+            case MoveState.LEFT:
+                _moveStateName = "Left";
+                break;
+            case MoveState.RIGHT:
+                _moveStateName = "Right";
+                break;
+            default:
+                _moveStateName = "Right";
+                break;
+        }
     }
 
     public void TakeDamage(Character damageSource)
@@ -189,8 +251,8 @@ public class Character : MonoBehaviour, IDamageable {
         float duration = 0.33f;
         float smoothness = 0.01f;
         float _progress = 0;
-
-        if(_spriteRenderer.color == _defaultColor)
+        yield return null;
+        /*if(_spriteRenderer.color == _defaultColor)
         {
             while (_progress < duration)
             {
@@ -205,7 +267,7 @@ public class Character : MonoBehaviour, IDamageable {
                 _progress -= duration;
                 yield return new WaitForSeconds(smoothness);
             }
-        }
+        }*/
     }
 
     IEnumerator ResetDamageSource(GameObject source)
@@ -217,11 +279,25 @@ public class Character : MonoBehaviour, IDamageable {
 
     IEnumerator HitRoutine()
     {
-        _animator.SetBool("Hit", true);
+        _upperBodySkeleton.AnimationName = SpineAnimationNames.HIT + _moveStateName;
         _canMove = false;
         yield return new WaitForSeconds(0.5f);
         _canMove = true;
-        _animator.SetBool("Hit",false);
+        _upperBodySkeleton.AnimationName = SpineAnimationNames.IDLE + _moveStateName;
+    }
+
+    void GetHit()
+    {
+        _upperBodySkeleton.AnimationName = SpineAnimationNames.HIT + _moveStateName;
+        _upperBodySkeleton.state.Complete += IdleState;
+    }
+
+    void IdleState(Spine.TrackEntry trackEntry)
+    {
+        Debug.Log("Going into idle");
+        _upperBodySkeleton.AnimationName = SpineAnimationNames.IDLE + _moveStateName;
+        _lowerBodySkeleton.AnimationName = SpineAnimationNames.IDLE + _moveStateName;
+        _canMove = true;
     }
 
     IEnumerator RemoveVelocity(float stunTime)

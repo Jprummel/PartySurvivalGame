@@ -190,7 +190,5 @@ namespace Spine.Unity {
 				_UpdateComplete(this);
 			}
 		}
-
 	}
-
 }

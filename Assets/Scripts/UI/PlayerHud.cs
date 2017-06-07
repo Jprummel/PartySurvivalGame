@@ -6,109 +6,46 @@ using DG.Tweening;
 
 public class PlayerHud : MonoBehaviour {
 
-    private PlayerCharacter _playerCharacter;
-    public PlayerCharacter Character
-    {
-        get{ return _playerCharacter; }
-        set{ _playerCharacter = value; }
-    }
-
-    [SerializeField]private Image _enemyHealthBar;
+    private PlayerCharacter _player;
     [SerializeField]private Image _healthBar;
-    [SerializeField]private Image _portrait;
-    [SerializeField]private Text _gold;
-    [SerializeField]private Text _rankText;
     [SerializeField]private Image _abilityImage;
-    [SerializeField]private Image _abilityCooldownSlider;
-
-    public Image Portrait
-    { 
-        get {return _portrait;}
-        set {_portrait = value; }
-    }
-
-    public Image HealthBar
-    {
-        get { return _healthBar; }
-        set { _healthBar = value; }
-    }
-
-    public Text RankText
-    {
-        get { return _rankText; }
-        set { _rankText = value; }
-    }
-
-    public Image AbilityImage
-    {
-        get { return _abilityImage; }
-        set { _abilityImage = value; }
-    }
-
-    private Color _defaultColor = new Color();
-
-    public Color DefaultColor
-    {
-        get { return _defaultColor; }
-    }
-
-    public Color InactiveColor
-    {
-        get { return _defaultColor; }
-    }
+    [SerializeField]private Image _abilityCooldownIndicator;
+    [SerializeField]private Image _enemyPlayerHealthBar;
 
     void Start()
     {
-        //Character.HUD = this;
-        _defaultColor = new Color(255, 255, 255, 1);
+        _player = GetComponentInParent<PlayerCharacter>();
+        _player.HUD = this;
+        Debug.Log(_player.Ability);
+        _abilityImage.sprite = _player.Ability.AbilityImage;
     }
 
-    void Update()
-    {
-        SetPortrait();
+	void Update () {
         SetHealthBar();
-        SetGold();
-        SetAbilityImage();
         ShowAbilityCooldown();
-    }
-
-    void SetPortrait()
-    {
-        if (Character != null)
-        {
-            _portrait.sprite = Character.Portrait;
-        }
-    }
-
-    void SetAbilityImage()
-    {
-        _abilityImage.sprite = _playerCharacter.Ability.AbilityImage; //Sets ability image in HUD to fit the one passed into the ability script
-    }
+	}
 
     void SetHealthBar()
     {
-        //_healthBar.DOFillAmount(Character.CurrentHealth / Character.MaxHealth, 1);
+        _healthBar.DOFillAmount(_player.CurrentHealth / _player.MaxHealth, 1);
     }
 
     void ShowAbilityCooldown()
     {
-        float cooldown = _playerCharacter.Ability.Cooldown;
-        float maxCooldown = _playerCharacter.Ability.MaxCooldown;
+        float cooldown = _player.Ability.Cooldown;
+        float maxCooldown = _player.Ability.MaxCooldown;
 
-        if(!_playerCharacter.Ability.AbilityIsReady)
+        if (!_player.Ability.AbilityIsReady)
         {
-            //_abilityCooldownSlider.fillAmount = 1;
-            _abilityCooldownSlider.DOFillAmount(cooldown / maxCooldown,0.1f).ChangeStartValue(1);
+            _abilityCooldownIndicator.DOFillAmount(cooldown / maxCooldown, 0.1f).ChangeStartValue(1);
         }
-    }
-
-    void SetGold()
-    {
-        _gold.text = Character.Gold.ToString("N0");
     }
 
     public void SetNewHealthBar()
     {
-        _healthBar.sprite = _enemyHealthBar.sprite;
+        if (!_player.IsAlly)
+        {
+            _healthBar.sprite = _enemyPlayerHealthBar.sprite;
+        }
     }
 }

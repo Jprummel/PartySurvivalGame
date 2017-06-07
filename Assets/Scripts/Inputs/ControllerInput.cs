@@ -5,7 +5,6 @@ using UnityEngine;
 public class ControllerInput : MonoBehaviour {
 
     private ShopDisplay         _shopDisplay;
-    private GameObject          _pauseGameObject;
     private WalkParticle        _walkParticle;
     private CharacterSoundFX    _soundEffects;
     private WaveController      _waveController;
@@ -16,15 +15,14 @@ public class ControllerInput : MonoBehaviour {
 
     void Awake()
     {
-        _shopDisplay    = GameObject.FindGameObjectWithTag(Tags.SHOPMANAGER).GetComponent<ShopDisplay>();
-        _pauseGameObject = GameObject.FindGameObjectWithTag(Tags.PAUSEOBJECT);
-        _walkParticle   = GetComponentInChildren<WalkParticle>();
-        _soundEffects   = GetComponent<CharacterSoundFX>();
-        _waveController = GameObject.FindGameObjectWithTag(Tags.WAVEMANAGER).GetComponent<WaveController>();
-        _pauseGame      = _pauseGameObject.GetComponent<PauseGame>();
-        _player         = GetComponent<PlayerCharacter>();
-        _playerMovement = GetComponent<PlayerMovement>();
-        _playerAttack   = GetComponent<PlayerAttack>();
+        _shopDisplay        = GameObject.FindGameObjectWithTag(Tags.SHOPMANAGER).GetComponent<ShopDisplay>();
+        _pauseGame          = GameObject.FindGameObjectWithTag(Tags.PAUSEOBJECT).GetComponent<PauseGame>();
+        _walkParticle       = GetComponentInChildren<WalkParticle>();
+        _soundEffects       = GetComponent<CharacterSoundFX>();
+        _waveController     = GameObject.FindGameObjectWithTag(Tags.WAVEMANAGER).GetComponent<WaveController>();
+        _player             = GetComponent<PlayerCharacter>();
+        _playerMovement     = GetComponent<PlayerMovement>();
+        _playerAttack       = GetComponent<PlayerAttack>();
     }
 
     void Update()
@@ -86,6 +84,10 @@ public class ControllerInput : MonoBehaviour {
                     _soundEffects.StopWalkSound();
                 }
             }
+            else if (!_player.CanMove)
+            {
+                _player.LowerBody.AnimationName = SpineAnimationNames.IDLE + _player.MoveStateName;
+            }
         }
         
         if (Input.GetButtonDown(InputAxes.START + _player.PlayerID) && _waveController.IsCombatPhase)
@@ -112,20 +114,20 @@ public class ControllerInput : MonoBehaviour {
         //If player is moving on Y axis switch between up and down and ignore X axis
         if (x > 0 && y == 0)
         {
-            _player.moveState = PlayerCharacter.MoveState.RIGHT;
+            _player.moveState = Character.MoveState.RIGHT;
         }
         else if (x < 0 && y == 0)
         {
-            _player.moveState = PlayerCharacter.MoveState.LEFT;
+            _player.moveState = Character.MoveState.LEFT;
         }
 
         if (y > 0)
         {
-            _player.moveState = PlayerCharacter.MoveState.UP;
+            _player.moveState = Character.MoveState.FRONT;
         }
         else if (y < 0)
         {
-            _player.moveState = PlayerCharacter.MoveState.DOWN;
+            _player.moveState = Character.MoveState.DOWN;
         }
     }
 }

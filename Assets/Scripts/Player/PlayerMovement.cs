@@ -22,31 +22,22 @@ public class PlayerMovement : MonoBehaviour {
     public void Move(Vector2 moveDir)
     {
         transform.rotation = _rotation;
-
-        _rgb2d.MovePosition(_rgb2d.position + moveDir * _player.MovementSpeed * Time.deltaTime);
-   
+        _rgb2d.MovePosition(_rgb2d.position + moveDir * _player.MovementSpeed * Time.deltaTime);   
         PlayAnimation(moveDir);
-        
-        //Makes the characters sprite face his move direction 
-        if (moveDir.x < 0)
-        {
-            _rotation.y = 180;
-        }
-        else if (moveDir.x > 0)
-        {
-            _rotation.y = 0;
-        }
     }
 
     private void PlayAnimation(Vector2 dir)
     {
-        if(dir != Vector2.zero)
+        if (dir != Vector2.zero)
         {
-            _player.CharacterAnimator.SetBool("IsMoving", true);
+            _player.UpperBody.AnimationName = SpineAnimationNames.WALK + _player.MoveStateName;
+            _player.LowerBody.AnimationName = SpineAnimationNames.WALK + _player.MoveStateName;
         }
-        else
+        else if(_player.MoveStateName != null)
         {
-            _player.CharacterAnimator.SetBool("IsMoving", false);
+
+            _player.UpperBody.AnimationName = SpineAnimationNames.IDLE + _player.MoveStateName;
+            _player.LowerBody.AnimationName = SpineAnimationNames.IDLE + _player.MoveStateName;
         }
     }
 }

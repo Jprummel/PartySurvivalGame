@@ -34,7 +34,7 @@ public class PlayerCharacter : Character {
     private Sprite _startSprite;
 
     public Sprite Portrait { get { return _portrait; }}
-    public NewPlayerHud HUD { get; set; }
+    public PlayerHud HUD { get; set; }
 
     //Script/Component imports
     private EnemySpawner _enemySpawner;
@@ -43,6 +43,7 @@ public class PlayerCharacter : Character {
     private PlayerUpgradeCosts _upgradeCosts;
     public PlayerUpgradeCosts UpgradeCosts { get { return _upgradeCosts; }}
 
+    //Scale factors (when player turns into an enemy)
     protected float _damageScaleFactor;
     protected float _healthScaleFactor;
 
@@ -79,32 +80,43 @@ public class PlayerCharacter : Character {
         get { return _playerID; }
         set { _playerID = value; }
     }
-
-    public enum MoveState
-    {
-        UP,
-        DOWN,
-        LEFT,
-        RIGHT
-    }
-
-    public MoveState moveState;
     
     protected override void Awake()
     {
         _gold = 1500;
         _endLerpGold = _gold;
         PlayerParty.PlayerCharacters.Add(this);
-        _warningPlayer = GameObject.Find("PlayerDiedWarning").GetComponent<PlayerDiedWarning>();
+        _warningPlayer = GameObject.FindGameObjectWithTag(Tags.WARNINGOBJECT).GetComponent<PlayerDiedWarning>();
         _upgradeCosts = GetComponent<PlayerUpgradeCosts>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        _startSprite = _spriteRenderer.sprite;
         base.Awake();
-        _respawn = GameObject.FindWithTag("PlayerParty").GetComponent<Respawn>();
+        _respawn = GameObject.FindWithTag(Tags.PLAYERPARTY).GetComponent<Respawn>();
     }
 
-    void Update()
+    protected virtual void Start()
     {
+        switch (_playerID)
+        {
+            case 1:
+                _upperBodySkeleton.skeleton.SetSkin(SpineSkinNames.ORANGE);
+                break;
+            case 2:
+                _upperBodySkeleton.skeleton.SetSkin(SpineSkinNames.BLUE);
+                break;
+            case 3:
+                _upperBodySkeleton.skeleton.SetSkin(SpineSkinNames.GREEN);
+                break;
+            case 4:
+                _upperBodySkeleton.skeleton.SetSkin(SpineSkinNames.PURPLE);
+                break;
+            default:
+                _upperBodySkeleton.skeleton.SetSkin(SpineSkinNames.ORANGE);
+                break;
+        }
+    }
+
+    protected override void Update()
+    {
+        base.Update();
         if(CurrentHealth <= 0 && !_isDead)
         {
             StartCoroutine(DeathRoutine());
@@ -135,8 +147,8 @@ public class PlayerCharacter : Character {
         }
         _isDead = true;
         _canMove = false;
-        _animator.SetBool("IsDead", true);
-        _animator.SetInteger("AttackState", 0);
+        _upperBodySkeleton.AnimationState.SetAnimation(0, SpineAnimationNames.DEATH + _moveStateName,false);
+        _lowerBodySkeleton.AnimationState.SetAnimation(0, SpineAnimationNames.DEATH + _moveStateName, false);
         yield return new WaitForSeconds(1.5f);
         if (_isAlly)
         {

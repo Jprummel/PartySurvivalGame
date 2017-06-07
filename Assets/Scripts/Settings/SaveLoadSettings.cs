@@ -6,6 +6,12 @@ using System.IO;
 
 public class SaveLoadSettings : MonoBehaviour {
 
+    void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+        LoadSettings();
+    }
+
     public void SaveSettings()
     {
         //Save the settings
@@ -27,9 +33,8 @@ public class SaveLoadSettings : MonoBehaviour {
 
     public void LoadSettings()
     {
-        if (File.Exists(Application.persistentDataPath + "/SaveDataSlot.dat"))
+        if (File.Exists(Application.persistentDataPath + "/SavedSettingsSlot.dat"))
         {
-            Debug.Log("Loaded file");
             //If there is a save file of the settings, load the settings
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/SavedSettingsSlot.dat", FileMode.Open);
@@ -39,10 +44,10 @@ public class SaveLoadSettings : MonoBehaviour {
             SettingsInformation.ResolutionWidth     = settingsData.ResolutionWidth;
             SettingsInformation.ResoltuionHeight    = settingsData.ResoltuionHeight;
             SettingsInformation.IsFullScreen        = settingsData.IsFullScreen;
-            SettingsInformation.MasterVolume = settingsData.MasterVolume;
-            SettingsInformation.SoundFXVolume = settingsData.SoundFXVolume;
-            SettingsInformation.MusicVolume = settingsData.MusicVolume;
-            SettingsInformation.SkipCutscenes = settingsData.SkipCutscenes;
+            SettingsInformation.MasterVolume        = settingsData.MasterVolume;
+            SettingsInformation.SoundFXVolume       = settingsData.SoundFXVolume;
+            SettingsInformation.MusicVolume         = settingsData.MusicVolume;
+            SettingsInformation.SkipCutscenes       = settingsData.SkipCutscenes;
             file.Close();
         }
         else
