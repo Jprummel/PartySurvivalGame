@@ -55,8 +55,6 @@ public class Unit : MonoBehaviour {
             {
                 transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, _enemy.MovementSpeed / 100);
             }
-            /*Vector2 dir = (currentWaypoint - transform.position).normalized * _enemy.MovementSpeed;
-            _rgb2d.velocity = dir;*/
             yield return null;
         }
     }
