@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour {
 
-    private Rigidbody2D _rgb2d;
     private Enemy _enemy;
-    private bool _hasTarget;
+    private Rigidbody2D _rgb2d;
     public Transform target;
     Vector3[] path;
     int targetIndex;
@@ -15,10 +14,12 @@ public class Unit : MonoBehaviour {
     {
         _enemy = GetComponent<Enemy>();
         _rgb2d = GetComponent<Rigidbody2D>();
+        InvokeRepeating("FindPath", 0.01f, 0.25f);
     }
 
-    void Update()
+    void FindPath()
     {
+        Debug.Log(target);
         if (target != null)
         {
             PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
@@ -42,10 +43,10 @@ public class Unit : MonoBehaviour {
 
         while (true)
         {
-            if(transform.position == currentWaypoint)
+            if (transform.position == currentWaypoint)
             {
                 targetIndex++;
-                if(targetIndex >= path.Length)
+                if (targetIndex >= path.Length)
                 {
                     yield break;
                 }
@@ -54,9 +55,9 @@ public class Unit : MonoBehaviour {
             if (distance > _enemy.AttackRange)
             {
                 transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, _enemy.MovementSpeed / 100);
+                _rgb2d.velocity = Vector2.zero;
             }
             yield return null;
         }
     }
-
 }
