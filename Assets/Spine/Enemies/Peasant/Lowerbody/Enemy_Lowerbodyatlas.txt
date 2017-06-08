@@ -1,0 +1,146 @@
+
+Enemy_Lowerbody.png
+size: 1024,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+4/Foot_B_4 
+  rotate: false
+  xy: 939, 16
+  size: 33, 34
+  orig: 33, 34
+  offset: 0, 0
+  index: -1
+Peasant_1/Foot_B_1
+  rotate: false
+  xy: 2, 2
+  size: 53, 48
+  orig: 53, 48
+  offset: 0, 0
+  index: -1
+Peasant_1/Foot_L_1
+  rotate: false
+  xy: 320, 14
+  size: 53, 36
+  orig: 53, 36
+  offset: 0, 0
+  index: -1
+Peasant_1/Foot_R_1
+  rotate: false
+  xy: 375, 14
+  size: 53, 36
+  orig: 53, 36
+  offset: 0, 0
+  index: -1
+Peasant_1/Leg_L_1
+  rotate: true
+  xy: 112, 2
+  size: 48, 50
+  orig: 48, 50
+  offset: 0, 0
+  index: -1
+Peasant_1/Leg_R_1
+  rotate: true
+  xy: 164, 2
+  size: 48, 50
+  orig: 48, 50
+  offset: 0, 0
+  index: -1
+Peasant_2/Foot_B_2
+  rotate: true
+  xy: 681, 10
+  size: 40, 44
+  orig: 40, 44
+  offset: 0, 0
+  index: -1
+Peasant_2/Foot_L_2
+  rotate: false
+  xy: 727, 11
+  size: 41, 39
+  orig: 41, 39
+  offset: 0, 0
+  index: -1
+Peasant_2/Foot_R_2
+  rotate: true
+  xy: 856, 12
+  size: 38, 40
+  orig: 38, 40
+  offset: 0, 0
+  index: -1
+Peasant_2/Leg_L_2
+  rotate: true
+  xy: 540, 9
+  size: 41, 45
+  orig: 41, 45
+  offset: 0, 0
+  index: -1
+Peasant_2/Leg_R_2
+  rotate: false
+  xy: 898, 13
+  size: 39, 37
+  orig: 39, 37
+  offset: 0, 0
+  index: -1
+Peasant_3/Foot_B_3
+  rotate: false
+  xy: 57, 2
+  size: 53, 48
+  orig: 53, 48
+  offset: 0, 0
+  index: -1
+Peasant_3/Foot_L_3
+  rotate: false
+  xy: 430, 14
+  size: 53, 36
+  orig: 53, 36
+  offset: 0, 0
+  index: -1
+Peasant_3/Foot_R_3
+  rotate: false
+  xy: 485, 14
+  size: 53, 36
+  orig: 53, 36
+  offset: 0, 0
+  index: -1
+Peasant_3/Leg_L_3
+  rotate: true
+  xy: 216, 2
+  size: 48, 50
+  orig: 48, 50
+  offset: 0, 0
+  index: -1
+Peasant_3/Leg_R_3
+  rotate: true
+  xy: 268, 2
+  size: 48, 50
+  orig: 48, 50
+  offset: 0, 0
+  index: -1
+Peasant_4/Foot_L_4
+  rotate: false
+  xy: 770, 11
+  size: 41, 39
+  orig: 41, 39
+  offset: 0, 0
+  index: -1
+Peasant_4/Foot_R_4
+  rotate: false
+  xy: 813, 11
+  size: 41, 39
+  orig: 41, 39
+  offset: 0, 0
+  index: -1
+Peasant_4/Leg_L_4
+  rotate: true
+  xy: 587, 9
+  size: 41, 45
+  orig: 41, 45
+  offset: 0, 0
+  index: -1
+Peasant_4/Leg_R_4
+  rotate: true
+  xy: 634, 9
+  size: 41, 45
+  orig: 41, 45
+  offset: 0, 0
+  index: -1

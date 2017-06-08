@@ -134,10 +134,9 @@ public class CharacterSelect : MonoBehaviour {
     public void SelectCharacter()
     {
         _selectedCharacterPrefab = _characters[_selectedCharacterNumber];
-        
+        PlayerParty.Players.Add(_selectedCharacterPrefab);
         _selectedCharacter = _selectedCharacterPrefab.GetComponent<PlayerCharacter>();
         _selectedCharacter.PlayerID = _input.PlayerID; //Sets selected characters id equal to the players id who selected him
-        PlayerParty.Players.Add(_selectedCharacterPrefab);
         ReadyUp();
         _inputDelay = _inputDelayMaxTime;
     }

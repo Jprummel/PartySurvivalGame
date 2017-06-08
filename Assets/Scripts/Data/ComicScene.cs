@@ -25,7 +25,7 @@ public class ComicScene : MonoBehaviour {
 
     void FadePanel()
     {
-        if (Input.GetButtonDown(InputAxes.XBOX_A + "1"))
+        if (Input.GetButtonDown(InputAxes.MENU_NAV_CONFIRM))
         {
             if (_currentPanel < _comicPanels.Count)
             {

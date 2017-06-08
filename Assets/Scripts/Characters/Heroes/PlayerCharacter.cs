@@ -39,7 +39,6 @@ public class PlayerCharacter : Character {
     //Script/Component imports
     private EnemySpawner _enemySpawner;
     private Respawn     _respawn;
-    private ChangePortraitColor _portraitColor;
     private PlayerUpgradeCosts _upgradeCosts;
     public PlayerUpgradeCosts UpgradeCosts { get { return _upgradeCosts; }}
 
