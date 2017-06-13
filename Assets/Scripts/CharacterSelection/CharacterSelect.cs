@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class CharacterSelect : MonoBehaviour {
 
-
-    private GameObject[] _players = new GameObject[4];
     //Script imports
     [SerializeField]private SelectionScreen _selectionScreen;
     private CharacterSelectPlayers _characterSelectPlayers;
@@ -45,7 +43,6 @@ public class CharacterSelect : MonoBehaviour {
 
     void Start()
     {
-        Debug.Log(PlayerParty.Players.Count);
         _characterInfo = GetComponent<ShowCharacterInfo>();
         _characterSelectPlayers = GameObject.FindGameObjectWithTag(Tags.CHARACTERSELECTOBJECT).GetComponent<CharacterSelectPlayers>();
         _characterSelectUI = GetComponent<CharacterSelectUI>();
@@ -134,12 +131,10 @@ public class CharacterSelect : MonoBehaviour {
 
     public void SelectCharacter()
     {
-        
-        _selectedCharacterPrefab = _characters[_selectedCharacterNumber]; //Sets selectedcharacter prefab to the prefab in the list
-        PlayerParty.Players.Insert(_input.PlayerID, _selectedCharacterPrefab);
-        //PlayerParty.Players.Add(_selectedCharacterPrefab); //Adds the prefab to the players list
-        //_selectedCharacter = _selectedCharacterPrefab.GetComponent<PlayerCharacter>(); //Gets the playercharacterscript from the player
-        //_selectedCharacter.PlayerID = _input.PlayerID; //Sets selected characters id equal to the players id who selected him
+        _selectedCharacterPrefab = _characters[_selectedCharacterNumber];
+        PlayerParty.Players.Add(_selectedCharacterPrefab);
+        _selectedCharacter = _selectedCharacterPrefab.GetComponent<PlayerCharacter>();
+        _selectedCharacter.PlayerID = _input.PlayerID; //Sets selected characters id equal to the players id who selected him
         ReadyUp();
         _inputDelay = _inputDelayMaxTime;
     }
