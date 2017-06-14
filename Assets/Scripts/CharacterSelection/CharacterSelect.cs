@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class CharacterSelect : MonoBehaviour {
 
@@ -8,7 +9,9 @@ public class CharacterSelect : MonoBehaviour {
     private ShowCharacterInfo               _characterInfo;
     private CharacterSelectUI               _characterSelectUI;
     private CharacterSelectInput            _input;
-    
+
+    //List of selectable characters
+    [SerializeField]private List<GameObject> _characters = new List<GameObject>();
     //UI
     [SerializeField]private GameObject _joinGameImage;
     [SerializeField]private GameObject _readyText;
@@ -16,9 +19,13 @@ public class CharacterSelect : MonoBehaviour {
     private bool _characterSelectState;
     private bool _playerIsActive;
     private bool _ready;
-
+    //Inputs
+    private float _inputDelay;
+    private float _inputDelayMaxTime = 0.2f;
     //Selected Character    
     private int             _selectedCharacterNumber = 0;
+    private GameObject      _selectedCharacterPrefab;
+    private PlayerCharacter _selectedCharacter;
     public int SelectedCharacterNumber
     {
         get { return _selectedCharacterNumber; }
@@ -50,14 +57,14 @@ public class CharacterSelect : MonoBehaviour {
         {
             _input.JoinGame();
             _input.LeaveGame();
-            if (_playerIsActive && _input.InputDelay <= 0) // If player is active but not ready & input delay timer is zero
+            if (_playerIsActive && _inputDelay <= 0) // If player is active but not ready & input delay timer is zero
             {
                 _input.ShowPlayerInfo();
                 if (!_ready)
                 {
                     _input.NextCharacter();
                     _input.PreviousCharacter();
-                    _input.SelectCharacter(_selectedCharacterNumber,_input.PlayerID);
+                    _input.SelectCharacter();
                 }
             }
             if (_characterSelectPlayers.ReadyToStart)
@@ -65,6 +72,7 @@ public class CharacterSelect : MonoBehaviour {
                 _input.ShowPlayerInfo();
                 _input.StartGame();
             }
+            InputDelayTimer();
         }
     }
 
@@ -77,6 +85,7 @@ public class CharacterSelect : MonoBehaviour {
             _playerIsActive = true;
             _characterSelectPlayers.ActivePlayers++;
             _characterSelectUI.SelectedCharacterVisuals();
+            _inputDelay = _inputDelayMaxTime;
         }
     }
 
@@ -84,6 +93,8 @@ public class CharacterSelect : MonoBehaviour {
     {
         if (_playerIsActive && _ready) //If player is active and ready , unready
         {
+            PlayerParty.Players.Remove(_selectedCharacterPrefab);
+            PlayerParty.PlayerCharacters.Remove(_selectedCharacter);
             _readyText.SetActive(false);
             _ready = false;
             _characterSelectPlayers.ReadyPlayers--;
@@ -94,7 +105,7 @@ public class CharacterSelect : MonoBehaviour {
             _playerIsActive = false; //Sets player inactive
             _characterSelectPlayers.ActivePlayers--;        //Reduces the active players
             _characterSelectPlayers._players.Remove(this);  //Removes this player from the character selection player list
-            _selectedCharacterNumber = 0; //if player wants to rejoin, start on knight character again
+            _selectedCharacterNumber = 0; //if player wants to rejoing, start on knight character again
             _characterSelectUI.DisablePortraitsAndNames(); //Deactivates the portraits and names
         }
 
@@ -107,9 +118,32 @@ public class CharacterSelect : MonoBehaviour {
     public void ChangePortraitAndName()
     {
         _characterSelectUI.SelectedCharacterVisuals(); //Changes portrait and nameplate
+        _inputDelay = _inputDelayMaxTime; //resets the input delay
     }
 
-    public void ReadyUp()
+    void InputDelayTimer()
+    {
+        if (_inputDelay > 0) //Input delay timer to prevent weird things happening with inputs
+        {
+            _inputDelay -= Time.deltaTime;
+        }
+    }
+
+    public void SelectCharacter()
+    {
+        _selectedCharacterPrefab = _characters[_selectedCharacterNumber]; //Sets selectedcharacter prefab to the prefab in the list
+        //PlayerParty.Players.Insert(_input.PlayerID, _selectedCharacterPrefab);
+        PlayerParty.Players.Add(_selectedCharacterPrefab); //Adds the prefab to the players list
+        _selectedCharacter = _selectedCharacterPrefab.GetComponent<PlayerCharacter>(); //Gets the playercharacterscript from the player
+        _selectedCharacterPrefab = _characters[_selectedCharacterNumber];
+        PlayerParty.Players.Add(_selectedCharacterPrefab);
+        _selectedCharacter = _selectedCharacterPrefab.GetComponent<PlayerCharacter>();
+        _selectedCharacter.PlayerID = _input.PlayerID; //Sets selected characters id equal to the players id who selected him
+        ReadyUp();
+        _inputDelay = _inputDelayMaxTime;
+    }
+
+    void ReadyUp()
     {
         //Sets the players state to ready in the character selection screen
         _ready = true;

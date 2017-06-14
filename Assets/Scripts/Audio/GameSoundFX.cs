@@ -1,11 +1,13 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class GameSoundFX : MonoBehaviour {
 
-    [SerializeField]private AudioClip _warhorn;
     private AudioSource _audio;
+    [SerializeField]private AudioClip _warhorn;
 
-    void Start () {
+	void Start () {
 		_audio = GetComponent<AudioSource>();
 	}
 	
