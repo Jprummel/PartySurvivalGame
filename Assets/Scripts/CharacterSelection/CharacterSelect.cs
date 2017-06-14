@@ -131,13 +131,17 @@ public class CharacterSelect : MonoBehaviour {
 
     public void SelectCharacter()
     {
+<<<<<<< HEAD
+        
         _selectedCharacterPrefab = _characters[_selectedCharacterNumber]; //Sets selectedcharacter prefab to the prefab in the list
         //PlayerParty.Players.Insert(_input.PlayerID, _selectedCharacterPrefab);
         PlayerParty.Players.Add(_selectedCharacterPrefab); //Adds the prefab to the players list
         _selectedCharacter = _selectedCharacterPrefab.GetComponent<PlayerCharacter>(); //Gets the playercharacterscript from the player
+=======
         _selectedCharacterPrefab = _characters[_selectedCharacterNumber];
         PlayerParty.Players.Add(_selectedCharacterPrefab);
         _selectedCharacter = _selectedCharacterPrefab.GetComponent<PlayerCharacter>();
+>>>>>>> origin/master
         _selectedCharacter.PlayerID = _input.PlayerID; //Sets selected characters id equal to the players id who selected him
         ReadyUp();
         _inputDelay = _inputDelayMaxTime;
