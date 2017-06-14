@@ -1,0 +1,55 @@
+
+skeleton.png
+size: 3331,1924
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Banner
+  rotate: false
+  xy: 3248, 1681
+  size: 81, 241
+  orig: 81, 241
+  offset: 0, 0
+  index: -1
+Bird
+  rotate: true
+  xy: 3248, 1517
+  size: 162, 70
+  orig: 162, 70
+  offset: 0, 0
+  index: -1
+Border
+  rotate: true
+  xy: 2, 2
+  size: 1920, 1080
+  orig: 1920, 1080
+  offset: 0, 0
+  index: -1
+Flag
+  rotate: true
+  xy: 3248, 1266
+  size: 249, 41
+  orig: 249, 41
+  offset: 0, 0
+  index: -1
+Grass
+  rotate: false
+  xy: 3248, 1158
+  size: 80, 106
+  orig: 80, 106
+  offset: 0, 0
+  index: -1
+Main_Menu_Without_Border
+  rotate: true
+  xy: 1084, 2
+  size: 1920, 1080
+  orig: 1920, 1080
+  offset: 0, 0
+  index: -1
+Sunlight
+  rotate: true
+  xy: 2166, 2
+  size: 1920, 1080
+  orig: 1920, 1080
+  offset: 0, 0
+  index: -1
