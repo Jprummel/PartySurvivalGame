@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour {
 
+    private bool _isMoving = false;
     private Enemy _enemy;
     private Rigidbody2D _rgb2d;
     public Transform target;
@@ -36,26 +37,71 @@ public class Unit : MonoBehaviour {
 
     IEnumerator FollowPath()
     {
-        Vector3 currentWaypoint = path[0];
-        float distance = Vector2.Distance(transform.position, target.position);
-
-        while (true)
+        if (path.Length >= 1)
         {
-            if (transform.position == currentWaypoint)
+            _isMoving = true;
+            Vector3 currentWaypoint = path[0];
+            float distance = Vector2.Distance(transform.position, target.position);
+
+            while (true)
             {
-                targetIndex++;
-                if (targetIndex >= path.Length)
+                if (transform.position == currentWaypoint)
                 {
-                    yield break;
+                    targetIndex++;
+                    if (targetIndex >= path.Length)
+                    {
+                        yield break;
+                    }
+                    currentWaypoint = path[targetIndex];
                 }
-                currentWaypoint = path[targetIndex];
+                if (distance > _enemy.AttackRange)
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, _enemy.MovementSpeed / 100);
+                    float dirX = currentWaypoint.x - transform.position.x;
+                    float dirY = currentWaypoint.y - transform.position.y;
+                    _rgb2d.velocity = Vector2.zero;
+                    SetMoveState(dirX, dirY);
+                }else if(distance < _enemy.AttackRange)
+                {
+                    _isMoving = false;
+                }
+                MoveAnimation();
+                yield return null;
             }
-            if (distance > _enemy.AttackRange)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, _enemy.MovementSpeed / 100);
-                _rgb2d.velocity = Vector2.zero;
-            }
-            yield return null;
+        }
+    }
+
+    void SetMoveState(float x, float y)
+    {
+        if (x > 0 && x > y)
+        {
+            _enemy.moveState = Character.MoveState.RIGHT;
+        }
+        if (x < 0 && -x > -y)
+       {
+            _enemy.moveState = Character.MoveState.LEFT;
+        }
+       if (y > 0 && y > x)
+       {
+            _enemy.moveState = Character.MoveState.FRONT;
+        }
+       if(y < 0 && -y > -x)
+       {
+            _enemy.moveState = Character.MoveState.DOWN;
+       }
+    }
+
+    void MoveAnimation()
+    {
+        if (_isMoving)
+        {
+            _enemy.UpperBody.AnimationName = SpineAnimationNames.WALK + _enemy.MoveStateName;
+            _enemy.LowerBody.AnimationName = SpineAnimationNames.WALK + _enemy.MoveStateName;
+        }
+        else
+        {
+            _enemy.UpperBody.AnimationName = SpineAnimationNames.IDLE + _enemy.MoveStateName;
+            _enemy.LowerBody.AnimationName = SpineAnimationNames.IDLE + _enemy.MoveStateName;
         }
     }
 }

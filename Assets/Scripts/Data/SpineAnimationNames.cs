@@ -13,6 +13,7 @@ public class SpineAnimationNames : MonoBehaviour {
     public const string HIT = "Hit_";
     public const string DEATH = "Death_";
     public const string ABILITY = "Ability";
+    public const string ATTACK = "Attack_";
 
     //Ability Animations
     public const string ROUNDABOUT = "Roundabout";

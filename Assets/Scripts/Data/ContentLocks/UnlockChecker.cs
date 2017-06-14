@@ -15,7 +15,7 @@ public class UnlockChecker : MonoBehaviour {
 
     void Awake()
     {
-        _saveData = GameObject.FindGameObjectWithTag(Tags.SAVELOADOBJECT).GetComponent<SaveLoadData>();
+        //_saveData = GameObject.FindGameObjectWithTag(Tags.SAVELOADOBJECT).GetComponent<SaveLoadData>();
         Scene scene = SceneManager.GetActiveScene();
         _currentLevel = scene.name;
     }
