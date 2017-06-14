@@ -45,7 +45,6 @@ public class CharacterSelect : MonoBehaviour {
 
     void Start()
     {
-        Debug.Log(PlayerParty.Players.Count);
         _characterInfo = GetComponent<ShowCharacterInfo>();
         _characterSelectPlayers = GameObject.FindGameObjectWithTag(Tags.CHARACTERSELECTOBJECT).GetComponent<CharacterSelectPlayers>();
         _characterSelectUI = GetComponent<CharacterSelectUI>();
@@ -136,10 +135,10 @@ public class CharacterSelect : MonoBehaviour {
     {
         
         _selectedCharacterPrefab = _characters[_selectedCharacterNumber]; //Sets selectedcharacter prefab to the prefab in the list
-        PlayerParty.Players.Insert(_input.PlayerID, _selectedCharacterPrefab);
-        //PlayerParty.Players.Add(_selectedCharacterPrefab); //Adds the prefab to the players list
-        //_selectedCharacter = _selectedCharacterPrefab.GetComponent<PlayerCharacter>(); //Gets the playercharacterscript from the player
-        //_selectedCharacter.PlayerID = _input.PlayerID; //Sets selected characters id equal to the players id who selected him
+        //PlayerParty.Players.Insert(_input.PlayerID, _selectedCharacterPrefab);
+        PlayerParty.Players.Add(_selectedCharacterPrefab); //Adds the prefab to the players list
+        _selectedCharacter = _selectedCharacterPrefab.GetComponent<PlayerCharacter>(); //Gets the playercharacterscript from the player
+        _selectedCharacter.PlayerID = _input.PlayerID; //Sets selected characters id equal to the players id who selected him
         ReadyUp();
         _inputDelay = _inputDelayMaxTime;
     }

@@ -41,9 +41,14 @@ public class EnemyAttack : MonoBehaviour {
 
     IEnumerator AttackCooldown()
     {
-        _enemy.CharacterAnimator.SetInteger("AnimationState", 1);
-        yield return new WaitForSeconds(_enemy.AttackSpeed);
-        _enemy.CharacterAnimator.SetInteger("AnimationState", 0);
+        _enemy.UpperBody.state.SetAnimation(0, SpineAnimationNames.ATTACK + _enemy.MoveStateName, false);
+        _enemy.UpperBody.state.Complete += AttackOnTitanComplete;
+        yield return null;
+    }
+    
+    void AttackOnTitanComplete(Spine.TrackEntry track)
+    {
+        _enemy.UpperBody.state.SetAnimation(0, SpineAnimationNames.IDLE + _enemy.MoveStateName, true);
         _readyToAttack = true;
     }
 }

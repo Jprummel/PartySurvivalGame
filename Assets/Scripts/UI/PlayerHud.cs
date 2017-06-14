@@ -16,7 +16,6 @@ public class PlayerHud : MonoBehaviour {
     {
         _player = GetComponentInParent<PlayerCharacter>();
         _player.HUD = this;
-        Debug.Log(_player.Ability);
         _abilityImage.sprite = _player.Ability.AbilityImage;
     }
 
