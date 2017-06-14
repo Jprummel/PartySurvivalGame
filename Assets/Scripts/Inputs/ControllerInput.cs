@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ControllerInput : MonoBehaviour {
 
-    private CharacterAnimations    _animations;
+    private CharacterAnimations _animations;
     private ShopDisplay         _shopDisplay;
     private WalkParticle        _walkParticle;
     private CharacterSoundFX    _soundEffects;
@@ -92,7 +90,6 @@ public class ControllerInput : MonoBehaviour {
             else if (!_player.CanMove)
             {
                 _animations.IdleAnimation();
-                //_player.LowerBody.AnimationName = SpineAnimationNames.IDLE + _player.MoveStateName;
             }
         }
         
