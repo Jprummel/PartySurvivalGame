@@ -50,7 +50,6 @@ public class Character : MonoBehaviour, IDamageable {
 
     //Visuals
     protected Animator _animator;
-    protected float _hitEffectSpeed = 5;
     protected SpriteRenderer _spriteRenderer;
     protected Color _defaultColor;
     protected Color _hitColor;
@@ -199,7 +198,6 @@ public class Character : MonoBehaviour, IDamageable {
                 //attack checks for collision with player or enemy
                 if (this.gameObject.tag == Tags.PLAYER & damageSource.gameObject.tag == Tags.ENEMY & !_invincible)
                 {
-                    StartCoroutine(HitEffect());
                     _soundEffects.PlayHitAudio();
                     _currentHealth -= damageSource.Damage;   //Reduces currenthealth by the amount of damage the source of damage has
                     KnockBack(10, damageSource, 0.1f);
@@ -207,7 +205,6 @@ public class Character : MonoBehaviour, IDamageable {
                 if (this.gameObject.tag == Tags.ENEMY & damageSource.gameObject.tag == Tags.PLAYER)
                 {
                     StartCoroutine(HitRoutine());
-                    StartCoroutine(HitEffect());
                     _soundEffects.PlayHitAudio();
                     _currentHealth -= damageSource.Damage;   //Reduces currenthealth by the amount of damage the source of damage has
                                                              //knockback value/1000
@@ -243,31 +240,6 @@ public class Character : MonoBehaviour, IDamageable {
         //set min/max value to prevent character being knocked back to china.
         _rgb2d.AddForce(power * (clampedPos), ForceMode2D.Impulse);
         StartCoroutine(RemoveVelocity(stunTime));
-    }
-
-
-    IEnumerator HitEffect()
-    {
-        float duration = 0.33f;
-        float smoothness = 0.01f;
-        float _progress = 0;
-        yield return null;
-        /*if(_spriteRenderer.color == _defaultColor)
-        {
-            while (_progress < duration)
-            {
-                _spriteRenderer.color = Color.Lerp(_defaultColor, _hitColor, _progress * 5);
-                _progress += Time.deltaTime;
-                yield return new WaitForSeconds(smoothness);
-            }
-            //go back to standard color when the player is at the end of the hit color animation
-            while (_progress >= duration)
-            {
-                _spriteRenderer.color = Color.Lerp(_hitColor, _defaultColor, _progress * 5);
-                _progress -= duration;
-                yield return new WaitForSeconds(smoothness);
-            }
-        }*/
     }
 
     IEnumerator ResetDamageSource(GameObject source)

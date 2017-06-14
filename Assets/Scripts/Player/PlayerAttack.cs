@@ -1,19 +1,17 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class PlayerAttack : MonoBehaviour {
 
     PlayerCharacter _player;
-    private float _comboResetTimer;
-    private float _delayBetweenCombos;
-    private bool _readyToAttack = true;
+    private float   _defaultDamage;
+    private float   _comboResetTimer;
+    private float   _delayBetweenCombos;
+    private bool    _readyToAttack = true;
     public bool ReadyToAttack
     {
         get { return _readyToAttack; }
     }
-    private float _defaultDamage;
 
     void Awake()
     {
@@ -29,7 +27,7 @@ public class PlayerAttack : MonoBehaviour {
     {
         if (_readyToAttack && _delayBetweenCombos <= 0)
         {
-            AttackAnim(_player.LightAttackState);
+            //AttackAnim(_player.LightAttackState);
             //StartCoroutine(AttackState(_playerCharacter.LightAttackState));
             _readyToAttack = false;
             _player.LightAttackState++;
@@ -47,7 +45,7 @@ public class PlayerAttack : MonoBehaviour {
     {
         if (_readyToAttack & !_player.Ability.UsingAbility)
         {
-            AttackAnim(3);
+            //AttackAnim(3);
             //StartCoroutine(AttackState(3));
             StartCoroutine(HeavyAttackRoutine(2));
             _readyToAttack = false;

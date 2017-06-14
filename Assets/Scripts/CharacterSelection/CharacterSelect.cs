@@ -5,10 +5,10 @@ public class CharacterSelect : MonoBehaviour {
 
     //Script imports
     [SerializeField]private SelectionScreen _selectionScreen;
-    private CharacterSelectPlayers _characterSelectPlayers;
-    private ShowCharacterInfo _characterInfo;
-    private CharacterSelectUI _characterSelectUI;
-    private CharacterSelectInput _input;
+    private CharacterSelectPlayers          _characterSelectPlayers;
+    private ShowCharacterInfo               _characterInfo;
+    private CharacterSelectUI               _characterSelectUI;
+    private CharacterSelectInput            _input;
 
     //List of selectable characters
     [SerializeField]private List<GameObject> _characters = new List<GameObject>();
@@ -23,8 +23,8 @@ public class CharacterSelect : MonoBehaviour {
     private float _inputDelay;
     private float _inputDelayMaxTime = 0.2f;
     //Selected Character    
-    private int _selectedCharacterNumber = 0;
-    private GameObject _selectedCharacterPrefab;
+    private int             _selectedCharacterNumber = 0;
+    private GameObject      _selectedCharacterPrefab;
     private PlayerCharacter _selectedCharacter;
     public int SelectedCharacterNumber
     {
@@ -43,10 +43,10 @@ public class CharacterSelect : MonoBehaviour {
 
     void Start()
     {
-        _characterInfo = GetComponent<ShowCharacterInfo>();
+        _characterInfo          = GetComponent<ShowCharacterInfo>();
         _characterSelectPlayers = GameObject.FindGameObjectWithTag(Tags.CHARACTERSELECTOBJECT).GetComponent<CharacterSelectPlayers>();
-        _characterSelectUI = GetComponent<CharacterSelectUI>();
-        _input = GetComponent<CharacterSelectInput>();
+        _characterSelectUI      = GetComponent<CharacterSelectUI>();
+        _input                  = GetComponent<CharacterSelectInput>();
 
         _characterInfo.CharacterDescription(0);
     }

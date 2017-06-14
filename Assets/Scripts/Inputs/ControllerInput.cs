@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ControllerInput : MonoBehaviour {
 
+    private CharacterAnimations    _animations;
     private ShopDisplay         _shopDisplay;
     private WalkParticle        _walkParticle;
     private CharacterSoundFX    _soundEffects;
@@ -15,6 +16,7 @@ public class ControllerInput : MonoBehaviour {
 
     void Awake()
     {
+        _animations         = GetComponent<CharacterAnimations>();
         _shopDisplay        = GameObject.FindGameObjectWithTag(Tags.SHOPMANAGER).GetComponent<ShopDisplay>();
         _pauseGame          = GameObject.FindGameObjectWithTag(Tags.PAUSEOBJECT).GetComponent<PauseGame>();
         _walkParticle       = GetComponentInChildren<WalkParticle>();
@@ -39,6 +41,7 @@ public class ControllerInput : MonoBehaviour {
                 if (Input.GetButtonDown(InputAxes.XBOX_A + _player.PlayerID))
                 {
                     _player.Ability.UseAbility();
+                    _animations.AbilityAnimation();
                 }
 
                 if (Input.GetButtonDown(InputAxes.XBOX_B + _player.PlayerID) && _player.Ability.UsingAbility)
@@ -53,6 +56,7 @@ public class ControllerInput : MonoBehaviour {
             if (Input.GetButtonDown(InputAxes.XBOX_X + _player.PlayerID) && _playerAttack.ReadyToAttack)
             {
                 _playerAttack.Attack();
+                _animations.PlayerAttackAnimation(_player.LightAttackState);
                 _soundEffects.PlayLightAttackAudio(); //Basic Attack (miss) sound
             }
 
@@ -61,6 +65,7 @@ public class ControllerInput : MonoBehaviour {
                 //Heavy Attack
                 _soundEffects.PlayHeavyAttackAudio(); // Heavy Attack (miss) sound
                 _playerAttack.HeavyAttack();
+                _animations.PlayerAttackAnimation(3);
             }
             if (_player.CanMove)
             {
@@ -86,7 +91,8 @@ public class ControllerInput : MonoBehaviour {
             }
             else if (!_player.CanMove)
             {
-                _player.LowerBody.AnimationName = SpineAnimationNames.IDLE + _player.MoveStateName;
+                _animations.IdleAnimation();
+                //_player.LowerBody.AnimationName = SpineAnimationNames.IDLE + _player.MoveStateName;
             }
         }
         

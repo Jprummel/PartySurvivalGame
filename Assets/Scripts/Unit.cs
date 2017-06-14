@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Unit : MonoBehaviour {
@@ -19,7 +18,6 @@ public class Unit : MonoBehaviour {
 
     void FindPath()
     {
-        Debug.Log(target);
         if (target != null)
         {
             PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);

@@ -6,13 +6,12 @@ using DG.Tweening;
 
 public class UnlockChecker : MonoBehaviour {
 
-    [SerializeField]private GameObject _notificationObject;
-    [SerializeField]private Text _unlockNotificationText;
-    [SerializeField]private int _waveRequiredForUnlock;
-    private string _currentLevel;
+    [SerializeField]private GameObject  _notificationObject;
+    [SerializeField]private Text        _unlockNotificationText;
+    [SerializeField]private int         _waveRequiredForUnlock;
 
-
-    private SaveLoadData _saveData;
+    private string          _currentLevel;
+    private SaveLoadData    _saveData;
 
     void Awake()
     {

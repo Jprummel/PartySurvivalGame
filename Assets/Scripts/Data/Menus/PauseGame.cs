@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-public class PauseGame : MonoBehaviour {
+﻿using UnityEngine;
 
+public class PauseGame : MonoBehaviour {
 
     [SerializeField]private GameObject _pauseScreen;
     private bool _gameIsPaused;
