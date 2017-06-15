@@ -10,6 +10,11 @@ public class ShowCharacterInfo : MonoBehaviour {
     [SerializeField]private Text _classDescription;
     private bool _isShowingDescription;
 
+    private void Start()
+    {
+        CharacterDescription(0);
+    }
+
     public void ToggleDescription()
     {
         if (!_isShowingDescription)
@@ -42,11 +47,6 @@ public class ShowCharacterInfo : MonoBehaviour {
                 _classRole.text = "Class Role" + "\n" + "DPS";
                 _classDescription.text = "Warriors tend to be flexible on the battlefield they can deal devastating blows while taking a few hits" + "\n\n" + 
                 "Ability : Whirlwind";
-                break;
-            case 3:
-                _classRole.text = "Class Role" + "\n" + "Support";
-                _classDescription.text = "Wardrummers use special rhythmic techniques to heal their allies" + "\n\n" +
-                "Ability : Healing Rhythm";
                 break;
         }
     }

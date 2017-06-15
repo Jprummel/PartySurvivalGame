@@ -43,7 +43,7 @@ public class MapSelection : MonoBehaviour {
     {
         if (!_characterSelect.CharacterSelectState)
         {
-            if (Input.GetButtonDown(InputAxes.XBOX_B + "1"))
+            if (Input.GetButtonDown(InputAxes.MENU_NAV_CANCEL))
             {
                 _eventSystem.SetActive(false);
                 _returnToMenuScreen.SetActive(true);

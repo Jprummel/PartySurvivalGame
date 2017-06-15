@@ -6,9 +6,16 @@ public class CharacterSelectUI : MonoBehaviour {
 
     [SerializeField]private List<GameObject> _selectionPortraits = new List<GameObject>();
     [SerializeField]private List<GameObject> _selectionNames = new List<GameObject>();
-    [SerializeField]private GameObject _joingGameImage;
+    [SerializeField]private GameObject _joinGameImage;
     [SerializeField]private GameObject _readyText;
-    private CharacterSelect _characterSelect;
+
+    private int _selectedCharacterNumber;
+
+    public int SelectedCharacterNumber
+    {
+        get { return _selectedCharacterNumber; }
+        set { _selectedCharacterNumber = value; }
+    }
 
     public List<GameObject> SelectionPortraits
     {
@@ -21,7 +28,6 @@ public class CharacterSelectUI : MonoBehaviour {
     }
 
 	void Start () {
-        _characterSelect = GetComponent<CharacterSelect>();
         for (int i = 0; i < _selectionPortraits.Count; i++)
         {
             //Deactivate all portaits and nameplates at the start
@@ -30,11 +36,16 @@ public class CharacterSelectUI : MonoBehaviour {
         }
 	}
 
+    public void ToggleJoinGameImage(bool isActive)
+    {
+        _joinGameImage.SetActive(isActive);
+    }
+
     public void SelectedCharacterVisuals()
     {
         for (int i = 0; i < _selectionPortraits.Count; i++)
         {
-            if (i == _characterSelect.SelectedCharacterNumber) //If i is equal to _selectedCharacterNumber activate the fitting name and portrait
+            if (i == _selectedCharacterNumber) //If i is equal to _selectedCharacterNumber activate the fitting name and portrait
             {
                 _selectionPortraits[i].SetActive(true);
                 _selectionNames[i].SetActive(true);
@@ -43,7 +54,6 @@ public class CharacterSelectUI : MonoBehaviour {
                 _selectionPortraits[i].SetActive(false);
                 _selectionNames[i].SetActive(false);
             }
-
         }
     }
 

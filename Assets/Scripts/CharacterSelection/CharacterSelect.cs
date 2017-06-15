@@ -1,35 +1,29 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CharacterSelect : MonoBehaviour {
 
     //Script imports
     [SerializeField]private SelectionScreen _selectionScreen;
     private CharacterSelectPlayers          _characterSelectPlayers;
-    private ShowCharacterInfo               _characterInfo;
     private CharacterSelectUI               _characterSelectUI;
     private CharacterSelectInput            _input;
-
-    //List of selectable characters
-    [SerializeField]private List<GameObject> _characters = new List<GameObject>();
+    
     //UI
-    [SerializeField]private GameObject _joinGameImage;
     [SerializeField]private GameObject _readyText;
 
     private bool _characterSelectState;
     private bool _playerIsActive;
     private bool _ready;
-    //Inputs
-    private float _inputDelay;
-    private float _inputDelayMaxTime = 0.2f;
-    //Selected Character    
-    private int             _selectedCharacterNumber = 0;
-    private GameObject      _selectedCharacterPrefab;
-    private PlayerCharacter _selectedCharacter;
-    public int SelectedCharacterNumber
+
+    public bool PlayerIsActive
     {
-        get { return _selectedCharacterNumber; }
-        set { _selectedCharacterNumber = value; }
+        get { return _playerIsActive; }
+        set { _playerIsActive = value; }
+    }
+
+    public bool PlayerIsReady
+    {
+        get { return _ready; }
     }
 
     [SerializeField]private GameObject _mapSelectionScreen;
@@ -43,111 +37,46 @@ public class CharacterSelect : MonoBehaviour {
 
     void Start()
     {
-        _characterInfo          = GetComponent<ShowCharacterInfo>();
         _characterSelectPlayers = GameObject.FindGameObjectWithTag(Tags.CHARACTERSELECTOBJECT).GetComponent<CharacterSelectPlayers>();
         _characterSelectUI      = GetComponent<CharacterSelectUI>();
         _input                  = GetComponent<CharacterSelectInput>();
-
-        _characterInfo.CharacterDescription(0);
-    }
-
-    void Update()
-    {
-        if (_characterSelectState)
-        {
-            _input.JoinGame();
-            _input.LeaveGame();
-            if (_playerIsActive && _inputDelay <= 0) // If player is active but not ready & input delay timer is zero
-            {
-                _input.ShowPlayerInfo();
-                if (!_ready)
-                {
-                    _input.NextCharacter();
-                    _input.PreviousCharacter();
-                    _input.SelectCharacter();
-                }
-            }
-            if (_characterSelectPlayers.ReadyToStart)
-            {
-                _input.ShowPlayerInfo();
-                _input.StartGame();
-            }
-            InputDelayTimer();
-        }
     }
 
     public void JoinGame()
     {
         if (!_playerIsActive)
         {
-            _joinGameImage.SetActive(false);
             _characterSelectPlayers._players.Add(this);
             _playerIsActive = true;
             _characterSelectPlayers.ActivePlayers++;
-            _characterSelectUI.SelectedCharacterVisuals();
-            _inputDelay = _inputDelayMaxTime;
         }
     }
 
     public void LeaveGame()
     {
-        if (_playerIsActive && _ready) //If player is active and ready , unready
+        if (_playerIsActive && !_ready) //If player is active but not ready , set inactive
         {
-            PlayerParty.Players.Remove(_selectedCharacterPrefab);
-            PlayerParty.PlayerCharacters.Remove(_selectedCharacter);
-            _readyText.SetActive(false);
-            _ready = false;
-            _characterSelectPlayers.ReadyPlayers--;
-        }
-        else if (_playerIsActive && !_ready) //If player is active but not ready , set inactive
-        {
-            _joinGameImage.SetActive(true); //Shows the "Join Game" image
             _playerIsActive = false; //Sets player inactive
             _characterSelectPlayers.ActivePlayers--;        //Reduces the active players
             _characterSelectPlayers._players.Remove(this);  //Removes this player from the character selection player list
-            _selectedCharacterNumber = 0; //if player wants to rejoing, start on knight character again
-            _characterSelectUI.DisablePortraitsAndNames(); //Deactivates the portraits and names
         }
-
         if (_characterSelectPlayers.ActivePlayers <= 0)
         {
             StartCoroutine(_selectionScreen.SwitchToMapSelect());
         }
     }
 
-    public void ChangePortraitAndName()
+    public void UnReady()
     {
-        _characterSelectUI.SelectedCharacterVisuals(); //Changes portrait and nameplate
-        _inputDelay = _inputDelayMaxTime; //resets the input delay
-    }
-
-    void InputDelayTimer()
-    {
-        if (_inputDelay > 0) //Input delay timer to prevent weird things happening with inputs
+        if (_playerIsActive && _ready) //If player is active and ready , unready
         {
-            _inputDelay -= Time.deltaTime;
+            _readyText.SetActive(false);
+            _ready = false;
+            _characterSelectPlayers.ReadyPlayers--;
         }
     }
-
-    public void SelectCharacter()
-    {
-<<<<<<< HEAD
-        
-        _selectedCharacterPrefab = _characters[_selectedCharacterNumber]; //Sets selectedcharacter prefab to the prefab in the list
-        //PlayerParty.Players.Insert(_input.PlayerID, _selectedCharacterPrefab);
-        PlayerParty.Players.Add(_selectedCharacterPrefab); //Adds the prefab to the players list
-        _selectedCharacter = _selectedCharacterPrefab.GetComponent<PlayerCharacter>(); //Gets the playercharacterscript from the player
-=======
-        _selectedCharacterPrefab = _characters[_selectedCharacterNumber];
-        PlayerParty.Players.Add(_selectedCharacterPrefab);
-        _selectedCharacter = _selectedCharacterPrefab.GetComponent<PlayerCharacter>();
->>>>>>> origin/master
-        _selectedCharacter.PlayerID = _input.PlayerID; //Sets selected characters id equal to the players id who selected him
-        ReadyUp();
-        _inputDelay = _inputDelayMaxTime;
-    }
-
-    void ReadyUp()
+    
+    public void ReadyUp()
     {
         //Sets the players state to ready in the character selection screen
         _ready = true;

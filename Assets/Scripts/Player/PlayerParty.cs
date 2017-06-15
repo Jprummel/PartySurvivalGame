@@ -34,7 +34,6 @@ public class PlayerParty : MonoBehaviour {
         for (int i = 0; i < Players.Count; i++)
         {
             GameObject Player = Instantiate(Players[i]);
-            Player.GetComponent<PlayerCharacter>().PlayerID = i+1;
             Player.transform.position = _spawnPoints[i].position;
             _ingamePlayers.Add(Player);
         }
