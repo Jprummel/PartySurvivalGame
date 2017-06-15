@@ -164,6 +164,7 @@ public class Character : MonoBehaviour, IDamageable {
 
     protected virtual void Update()
     {
+        Debug.Log("lmao");
         CheckMoveState();
     }
 
