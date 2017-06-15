@@ -19,13 +19,14 @@ public class Enemy : Character, IDamageable{
     {
         _maxHealth = Mathf.RoundToInt(_maxHealth + Mathf.Pow(GameInformation.Wave, _healthGrowFactor)); //Scales max health with wave and growth factor
         _damage = _damage + Mathf.Pow(GameInformation.Wave, _damageGrowFactor); //Scales damage with wave and growth factor
-        _enemySpawner = GameObject.FindGameObjectWithTag(Tags.ENEMYSPAWNER).GetComponent<EnemySpawner>();
+        //_enemySpawner = GameObject.FindGameObjectWithTag(Tags.ENEMYSPAWNER).GetComponent<EnemySpawner>();
         _healthBar = GetComponentInChildren<Image>();
-        base.Awake();
+        //base.Awake();
     }
 
-    void Update()
+    protected override void Update()
     {
+        base.Update();
         if (_currentHealth <= 0)
         {
             StartCoroutine(DeathRoutine());
