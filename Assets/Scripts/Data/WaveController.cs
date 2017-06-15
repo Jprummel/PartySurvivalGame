@@ -1,10 +1,6 @@
-﻿//( ͡° ͜ʖ ͡°)
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class WaveController : MonoBehaviour{
-
 
     [SerializeField]private bool DevTest;
     private EnemySpawner _enemySpawner;
@@ -33,7 +29,9 @@ public class WaveController : MonoBehaviour{
         _enemySpawner = GameObject.FindWithTag(Tags.ENEMYSPAWNER).GetComponent<EnemySpawner>();
         _shop = GameObject.FindGameObjectWithTag(Tags.SHOPMANAGER).GetComponent<ShopDisplay>();
         if (DevTest)
+        {
             _enemiesToSpawn = 1;
+        }
     }
 
     void Update()
@@ -53,7 +51,6 @@ public class WaveController : MonoBehaviour{
             //reset wave values
             ResetWave();
         }
-
     }
 
     void SpawnEnemy()
@@ -100,6 +97,8 @@ public class WaveController : MonoBehaviour{
             _enemiesToSpawn = Mathf.RoundToInt(newEnemyAmount * _jeMoeder);
         }
         else
+        {
             _enemiesToSpawn = 1;
+        }
     }
 }

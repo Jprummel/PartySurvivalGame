@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Commander : PlayerCharacter {
+﻿public class Commander : PlayerCharacter {
 
     void Start()
     {

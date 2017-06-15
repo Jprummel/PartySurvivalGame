@@ -1,7 +1,3 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Soldier : Enemy {
+﻿public class Soldier : Enemy {
 
 }

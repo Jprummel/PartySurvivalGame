@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
-using System.Collections;
-using System.Collections.Generic;
 
 public class SetVolumes : MonoBehaviour {
 

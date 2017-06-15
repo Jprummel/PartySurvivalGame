@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CharacterSelectInput : MonoBehaviour {
 
@@ -12,9 +10,7 @@ public class CharacterSelectInput : MonoBehaviour {
     private CharacterSelectPlayers _characterSelectPlayers;
     private ShowCharacterInfo _characterInfo;
     private CharacterSelectPrefabs _selectPrefab;
-
-    private int _selectedCharacterNumber;
-
+    
     private float _inputDelay;
     private float _inputDelayMaxTime = 0.2f;
 

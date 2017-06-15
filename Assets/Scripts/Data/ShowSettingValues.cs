@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ShowSettingValues : MonoBehaviour {
@@ -16,9 +14,5 @@ public class ShowSettingValues : MonoBehaviour {
         _masterVolumeSlider.value   = SettingsInformation.MasterVolume;
         _musicVolumeSlider.value    = SettingsInformation.MusicVolume;
         _soundFXVolumeSlider.value  = SettingsInformation.SoundFXVolume;
-	}
-	
-	void Update () {
-		
 	}
 }
