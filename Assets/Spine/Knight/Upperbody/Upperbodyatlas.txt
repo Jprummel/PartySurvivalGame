@@ -1,0 +1,664 @@
+
+Upperbody.png
+size: 2064,521
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Knight_4/Assets_Knight_4_Blue/Arm_L_4
+  rotate: false
+  xy: 1638, 160
+  size: 61, 81
+  orig: 61, 81
+  offset: 0, 0
+  index: -1
+Knight_4/Assets_Knight_4_Blue/Arm_R_4
+  rotate: false
+  xy: 1533, 153
+  size: 54, 88
+  orig: 54, 88
+  offset: 0, 0
+  index: -1
+Knight_4/Assets_Knight_4_Blue/Body_4
+  rotate: true
+  xy: 1527, 10
+  size: 136, 134
+  orig: 136, 134
+  offset: 0, 0
+  index: -1
+Knight_4/Assets_Knight_4_Blue/Hand_L_4
+  rotate: true
+  xy: 1994, 260
+  size: 45, 67
+  orig: 45, 67
+  offset: 0, 0
+  index: -1
+Knight_4/Assets_Knight_4_Blue/Hand_R_4
+  rotate: false
+  xy: 1952, 206
+  size: 38, 46
+  orig: 38, 46
+  offset: 0, 0
+  index: -1
+Knight_4/Assets_Knight_4_Blue/Head_4
+  rotate: true
+  xy: 1066, 121
+  size: 98, 113
+  orig: 98, 113
+  offset: 0, 0
+  index: -1
+Knight_4/Assets_Knight_4_Blue/Shoulder_L_4
+  rotate: false
+  xy: 1957, 458
+  size: 79, 61
+  orig: 79, 61
+  offset: 0, 0
+  index: -1
+Knight_4/Assets_Knight_4_Blue/Shoulder_R_4
+  rotate: true
+  xy: 1714, 81
+  size: 80, 61
+  orig: 80, 61
+  offset: 0, 0
+  index: -1
+Knight_4/Assets_Knight_4_Green/Body_4
+  rotate: true
+  xy: 1642, 245
+  size: 136, 134
+  orig: 136, 134
+  offset: 0, 0
+  index: -1
+Knight_4/Assets_Knight_4_Green/Shoulder_L_4
+  rotate: true
+  xy: 1841, 303
+  size: 79, 61
+  orig: 79, 61
+  offset: 0, 0
+  index: -1
+Knight_4/Assets_Knight_4_Green/Shoulder_R_4
+  rotate: true
+  xy: 1764, 163
+  size: 80, 61
+  orig: 80, 61
+  offset: 0, 0
+  index: -1
+Knight_4/Assets_Knight_4_Orange/Body_4
+  rotate: true
+  xy: 1515, 383
+  size: 136, 134
+  orig: 136, 134
+  offset: 0, 0
+  index: -1
+Knight_4/Assets_Knight_4_Orange/Shoulder_L_4
+  rotate: true
+  xy: 1894, 2
+  size: 79, 61
+  orig: 79, 61
+  offset: 0, 0
+  index: -1
+Knight_4/Assets_Knight_4_Orange/Shoulder_R_4
+  rotate: true
+  xy: 1701, 163
+  size: 80, 61
+  orig: 80, 61
+  offset: 0, 0
+  index: -1
+Knight_4/Assets_Knight_4_Purple/Body_4
+  rotate: true
+  xy: 1651, 383
+  size: 136, 134
+  orig: 136, 134
+  offset: 0, 0
+  index: -1
+Knight_4/Assets_Knight_4_Purple/Shoulder_L_4
+  rotate: true
+  xy: 1841, 443
+  size: 76, 60
+  orig: 76, 60
+  offset: 0, 0
+  index: -1
+knight_2/Assets_Knight_2_Purple/Shoulder_R_2
+  rotate: true
+  xy: 1841, 443
+  size: 76, 60
+  orig: 76, 60
+  offset: 0, 0
+  index: -1
+Knight_4/Assets_Knight_4_Purple/Shoulder_R_4
+  rotate: true
+  xy: 1777, 81
+  size: 80, 61
+  orig: 80, 61
+  offset: 0, 0
+  index: -1
+knight_2/Assets_Knight_2_Purple/Shoulder_L_2
+  rotate: true
+  xy: 1777, 81
+  size: 80, 61
+  orig: 80, 61
+  offset: 0, 0
+  index: -1
+knight_1/Assets_Knight_1_Blue/Arm_L_1
+  rotate: false
+  xy: 1381, 142
+  size: 51, 95
+  orig: 51, 95
+  offset: 0, 0
+  index: -1
+knight_1/Assets_Knight_1_Blue/Arm_R_1
+  rotate: false
+  xy: 1346, 24
+  size: 51, 98
+  orig: 51, 98
+  offset: 0, 0
+  index: -1
+knight_1/Assets_Knight_1_Blue/Body_1
+  rotate: true
+  xy: 1386, 241
+  size: 137, 126
+  orig: 137, 126
+  offset: 0, 0
+  index: -1
+knight_1/Assets_Knight_1_Blue/Hand_L_1
+  rotate: false
+  xy: 1903, 92
+  size: 43, 48
+  orig: 43, 48
+  offset: 0, 0
+  index: -1
+knight_1/Assets_Knight_1_Blue/Hand_R_1
+  rotate: false
+  xy: 1949, 116
+  size: 41, 42
+  orig: 41, 42
+  offset: 0, 0
+  index: -1
+knight_1/Assets_Knight_1_Blue/Hand_R_Fingers_1
+  rotate: false
+  xy: 1903, 142
+  size: 44, 27
+  orig: 44, 27
+  offset: 0, 0
+  index: -1
+knight_1/Assets_Knight_1_Blue/Head_1
+  rotate: true
+  xy: 604, 2
+  size: 105, 110
+  orig: 105, 110
+  offset: 0, 0
+  index: -1
+knight_1/Assets_Knight_1_Blue/Shield_1
+  rotate: false
+  xy: 492, 109
+  size: 97, 204
+  orig: 97, 204
+  offset: 0, 0
+  index: -1
+knight_1/Assets_Knight_1_Blue/Shoulder_L_1
+  rotate: true
+  xy: 1776, 2
+  size: 77, 57
+  orig: 77, 57
+  offset: 0, 0
+  index: -1
+knight_1/Assets_Knight_1_Blue/Shoulder_R_1
+  rotate: false
+  xy: 1778, 247
+  size: 70, 52
+  orig: 70, 52
+  offset: 0, 0
+  index: -1
+knight_1/Assets_Knight_1_Blue/Weapon
+  rotate: true
+  xy: 2, 17
+  size: 250, 100
+  orig: 250, 100
+  offset: 0, 0
+  index: -1
+knight_1/Assets_Knight_1_Green/Body_1
+  rotate: true
+  xy: 1387, 382
+  size: 137, 126
+  orig: 137, 126
+  offset: 0, 0
+  index: -1
+knight_1/Assets_Knight_1_Green/Head_1
+  rotate: true
+  xy: 716, 2
+  size: 105, 110
+  orig: 105, 110
+  offset: 0, 0
+  index: -1
+knight_1/Assets_Knight_1_Green/Shield_1
+  rotate: false
+  xy: 591, 315
+  size: 97, 204
+  orig: 97, 204
+  offset: 0, 0
+  index: -1
+knight_1/Assets_Knight_1_Green/Shoulder_L_1
+  rotate: true
+  xy: 1835, 2
+  size: 77, 57
+  orig: 77, 57
+  offset: 0, 0
+  index: -1
+knight_1/Assets_Knight_1_Green/Shoulder_R_1
+  rotate: true
+  xy: 1903, 449
+  size: 70, 52
+  orig: 70, 52
+  offset: 0, 0
+  index: -1
+knight_1/Assets_Knight_1_Green/Weapon
+  rotate: true
+  xy: 104, 269
+  size: 250, 100
+  orig: 250, 100
+  offset: 0, 0
+  index: -1
+knight_1/Assets_Knight_1_Orange/Body_1
+  rotate: true
+  xy: 1399, 3
+  size: 137, 126
+  orig: 137, 126
+  offset: 0, 0
+  index: -1
+knight_1/Assets_Knight_1_Orange/Head_1
+  rotate: true
+  xy: 492, 2
+  size: 105, 110
+  orig: 105, 110
+  offset: 0, 0
+  index: -1
+knight_1/Assets_Knight_1_Orange/Shield_1
+  rotate: false
+  xy: 492, 315
+  size: 97, 204
+  orig: 97, 204
+  offset: 0, 0
+  index: -1
+knight_1/Assets_Knight_1_Orange/Shoulder_L_1
+  rotate: true
+  xy: 1717, 2
+  size: 77, 57
+  orig: 77, 57
+  offset: 0, 0
+  index: -1
+knight_1/Assets_Knight_1_Orange/Shoulder_R_1
+  rotate: true
+  xy: 1663, 5
+  size: 70, 52
+  orig: 70, 52
+  offset: 0, 0
+  index: -1
+knight_1/Assets_Knight_1_Orange/Weapon
+  rotate: true
+  xy: 2, 269
+  size: 250, 100
+  orig: 250, 100
+  offset: 0, 0
+  index: -1
+knight_1/Assets_Knight_1_Purple/Body_1
+  rotate: true
+  xy: 1514, 243
+  size: 137, 126
+  orig: 137, 126
+  offset: 0, 0
+  index: -1
+knight_1/Assets_Knight_1_Purple/Head_1
+  rotate: true
+  xy: 828, 2
+  size: 105, 110
+  orig: 105, 110
+  offset: 0, 0
+  index: -1
+knight_1/Assets_Knight_1_Purple/Shield_1
+  rotate: false
+  xy: 591, 109
+  size: 97, 204
+  orig: 97, 204
+  offset: 0, 0
+  index: -1
+knight_1/Assets_Knight_1_Purple/Shoulder_L_1
+  rotate: false
+  xy: 1787, 384
+  size: 77, 57
+  orig: 77, 57
+  offset: 0, 0
+  index: -1
+knight_1/Assets_Knight_1_Purple/Shoulder_R_1
+  rotate: true
+  xy: 1787, 449
+  size: 70, 52
+  orig: 70, 52
+  offset: 0, 0
+  index: -1
+knight_1/Assets_Knight_1_Purple/Weapon
+  rotate: true
+  xy: 104, 17
+  size: 250, 100
+  orig: 250, 100
+  offset: 0, 0
+  index: -1
+knight_2/Assets_Knight_2_Blue/Arm_L_Arm_2
+  rotate: false
+  xy: 1663, 77
+  size: 49, 81
+  orig: 49, 81
+  offset: 0, 0
+  index: -1
+knight_2/Assets_Knight_2_Blue/Arm_R_Arm_2
+  rotate: false
+  xy: 1434, 146
+  size: 49, 93
+  orig: 49, 93
+  offset: 0, 0
+  index: -1
+knight_2/Assets_Knight_2_Blue/Body_2
+  rotate: true
+  xy: 860, 221
+  size: 148, 135
+  orig: 148, 135
+  offset: 0, 0
+  index: -1
+knight_2/Assets_Knight_2_Blue/Hand_L_2
+  rotate: false
+  xy: 1995, 16
+  size: 37, 37
+  orig: 37, 37
+  offset: 0, 0
+  index: -1
+knight_2/Assets_Knight_2_Blue/Hand_R_2
+  rotate: false
+  xy: 1957, 10
+  size: 36, 43
+  orig: 36, 43
+  offset: 0, 0
+  index: -1
+knight_2/Assets_Knight_2_Blue/Head_2
+  rotate: false
+  xy: 1181, 124
+  size: 98, 113
+  orig: 98, 113
+  offset: 0, 0
+  index: -1
+knight_2/Assets_Knight_2_Blue/Shield_2
+  rotate: false
+  xy: 206, 29
+  size: 141, 244
+  orig: 141, 244
+  offset: 0, 0
+  index: -1
+knight_2/Assets_Knight_2_Blue/Shoulder_L_2
+  rotate: true
+  xy: 1827, 165
+  size: 80, 61
+  orig: 80, 61
+  offset: 0, 0
+  index: -1
+knight_2/Assets_Knight_2_Blue/Shoulder_R_2
+  rotate: true
+  xy: 1890, 171
+  size: 76, 60
+  orig: 76, 60
+  offset: 0, 0
+  index: -1
+knight_2/Assets_Knight_2_Green/Body_2
+  rotate: true
+  xy: 997, 371
+  size: 148, 135
+  orig: 148, 135
+  offset: 0, 0
+  index: -1
+knight_2/Assets_Knight_2_Green/Head_2
+  rotate: false
+  xy: 1246, 9
+  size: 98, 113
+  orig: 98, 113
+  offset: 0, 0
+  index: -1
+knight_2/Assets_Knight_2_Green/Shield_2
+  rotate: false
+  xy: 349, 275
+  size: 141, 244
+  orig: 141, 244
+  offset: 0, 0
+  index: -1
+knight_2/Assets_Knight_2_Green/Shoulder_L_2
+  rotate: true
+  xy: 1840, 83
+  size: 80, 61
+  orig: 80, 61
+  offset: 0, 0
+  index: -1
+knight_2/Assets_Knight_2_Green/Shoulder_R_2
+  rotate: true
+  xy: 1966, 307
+  size: 76, 60
+  orig: 76, 60
+  offset: 0, 0
+  index: -1
+knight_2/Assets_Knight_2_Orange/Body_2
+  rotate: true
+  xy: 860, 371
+  size: 148, 135
+  orig: 148, 135
+  offset: 0, 0
+  index: -1
+knight_2/Assets_Knight_2_Orange/Head_2
+  rotate: false
+  xy: 1146, 6
+  size: 98, 113
+  orig: 98, 113
+  offset: 0, 0
+  index: -1
+knight_2/Assets_Knight_2_Orange/Shield_2
+  rotate: false
+  xy: 206, 275
+  size: 141, 244
+  orig: 141, 244
+  offset: 0, 0
+  index: -1
+knight_2/Assets_Knight_2_Orange/Shoulder_L_2
+  rotate: true
+  xy: 1778, 301
+  size: 80, 61
+  orig: 80, 61
+  offset: 0, 0
+  index: -1
+knight_2/Assets_Knight_2_Orange/Shoulder_R_2
+  rotate: true
+  xy: 1904, 307
+  size: 76, 60
+  orig: 76, 60
+  offset: 0, 0
+  index: -1
+knight_2/Assets_Knight_2_Purple/Body_2
+  rotate: true
+  xy: 997, 221
+  size: 148, 135
+  orig: 148, 135
+  offset: 0, 0
+  index: -1
+knight_2/Assets_Knight_2_Purple/Head_2
+  rotate: false
+  xy: 1281, 124
+  size: 98, 113
+  orig: 98, 113
+  offset: 0, 0
+  index: -1
+knight_2/Assets_Knight_2_Purple/Shield_2
+  rotate: false
+  xy: 349, 29
+  size: 141, 244
+  orig: 141, 244
+  offset: 0, 0
+  index: -1
+knight_3/Assets_Knight_3_Blue/Arm_L_3
+  rotate: false
+  xy: 1485, 148
+  size: 46, 91
+  orig: 46, 91
+  offset: 0, 0
+  index: -1
+knight_3/Assets_Knight_3_Blue/Arm_R_3
+  rotate: false
+  xy: 1589, 154
+  size: 47, 87
+  orig: 47, 87
+  offset: 0, 0
+  index: -1
+knight_3/Assets_Knight_3_Blue/Body_3
+  rotate: true
+  xy: 1260, 239
+  size: 139, 124
+  orig: 139, 124
+  offset: 0, 0
+  index: -1
+knight_3/Assets_Knight_3_Blue/Hand_L_3
+  rotate: true
+  xy: 1957, 55
+  size: 48, 43
+  orig: 48, 43
+  offset: 0, 0
+  index: -1
+knight_3/Assets_Knight_3_Blue/Hand_R_3
+  rotate: true
+  xy: 1952, 160
+  size: 44, 37
+  orig: 44, 37
+  offset: 0, 0
+  index: -1
+knight_3/Assets_Knight_3_Blue/Head_3
+  rotate: false
+  xy: 963, 113
+  size: 101, 106
+  orig: 101, 106
+  offset: 0, 0
+  index: -1
+knight_3/Assets_Knight_3_Blue/Shield_3
+  rotate: false
+  xy: 690, 109
+  size: 83, 204
+  orig: 83, 204
+  offset: 0, 0
+  index: -1
+knight_3/Assets_Knight_3_Blue/Shoulder_L_3
+  rotate: true
+  xy: 1954, 385
+  size: 62, 49
+  orig: 62, 49
+  offset: 0, 0
+  index: -1
+knight_3/Assets_Knight_3_Blue/Shoulder_R_3
+  rotate: true
+  xy: 2005, 386
+  size: 70, 51
+  orig: 70, 51
+  offset: 0, 0
+  index: -1
+knight_3/Assets_Knight_3_Green/Body_3
+  rotate: true
+  xy: 1261, 380
+  size: 139, 124
+  orig: 139, 124
+  offset: 0, 0
+  index: -1
+knight_3/Assets_Knight_3_Green/Head_3
+  rotate: false
+  xy: 1043, 5
+  size: 101, 106
+  orig: 101, 106
+  offset: 0, 0
+  index: -1
+knight_3/Assets_Knight_3_Green/Shield_3
+  rotate: false
+  xy: 775, 315
+  size: 83, 204
+  orig: 83, 204
+  offset: 0, 0
+  index: -1
+knight_3/Assets_Knight_3_Green/Shoulder_L_3
+  rotate: false
+  xy: 1994, 209
+  size: 62, 49
+  orig: 62, 49
+  offset: 0, 0
+  index: -1
+knight_3/Assets_Knight_3_Green/Shoulder_R_3
+  rotate: false
+  xy: 1992, 156
+  size: 70, 51
+  orig: 70, 51
+  offset: 0, 0
+  index: -1
+knight_3/Assets_Knight_3_Orange/Body_3
+  rotate: true
+  xy: 1134, 239
+  size: 139, 124
+  orig: 139, 124
+  offset: 0, 0
+  index: -1
+knight_3/Assets_Knight_3_Orange/Head_3
+  rotate: false
+  xy: 940, 4
+  size: 101, 106
+  orig: 101, 106
+  offset: 0, 0
+  index: -1
+knight_3/Assets_Knight_3_Orange/Shield_3
+  rotate: false
+  xy: 690, 315
+  size: 83, 204
+  orig: 83, 204
+  offset: 0, 0
+  index: -1
+knight_3/Assets_Knight_3_Orange/Shoulder_L_3
+  rotate: true
+  xy: 1903, 385
+  size: 62, 49
+  orig: 62, 49
+  offset: 0, 0
+  index: -1
+knight_3/Assets_Knight_3_Orange/Shoulder_R_3
+  rotate: false
+  xy: 1922, 254
+  size: 70, 51
+  orig: 70, 51
+  offset: 0, 0
+  index: -1
+knight_3/Assets_Knight_3_Purple/Body_3
+  rotate: true
+  xy: 1134, 380
+  size: 139, 125
+  orig: 139, 125
+  offset: 0, 0
+  index: -1
+knight_3/Assets_Knight_3_Purple/Head_3
+  rotate: false
+  xy: 860, 112
+  size: 101, 107
+  orig: 101, 107
+  offset: 0, 0
+  index: -1
+knight_3/Assets_Knight_3_Purple/Shield_3
+  rotate: false
+  xy: 775, 109
+  size: 83, 204
+  orig: 83, 204
+  offset: 0, 0
+  index: -1
+knight_3/Assets_Knight_3_Purple/Shoulder_L_3
+  rotate: false
+  xy: 1992, 105
+  size: 62, 49
+  orig: 62, 49
+  offset: 0, 0
+  index: -1
+knight_3/Assets_Knight_3_Purple/Shoulder_R_3
+  rotate: false
+  xy: 1850, 249
+  size: 70, 52
+  orig: 70, 52
+  offset: 0, 0
+  index: -1
