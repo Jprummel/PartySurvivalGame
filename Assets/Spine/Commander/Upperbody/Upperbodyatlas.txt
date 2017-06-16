@@ -1,712 +1,712 @@
 
 Upperbody.png
-size: 1024,512
+size: 870,525
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 Commander_1/Assets_Commander_1_Blue/Badge1_Body_1
-  rotate: false
-  xy: 642, 179
+  rotate: true
+  xy: 262, 136
   size: 25, 78
   orig: 25, 78
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Blue/Badge2_Body_1
   rotate: false
-  xy: 915, 177
+  xy: 660, 28
   size: 19, 55
   orig: 19, 55
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Blue/Badge_Shoulder_R_1
   rotate: true
-  xy: 543, 111
+  xy: 303, 18
   size: 19, 78
   orig: 19, 78
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Blue/Badge_Shoulder_R_3
   rotate: true
-  xy: 543, 111
+  xy: 303, 18
   size: 19, 78
   orig: 19, 78
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Blue/Body_1
   rotate: false
-  xy: 172, 243
+  xy: 252, 260
   size: 88, 96
   orig: 88, 96
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Blue/Head_1
-  rotate: true
-  xy: 536, 352
+  rotate: false
+  xy: 172, 234
   size: 78, 118
   orig: 78, 118
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Green/Arm_L_1
   rotate: true
-  xy: 777, 298
+  xy: 700, 179
   size: 42, 63
   orig: 42, 63
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Green/Arm_R_1
-  rotate: true
-  xy: 531, 47
+  rotate: false
+  xy: 571, 78
   size: 42, 59
   orig: 42, 59
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Green/Badge1_Body_1
   rotate: false
-  xy: 615, 179
+  xy: 806, 445
   size: 25, 78
   orig: 25, 78
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Green/Badge2_Body_1
   rotate: false
-  xy: 964, 235
+  xy: 618, 27
   size: 19, 55
   orig: 19, 55
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Green/Badge_Shoulder_R_1
   rotate: true
-  xy: 777, 277
+  xy: 776, 257
   size: 19, 78
   orig: 19, 78
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Green/Badge_Shoulder_R_3
   rotate: true
-  xy: 777, 277
+  xy: 776, 257
   size: 19, 78
   orig: 19, 78
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Green/Body_1
-  rotate: true
-  xy: 754, 342
+  rotate: false
+  xy: 123, 12
   size: 88, 96
   orig: 88, 96
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Green/Hand_L_1
-  rotate: false
-  xy: 985, 263
+  rotate: true
+  xy: 397, 27
   size: 37, 48
   orig: 37, 48
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Green/Hand_R_1
   rotate: false
-  xy: 839, 186
+  xy: 808, 41
   size: 38, 38
   orig: 38, 38
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Green/Head_1
   rotate: true
-  xy: 899, 432
+  xy: 536, 365
   size: 78, 118
   orig: 78, 118
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Green/Shoulder_L_1
   rotate: false
-  xy: 651, 294
+  xy: 700, 223
   size: 61, 46
   orig: 61, 46
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Green/Shoulder_R_1
-  rotate: false
-  xy: 123, 15
+  rotate: true
+  xy: 405, 129
   size: 47, 38
   orig: 47, 38
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Green/Wing_L_1
   rotate: false
-  xy: 950, 338
+  xy: 706, 271
   size: 33, 92
   orig: 33, 92
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Green/Wing_R_1
-  rotate: true
-  xy: 360, 141
+  rotate: false
+  xy: 741, 271
   size: 33, 92
   orig: 33, 92
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Orange/Badge1_Body_1
-  rotate: true
-  xy: 651, 267
+  rotate: false
+  xy: 779, 445
   size: 25, 78
   orig: 25, 78
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Orange/Badge2_Body_1
   rotate: false
-  xy: 943, 235
+  xy: 822, 173
   size: 19, 55
   orig: 19, 55
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Orange/Badge_Shoulder_R_1
-  rotate: false
-  xy: 723, 187
+  rotate: true
+  xy: 489, 68
   size: 19, 78
   orig: 19, 78
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Orange/Badge_Shoulder_R_3
-  rotate: false
-  xy: 723, 187
+  rotate: true
+  xy: 489, 68
   size: 19, 78
   orig: 19, 78
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Orange/Body_1
-  rotate: true
-  xy: 656, 342
+  rotate: false
+  xy: 172, 136
   size: 88, 96
   orig: 88, 96
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Orange/Head_1
   rotate: true
-  xy: 779, 432
+  xy: 416, 365
   size: 78, 118
   orig: 78, 118
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Purple/Badge1_Body_1
-  rotate: true
-  xy: 172, 22
+  rotate: false
+  xy: 833, 445
   size: 25, 78
   orig: 25, 78
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Purple/Badge2_Body_1
-  rotate: true
-  xy: 839, 165
+  rotate: false
+  xy: 639, 27
   size: 19, 55
   orig: 19, 55
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Purple/Badge_Shoulder_R_1
   rotate: true
-  xy: 669, 166
+  xy: 694, 131
   size: 19, 78
   orig: 19, 78
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Purple/Badge_Shoulder_R_3
   rotate: true
-  xy: 669, 166
+  xy: 694, 131
   size: 19, 78
   orig: 19, 78
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Purple/Body_1
-  rotate: true
-  xy: 852, 342
+  rotate: false
+  xy: 213, 38
   size: 88, 96
   orig: 88, 96
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Purple/Head_1
   rotate: true
-  xy: 416, 352
+  xy: 656, 365
   size: 78, 118
   orig: 78, 118
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Blue/Badge1_Body_2
   rotate: true
-  xy: 449, 66
+  xy: 489, 89
   size: 23, 80
   orig: 23, 80
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Blue/Badge2_Body_2
-  rotate: false
-  xy: 437, 3
+  rotate: true
+  xy: 356, 365
   size: 14, 51
   orig: 14, 51
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Blue/Badge_Shoulder_2
   rotate: true
-  xy: 839, 226
+  xy: 681, 31
   size: 18, 62
   orig: 18, 62
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Blue/Body_2
   rotate: false
-  xy: 530, 176
+  xy: 615, 189
   size: 83, 85
   orig: 83, 85
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Blue/Head_2
   rotate: false
-  xy: 87, 219
+  xy: 87, 232
   size: 83, 120
   orig: 83, 120
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Green/Arm_L_2
-  rotate: false
-  xy: 985, 313
+  rotate: true
+  xy: 489, 29
   size: 37, 57
   orig: 37, 57
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Green/Arm_R_2
   rotate: false
-  xy: 744, 187
+  xy: 615, 84
   size: 36, 59
   orig: 36, 59
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Green/Badge1_Body_2
   rotate: true
-  xy: 266, 37
+  xy: 527, 139
   size: 23, 80
   orig: 23, 80
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Green/Badge2_Body_2
   rotate: true
-  xy: 611, 147
+  xy: 352, 2
   size: 14, 51
   orig: 14, 51
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Green/Badge_Shoulder_2
   rotate: true
-  xy: 532, 91
+  xy: 489, 9
   size: 18, 62
   orig: 18, 62
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Green/Body_2
   rotate: false
-  xy: 360, 176
+  xy: 445, 189
   size: 83, 85
   orig: 83, 85
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Green/Hand_L_2
   rotate: false
-  xy: 744, 248
+  xy: 810, 81
   size: 31, 44
   orig: 31, 44
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Green/Hand_R_2
-  rotate: false
-  xy: 879, 186
+  rotate: true
+  xy: 259, 2
   size: 34, 38
   orig: 34, 38
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Green/Head_2
   rotate: false
-  xy: 2, 219
+  xy: 2, 232
   size: 83, 120
   orig: 83, 120
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Green/Shoulder_L_2
   rotate: false
-  xy: 782, 211
+  xy: 765, 184
   size: 55, 44
   orig: 55, 44
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Green/Shoulder_R_2
   rotate: false
-  xy: 123, 55
+  xy: 356, 136
   size: 47, 40
   orig: 47, 40
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Green/Wing_L_2
   rotate: true
-  xy: 356, 81
+  xy: 2, 5
   size: 23, 91
   orig: 23, 91
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Green/Wing_R_2
   rotate: true
-  xy: 450, 116
+  xy: 445, 164
   size: 23, 91
   orig: 23, 91
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Orange/Badge1_Body_2
   rotate: true
-  xy: 356, 56
+  xy: 445, 139
   size: 23, 80
   orig: 23, 80
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Orange/Badge2_Body_2
   rotate: true
-  xy: 615, 163
+  xy: 299, 2
   size: 14, 51
   orig: 14, 51
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Orange/Badge_Shoulder_2
   rotate: true
-  xy: 172, 2
+  xy: 692, 71
   size: 18, 62
   orig: 18, 62
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Orange/Body_2
   rotate: false
-  xy: 331, 368
+  xy: 331, 381
   size: 83, 85
   orig: 83, 85
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Orange/Head_2
   rotate: true
-  xy: 209, 370
+  xy: 209, 383
   size: 83, 120
   orig: 83, 120
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Purple/Badge1_Body_2
   rotate: true
-  xy: 450, 91
+  xy: 489, 114
   size: 23, 80
   orig: 23, 80
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Purple/Badge2_Body_2
   rotate: true
-  xy: 668, 150
+  xy: 303, 365
   size: 14, 51
   orig: 14, 51
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Purple/Badge_Shoulder_2
   rotate: true
-  xy: 777, 257
+  xy: 681, 51
   size: 18, 62
   orig: 18, 62
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Purple/Body_2
   rotate: false
-  xy: 445, 176
+  xy: 530, 189
   size: 83, 85
   orig: 83, 85
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Purple/Head_2
   rotate: false
-  xy: 2, 97
+  xy: 2, 110
   size: 83, 120
   orig: 83, 120
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Blue/Badge1_Body_3
-  rotate: true
-  xy: 357, 2
+  rotate: false
+  xy: 843, 97
   size: 25, 78
   orig: 25, 78
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Blue/Badge2_Body_3
-  rotate: false
-  xy: 999, 171
+  rotate: true
+  xy: 738, 4
   size: 19, 55
   orig: 19, 55
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Blue/Body_3
-  rotate: false
-  xy: 536, 263
+  rotate: true
+  xy: 356, 178
   size: 88, 87
   orig: 88, 87
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Blue/Head_3
   rotate: true
-  xy: 658, 432
+  xy: 658, 445
   size: 78, 119
   orig: 78, 119
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Green/Arm_L_3
   rotate: true
-  xy: 548, 132
+  xy: 631, 145
   size: 42, 61
   orig: 42, 61
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Green/Arm_R_3
-  rotate: true
-  xy: 842, 298
+  rotate: false
+  xy: 445, 74
   size: 42, 63
   orig: 42, 63
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Green/Badge1_Body_3
-  rotate: false
-  xy: 696, 187
+  rotate: true
+  xy: 763, 230
   size: 25, 78
   orig: 25, 78
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Green/Badge2_Body_3
-  rotate: false
-  xy: 957, 178
+  rotate: true
+  xy: 745, 25
   size: 19, 55
   orig: 19, 55
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Green/Body_3
   rotate: false
-  xy: 356, 263
+  xy: 526, 276
   size: 88, 87
   orig: 88, 87
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Green/Hand_L_3
-  rotate: false
-  xy: 949, 292
+  rotate: true
+  xy: 213, 2
   size: 34, 44
   orig: 34, 44
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Green/Hand_R_3
-  rotate: false
-  xy: 985, 228
+  rotate: true
+  xy: 548, 29
   size: 37, 33
   orig: 37, 33
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Green/Head_3
   rotate: true
-  xy: 416, 432
+  xy: 416, 445
   size: 78, 119
   orig: 78, 119
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Green/Shoulder_L_3
-  rotate: false
-  xy: 714, 294
+  rotate: true
+  xy: 397, 66
   size: 61, 46
   orig: 61, 46
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Green/Shoulder_R_3
-  rotate: false
-  xy: 782, 165
+  rotate: true
+  xy: 774, 127
   size: 55, 44
   orig: 55, 44
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Green/Wing_L_3
   rotate: true
-  xy: 454, 141
+  xy: 776, 313
   size: 33, 92
   orig: 33, 92
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Green/Wing_R_3
   rotate: true
-  xy: 356, 106
+  xy: 776, 278
   size: 33, 92
   orig: 33, 92
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Orange/Badge1_Body_3
-  rotate: false
-  xy: 669, 187
+  rotate: true
+  xy: 694, 152
   size: 25, 78
   orig: 25, 78
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Orange/Badge2_Body_3
   rotate: false
-  xy: 936, 177
+  xy: 848, 40
   size: 19, 55
   orig: 19, 55
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Orange/Body_3
   rotate: false
-  xy: 266, 62
+  xy: 436, 276
   size: 88, 87
   orig: 88, 87
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Orange/Head_3
   rotate: true
-  xy: 2, 17
+  xy: 2, 30
   size: 78, 119
   orig: 78, 119
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Purple/Badge1_Body_3
-  rotate: true
-  xy: 357, 29
+  rotate: false
+  xy: 843, 177
   size: 25, 78
   orig: 25, 78
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Purple/Badge2_Body_3
-  rotate: false
-  xy: 978, 171
+  rotate: true
+  xy: 681, 10
   size: 19, 55
   orig: 19, 55
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Purple/Body_3
   rotate: false
-  xy: 446, 263
+  xy: 616, 276
   size: 88, 87
   orig: 88, 87
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Purple/Head_3
   rotate: true
-  xy: 537, 432
+  xy: 537, 445
   size: 78, 119
   orig: 78, 119
   offset: 0, 0
   index: -1
 Commander_4/Assets_Commander_4_Blue/Body_4
   rotate: false
-  xy: 266, 151
+  xy: 342, 268
   size: 92, 95
   orig: 92, 95
   offset: 0, 0
   index: -1
 Commander_4/Assets_Commander_4_Green/Arm_L_4
   rotate: false
-  xy: 985, 372
+  xy: 653, 85
   size: 37, 58
   orig: 37, 58
   offset: 0, 0
   index: -1
 Commander_4/Assets_Commander_4_Green/Arm_R_4
-  rotate: false
-  xy: 903, 234
+  rotate: true
+  xy: 692, 91
   size: 38, 57
   orig: 38, 57
   offset: 0, 0
   index: -1
 Commander_4/Assets_Commander_4_Green/Body_4
   rotate: false
-  xy: 172, 49
+  xy: 262, 163
   size: 92, 95
   orig: 92, 95
   offset: 0, 0
   index: -1
 Commander_4/Assets_Commander_4_Green/Hand_L_4
   rotate: true
-  xy: 252, 2
+  xy: 751, 92
   size: 33, 57
   orig: 33, 57
   offset: 0, 0
   index: -1
 Commander_4/Assets_Commander_4_Green/Hand_R_4
-  rotate: true
-  xy: 311, 2
+  rotate: false
+  xy: 583, 32
   size: 33, 44
   orig: 33, 44
   offset: 0, 0
   index: -1
 Commander_4/Assets_Commander_4_Green/Head_4
   rotate: false
-  xy: 87, 97
+  xy: 87, 110
   size: 83, 120
   orig: 83, 120
   offset: 0, 0
   index: -1
 Commander_4/Assets_Commander_4_Green/Shoulder_L_4
-  rotate: true
-  xy: 857, 246
+  rotate: false
+  xy: 756, 46
   size: 50, 44
   orig: 50, 44
   offset: 0, 0
   index: -1
 Commander_4/Assets_Commander_4_Green/Shoulder_R_4
   rotate: true
-  xy: 907, 293
+  xy: 447, 25
   size: 47, 40
   orig: 47, 40
   offset: 0, 0
   index: -1
 Commander_4/Assets_Commander_4_Green/Wing_L_4
   rotate: true
-  xy: 209, 345
+  xy: 209, 358
   size: 23, 92
   orig: 23, 92
   offset: 0, 0
   index: -1
 Commander_4/Assets_Commander_4_Green/Wing_R_4
-  rotate: false
-  xy: 626, 259
+  rotate: true
+  xy: 538, 164
   size: 23, 91
   orig: 23, 91
   offset: 0, 0
   index: -1
 Commander_4/Assets_Commander_4_Orange/Body_4
   rotate: false
-  xy: 172, 146
+  xy: 776, 348
   size: 92, 95
   orig: 92, 95
   offset: 0, 0
   index: -1
 Commander_4/Assets_Commander_4_Purple/Body_4
   rotate: false
-  xy: 262, 248
+  xy: 303, 39
   size: 92, 95
   orig: 92, 95
   offset: 0, 0
   index: -1
 Commander_Weapons/Weapon_Blue
   rotate: false
-  xy: 2, 341
+  xy: 2, 354
   size: 205, 55
   orig: 205, 55
   offset: 0, 0
   index: -1
 Commander_Weapons/Weapon_Green
   rotate: false
-  xy: 2, 398
+  xy: 2, 411
   size: 205, 55
   orig: 205, 55
   offset: 0, 0
   index: -1
 Commander_Weapons/Weapon_Orange
   rotate: false
-  xy: 2, 455
+  xy: 2, 468
   size: 205, 55
   orig: 205, 55
   offset: 0, 0
   index: -1
 Commander_Weapons/Weapon_Purple
   rotate: false
-  xy: 209, 455
+  xy: 209, 468
   size: 205, 55
   orig: 205, 55
   offset: 0, 0

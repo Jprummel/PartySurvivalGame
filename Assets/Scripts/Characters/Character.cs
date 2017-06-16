@@ -49,10 +49,6 @@ public class Character : MonoBehaviour, IDamageable {
     private Sequence _giveGold;
 
     //Visuals
-    protected Animator _animator;
-    protected SpriteRenderer _spriteRenderer;
-    protected Color _defaultColor;
-    protected Color _hitColor;
     protected bool _invincible;
 
     //Getters & Setters
@@ -119,13 +115,7 @@ public class Character : MonoBehaviour, IDamageable {
         get { return _canMove; }
         set { _canMove = value; }
     }
-
-    public Animator CharacterAnimator
-    {
-        get { return _animator; }
-        set { _animator = value; }
-    }
-
+    
     public CharacterSoundFX SoundEffects
     {
         get { return _soundEffects; }
@@ -139,8 +129,6 @@ public class Character : MonoBehaviour, IDamageable {
 
     public enum MoveState
     {
-        FRONT,
-        DOWN,
         LEFT,
         RIGHT
     }
@@ -152,14 +140,10 @@ public class Character : MonoBehaviour, IDamageable {
         CheckMoveState();
         _giveGold       = DOTween.Sequence();
         _ranking        = GameObject.FindGameObjectWithTag(Tags.RANKTRACKER).GetComponent<Ranking>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
         _soundEffects   = GetComponent<CharacterSoundFX>();
-        _animator       = GetComponent<Animator>();    //Gets the characters animator
         _rgb2d          = GetComponent<Rigidbody2D>();
-        _hitColor       = new Color(1,0.6f,0.6f);
         _canMove        = true;
-        _currentHealth  = _maxHealth;             //Sets the characters current health to its max health on spawn
-       
+        _currentHealth  = _maxHealth;             //Sets the characters current health to its max health on spawn       
     }
 
     protected virtual void Update()
@@ -171,12 +155,6 @@ public class Character : MonoBehaviour, IDamageable {
     {
         switch (moveState)
         {
-            case MoveState.DOWN:
-                _moveStateName = "Front";
-                break;
-            case MoveState.FRONT:
-                _moveStateName = "Back";
-                break;
             case MoveState.LEFT:
                 _moveStateName = "Left";
                 break;

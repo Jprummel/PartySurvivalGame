@@ -39,7 +39,7 @@ public class ControllerInput : MonoBehaviour {
                 if (Input.GetButtonDown(InputAxes.XBOX_A + _player.PlayerID))
                 {
                     _player.Ability.UseAbility();
-                    _animations.AbilityAnimation();
+                    //_animations.AbilityAnimation();
                 }
 
                 if (Input.GetButtonDown(InputAxes.XBOX_B + _player.PlayerID) && _player.Ability.UsingAbility)
@@ -77,13 +77,13 @@ public class ControllerInput : MonoBehaviour {
                     _soundEffects.PlayWalkAudio();
                     if (x != 0)
                     {
-                        _walkParticle.ShowParticle(); // only show particle when player isnt running straight up or down
+                       // _walkParticle.ShowParticle(); // only show particle when player isnt running straight up or down
                     }
                 }
                 else
                 {
                     _playerMovement.Move(new Vector2(0, 0));
-                    _walkParticle.DisableParticle();
+                    //_walkParticle.DisableParticle();
                     _soundEffects.StopWalkSound();
                 }
             }
@@ -115,7 +115,6 @@ public class ControllerInput : MonoBehaviour {
     void SetMoveState(float x, float y)
     {
         //If player isnt moving on Y axis but is moving on X switch between left and right
-        //If player is moving on Y axis switch between up and down and ignore X axis
         if (x > 0 && y == 0)
         {
             _player.moveState = Character.MoveState.RIGHT;
@@ -123,15 +122,6 @@ public class ControllerInput : MonoBehaviour {
         else if (x < 0 && y == 0)
         {
             _player.moveState = Character.MoveState.LEFT;
-        }
-
-        if (y > 0)
-        {
-            _player.moveState = Character.MoveState.FRONT;
-        }
-        else if (y < 0)
-        {
-            _player.moveState = Character.MoveState.DOWN;
         }
     }
 }

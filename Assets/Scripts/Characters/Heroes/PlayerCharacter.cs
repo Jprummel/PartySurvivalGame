@@ -153,7 +153,6 @@ public class PlayerCharacter : Character {
         PlayerParty.PlayerCharacters.Remove(this);
         _respawn.deadPlayers.Add(this);
         BecomeEnemy();
-        _spriteRenderer.sprite = _startSprite;
         gameObject.SetActive(false);
     }
 

@@ -1,117 +1,117 @@
 
 Lowerbody.png
-size: 256,128
+size: 215,147
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 Commander_1/Assets_Commander_1_Green/Foot_L_1
   rotate: false
-  xy: 2, 14
+  xy: 86, 2
   size: 43, 43
   orig: 43, 43
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Green/Foot_R_1
   rotate: false
-  xy: 2, 14
+  xy: 86, 2
   size: 43, 43
   orig: 43, 43
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Green/Leg_L_1
   rotate: false
-  xy: 88, 60
+  xy: 45, 79
   size: 39, 66
   orig: 39, 66
   offset: 0, 0
   index: -1
 Commander_1/Assets_Commander_1_Green/Leg_R_1
   rotate: false
-  xy: 129, 60
+  xy: 45, 11
   size: 39, 66
   orig: 39, 66
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Green/Foot_L_2
-  rotate: true
-  xy: 169, 17
+  rotate: false
+  xy: 170, 35
   size: 41, 33
   orig: 41, 33
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Green/Foot_R_2
   rotate: false
-  xy: 211, 97
+  xy: 165, 4
   size: 40, 29
   orig: 40, 29
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Green/Leg_L_2
   rotate: false
-  xy: 211, 4
+  xy: 86, 47
   size: 37, 57
   orig: 37, 57
   offset: 0, 0
   index: -1
 Commander_2/Assets_Commander_2_Green/Leg_R_2
-  rotate: false
-  xy: 92, 2
+  rotate: true
+  xy: 154, 106
   size: 39, 56
   orig: 39, 56
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Green/Foot_L_3
   rotate: false
-  xy: 47, 14
+  xy: 125, 61
   size: 43, 43
   orig: 43, 43
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Green/Foot_R_3
   rotate: false
-  xy: 47, 14
+  xy: 125, 61
   size: 43, 43
   orig: 43, 43
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Green/Leg_L_3
-  rotate: false
-  xy: 170, 60
+  rotate: true
+  xy: 86, 106
   size: 39, 66
   orig: 39, 66
   offset: 0, 0
   index: -1
 Commander_3/Assets_Commander_3_Green/Leg_R_3
-  rotate: false
-  xy: 170, 60
+  rotate: true
+  xy: 86, 106
   size: 39, 66
   orig: 39, 66
   offset: 0, 0
   index: -1
 Commander_4/Assets_Commander_4_Green/Foot_L_4
-  rotate: false
-  xy: 211, 63
+  rotate: true
+  xy: 131, 21
   size: 38, 32
   orig: 38, 32
   offset: 0, 0
   index: -1
 Commander_4/Assets_Commander_4_Green/Foot_R_4
-  rotate: true
-  xy: 133, 15
+  rotate: false
+  xy: 170, 70
   size: 43, 34
   orig: 43, 34
   offset: 0, 0
   index: -1
 Commander_4/Assets_Commander_4_Green/Leg_L_4
   rotate: false
-  xy: 2, 59
+  xy: 2, 78
   size: 41, 67
   orig: 41, 67
   offset: 0, 0
   index: -1
 Commander_4/Assets_Commander_4_Green/Leg_R_4
   rotate: false
-  xy: 45, 59
+  xy: 2, 9
   size: 41, 67
   orig: 41, 67
   offset: 0, 0

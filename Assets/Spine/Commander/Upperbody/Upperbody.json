@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "ln2tFby7TQEPzrqy4YB2uL+02lQ", "spine": "3.5.51", "width": 271.47, "height": 205.3, "images": "" },
+"skeleton": { "hash": "zI1x1u3zR2oRoTmRW5LYvMVOfDU", "spine": "3.5.51", "width": 271.47, "height": 205.3, "images": "" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "Body", "parent": "root", "length": 33.83, "rotation": 89.79, "x": 1.86, "y": 49.32 },
@@ -3018,7 +3018,7 @@
 			}
 		]
 	},
-	"Forhand_Back": {
+	"Forehand_Back": {
 		"slots": {
 			"Arm_L": {
 				"attachment": [
@@ -3230,7 +3230,7 @@
 			}
 		]
 	},
-	"Forhand_Front": {
+	"Forehand_Front": {
 		"slots": {
 			"Arm_L": {
 				"attachment": [
@@ -3545,7 +3545,7 @@
 			}
 		]
 	},
-	"Forhand_Left": {
+	"Forehand_Left": {
 		"bones": {
 			"Badge_7": {
 				"rotate": [
@@ -3902,7 +3902,7 @@
 			}
 		]
 	},
-	"Forhand_Right": {
+	"Forehand_Right": {
 		"slots": {
 			"Arm_L": {
 				"attachment": [
