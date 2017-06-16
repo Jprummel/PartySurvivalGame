@@ -7,23 +7,9 @@ public class EnemyTargetting : MonoBehaviour {
 
     private List<GameObject> _players = new List<GameObject>();
 
-    private float _oldDist = 100;
+    private float _oldDist = 150;
     private GameObject _target;
-    private bool _obstacle;
-    private Vector3 _posRelative;
-    private GameObject _lastObstacle;
     private Unit _AStar;
-
-    public Vector3 PosRelative
-    {
-        get { return _posRelative; }
-    }
-
-    public bool Obstacle
-    {
-        get { return _obstacle; }
-        set { _obstacle = value; }
-    }
 
     public GameObject Target
     {

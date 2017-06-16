@@ -63,7 +63,7 @@ public class Unit : MonoBehaviour {
                     float dirY = currentWaypoint.y - transform.position.y;*/
                     Vector3 direction = transform.position - currentWaypoint;
                     var localDir = transform.InverseTransformDirection(direction);
-                    Debug.Log(localDir);
+                    //Debug.Log(localDir);
                     _rgb2d.velocity = Vector2.zero;
                     SetMoveState(localDir.x, localDir.y);
                 }else if(distance < _enemy.AttackRange)
@@ -78,22 +78,89 @@ public class Unit : MonoBehaviour {
 
     void SetMoveState(float x, float y)
     {
-        if (x < 0 && x < y)
+        /*if (x < 0 && x < y)
         {
-            _enemy.moveState = Character.MoveState.RIGHT;
+            Debug.Log("Right");
+            //_enemy.moveState = Character.MoveState.RIGHT;
         }
         if (x > 0 && x > y)
-       {
-            _enemy.moveState = Character.MoveState.LEFT;
+        {
+            Debug.Log("Left");
+            // _enemy.moveState = Character.MoveState.LEFT;
         }
-       if (y < 0 && y > x)
-       {
-            _enemy.moveState = Character.MoveState.DOWN;
-       }
-       if(y > 0 && y > x)
-       {
-            _enemy.moveState = Character.MoveState.FRONT;
-       }
+        if (y > 0 && y < x)
+        {
+            Debug.Log("Down");
+            // _enemy.moveState = Character.MoveState.DOWN;
+        }
+        if (y < 0 && y < x)
+        {
+            Debug.Log("Front");
+            //_enemy.moveState = Character.MoveState.FRONT;
+        }*/
+        if(transform.position.x > target.position.x)
+        {
+            //left
+            if(transform.position.y > target.position.y)
+            {
+                //down
+                if(x > y)
+                {
+                    Debug.Log("l");
+                    _enemy.moveState = Character.MoveState.LEFT;
+                }
+                else if(x < y)
+                {
+                    Debug.Log("d");
+                    _enemy.moveState = Character.MoveState.DOWN;
+                }
+            }
+            else if(transform.position.y < target.position.y)
+            {
+                //up
+                if(x > -y)
+                {
+                    Debug.Log("l");
+                    _enemy.moveState = Character.MoveState.LEFT;
+                }
+                else if(x < -y)
+                {
+                    Debug.Log("f");
+                    _enemy.moveState = Character.MoveState.FRONT;
+                }
+            }
+        }
+        else if(transform.position.x < target.position.x)
+        {
+            //right
+            if (transform.position.y > target.position.y)
+            {
+                //down
+                if(-x > y)
+                {
+                    Debug.Log("r");
+                    _enemy.moveState = Character.MoveState.RIGHT;
+                }else if(-x < y)
+                {
+                    Debug.Log("d");
+                    _enemy.moveState = Character.MoveState.DOWN;
+                }
+            }
+            else if (transform.position.y < target.position.y)
+            {
+                //up
+                if(x > y)
+                {
+                    Debug.Log("r");
+                    _enemy.moveState = Character.MoveState.RIGHT;
+                }
+                else if(x < y)
+                {
+                    Debug.Log("f");
+                    _enemy.moveState = Character.MoveState.FRONT;
+                }
+            }
+        }
     }
 
     void MoveAnimation()
