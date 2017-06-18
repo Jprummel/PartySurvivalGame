@@ -9,6 +9,7 @@ public class Character : MonoBehaviour, IDamageable {
     //Spine values
     [SerializeField]protected SkeletonAnimation _upperBodySkeleton;
     [SerializeField]protected SkeletonAnimation _lowerBodySkeleton;
+    protected CharacterAnimations _animations;
     protected string _moveStateName;
 
     public SkeletonAnimation UpperBody
@@ -21,6 +22,12 @@ public class Character : MonoBehaviour, IDamageable {
     {
         get { return _lowerBodySkeleton; }
         set { _lowerBodySkeleton = value; }
+    }
+
+    public CharacterAnimations Animations
+    {
+        get { return _animations; }
+        set { _animations = value; }
     }
 
     public string MoveStateName
@@ -138,6 +145,7 @@ public class Character : MonoBehaviour, IDamageable {
     protected virtual void Awake()
     {
         CheckMoveState();
+        _animations     = GetComponent<CharacterAnimations>();
         _giveGold       = DOTween.Sequence();
         _ranking        = GameObject.FindGameObjectWithTag(Tags.RANKTRACKER).GetComponent<Ranking>();
         _soundEffects   = GetComponent<CharacterSoundFX>();

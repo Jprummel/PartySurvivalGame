@@ -40,7 +40,6 @@ public class Enemy : Character, IDamageable{
         _isDead = true;
         CapsuleCollider2D collider = GetComponent<CapsuleCollider2D>();
         collider.enabled = false;
-        _animator.SetBool("IsDead", true);
         _enemySpawner.spawnedEnemies.Remove(this.gameObject);
         yield return new WaitForSeconds(1f);
         Instantiate(_deadBody, transform.position, transform.rotation);

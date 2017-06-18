@@ -14,7 +14,6 @@ public class CharacterSelectPrefabs : MonoBehaviour {
         PlayerParty.Players.Add(_selectedCharacterPrefab); //Adds the prefab to the players list
         _selectedCharacter = _selectedCharacterPrefab.GetComponent<PlayerCharacter>(); //Gets the playercharacterscript from the player
         _selectedCharacter.PlayerID = playerID; //Sets selected characters id equal to the players id who selected him
-        Debug.Log(playerID + " " + _selectedCharacter.PlayerID);
     }
 
     public void DeselectCharacter()

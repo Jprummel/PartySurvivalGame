@@ -109,11 +109,6 @@ public class Unit : MonoBehaviour {
                     Debug.Log("l");
                     _enemy.moveState = Character.MoveState.LEFT;
                 }
-                else if(x < y)
-                {
-                    Debug.Log("d");
-                    _enemy.moveState = Character.MoveState.DOWN;
-                }
             }
             else if(transform.position.y < target.position.y)
             {
@@ -122,11 +117,6 @@ public class Unit : MonoBehaviour {
                 {
                     Debug.Log("l");
                     _enemy.moveState = Character.MoveState.LEFT;
-                }
-                else if(x < -y)
-                {
-                    Debug.Log("f");
-                    _enemy.moveState = Character.MoveState.FRONT;
                 }
             }
         }
@@ -138,12 +128,10 @@ public class Unit : MonoBehaviour {
                 //down
                 if(-x > y)
                 {
-                    Debug.Log("r");
                     _enemy.moveState = Character.MoveState.RIGHT;
                 }else if(-x < y)
                 {
-                    Debug.Log("d");
-                    _enemy.moveState = Character.MoveState.DOWN;
+                    //_enemy.moveState = Character.MoveState.DOWN;
                 }
             }
             else if (transform.position.y < target.position.y)
@@ -151,13 +139,11 @@ public class Unit : MonoBehaviour {
                 //up
                 if(x > y)
                 {
-                    Debug.Log("r");
                     _enemy.moveState = Character.MoveState.RIGHT;
                 }
                 else if(x < y)
                 {
-                    Debug.Log("f");
-                    _enemy.moveState = Character.MoveState.FRONT;
+                    //_enemy.moveState = Character.MoveState.FRONT;
                 }
             }
         }

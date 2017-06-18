@@ -59,13 +59,14 @@ public class ArrowRain : Ability {
                 //face player targetting side
                 if(_circle.transform.position.x < transform.position.x)
                 {
-                    _rotation.y = 180;
+                    _player.moveState = Character.MoveState.LEFT;
+                    _player.Animations.IdleAnimation();
                 }
                 else if(_circle.transform.position.x > transform.position.x)
                 {
-                    _rotation.y = 0;
+                    _player.moveState = Character.MoveState.RIGHT;
+                    _player.Animations.IdleAnimation();
                 }
-                transform.rotation = _rotation;
             }
         }
     }
@@ -73,7 +74,6 @@ public class ArrowRain : Ability {
     void StartTargeting()
     {
         _player.CanMove = false;
-        //_player.CharacterAnimator.SetBool("IsMoving",false);
         //distance from circle to player
         float Offset = 3;
         if(transform.rotation.y > 0)
@@ -137,7 +137,7 @@ public class ArrowRain : Ability {
         //_player.CharacterAnimator.SetBool("CommandArchers", true);
         _player.UpperBody.state.SetAnimation(0, SpineAnimationNames.ABILITY + "_" +_player.MoveStateName, false);
         yield return new WaitForSeconds(0.75f);
-        _player.UpperBody.state.SetAnimation(0, SpineAnimationNames.IDLE + _player.MoveStateName, true);
+        //_player.UpperBody.state.SetAnimation(0, SpineAnimationNames.IDLE + _player.MoveStateName, true);
         //_player.CharacterAnimator.SetBool("CommandArchers", false);
         _player.CanMove = true;
     }
