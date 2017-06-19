@@ -24,8 +24,7 @@ public class Unit : MonoBehaviour {
         if (target != null)
         {
             PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
-            Debug.Log(_isMoving);
-            PlayAnimation();
+            MoveAnimation();
         }
     }
 
@@ -58,8 +57,9 @@ public class Unit : MonoBehaviour {
                     }
                     currentWaypoint = path[targetIndex];
                 }
-                if (distance > _enemy.AttackRange)
+                if (distance > _enemy.AttackRange - 2)
                 {
+                    Debug.Log("distance: " + distance + "attack range: " + _enemy.AttackRange);
                     transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, _enemy.MovementSpeed  / 55);
                     Vector3 direction = transform.position - currentWaypoint;
                     _rgb2d.velocity = Vector2.zero;
@@ -79,22 +79,6 @@ public class Unit : MonoBehaviour {
         else if (x < 0)
         {
             _enemy.moveState = Character.MoveState.RIGHT;
-        }
-    }
-
-    private void PlayAnimation()
-    {
-        if (_isMoving)
-        {
-            Debug.Log(_enemy.MoveStateName);
-            _enemy.UpperBody.AnimationName = SpineAnimationNames.WALK + _enemy.MoveStateName;
-            _enemy.LowerBody.AnimationName = SpineAnimationNames.WALK + _enemy.MoveStateName;
-        }
-        else if (_enemy.MoveStateName != null)
-        {
-
-            _enemy.UpperBody.AnimationName = SpineAnimationNames.IDLE + _enemy.MoveStateName;
-            _enemy.LowerBody.AnimationName = SpineAnimationNames.IDLE + _enemy.MoveStateName;
         }
     }
 

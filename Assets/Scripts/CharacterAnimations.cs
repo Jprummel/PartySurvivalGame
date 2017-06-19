@@ -16,8 +16,8 @@ public class CharacterAnimations : MonoBehaviour {
 
     public void MoveAnimation()
     {
-        _upperbody.state.SetAnimation(0, SpineAnimationNames.WALK + _character.MoveStateName, true);
-        _lowerbody.state.SetAnimation(0, SpineAnimationNames.WALK + _character.MoveStateName, true);
+        _upperbody.AnimationName = SpineAnimationNames.WALK + _character.MoveStateName;
+        _lowerbody.AnimationName = SpineAnimationNames.WALK + _character.MoveStateName;
     }
 
     public void PlayerAttackAnimation(int attackState)
@@ -46,7 +46,7 @@ public class CharacterAnimations : MonoBehaviour {
 
     public void IdleAnimation()
     {
-        _upperbody.state.SetAnimation(0, SpineAnimationNames.IDLE + _character.MoveStateName, true);
-        _lowerbody.state.SetAnimation(0, SpineAnimationNames.IDLE + _character.MoveStateName, true);
+        _upperbody.AnimationName = SpineAnimationNames.IDLE + _character.MoveStateName;
+        _lowerbody.AnimationName = SpineAnimationNames.IDLE + _character.MoveStateName;
     }
 }
