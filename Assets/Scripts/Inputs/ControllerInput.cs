@@ -53,7 +53,7 @@ public class ControllerInput : MonoBehaviour {
             if (Input.GetButtonDown(InputAxes.XBOX_X + _player.PlayerID) && _playerAttack.ReadyToAttack)
             {
                 _playerAttack.Attack();
-                _player.Animations.PlayerAttackAnimation(_player.LightAttackState);
+                //_player.Animations.PlayerAttackAnimation(_player.LightAttackState);
                 _soundEffects.PlayLightAttackAudio(); //Basic Attack (miss) sound
             }
 
@@ -89,7 +89,6 @@ public class ControllerInput : MonoBehaviour {
             else if (!_player.CanMove)
             {
                 _player.Animations.IdleAnimation();
-                //_player.LowerBody.AnimationName = SpineAnimationNames.IDLE + _player.MoveStateName;
             }
         }
         

@@ -27,8 +27,7 @@ public class PlayerAttack : MonoBehaviour {
     {
         if (_readyToAttack && _delayBetweenCombos <= 0)
         {
-            //AttackAnim(_player.LightAttackState);
-            //StartCoroutine(AttackState(_playerCharacter.LightAttackState));
+            _player.Animations.PlayerAttackAnimation(_player.LightAttackState);
             _readyToAttack = false;
             _player.LightAttackState++;
             _comboResetTimer = 0.8f;
@@ -45,31 +44,15 @@ public class PlayerAttack : MonoBehaviour {
     {
         if (_readyToAttack & !_player.Ability.UsingAbility)
         {
-            //AttackAnim(3);
-            //StartCoroutine(AttackState(3));
+            _player.CanMove = false;
+            _player.Animations.PlayerAttackAnimation(3);
             StartCoroutine(HeavyAttackRoutine(2));
             _readyToAttack = false;
             StartCoroutine(Cooldown(1));
         }
     }
 
-    IEnumerator AttackState(int animationAttackState)
-    {
-        switch (animationAttackState)
-        {
-            case 1:
-                _player.UpperBody.AnimationState.SetAnimation(0, SpineAnimationNames.FOREHAND + _player.MoveStateName, false);
-                break;
-            case 2:
-                _player.UpperBody.AnimationState.SetAnimation(0, SpineAnimationNames.BACKHAND + _player.MoveStateName, false);
-                break;
-            case 3:
-                _player.UpperBody.AnimationState.SetAnimation(0, SpineAnimationNames.OVERHEAD + _player.MoveStateName, false);
-                break;
-        }
-        
-        yield return null;
-    }
+   
 
     void AttackAnim(int animationAttackState)
     {
@@ -85,7 +68,6 @@ public class PlayerAttack : MonoBehaviour {
                 _player.UpperBody.AnimationState.SetAnimation(0, SpineAnimationNames.OVERHEAD + _player.MoveStateName, false);
                 break;
         }
-        _player.UpperBody.state.Complete += IdleState;
     }
 
     void StartComboResetTimer()
@@ -120,7 +102,7 @@ public class PlayerAttack : MonoBehaviour {
         _player.CanMove = true;
     }
 
-    void IdleState(Spine.TrackEntry track)
+    void IdleState()
     {
         Debug.Log("Ayyeylmao");
         _player.UpperBody.AnimationName = SpineAnimationNames.IDLE + _player.MoveStateName;
