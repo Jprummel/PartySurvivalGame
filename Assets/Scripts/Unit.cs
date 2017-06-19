@@ -24,6 +24,8 @@ public class Unit : MonoBehaviour {
         if (target != null)
         {
             PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+            Debug.Log(_isMoving);
+            PlayAnimation();
         }
     }
 
@@ -58,106 +60,46 @@ public class Unit : MonoBehaviour {
                 }
                 if (distance > _enemy.AttackRange)
                 {
-                    transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, _enemy.MovementSpeed / 100);
-                    /*float dirX = currentWaypoint.x - transform.position.x;
-                    float dirY = currentWaypoint.y - transform.position.y;*/
+                    transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, _enemy.MovementSpeed  / 55);
                     Vector3 direction = transform.position - currentWaypoint;
-                    var localDir = transform.InverseTransformDirection(direction);
-                    //Debug.Log(localDir);
                     _rgb2d.velocity = Vector2.zero;
-                    SetMoveState(localDir.x, localDir.y);
-                }else if(distance < _enemy.AttackRange)
-                {
-                    _isMoving = false;
+                    SetMoveState(direction.x);
                 }
-                MoveAnimation();
                 yield return null;
             }
         }
     }
 
-    void SetMoveState(float x, float y)
+    void SetMoveState(float x)
     {
-        /*if (x < 0 && x < y)
+        if(x > 0)
         {
-            Debug.Log("Right");
-            //_enemy.moveState = Character.MoveState.RIGHT;
+            _enemy.moveState = Character.MoveState.LEFT;
         }
-        if (x > 0 && x > y)
+        else if (x < 0)
         {
-            Debug.Log("Left");
-            // _enemy.moveState = Character.MoveState.LEFT;
+            _enemy.moveState = Character.MoveState.RIGHT;
         }
-        if (y > 0 && y < x)
+    }
+
+    private void PlayAnimation()
+    {
+        if (_isMoving)
         {
-            Debug.Log("Down");
-            // _enemy.moveState = Character.MoveState.DOWN;
+            Debug.Log(_enemy.MoveStateName);
+            _enemy.UpperBody.AnimationName = SpineAnimationNames.WALK + _enemy.MoveStateName;
+            _enemy.LowerBody.AnimationName = SpineAnimationNames.WALK + _enemy.MoveStateName;
         }
-        if (y < 0 && y < x)
+        else if (_enemy.MoveStateName != null)
         {
-            Debug.Log("Front");
-            //_enemy.moveState = Character.MoveState.FRONT;
-        }*/
-        if(transform.position.x > target.position.x)
-        {
-            //left
-            if(transform.position.y > target.position.y)
-            {
-                //down
-                if(x > y)
-                {
-                    Debug.Log("l");
-                    _enemy.moveState = Character.MoveState.LEFT;
-                }
-            }
-            else if(transform.position.y < target.position.y)
-            {
-                //up
-                if(x > -y)
-                {
-                    Debug.Log("l");
-                    _enemy.moveState = Character.MoveState.LEFT;
-                }
-            }
-        }
-        else if(transform.position.x < target.position.x)
-        {
-            //right
-            if (transform.position.y > target.position.y)
-            {
-                //down
-                if(-x > y)
-                {
-                    _enemy.moveState = Character.MoveState.RIGHT;
-                }else if(-x < y)
-                {
-                    //_enemy.moveState = Character.MoveState.DOWN;
-                }
-            }
-            else if (transform.position.y < target.position.y)
-            {
-                //up
-                if(x > y)
-                {
-                    _enemy.moveState = Character.MoveState.RIGHT;
-                }
-                else if(x < y)
-                {
-                    //_enemy.moveState = Character.MoveState.FRONT;
-                }
-            }
+
+            _enemy.UpperBody.AnimationName = SpineAnimationNames.IDLE + _enemy.MoveStateName;
+            _enemy.LowerBody.AnimationName = SpineAnimationNames.IDLE + _enemy.MoveStateName;
         }
     }
 
     void MoveAnimation()
     {
-        if (_isMoving && _enemy.MoveStateName != null)
-        {
             _animations.MoveAnimation();
-        }
-        /*else
-        {
-            _animations.IdleAnimation();
-        }*/
     }
 }

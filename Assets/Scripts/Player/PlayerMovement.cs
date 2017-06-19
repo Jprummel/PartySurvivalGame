@@ -2,6 +2,7 @@
 
 public class PlayerMovement : MonoBehaviour {
 
+    private CharacterAnimations _animations;
     private PlayerCharacter _player;
     private Rigidbody2D _rgb2d;
     private Quaternion _rotation;
@@ -9,6 +10,7 @@ public class PlayerMovement : MonoBehaviour {
 
     void Awake()
     {
+        _animations = GetComponent<CharacterAnimations>();
         _player = GetComponent<PlayerCharacter>();
     }
 
@@ -19,7 +21,8 @@ public class PlayerMovement : MonoBehaviour {
     public void Move(Vector2 moveDir)
     {
         transform.rotation = _rotation;
-        _rgb2d.MovePosition(_rgb2d.position + moveDir * _player.MovementSpeed * Time.deltaTime);   
+        _rgb2d.MovePosition(_rgb2d.position + moveDir * _player.MovementSpeed * Time.deltaTime);
+        //_animations.MoveAnimation();
         PlayAnimation(moveDir);
     }
 
