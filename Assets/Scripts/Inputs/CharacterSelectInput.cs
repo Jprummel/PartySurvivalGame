@@ -8,7 +8,6 @@ public class CharacterSelectInput : MonoBehaviour {
     private CharacterSelect _characterSelect;
     private CharacterSelectUI _characterSelectUI;
     private CharacterSelectPlayers _characterSelectPlayers;
-    private ShowCharacterInfo _characterInfo;
     private CharacterSelectPrefabs _selectPrefab;
     
     private float _inputDelay;
@@ -25,7 +24,6 @@ public class CharacterSelectInput : MonoBehaviour {
         _sceneLoader = GameObject.FindGameObjectWithTag(Tags.SCENELOADER).GetComponent<SceneLoader>();
         _characterSelect = GetComponent<CharacterSelect>();
         _characterSelectUI = GetComponent<CharacterSelectUI>();
-        _characterInfo = GetComponent<ShowCharacterInfo>();
 	}
 
     private void Update()
@@ -45,7 +43,6 @@ public class CharacterSelectInput : MonoBehaviour {
                     BacktrackThroughSelect();
                     if (_characterSelect.PlayerIsActive) // If player is active but not ready & input delay timer is zero
                     {
-                        ShowPlayerInfo();
                         if (!_characterSelect.PlayerIsReady)
                         {
                             NextCharacter();
@@ -55,7 +52,6 @@ public class CharacterSelectInput : MonoBehaviour {
                 }
                 if (_characterSelectPlayers.ReadyToStart)
                 {
-                    ShowPlayerInfo();
                     StartGame();
                     BacktrackThroughSelect();
                 }
@@ -89,15 +85,6 @@ public class CharacterSelectInput : MonoBehaviour {
                 _characterSelect.ReadyUp();
                 _inputDelay = _inputDelayMaxTime;
             }
-        }
-    }
-
-    public void ShowPlayerInfo()
-    {
-        if (Input.GetButtonDown(InputAxes.XBOX_Y + _playerID))
-        {
-            _characterInfo.ToggleDescription();
-            _inputDelay = _inputDelayMaxTime;
         }
     }
 
@@ -153,7 +140,6 @@ public class CharacterSelectInput : MonoBehaviour {
                 _characterSelectUI.SelectedCharacterNumber = 0;
             }
             _characterSelectUI.SelectedCharacterVisuals();
-            _characterInfo.CharacterDescription(_characterSelectUI.SelectedCharacterNumber);
             _inputDelay = _inputDelayMaxTime;
         }
     }
@@ -171,7 +157,6 @@ public class CharacterSelectInput : MonoBehaviour {
                 _characterSelectUI.SelectedCharacterNumber = _characterSelectUI.SelectionPortraits.Count - 1;
             }
             _characterSelectUI.SelectedCharacterVisuals();
-            _characterInfo.CharacterDescription(_characterSelectUI.SelectedCharacterNumber);
             _inputDelay = _inputDelayMaxTime;
         }
     }
