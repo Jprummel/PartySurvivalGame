@@ -2,26 +2,26 @@
 
 public class ControllerInput : MonoBehaviour {
 
-    private CharacterAnimations    _animations;
-    private ShopDisplay         _shopDisplay;
-    private WalkParticle        _walkParticle;
-    private CharacterSoundFX    _soundEffects;
-    private WaveController      _waveController;
-    private PauseGame           _pauseGame;
-    private PlayerCharacter     _player;
-    private PlayerMovement      _playerMovement;
-    private PlayerAttack        _playerAttack;
+    private CharacterAnimations _animations;
+    private ShopDisplay _shopDisplay;
+    private WalkParticle _walkParticle;
+    private CharacterSoundFX _soundEffects;
+    private WaveController _waveController;
+    private PauseGame _pauseGame;
+    private PlayerCharacter _player;
+    private PlayerMovement _playerMovement;
+    private PlayerAttack _playerAttack;
 
     void Awake()
     {
-        _shopDisplay        = GameObject.FindGameObjectWithTag(Tags.SHOPMANAGER).GetComponent<ShopDisplay>();
-        _pauseGame          = GameObject.FindGameObjectWithTag(Tags.PAUSEOBJECT).GetComponent<PauseGame>();
-        _walkParticle       = GetComponentInChildren<WalkParticle>();
-        _soundEffects       = GetComponent<CharacterSoundFX>();
-        _waveController     = GameObject.FindGameObjectWithTag(Tags.WAVEMANAGER).GetComponent<WaveController>();
-        _player             = GetComponent<PlayerCharacter>();
-        _playerMovement     = GetComponent<PlayerMovement>();
-        _playerAttack       = GetComponent<PlayerAttack>();
+        _shopDisplay = GameObject.FindGameObjectWithTag(Tags.SHOPMANAGER).GetComponent<ShopDisplay>();
+        _pauseGame = GameObject.FindGameObjectWithTag(Tags.PAUSEOBJECT).GetComponent<PauseGame>();
+        _walkParticle = GetComponentInChildren<WalkParticle>();
+        _soundEffects = GetComponent<CharacterSoundFX>();
+        _waveController = GameObject.FindGameObjectWithTag(Tags.WAVEMANAGER).GetComponent<WaveController>();
+        _player = GetComponent<PlayerCharacter>();
+        _playerMovement = GetComponent<PlayerMovement>();
+        _playerAttack = GetComponent<PlayerAttack>();
     }
 
     void Update()
@@ -76,7 +76,7 @@ public class ControllerInput : MonoBehaviour {
                     _soundEffects.PlayWalkAudio();
                     if (x != 0)
                     {
-                       // _walkParticle.ShowParticle(); // only show particle when player isnt running straight up or down
+                        // _walkParticle.ShowParticle(); // only show particle when player isnt running straight up or down
                     }
                 }
                 else
@@ -91,7 +91,7 @@ public class ControllerInput : MonoBehaviour {
                 _player.Animations.IdleAnimation();
             }
         }
-        
+
         if (Input.GetButtonDown(InputAxes.START + _player.PlayerID) && _waveController.IsCombatPhase)
         {
             _pauseGame.TogglePause();
@@ -106,18 +106,18 @@ public class ControllerInput : MonoBehaviour {
 
             _soundEffects.StopWalkSound();
             _walkParticle.DisableParticle();
-            _playerMovement.Move(new Vector2(0,0));
+            _playerMovement.Move(new Vector2(0, 0));
         }
     }
 
     void SetMoveState(float x, float y)
     {
         //If player isnt moving on Y axis but is moving on X switch between left and right
-        if (x > 0 && y == 0)
+        if (x > 0)
         {
             _player.moveState = Character.MoveState.RIGHT;
         }
-        else if (x < 0 && y == 0)
+        else if (x < 0)
         {
             _player.moveState = Character.MoveState.LEFT;
         }
