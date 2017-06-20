@@ -179,6 +179,7 @@ public class Character : MonoBehaviour, IDamageable {
     {   //checks if source of damage is not the last enemy/player who dealt damage
         if(damageSource.gameObject != _lastSource)
         {
+            Debug.Log("source: " + damageSource);
             if (_currentHealth > 0)
             {
                 //attack checks for collision with player or enemy
@@ -191,7 +192,7 @@ public class Character : MonoBehaviour, IDamageable {
                 if (this.gameObject.tag == Tags.ENEMY & damageSource.gameObject.tag == Tags.PLAYER)
                 {
                     StartCoroutine(HitRoutine());
-                    _soundEffects.PlayHitAudio();
+                    //_soundEffects.PlayHitAudio();
                     _currentHealth -= damageSource.Damage;   //Reduces currenthealth by the amount of damage the source of damage has
                                                              //knockback value/1000
                     KnockBack(2f, damageSource, 0.15f);

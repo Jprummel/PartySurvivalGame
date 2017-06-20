@@ -10,6 +10,7 @@ public class Unit : MonoBehaviour {
     public Transform target;
     Vector3[] path;
     int targetIndex;
+    private bool _isAttacking;
 
     void Start()
     {
@@ -25,6 +26,7 @@ public class Unit : MonoBehaviour {
         {
             PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
             MoveAnimation();
+            CheckDistance();
         }
     }
 
@@ -44,7 +46,6 @@ public class Unit : MonoBehaviour {
         {
             _isMoving = true;
             Vector3 currentWaypoint = path[0];
-            float distance = Vector2.Distance(transform.position, target.position);
 
             while (true)
             {
@@ -57,9 +58,9 @@ public class Unit : MonoBehaviour {
                     }
                     currentWaypoint = path[targetIndex];
                 }
-                if (distance > _enemy.AttackRange - 2)
+                if (!_isAttacking)
                 {
-                    Debug.Log("distance: " + distance + "attack range: " + _enemy.AttackRange);
+                    //Debug.Log("distance: " + distance + "attack range: " + _enemy.AttackRange);
                     transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, _enemy.MovementSpeed  / 55);
                     Vector3 direction = transform.position - currentWaypoint;
                     _rgb2d.velocity = Vector2.zero;
@@ -67,6 +68,19 @@ public class Unit : MonoBehaviour {
                 }
                 yield return null;
             }
+        }
+    }
+
+    void CheckDistance()
+    {
+        float distance = Vector2.Distance(transform.position, target.position);
+        if(distance <= _enemy.AttackRange)
+        {
+            _isAttacking = true;
+        }
+        else
+        {
+            _isAttacking = false;
         }
     }
 

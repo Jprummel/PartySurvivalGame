@@ -19,10 +19,9 @@ public class Enemy : Character, IDamageable{
     {
         _maxHealth = Mathf.RoundToInt(_maxHealth + Mathf.Pow(GameInformation.Wave, _healthGrowFactor)); //Scales max health with wave and growth factor
         _damage = _damage + Mathf.Pow(GameInformation.Wave, _damageGrowFactor); //Scales damage with wave and growth factor
-        //_enemySpawner = GameObject.FindGameObjectWithTag(Tags.ENEMYSPAWNER).GetComponent<EnemySpawner>();
+        _enemySpawner = GameObject.FindGameObjectWithTag(Tags.ENEMYSPAWNER).GetComponent<EnemySpawner>();
         _healthBar = GetComponentInChildren<Image>();
-        _currentHealth = _maxHealth;
-        //base.Awake();
+        base.Awake();
     }
 
     protected override void Update()
