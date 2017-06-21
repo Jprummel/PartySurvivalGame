@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour {
@@ -16,9 +17,15 @@ public class SceneLoader : MonoBehaviour {
     {
         if (!_isLoading)
         {
-            _async = SceneManager.LoadSceneAsync(sceneName);
-            _fader.Fade(1,3);
-            _isLoading = true;
+            StartCoroutine(ChangeSceneRoutine(sceneName));
         }
+    }
+
+    IEnumerator ChangeSceneRoutine(string sceneName)
+    {
+        _fader.Fade(1, 1.5f);
+        yield return new WaitForSeconds(1.5f);
+        _async = SceneManager.LoadSceneAsync(sceneName);
+        _isLoading = true;
     }
 }

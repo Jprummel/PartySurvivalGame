@@ -29,6 +29,7 @@ public class PlayerCharacter : Character {
     [SerializeField]protected Sprite _portrait;
     [SerializeField]private PlayerDiedWarning _warningPlayer;
     private Sprite _startSprite;
+    protected string _skinName;
 
     public Sprite Portrait { get { return _portrait; }}
     public PlayerHud HUD { get; set; }
@@ -90,19 +91,29 @@ public class PlayerCharacter : Character {
 
     protected virtual void Start()
     {
+        SetCharacterSkin();
+        _portrait = Resources.Load<Sprite>("Art/Sprites/Portraits/" + name + "_" + _skinName);
+    }
+
+    void SetCharacterSkin()
+    {
         switch (_playerID)
         {
             case 1:
                 _upperBodySkeleton.skeleton.SetSkin(SpineSkinNames.ORANGE);
+                _skinName = SpineSkinNames.ORANGE;
                 break;
             case 2:
                 _upperBodySkeleton.skeleton.SetSkin(SpineSkinNames.BLUE);
+                _skinName = SpineSkinNames.BLUE;
                 break;
             case 3:
                 _upperBodySkeleton.skeleton.SetSkin(SpineSkinNames.GREEN);
+                _skinName = SpineSkinNames.GREEN;
                 break;
             case 4:
                 _upperBodySkeleton.skeleton.SetSkin(SpineSkinNames.PURPLE);
+                _skinName = SpineSkinNames.PURPLE;
                 break;
             default:
                 _upperBodySkeleton.skeleton.SetSkin(SpineSkinNames.ORANGE);

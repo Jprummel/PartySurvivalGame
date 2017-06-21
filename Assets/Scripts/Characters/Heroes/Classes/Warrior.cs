@@ -2,10 +2,10 @@
 
     void Start()
     {
-        base.Start();
         _ability = GetComponent<Whirlwind>();
-        name = "Warrior";
+        Name = "Warrior";
         _damageScaleFactor = 1.2f;
         _healthScaleFactor = 1.2f;
+        base.Start();
     }
 }

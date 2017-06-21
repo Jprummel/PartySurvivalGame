@@ -6,5 +6,6 @@
         Name = "Knight";
         _damageScaleFactor = 1.1f;
         _healthScaleFactor = 1.3f;
+        base.Start();
     }
 }

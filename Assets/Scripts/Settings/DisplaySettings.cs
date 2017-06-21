@@ -1,16 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class ResolutionSettings : MonoBehaviour {
+public class DisplaySettings : MonoBehaviour {
 
     [SerializeField]private Dropdown _resolutionDropdown;
     [SerializeField]private Toggle _fullScreenToggle;
     private SaveLoadSettings _saveSettings = new SaveLoadSettings();
-
-    void Start()
-    {
-
-    }
 
     public void ChangeResolution()
     {
@@ -18,26 +13,31 @@ public class ResolutionSettings : MonoBehaviour {
             
             case 0:
                 SettingsInformation.ResolutionWidth = 1024;
-                SettingsInformation.ResoltuionHeight = 768;
+                SettingsInformation.ResolutionHeight = 768;
+                SettingsInformation.SelectedResolutionOption = 0;
                 break;
             case 1:
                 SettingsInformation.ResolutionWidth = 1280;
-                SettingsInformation.ResoltuionHeight = 720;
+                SettingsInformation.ResolutionHeight = 720;
+                SettingsInformation.SelectedResolutionOption = 1;
                 break;
             case 2:
                 SettingsInformation.ResolutionWidth = 1366;
-                SettingsInformation.ResoltuionHeight = 768;
+                SettingsInformation.ResolutionHeight = 768;
+                SettingsInformation.SelectedResolutionOption = 2;
                 break;
             case 3:
                 SettingsInformation.ResolutionWidth = 1600;
-                SettingsInformation.ResoltuionHeight = 900;
+                SettingsInformation.ResolutionHeight = 900;
+                SettingsInformation.SelectedResolutionOption = 3;
                 break;
             case 4:
                 SettingsInformation.ResolutionWidth = 1920;
-                SettingsInformation.ResoltuionHeight = 1080;
+                SettingsInformation.ResolutionHeight = 1080;
+                SettingsInformation.SelectedResolutionOption = 4;
                 break;
         }
-        Screen.SetResolution(SettingsInformation.ResolutionWidth, SettingsInformation.ResoltuionHeight, SettingsInformation.IsFullScreen);
+        Screen.SetResolution(SettingsInformation.ResolutionWidth, SettingsInformation.ResolutionHeight, SettingsInformation.IsFullScreen);
         _saveSettings.SaveSettings();
     }
 
@@ -52,7 +52,7 @@ public class ResolutionSettings : MonoBehaviour {
         {
             SettingsInformation.IsFullScreen = false;
         }
-        Screen.SetResolution(SettingsInformation.ResolutionWidth, SettingsInformation.ResoltuionHeight, SettingsInformation.IsFullScreen);
+        Screen.SetResolution(SettingsInformation.ResolutionWidth, SettingsInformation.ResolutionHeight, SettingsInformation.IsFullScreen);
         _saveSettings.SaveSettings();
     }
 }

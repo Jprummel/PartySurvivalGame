@@ -30,9 +30,8 @@ public class MapSelection : MonoBehaviour {
         EnableReturnToMenuScreen();
     }
 
-    public void SelectMap(string levelToLoad)
-    {
-        _selectedMap = levelToLoad;
+    public void GoToCharacterSelect()
+    {      
         StartCoroutine(_selectionScreen.SwitchToCharacterSelect());
         _eventSystem.SetActive(false);
     }

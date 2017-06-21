@@ -5,7 +5,8 @@ public class SettingsInformation : MonoBehaviour {
 
     //Resolution Settings
     public static int ResolutionWidth;
-    public static int ResoltuionHeight;
+    public static int ResolutionHeight;
+    public static int SelectedResolutionOption;
     public static bool IsFullScreen;
 
     //Audio Settings

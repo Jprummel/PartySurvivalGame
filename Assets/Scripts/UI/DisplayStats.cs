@@ -29,8 +29,7 @@ public class DisplayStats : MonoBehaviour {
 
 
     void Start () {
-        _display = GameObject.FindGameObjectWithTag(Tags.SHOPMANAGER).GetComponent<ShopDisplay>();
-        
+        _display = GameObject.FindGameObjectWithTag(Tags.SHOPMANAGER).GetComponent<ShopDisplay>();        
 	}
 	
 	void Update () {

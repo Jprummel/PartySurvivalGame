@@ -13,18 +13,18 @@ public class SaveLoadSettings : MonoBehaviour {
     public void SaveSettings()
     {
         //Save the settings
-        Debug.Log("Sayuved");
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/SavedSettingsSlot.dat");
 
-        SettingsData settingsData       = new SettingsData();
-        settingsData.ResolutionWidth    = SettingsInformation.ResolutionWidth;
-        settingsData.ResoltuionHeight   = SettingsInformation.ResoltuionHeight;
-        settingsData.IsFullScreen       = SettingsInformation.IsFullScreen;
-        settingsData.MasterVolume       = SettingsInformation.MasterVolume;
-        settingsData.SoundFXVolume      = SettingsInformation.SoundFXVolume;
-        settingsData.MusicVolume        = SettingsInformation.MusicVolume;
-        settingsData.SkipCutscenes      = SettingsInformation.SkipCutscenes;
+        SettingsData settingsData               = new SettingsData();
+        settingsData.ResolutionWidth            = SettingsInformation.ResolutionWidth;
+        settingsData.ResolutionHeight           = SettingsInformation.ResolutionHeight;
+        settingsData.SelectedResolutionOption   = SettingsInformation.SelectedResolutionOption;
+        settingsData.IsFullScreen               = SettingsInformation.IsFullScreen;
+        settingsData.MasterVolume               = SettingsInformation.MasterVolume;
+        settingsData.SoundFXVolume              = SettingsInformation.SoundFXVolume;
+        settingsData.MusicVolume                = SettingsInformation.MusicVolume;
+        settingsData.SkipCutscenes              = SettingsInformation.SkipCutscenes;
         bf.Serialize(file, settingsData);
         file.Close();
     }
@@ -37,15 +37,16 @@ public class SaveLoadSettings : MonoBehaviour {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/SavedSettingsSlot.dat", FileMode.Open);
 
-            SettingsData settingsData               = (SettingsData)bf.Deserialize(file);
+            SettingsData settingsData                       = (SettingsData)bf.Deserialize(file);
 
-            SettingsInformation.ResolutionWidth     = settingsData.ResolutionWidth;
-            SettingsInformation.ResoltuionHeight    = settingsData.ResoltuionHeight;
-            SettingsInformation.IsFullScreen        = settingsData.IsFullScreen;
-            SettingsInformation.MasterVolume        = settingsData.MasterVolume;
-            SettingsInformation.SoundFXVolume       = settingsData.SoundFXVolume;
-            SettingsInformation.MusicVolume         = settingsData.MusicVolume;
-            SettingsInformation.SkipCutscenes       = settingsData.SkipCutscenes;
+            SettingsInformation.ResolutionWidth             = settingsData.ResolutionWidth;
+            SettingsInformation.ResolutionHeight            = settingsData.ResolutionHeight;
+            SettingsInformation.SelectedResolutionOption    = settingsData.SelectedResolutionOption;
+            SettingsInformation.IsFullScreen                = settingsData.IsFullScreen;
+            SettingsInformation.MasterVolume                = settingsData.MasterVolume;
+            SettingsInformation.SoundFXVolume               = settingsData.SoundFXVolume;
+            SettingsInformation.MusicVolume                 = settingsData.MusicVolume;
+            SettingsInformation.SkipCutscenes               = settingsData.SkipCutscenes;
             file.Close();
         }
         else
@@ -58,13 +59,14 @@ public class SaveLoadSettings : MonoBehaviour {
     {
         //If there is no save file of the settings or player wants to reset them set these as the default
         Debug.Log("Loaded Defaults");
-        SettingsInformation.ResolutionWidth     = 1920;
-        SettingsInformation.ResoltuionHeight    = 1080;
-        SettingsInformation.IsFullScreen        = true;
-        SettingsInformation.MasterVolume        = 1;
-        SettingsInformation.SoundFXVolume       = 1;
-        SettingsInformation.MusicVolume         = 1;
-        SettingsInformation.SkipCutscenes       = false;
+        SettingsInformation.ResolutionWidth             = 1920;
+        SettingsInformation.ResolutionHeight            = 1080;
+        SettingsInformation.SelectedResolutionOption    = 4;
+        SettingsInformation.IsFullScreen                = true;
+        SettingsInformation.MasterVolume                = 1;
+        SettingsInformation.SoundFXVolume               = 1;
+        SettingsInformation.MusicVolume                 = 1;
+        SettingsInformation.SkipCutscenes               = false;
     }
 }
 [System.Serializable]
@@ -72,7 +74,8 @@ public class SettingsData
 {
     //Graphic Settings
     public int ResolutionWidth;
-    public int ResoltuionHeight;
+    public int ResolutionHeight;
+    public int SelectedResolutionOption;
     public bool IsFullScreen;
 
     //Audio Settings
