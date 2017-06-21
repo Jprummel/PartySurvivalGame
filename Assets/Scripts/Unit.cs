@@ -22,7 +22,8 @@ public class Unit : MonoBehaviour {
 
     void FindPath()
     {
-        if (target != null)
+        
+        if (target != null && !_enemy.IsDead)
         {
             PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
             MoveAnimation();

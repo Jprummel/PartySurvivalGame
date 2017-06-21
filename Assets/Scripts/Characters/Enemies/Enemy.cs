@@ -41,7 +41,7 @@ public class Enemy : Character, IDamageable{
         collider.enabled = false;
         _enemySpawner.spawnedEnemies.Remove(this.gameObject);
         yield return new WaitForSeconds(1f);
-        Instantiate(_deadBody, transform.position, transform.rotation);
+        //Instantiate(_deadBody, transform.position, transform.rotation);
         Destroy(this.gameObject);
     }
 
