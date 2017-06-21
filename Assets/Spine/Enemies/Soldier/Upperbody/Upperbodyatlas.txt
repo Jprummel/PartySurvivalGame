@@ -1,0 +1,265 @@
+
+Upperbody.png
+size: 775,147
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Soldier_1/Arm_L_1
+  rotate: false
+  xy: 715, 76
+  size: 28, 29
+  orig: 28, 29
+  offset: 0, 0
+  index: -1
+Soldier_1/Arm_R_1
+  rotate: true
+  xy: 656, 3
+  size: 29, 34
+  orig: 29, 34
+  offset: 0, 0
+  index: -1
+Soldier_1/Body_1
+  rotate: true
+  xy: 523, 68
+  size: 77, 74
+  orig: 77, 74
+  offset: 0, 0
+  index: -1
+Soldier_1/Hand_L_1
+  rotate: true
+  xy: 720, 18
+  size: 27, 25
+  orig: 27, 25
+  offset: 0, 0
+  index: -1
+Soldier_1/Hand_R_1
+  rotate: true
+  xy: 744, 119
+  size: 26, 29
+  orig: 26, 29
+  offset: 0, 0
+  index: -1
+Soldier_1/Head_1
+  rotate: false
+  xy: 2, 46
+  size: 88, 99
+  orig: 88, 99
+  offset: 0, 0
+  index: -1
+Soldier_1/Shield_3
+  rotate: true
+  xy: 2, 7
+  size: 37, 109
+  orig: 37, 109
+  offset: 0, 0
+  index: -1
+Soldier_1/Shoulder_L_1
+  rotate: true
+  xy: 357, 16
+  size: 38, 37
+  orig: 38, 37
+  offset: 0, 0
+  index: -1
+Soldier_1/Shoulder_R_1
+  rotate: true
+  xy: 675, 69
+  size: 33, 38
+  orig: 33, 38
+  offset: 0, 0
+  index: -1
+Soldier_2/Arm_L_2
+  rotate: true
+  xy: 745, 96
+  size: 21, 24
+  orig: 21, 24
+  offset: 0, 0
+  index: -1
+Soldier_4/Arm_L_4
+  rotate: true
+  xy: 745, 96
+  size: 21, 24
+  orig: 21, 24
+  offset: 0, 0
+  index: -1
+Soldier_2/Arm_R_2
+  rotate: true
+  xy: 747, 26
+  size: 21, 24
+  orig: 21, 24
+  offset: 0, 0
+  index: -1
+Soldier_4/Arm_R_4
+  rotate: true
+  xy: 747, 26
+  size: 21, 24
+  orig: 21, 24
+  offset: 0, 0
+  index: -1
+Soldier_2/Body_2
+  rotate: false
+  xy: 362, 63
+  size: 80, 82
+  orig: 80, 82
+  offset: 0, 0
+  index: -1
+Soldier_2/Hand_L_2
+  rotate: true
+  xy: 598, 2
+  size: 24, 27
+  orig: 24, 27
+  offset: 0, 0
+  index: -1
+Soldier_4/Hand_L_4
+  rotate: true
+  xy: 598, 2
+  size: 24, 27
+  orig: 24, 27
+  offset: 0, 0
+  index: -1
+Soldier_2/Hand_R_2
+  rotate: true
+  xy: 627, 2
+  size: 24, 27
+  orig: 24, 27
+  offset: 0, 0
+  index: -1
+Soldier_4/Hand_R_4
+  rotate: true
+  xy: 627, 2
+  size: 24, 27
+  orig: 24, 27
+  offset: 0, 0
+  index: -1
+Soldier_2/Head_2
+  rotate: false
+  xy: 182, 53
+  size: 88, 92
+  orig: 88, 92
+  offset: 0, 0
+  index: -1
+Soldier_2/Shield_2
+  rotate: true
+  xy: 396, 3
+  size: 58, 99
+  orig: 58, 99
+  offset: 0, 0
+  index: -1
+Soldier_2/Shoulder_L_2
+  rotate: true
+  xy: 637, 34
+  size: 32, 41
+  orig: 32, 41
+  offset: 0, 0
+  index: -1
+Soldier_4/Shoulder_L_4
+  rotate: true
+  xy: 637, 34
+  size: 32, 41
+  orig: 32, 41
+  offset: 0, 0
+  index: -1
+Soldier_2/Shoulder_R_2
+  rotate: false
+  xy: 675, 104
+  size: 32, 41
+  orig: 32, 41
+  offset: 0, 0
+  index: -1
+Soldier_4/Shoulder_R_4
+  rotate: false
+  xy: 675, 104
+  size: 32, 41
+  orig: 32, 41
+  offset: 0, 0
+  index: -1
+Soldier_3/Arm_L_3
+  rotate: true
+  xy: 680, 38
+  size: 29, 34
+  orig: 29, 34
+  offset: 0, 0
+  index: -1
+Soldier_3/Arm_R_3
+  rotate: false
+  xy: 692, 7
+  size: 26, 29
+  orig: 26, 29
+  offset: 0, 0
+  index: -1
+Soldier_3/Body_3
+  rotate: true
+  xy: 599, 68
+  size: 77, 74
+  orig: 77, 74
+  offset: 0, 0
+  index: -1
+Soldier_3/Hand_L_3
+  rotate: true
+  xy: 744, 49
+  size: 25, 23
+  orig: 25, 23
+  offset: 0, 0
+  index: -1
+Soldier_3/Hand_R_3
+  rotate: false
+  xy: 716, 47
+  size: 26, 27
+  orig: 26, 27
+  offset: 0, 0
+  index: -1
+Soldier_3/Head_3
+  rotate: false
+  xy: 92, 46
+  size: 88, 99
+  orig: 88, 99
+  offset: 0, 0
+  index: -1
+Soldier_3/Shield_3
+  rotate: true
+  xy: 113, 7
+  size: 37, 108
+  orig: 37, 108
+  offset: 0, 0
+  index: -1
+Soldier_3/Shoulder_L_3
+  rotate: false
+  xy: 709, 107
+  size: 33, 38
+  orig: 33, 38
+  offset: 0, 0
+  index: -1
+Soldier_3/Shoulder_R_3
+  rotate: true
+  xy: 598, 28
+  size: 38, 37
+  orig: 38, 37
+  offset: 0, 0
+  index: -1
+Soldier_4/Body_4
+  rotate: false
+  xy: 444, 63
+  size: 77, 82
+  orig: 77, 82
+  offset: 0, 0
+  index: -1
+Soldier_4/Head_4
+  rotate: false
+  xy: 272, 56
+  size: 88, 89
+  orig: 88, 89
+  offset: 0, 0
+  index: -1
+Soldier_4/Shield_4
+  rotate: true
+  xy: 497, 3
+  size: 58, 99
+  orig: 58, 99
+  offset: 0, 0
+  index: -1
+Weapon/Weapon
+  rotate: false
+  xy: 223, 21
+  size: 132, 30
+  orig: 132, 30
+  offset: 0, 0
+  index: -1

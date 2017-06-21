@@ -1,0 +1,118 @@
+
+Lowerbody.png
+size: 282,90
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Soldier_1/Foot_L_1
+  rotate: true
+  xy: 62, 38
+  size: 50, 30
+  orig: 50, 30
+  offset: 0, 0
+  index: -1
+Soldier_1/Foot_R_1
+  rotate: true
+  xy: 2, 37
+  size: 51, 28
+  orig: 51, 28
+  offset: 0, 0
+  index: -1
+Soldier_1/Leg_L_1
+  rotate: true
+  xy: 204, 48
+  size: 40, 37
+  orig: 40, 37
+  offset: 0, 0
+  index: -1
+Soldier_1/Leg_R_1
+  rotate: true
+  xy: 243, 48
+  size: 40, 37
+  orig: 40, 37
+  offset: 0, 0
+  index: -1
+Soldier_2/Foot_L_2
+  rotate: false
+  xy: 76, 2
+  size: 36, 34
+  orig: 36, 34
+  offset: 0, 0
+  index: -1
+Soldier_2/Foot_R_2
+  rotate: false
+  xy: 114, 2
+  size: 36, 34
+  orig: 36, 34
+  offset: 0, 0
+  index: -1
+Soldier_2/Leg_L_2
+  rotate: false
+  xy: 126, 47
+  size: 37, 41
+  orig: 37, 41
+  offset: 0, 0
+  index: -1
+Soldier_2/Leg_R_2
+  rotate: false
+  xy: 152, 4
+  size: 37, 41
+  orig: 37, 41
+  offset: 0, 0
+  index: -1
+Soldier_3/Foot_L_3
+  rotate: true
+  xy: 32, 37
+  size: 51, 28
+  orig: 51, 28
+  offset: 0, 0
+  index: -1
+Soldier_3/Foot_R_3
+  rotate: true
+  xy: 94, 38
+  size: 50, 30
+  orig: 50, 30
+  offset: 0, 0
+  index: -1
+Soldier_3/Leg_L_3
+  rotate: true
+  xy: 230, 6
+  size: 40, 37
+  orig: 40, 37
+  offset: 0, 0
+  index: -1
+Soldier_3/Leg_R_3
+  rotate: true
+  xy: 230, 6
+  size: 40, 37
+  orig: 40, 37
+  offset: 0, 0
+  index: -1
+Soldier_4/Foot_L_4
+  rotate: false
+  xy: 2, 3
+  size: 35, 32
+  orig: 35, 32
+  offset: 0, 0
+  index: -1
+Soldier_4/Foot_R_4
+  rotate: false
+  xy: 39, 3
+  size: 35, 32
+  orig: 35, 32
+  offset: 0, 0
+  index: -1
+Soldier_4/Leg_L_4
+  rotate: false
+  xy: 165, 47
+  size: 37, 41
+  orig: 37, 41
+  offset: 0, 0
+  index: -1
+Soldier_4/Leg_R_4
+  rotate: false
+  xy: 191, 4
+  size: 37, 41
+  orig: 37, 41
+  offset: 0, 0
+  index: -1

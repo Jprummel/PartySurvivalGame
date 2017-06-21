@@ -1,0 +1,118 @@
+
+Lowerbody.png
+size: 609,41
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Militia_1/Left_Feet
+  rotate: false
+  xy: 198, 12
+  size: 41, 27
+  orig: 41, 27
+  offset: 0, 0
+  index: -1
+Militia_1/Left_Leg
+  rotate: true
+  xy: 456, 3
+  size: 36, 29
+  orig: 36, 29
+  offset: 0, 0
+  index: -1
+Militia_1/Right_Feet
+  rotate: false
+  xy: 284, 14
+  size: 44, 25
+  orig: 44, 25
+  offset: 0, 0
+  index: -1
+Militia_1/Right_Leg
+  rotate: false
+  xy: 376, 10
+  size: 38, 29
+  orig: 38, 29
+  offset: 0, 0
+  index: -1
+Militia_2/Left_Feet
+  rotate: false
+  xy: 2, 2
+  size: 62, 37
+  orig: 62, 37
+  offset: 0, 0
+  index: -1
+Militia_2/Left_Leg
+  rotate: true
+  xy: 128, 4
+  size: 35, 33
+  orig: 35, 33
+  offset: 0, 0
+  index: -1
+Militia_2/Right_Feet
+  rotate: false
+  xy: 66, 2
+  size: 60, 37
+  orig: 60, 37
+  offset: 0, 0
+  index: -1
+Militia_2/Right_Leg
+  rotate: true
+  xy: 163, 4
+  size: 35, 33
+  orig: 35, 33
+  offset: 0, 0
+  index: -1
+Militia_3/Left_Feet
+  rotate: false
+  xy: 330, 14
+  size: 44, 25
+  orig: 44, 25
+  offset: 0, 0
+  index: -1
+Militia_3/Left_Leg
+  rotate: false
+  xy: 416, 10
+  size: 38, 29
+  orig: 38, 29
+  offset: 0, 0
+  index: -1
+Militia_3/Right_Feet
+  rotate: false
+  xy: 241, 12
+  size: 41, 27
+  orig: 41, 27
+  offset: 0, 0
+  index: -1
+Militia_3/Right_Leg
+  rotate: true
+  xy: 487, 3
+  size: 36, 29
+  orig: 36, 29
+  offset: 0, 0
+  index: -1
+Militia_4/Left_Feet
+  rotate: true
+  xy: 518, 8
+  size: 31, 29
+  orig: 31, 29
+  offset: 0, 0
+  index: -1
+Militia_4/Left_Leg
+  rotate: true
+  xy: 580, 8
+  size: 31, 27
+  orig: 31, 27
+  offset: 0, 0
+  index: -1
+Militia_4/Right_Leg
+  rotate: true
+  xy: 580, 8
+  size: 31, 27
+  orig: 31, 27
+  offset: 0, 0
+  index: -1
+Militia_4/Right_Feet
+  rotate: true
+  xy: 549, 8
+  size: 31, 29
+  orig: 31, 29
+  offset: 0, 0
+  index: -1
