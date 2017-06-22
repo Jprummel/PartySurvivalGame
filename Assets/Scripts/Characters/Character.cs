@@ -9,8 +9,22 @@ public class Character : MonoBehaviour, IDamageable {
     //Spine values
     [SerializeField]protected SkeletonAnimation _upperBodySkeleton;
     [SerializeField]protected SkeletonAnimation _lowerBodySkeleton;
+    [SerializeField] protected Animator _upperBodyAnimator;
+    [SerializeField] protected Animator _lowerBodyAnimator;
     protected CharacterAnimations _animations;
     protected string _moveStateName;
+
+    public Animator UpperBodyAnimator
+    {
+        get { return _upperBodyAnimator; }
+        set { _upperBodyAnimator = value; }
+    }
+
+    public Animator LowerBodyAnimator
+    {
+        get { return _lowerBodyAnimator; }
+        set { _lowerBodyAnimator = value; }
+    }
 
     public SkeletonAnimation UpperBody
     {
@@ -182,6 +196,7 @@ public class Character : MonoBehaviour, IDamageable {
             Debug.Log("source: " + damageSource);
             if (_currentHealth > 0)
             {
+                StartCoroutine(TakeDamageRoutine());
                 //attack checks for collision with player or enemy
                 if (this.gameObject.tag == Tags.PLAYER & damageSource.gameObject.tag == Tags.ENEMY & !_invincible)
                 {
@@ -216,6 +231,13 @@ public class Character : MonoBehaviour, IDamageable {
             }//wait 0.25s to be able to get hit again by the same target
             StartCoroutine(ResetDamageSource(damageSource.gameObject));
         }
+    }
+
+    IEnumerator TakeDamageRoutine()
+    {
+        _upperBodyAnimator.SetBool("Hit", true);
+        yield return new WaitForSeconds(0.2f);
+        _upperBodyAnimator.SetBool("Hit", false);
     }
 
     void KnockBack(float power, Character source, float stunTime)

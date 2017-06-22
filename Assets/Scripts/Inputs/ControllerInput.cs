@@ -62,7 +62,7 @@ public class ControllerInput : MonoBehaviour {
                 //Heavy Attack
                 _soundEffects.PlayHeavyAttackAudio(); // Heavy Attack (miss) sound
                 _playerAttack.HeavyAttack();
-                _player.Animations.PlayerAttackAnimation(3);
+                //_player.Animations.PlayerAttackAnimation(3);//Test
             }
             if (_player.CanMove)
             {
@@ -88,7 +88,9 @@ public class ControllerInput : MonoBehaviour {
             }
             else if (!_player.CanMove)
             {
-                _player.Animations.IdleAnimation();
+                _player.UpperBodyAnimator.SetBool("IsWalking", false);//Test
+                _player.LowerBodyAnimator.SetBool("IsWalking", false);//Test
+                //_player.Animations.IdleAnimation();//Test
             }
         }
 

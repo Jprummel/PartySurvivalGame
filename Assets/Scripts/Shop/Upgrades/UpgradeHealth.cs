@@ -9,7 +9,6 @@ public class UpgradeHealth : ShopItem, IUpgrade {
             _soundEffects.PlayBuySound();
             _display.MatchingPlayer.MaxHealth = Mathf.Round(_display.MatchingPlayer.MaxHealth * 1.1f);
             _display.MatchingPlayer.Gold -= _cost;
-            //SpawnParticle();
             DetermineNewCost();
         }
     }
