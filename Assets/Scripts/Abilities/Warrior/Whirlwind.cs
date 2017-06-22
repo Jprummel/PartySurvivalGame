@@ -23,6 +23,8 @@ public class Whirlwind : Ability {
     IEnumerator WhirlwindRoutine()
     {
         _usingAbility = true;
+        _player.UpperBodyAnimator.SetBool("UsingAbility",true);
+        _player.LowerBodyAnimator.SetBool("UsingAbility",true);
         StartCoroutine(SpecialAttackDamage(0.8f,1));
         //_player.UpperBody.AnimationState.SetAnimation(3, SpineAnimationNames.ABILITY, false);
         //_player.LowerBody.AnimationState.SetAnimation(3, SpineAnimationNames.ABILITY, false);
@@ -32,6 +34,8 @@ public class Whirlwind : Ability {
         //_player.UpperBody.AnimationState.SetAnimation(3, SpineAnimationNames.IDLE + _player.MoveStateName, false);
         //_player.LowerBody.AnimationState.SetAnimation(3, SpineAnimationNames.IDLE + _player.MoveStateName, false);
         //_player.CharacterAnimator.SetBool("UseAbility", false);
+        _player.UpperBodyAnimator.SetBool("UsingAbility", false);
+        _player.LowerBodyAnimator.SetBool("UsingAbility", false);
         _cooldown = _maxCooldown;
         _usingAbility = false;
         _abilityIsReady = false;

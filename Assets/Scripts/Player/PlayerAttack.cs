@@ -27,7 +27,8 @@ public class PlayerAttack : MonoBehaviour {
     {
         if (_readyToAttack && _delayBetweenCombos <= 0)
         {
-            _player.Animations.PlayerAttackAnimation(_player.LightAttackState);
+            StartCoroutine(AttackAnimRoutine(_player.LightAttackState));
+            //_player.Animations.PlayerAttackAnimation(_player.LightAttackState);
             _readyToAttack = false;
             _player.LightAttackState++;
             _comboResetTimer = 0.8f;
@@ -52,10 +53,16 @@ public class PlayerAttack : MonoBehaviour {
         }
     }
 
-   
+   IEnumerator AttackAnimRoutine(int animationAttackState)
+    {
+        _player.UpperBodyAnimator.SetInteger("AttackState", animationAttackState);
+        yield return new WaitForSeconds(0.5f);
+        _player.UpperBodyAnimator.SetInteger("AttackState", 0);
+    }
 
     void AttackAnim(int animationAttackState)
     {
+
         switch (animationAttackState)
         {
             case 1:

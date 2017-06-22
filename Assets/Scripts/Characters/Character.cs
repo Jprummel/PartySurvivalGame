@@ -196,6 +196,7 @@ public class Character : MonoBehaviour, IDamageable {
             Debug.Log("source: " + damageSource);
             if (_currentHealth > 0)
             {
+                StartCoroutine(TakeDamageRoutine());
                 //attack checks for collision with player or enemy
                 if (this.gameObject.tag == Tags.PLAYER & damageSource.gameObject.tag == Tags.ENEMY & !_invincible)
                 {
@@ -230,6 +231,13 @@ public class Character : MonoBehaviour, IDamageable {
             }//wait 0.25s to be able to get hit again by the same target
             StartCoroutine(ResetDamageSource(damageSource.gameObject));
         }
+    }
+
+    IEnumerator TakeDamageRoutine()
+    {
+        _upperBodyAnimator.SetBool("Hit", true);
+        yield return new WaitForSeconds(0.2f);
+        _upperBodyAnimator.SetBool("Hit", false);
     }
 
     void KnockBack(float power, Character source, float stunTime)
