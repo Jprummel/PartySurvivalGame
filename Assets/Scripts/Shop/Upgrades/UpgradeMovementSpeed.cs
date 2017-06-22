@@ -26,7 +26,6 @@ public class UpgradeMovementSpeed : ShopItem, IUpgrade {
             _soundEffects.PlayBuySound();
             _display.MatchingPlayer.MovementSpeed = _display.MatchingPlayer.MovementSpeed + 0.25f;
             _display.MatchingPlayer.Gold -= _cost;
-            SpawnParticle();
             DetermineNewCost();            
         }
     }
