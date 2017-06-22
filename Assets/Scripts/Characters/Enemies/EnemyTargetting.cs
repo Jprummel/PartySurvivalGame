@@ -7,7 +7,7 @@ public class EnemyTargetting : MonoBehaviour {
 
     private List<GameObject> _players = new List<GameObject>();
 
-    private float _oldDist = 150;
+    private float _oldDist = 250;
     private GameObject _target;
     private Unit _AStar;
 
