@@ -6,7 +6,6 @@ using Spine.Unity;
 public class SpineAnimation : StateMachineBehaviour {
 
     [SerializeField] private string _animName;
-    [SerializeField] private float _speed;
     [SerializeField] private bool _loop;
 
 
@@ -14,6 +13,6 @@ public class SpineAnimation : StateMachineBehaviour {
     {
         SkeletonAnimation anim = animator.GetComponent<SkeletonAnimation>();
         Character _char = animator.GetComponentInParent<Character>();
-        anim.state.SetAnimation(0, _animName + _char.MoveStateName, _loop).timeScale = _speed;
+        anim.state.SetAnimation(0, _animName + _char.MoveStateName, _loop);
     }
 }

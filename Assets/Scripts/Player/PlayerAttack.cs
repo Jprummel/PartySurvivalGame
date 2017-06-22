@@ -45,7 +45,7 @@ public class PlayerAttack : MonoBehaviour {
         if (_readyToAttack & !_player.Ability.UsingAbility)
         {
             _player.CanMove = false;
-            _player.Animations.PlayerAttackAnimation(3);
+            //_player.Animations.PlayerAttackAnimation(3);
             StartCoroutine(HeavyAttackRoutine(2));
             _readyToAttack = false;
             StartCoroutine(Cooldown(1));
@@ -92,7 +92,7 @@ public class PlayerAttack : MonoBehaviour {
     IEnumerator HeavyAttackRoutine(float modifier)
     {
         float defaultDamage = _player.Damage;
-
+        _player.UpperBodyAnimator.SetInteger("AttackState", 3); //Test
         _player.CanMove = false;
         _player.Ability.CanUseAbility = false;
         _player.Damage = _player.Damage * modifier;
@@ -100,13 +100,6 @@ public class PlayerAttack : MonoBehaviour {
         _player.Damage = defaultDamage;
         _player.Ability.CanUseAbility = true;
         _player.CanMove = true;
-    }
-
-    void IdleState()
-    {
-        Debug.Log("Ayyeylmao");
-        _player.UpperBody.AnimationName = SpineAnimationNames.IDLE + _player.MoveStateName;
-        _player.CanMove = true;
-        _player.Ability.CanUseAbility = true;
+        _player.UpperBodyAnimator.SetInteger("AttackState", 0); //Test
     }
 }

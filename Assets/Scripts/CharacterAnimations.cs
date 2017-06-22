@@ -59,8 +59,8 @@ public class CharacterAnimations : MonoBehaviour {
 
     public void IdleAnimation()
     {
-        _upperbody.AnimationName = SpineAnimationNames.IDLE + _character.MoveStateName;
-        _lowerbody.AnimationName = SpineAnimationNames.IDLE + _character.MoveStateName;
+        _upperbody.state.AddAnimation(0,SpineAnimationNames.IDLE + _character.MoveStateName,true,0);//Test
+        _lowerbody.state.AddAnimation(0, SpineAnimationNames.IDLE + _character.MoveStateName, true, 0);//Test
     }
 
     IEnumerator ReturnAttack(float time)

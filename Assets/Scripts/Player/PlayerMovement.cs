@@ -29,11 +29,15 @@ public class PlayerMovement : MonoBehaviour {
     {
         if(moveDir != Vector2.zero)
         {
-            _animations.MoveAnimation();
+            _player.UpperBodyAnimator.SetBool("IsWalking", true);//Test
+            _player.LowerBodyAnimator.SetBool("IsWalking", true);//Test
+            //_animations.MoveAnimation();//Test
         }
         else
         {
-            _animations.IdleAnimation();
+            _player.UpperBodyAnimator.SetBool("IsWalking", false);//Test
+            _player.LowerBodyAnimator.SetBool("IsWalking", false);//Test
+            //_animations.IdleAnimation();//Test
         }
     }
 }
