@@ -26,11 +26,15 @@ public class Ranking : MonoBehaviour {
             {
                 _rankingObjects[i].SetActive(true);
             }
+            else
+            {
+                _rankingObjects[i].SetActive(false);
+            }
         }
 
         for (int i = 0; i < _players.Count; i++)
         {
-            _playerPortraits[i].sprite = _players[i].Portrait;
+            _playerPortraits[i].sprite = _players[i].GameOverPortrait;
             _goldEarned[i].text = "Earned" + "\n" + _players[i].TotalGoldEarned;            
         }
     }

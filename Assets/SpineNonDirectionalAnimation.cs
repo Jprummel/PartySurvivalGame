@@ -12,7 +12,6 @@ public class SpineNonDirectionalAnimation : StateMachineBehaviour {
     {
         SkeletonAnimation anim = animator.GetComponent<SkeletonAnimation>();
         Character _char = animator.GetComponentInParent<Character>();
-        Debug.Log(_animName);
         anim.state.SetAnimation(0, _animName, _loop);
     }
 }

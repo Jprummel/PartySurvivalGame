@@ -12,8 +12,8 @@ public class Respawn : MonoBehaviour {
         for (int i = 0; i < deadPlayers.Count; i++)
         {
             deadPlayers[i].RestoreHealth();
-            deadPlayers[i].UpperBody.state.SetAnimation(0, SpineAnimationNames.IDLE + deadPlayers[i].MoveStateName, true);
-            deadPlayers[i].LowerBody.state.SetAnimation(0, SpineAnimationNames.IDLE + deadPlayers[i].moveState, true);
+            deadPlayers[i].UpperBodyAnimator.SetBool("IsDead", false);
+            deadPlayers[i].LowerBodyAnimator.SetBool("IsDead", false);
             deadPlayers[i].gameObject.SetActive(true);
             deadPlayers[i].CanMove = true;
             _enemySpawner._playerEnemies.Add(deadPlayers[i].gameObject);

@@ -26,12 +26,13 @@ public class PlayerCharacter : Character {
     protected Ability _ability;
     public Ability Ability { get { return _ability; }}
     //Visuals
-    [SerializeField]protected Sprite _portrait;
+    protected Sprite _portrait;
+    protected Sprite _gameOverPortrait;
     [SerializeField]private PlayerDiedWarning _warningPlayer;
-    private Sprite _startSprite;
     protected string _skinName;
 
     public Sprite Portrait { get { return _portrait; }}
+    public Sprite GameOverPortrait { get { return _gameOverPortrait; }}
     public PlayerHud HUD { get; set; }
 
     //Script/Component imports
@@ -92,7 +93,9 @@ public class PlayerCharacter : Character {
     protected virtual void Start()
     {
         SetCharacterSkin();
-        _portrait = Resources.Load<Sprite>("Art/Sprites/Portraits/" + name + "_" + _skinName);
+        _portrait = Resources.Load<Sprite>("Art/Sprites/Portraits/" + Name + "_" + _skinName);
+        _gameOverPortrait = Resources.Load<Sprite>("Art/Sprites/Portraits/GameOver/" + Name + "_" + _skinName);
+        
     }
 
     void SetCharacterSkin()
@@ -153,9 +156,11 @@ public class PlayerCharacter : Character {
             _respawn.deadPlayers.Remove(this);
         }
         _isDead = true;
+        _upperBodyAnimator.SetBool("IsDead", true);
+        _lowerBodyAnimator.SetBool("IsDead", true);
         _canMove = false;
-        _upperBodySkeleton.AnimationState.SetAnimation(0, SpineAnimationNames.DEATH + _moveStateName,false);
-        _lowerBodySkeleton.AnimationState.SetAnimation(0, SpineAnimationNames.DEATH + _moveStateName, false);
+        //_upperBodySkeleton.AnimationState.SetAnimation(0, SpineAnimationNames.DEATH + _moveStateName,false);
+        //_lowerBodySkeleton.AnimationState.SetAnimation(0, SpineAnimationNames.DEATH + _moveStateName, false);
         yield return new WaitForSeconds(1.5f);
         if (_isAlly)
         {
