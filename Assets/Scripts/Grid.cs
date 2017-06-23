@@ -24,8 +24,8 @@ public class Grid : MonoBehaviour {
     void Awake()
     {
         nodeDiameter = nodeRadius * 2;
-        gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeRadius);
-        gridSizeY = Mathf.RoundToInt(gridWorldSize.y / nodeRadius);
+        gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
+        gridSizeY = Mathf.RoundToInt(gridWorldSize.y / nodeDiameter);
 
         foreach (TerrainType region in walkableRegions)
         {

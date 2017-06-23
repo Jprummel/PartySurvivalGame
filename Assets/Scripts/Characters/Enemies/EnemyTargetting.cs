@@ -22,7 +22,7 @@ public class EnemyTargetting : MonoBehaviour {
         _AStar = GetComponent<Unit>();
         _players.AddRange(GameObject.FindGameObjectsWithTag(Tags.PLAYER));
 
-        InvokeRepeating("CalculateTarget", 0.5f, 0.25f);
+        InvokeRepeating("CalculateTarget", 1f, 0.25f);
     }
 
     void CalculateTarget()

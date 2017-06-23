@@ -61,7 +61,6 @@ public class Unit : MonoBehaviour {
                 }
                 if (!_isAttacking)
                 {
-                    //Debug.Log("distance: " + distance + "attack range: " + _enemy.AttackRange);
                     transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, _enemy.MovementSpeed  / 55);
                     Vector3 direction = transform.position - currentWaypoint;
                     _rgb2d.velocity = Vector2.zero;
