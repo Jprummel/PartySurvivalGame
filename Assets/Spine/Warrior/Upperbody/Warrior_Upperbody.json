@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "d2byS65s66tAILOc9b6Gjwgxhjo", "spine": "3.5.51", "width": 341.48, "height": 224.47, "images": "./../warrior/" },
+"skeleton": { "hash": "iMxB3oNx+bKW66Z5drdw8M95cOs", "spine": "3.5.51", "width": 341.48, "height": 224.47, "images": "./../warrior/" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "Pelvis", "parent": "root", "length": 39.2, "rotation": 90.31, "x": -1.68, "y": 95.17 },
@@ -11,6 +11,7 @@
 	{ "name": "Hand_L", "parent": "Arm_L", "length": 22.7, "rotation": -35.46, "x": 31.21, "y": 3.97 },
 	{ "name": "Hand_R", "parent": "Arm_R", "length": 32.93, "rotation": 35.19, "x": 38.9, "y": 0.02 },
 	{ "name": "Head", "parent": "Torso", "length": 62.25, "rotation": -2.68, "x": 60.03, "y": -1.2 },
+	{ "name": "Hit", "parent": "Head", "rotation": -6.23, "x": 27.35, "y": 14.28 },
 	{ "name": "Sword_L", "parent": "Hand_L", "length": 49.07, "rotation": -51.4, "x": 19.23, "y": 1.79 },
 	{ "name": "White_Lash", "parent": "Sword_L", "x": 192.42, "y": -3.65 },
 	{ "name": "Impact", "parent": "White_Lash", "x": 0.16, "y": -0.78 },
@@ -30,10 +31,18 @@
 	{ "name": "Sword_Hitbox", "bone": "Sword_L" },
 	{ "name": "Sword_Hitbox2", "bone": "Sword_R" },
 	{ "name": "White_Lash", "bone": "White_Lash" },
-	{ "name": "Impact", "bone": "Impact" }
+	{ "name": "Impact", "bone": "Impact" },
+	{ "name": "Hit_Fx", "bone": "Hit" }
 ],
 "skins": {
 	"default": {
+		"Hit_Fx": {
+			"Effects/Hit fx0002": { "width": 184, "height": 157 },
+			"Effects/Hit fx0003": { "width": 184, "height": 157 },
+			"Effects/Hit fx0004": { "width": 184, "height": 157 },
+			"Effects/Hit fx0005": { "width": 184, "height": 157 },
+			"Effects/Hit fx0006": { "width": 184, "height": 157 }
+		},
 		"Impact": {
 			"Effects/overhead_Impact0009": { "x": 31.26, "y": 48.8, "width": 241, "height": 98 },
 			"Effects/overhead_Impact0010": { "x": 79.4, "y": 64.8, "width": 203, "height": 118 },
@@ -792,6 +801,11 @@
 					{ "time": 0.7, "name": "Warrior_shoulder_Side" },
 					{ "time": 0.7667, "name": "Warrior_Shoulder_R_Front" }
 				]
+			},
+			"White_Lash": {
+				"attachment": [
+					{ "time": 0, "name": "Effects/Warrior_Whirlwind_Slash" }
+				]
 			}
 		},
 		"bones": {
@@ -1105,6 +1119,11 @@
 					{ "time": 0.7, "x": 1, "y": -1, "curve": "stepped" },
 					{ "time": 0.7333, "x": 1, "y": -1, "curve": "stepped" },
 					{ "time": 0.7667, "x": 1, "y": 1 }
+				]
+			},
+			"White_Lash": {
+				"scale": [
+					{ "time": 0, "x": 1, "y": 3.163 }
 				]
 			}
 		},
@@ -3711,6 +3730,18 @@
 		]
 	},
 	"Hit_Left": {
+		"slots": {
+			"Hit_Fx": {
+				"attachment": [
+					{ "time": 0.1333, "name": "Effects/Hit fx0002" },
+					{ "time": 0.1667, "name": "Effects/Hit fx0003" },
+					{ "time": 0.2, "name": "Effects/Hit fx0004" },
+					{ "time": 0.2333, "name": "Effects/Hit fx0005" },
+					{ "time": 0.2667, "name": "Effects/Hit fx0006" },
+					{ "time": 0.3, "name": null }
+				]
+			}
+		},
 		"bones": {
 			"Shoulder_L": {
 				"rotate": [
@@ -3839,6 +3870,16 @@
 	},
 	"Hit_Right": {
 		"slots": {
+			"Hit_Fx": {
+				"attachment": [
+					{ "time": 0.1333, "name": "Effects/Hit fx0002" },
+					{ "time": 0.1667, "name": "Effects/Hit fx0003" },
+					{ "time": 0.2, "name": "Effects/Hit fx0004" },
+					{ "time": 0.2333, "name": "Effects/Hit fx0005" },
+					{ "time": 0.2667, "name": "Effects/Hit fx0006" },
+					{ "time": 0.3, "name": null }
+				]
+			},
 			"Warrior_Arm_L": {
 				"attachment": [
 					{ "time": 0, "name": "Warrior_Arm_L" }
@@ -5010,14 +5051,16 @@
 			},
 			"Sword_Hitbox": {
 				"attachment": [
-					{ "time": 0, "name": "Sword_Hitbox" }
+					{ "time": 0, "name": null },
+					{ "time": 0.2333, "name": "Sword_Hitbox" }
 				]
 			},
 			"White_Lash": {
 				"attachment": [
 					{ "time": 0.2, "name": null },
 					{ "time": 0.2333, "name": "Effects/Backhand0008" },
-					{ "time": 0.3, "name": "Effects/Backhand0007" }
+					{ "time": 0.3, "name": "Effects/Backhand0007" },
+					{ "time": 0.4333, "name": null }
 				]
 			}
 		},
@@ -5283,7 +5326,8 @@
 			},
 			"Sword_Hitbox": {
 				"attachment": [
-					{ "time": 0, "name": "Sword_Hitbox" },
+					{ "time": 0, "name": null },
+					{ "time": 0.2333, "name": "Sword_Hitbox" },
 					{ "time": 0.6667, "name": "Sword_Hitbox" }
 				]
 			},
@@ -5614,6 +5658,11 @@
 					{ "time": 0.2667, "x": 1, "y": 1, "curve": "stepped" },
 					{ "time": 0.5, "x": 1, "y": 1, "curve": "stepped" },
 					{ "time": 0.6667, "x": 1, "y": 1 }
+				]
+			},
+			"White_Lash": {
+				"scale": [
+					{ "time": 0.2667, "x": 1, "y": 1 }
 				]
 			},
 			"Impact": {

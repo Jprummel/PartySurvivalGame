@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "TKS2aEPGZeypKCnz6STg78FyXAw", "spine": "3.5.51", "width": 198.64, "height": 199.58, "images": "" },
+"skeleton": { "hash": "bTpDJpPIVF0y0pa0Z9uHTELe76U", "spine": "3.5.51", "width": 198.64, "height": 199.58, "images": "" },
 "bones": [
 	{ "name": "root", "x": -196.06 },
 	{ "name": "1/Body_1", "parent": "root", "length": 54.08, "rotation": 86.9, "x": 2.45, "y": 35.14 },
@@ -9,7 +9,9 @@
 	{ "name": "1/Arm_R_1", "parent": "1/Shoulder_R_1", "length": 14.69, "rotation": 2.78, "x": 19.18, "y": -0.6 },
 	{ "name": "1/Hand_L_1", "parent": "1/Arm_L_1", "length": 19.82, "rotation": -51.48, "x": 17.55, "y": -0.05 },
 	{ "name": "1/Hand_R_1", "parent": "1/Arm_R_1", "length": 14.46, "rotation": -7.65, "x": 18.78, "y": -0.76 },
-	{ "name": "1/Head_1", "parent": "1/Body_1", "length": 38.18, "rotation": 89.77, "x": 86.45, "y": -0.64 }
+	{ "name": "1/Head_1", "parent": "1/Body_1", "length": 38.18, "rotation": 89.77, "x": 86.45, "y": -0.64 },
+	{ "name": "Hit", "parent": "1/Head_1", "x": 18.08, "y": 12.81 },
+	{ "name": "Sword", "parent": "1/Hand_R_1", "rotation": -48.65, "x": 46.57, "y": -45.09 }
 ],
 "slots": [
 	{ "name": "Weapon", "bone": "1/Hand_R_1", "attachment": "Weapon/Weapon" },
@@ -22,14 +24,34 @@
 	{ "name": "Arm_L", "bone": "1/Arm_L_1", "attachment": "Arm_L_Left" },
 	{ "name": "Hand_L", "bone": "1/Hand_L_1", "attachment": "Hand_L_Left" },
 	{ "name": "Shoulder_L", "bone": "1/Shoulder_L_1", "attachment": "Shoulder_L_Left" },
-	{ "name": "Shield", "bone": "1/Hand_L_1", "attachment": "Soldier_1/Shield_3" }
+	{ "name": "Shield", "bone": "1/Hand_L_1", "attachment": "Soldier_1/Shield_3" },
+	{ "name": "Sword_Fx", "bone": "Sword" },
+	{ "name": "Hit_Fx", "bone": "Hit" },
+	{ "name": "Sword_Hitbox", "bone": "1/Hand_R_1" }
 ],
 "skins": {
 	"default": {
+		"Hit_Fx": {
+			"Effects/Hit fx0002": { "width": 184, "height": 157 },
+			"Effects/Hit fx0003": { "width": 184, "height": 157 },
+			"Effects/Hit fx0004": { "width": 184, "height": 157 },
+			"Effects/Hit fx0005": { "width": 184, "height": 157 },
+			"Effects/Hit fx0006": { "width": 184, "height": 157 }
+		},
 		"Shield": {
 			"Soldier_1/Shield_3": { "x": 22.21, "y": -6.05, "rotation": 132.74, "width": 37, "height": 109 },
 			"Soldier_2/Shield_2": { "rotation": 131.73, "width": 58, "height": 99 },
 			"Soldier_3/Shield_3": { "rotation": 131.73, "width": 37, "height": 108 }
+		},
+		"Sword_Fx": {
+			"Effects/Forhand0009": { "x": -19, "y": -65.09, "scaleX": 0.631, "scaleY": 0.631, "rotation": -142.11, "width": 271, "height": 208 }
+		},
+		"Sword_Hitbox": {
+			"Sword_Hitbox": {
+				"type": "boundingbox",
+				"vertexCount": 5,
+				"vertices": [ 14.04, -17.01, 25.74, -7.58, 72.22, -61.09, 71.02, -75.15, 58.93, -72.44 ]
+			}
 		},
 		"Weapon": {
 			"Soldier_4/Shield_4": { "rotation": 131.75, "width": 58, "height": 99 },
@@ -429,6 +451,20 @@
 		]
 	},
 	"Attack_Left": {
+		"slots": {
+			"Sword_Fx": {
+				"attachment": [
+					{ "time": 0.1, "name": "Effects/Forhand0009" },
+					{ "time": 0.2333, "name": null }
+				]
+			},
+			"Sword_Hitbox": {
+				"attachment": [
+					{ "time": 0.0667, "name": "Sword_Hitbox" },
+					{ "time": 0.2333, "name": null }
+				]
+			}
+		},
 		"bones": {
 			"1/Body_1": {
 				"rotate": [
@@ -531,6 +567,16 @@
 					{ "time": 0.2, "x": 2.64, "y": -6.47 },
 					{ "time": 0.3333, "x": 0, "y": 0 }
 				]
+			},
+			"Sword": {
+				"translate": [
+					{ "time": 0.1333, "x": 0, "y": 0 },
+					{ "time": 0.2, "x": 22.73, "y": -27.84 }
+				],
+				"scale": [
+					{ "time": 0.1333, "x": 1, "y": 1 },
+					{ "time": 0.2, "x": 0.102, "y": 0.102 }
+				]
 			}
 		}
 	},
@@ -587,6 +633,17 @@
 				"attachment": [
 					{ "time": 0, "name": "Shoulder_R_Right" },
 					{ "time": 0.3333, "name": "Shoulder_R_Right" }
+				]
+			},
+			"Sword_Fx": {
+				"attachment": [
+					{ "time": 0.1, "name": "Effects/Forhand0009" },
+					{ "time": 0.2667, "name": null }
+				]
+			},
+			"Sword_Hitbox": {
+				"attachment": [
+					{ "time": 0.1, "name": "Sword_Hitbox" }
 				]
 			},
 			"Weapon": {
@@ -686,6 +743,35 @@
 					{ "time": 0.0667, "angle": -21 },
 					{ "time": 0.1667, "angle": -2.65 }
 				]
+			},
+			"Sword": {
+				"rotate": [
+					{ "time": 0, "angle": 137.05 }
+				],
+				"translate": [
+					{ "time": 0.1, "x": -38.1, "y": 100.67, "curve": "stepped" },
+					{ "time": 0.1333, "x": -38.1, "y": 100.67, "curve": "stepped" },
+					{ "time": 0.1667, "x": -38.1, "y": 100.67, "curve": "stepped" },
+					{ "time": 0.2, "x": -38.1, "y": 100.67 },
+					{ "time": 0.2333, "x": -39.36, "y": 136.01 }
+				],
+				"scale": [
+					{ "time": 0.1, "x": 1, "y": -1, "curve": "stepped" },
+					{ "time": 0.2, "x": 1, "y": -1 },
+					{ "time": 0.2333, "x": 0.1, "y": -0.1 }
+				]
+			}
+		},
+		"deform": {
+			"default": {
+				"Sword_Hitbox": {
+					"Sword_Hitbox": [
+						{
+							"time": 0.1,
+							"vertices": [ 4.05296, 30.53784, -22.6788, 20.85689, -72.98894, 145.1376, -62.20287, 169.55833, -42.22852, 157.29219 ]
+						}
+					]
+				}
 			}
 		},
 		"drawOrder": [
@@ -1534,6 +1620,18 @@
 		]
 	},
 	"Hit_Left": {
+		"slots": {
+			"Hit_Fx": {
+				"attachment": [
+					{ "time": 0.0667, "name": "Effects/Hit fx0002" },
+					{ "time": 0.1, "name": "Effects/Hit fx0003" },
+					{ "time": 0.1333, "name": "Effects/Hit fx0004" },
+					{ "time": 0.1667, "name": "Effects/Hit fx0005" },
+					{ "time": 0.2, "name": "Effects/Hit fx0006" },
+					{ "time": 0.2333, "name": null }
+				]
+			}
+		},
 		"bones": {
 			"1/Body_1": {
 				"rotate": [
@@ -1632,6 +1730,15 @@
 					{ "time": 0.1667, "angle": 0 },
 					{ "time": 0.3333, "angle": -0.55 }
 				]
+			},
+			"Hit": {
+				"rotate": [
+					{ "time": 0.0667, "angle": -113.34 },
+					{ "time": 0.1333, "angle": -161.25 }
+				],
+				"translate": [
+					{ "time": 0.1333, "x": -12.64, "y": -31.82 }
+				]
 			}
 		}
 	},
@@ -1671,6 +1778,16 @@
 				"attachment": [
 					{ "time": 0, "name": "Head_Right" },
 					{ "time": 0.3333, "name": "Head_Right" }
+				]
+			},
+			"Hit_Fx": {
+				"attachment": [
+					{ "time": 0.1, "name": "Effects/Hit fx0002" },
+					{ "time": 0.1333, "name": "Effects/Hit fx0003" },
+					{ "time": 0.1667, "name": "Effects/Hit fx0004" },
+					{ "time": 0.2, "name": "Effects/Hit fx0005" },
+					{ "time": 0.2333, "name": "Effects/Hit fx0006" },
+					{ "time": 0.2667, "name": null }
 				]
 			},
 			"Shield": {
@@ -1840,6 +1957,14 @@
 				"scale": [
 					{ "time": 0, "x": 1, "y": 1, "curve": "stepped" },
 					{ "time": 0.3333, "x": 1, "y": 1 }
+				]
+			},
+			"Hit": {
+				"rotate": [
+					{ "time": 0.1, "angle": 156.1 }
+				],
+				"translate": [
+					{ "time": 0.1, "x": -14.69, "y": -28.96 }
 				]
 			}
 		},

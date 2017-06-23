@@ -1,0 +1,174 @@
+
+Upperbody.png
+size: 1282,267
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Assets_Left_View/Body
+  rotate: true
+  xy: 271, 6
+  size: 79, 80
+  orig: 79, 80
+  offset: 0, 0
+  index: -1
+Assets_Left_View/Head
+  rotate: true
+  xy: 2, 3
+  size: 64, 83
+  orig: 64, 84
+  offset: 0, 1
+  index: -1
+Assets_Left_View/Left_Arm
+  rotate: true
+  xy: 172, 19
+  size: 48, 88
+  orig: 48, 88
+  offset: 0, 0
+  index: -1
+Assets_Left_View/Left_Hand
+  rotate: true
+  xy: 1183, 188
+  size: 24, 32
+  orig: 24, 32
+  offset: 0, 0
+  index: -1
+Assets_Left_View/Right_Arm 
+  rotate: false
+  xy: 1228, 178
+  size: 50, 87
+  orig: 50, 87
+  offset: 0, 0
+  index: -1
+Assets_Left_View/Right_Hand
+  rotate: true
+  xy: 791, 52
+  size: 24, 23
+  orig: 24, 23
+  offset: 0, 0
+  index: -1
+Assets_Left_View/Skirt
+  rotate: true
+  xy: 558, 5
+  size: 104, 68
+  orig: 104, 68
+  offset: 0, 0
+  index: -1
+Assets_Right_View/Body
+  rotate: true
+  xy: 475, 30
+  size: 79, 81
+  orig: 79, 81
+  offset: 0, 0
+  index: -1
+Assets_Right_View/Head
+  rotate: true
+  xy: 87, 3
+  size: 64, 83
+  orig: 64, 84
+  offset: 0, 1
+  index: -1
+Assets_Right_View/Left_Arm
+  rotate: true
+  xy: 1058, 13
+  size: 48, 88
+  orig: 48, 88
+  offset: 0, 0
+  index: -1
+Assets_Right_View/Left_Hand
+  rotate: false
+  xy: 791, 78
+  size: 24, 32
+  orig: 24, 32
+  offset: 0, 0
+  index: -1
+Assets_Right_View/Right_Arm 
+  rotate: true
+  xy: 969, 11
+  size: 50, 87
+  orig: 50, 87
+  offset: 0, 0
+  index: -1
+Assets_Right_View/Right_Hand
+  rotate: true
+  xy: 791, 26
+  size: 24, 23
+  orig: 24, 23
+  offset: 0, 0
+  index: -1
+Assets_Right_View/Skirt
+  rotate: false
+  xy: 353, 17
+  size: 104, 68
+  orig: 104, 68
+  offset: 0, 0
+  index: -1
+Effects/Hit fx0002
+  rotate: false
+  xy: 652, 4
+  size: 137, 106
+  orig: 184, 157
+  offset: 33, 38
+  index: -1
+Effects/Hit fx0003
+  rotate: false
+  xy: 827, 116
+  size: 180, 149
+  orig: 184, 157
+  offset: 4, 8
+  index: -1
+Effects/Hit fx0004
+  rotate: false
+  xy: 652, 112
+  size: 173, 153
+  orig: 184, 157
+  offset: 0, 2
+  index: -1
+Effects/Hit fx0005
+  rotate: false
+  xy: 1009, 63
+  size: 172, 149
+  orig: 184, 157
+  offset: 0, 3
+  index: -1
+Effects/Hit fx0006
+  rotate: false
+  xy: 475, 111
+  size: 175, 154
+  orig: 184, 157
+  offset: 1, 0
+  index: -1
+Effects/pound0010
+  rotate: true
+  xy: 1183, 9
+  size: 167, 97
+  orig: 354, 306
+  offset: 0, 209
+  index: -1
+Effects/pound0011
+  rotate: true
+  xy: 2, 69
+  size: 196, 267
+  orig: 354, 306
+  offset: 122, 1
+  index: -1
+Effects/pound0012
+  rotate: false
+  xy: 271, 87
+  size: 202, 178
+  orig: 354, 306
+  offset: 142, 0
+  index: -1
+Effects/pound0013
+  rotate: false
+  xy: 1009, 214
+  size: 217, 51
+  orig: 354, 306
+  offset: 137, 43
+  index: -1
+Weapon/Weapon
+  rotate: false
+  xy: 827, 2
+  size: 140, 112
+  orig: 140, 112
+  offset: 0, 0
+  index: -1

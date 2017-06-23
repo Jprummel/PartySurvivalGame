@@ -1,257 +1,341 @@
 
 Enemy_Upperbody.png
-size: 344,513
+size: 637,516
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
+Effects/Attack_Fx0006
+  rotate: false
+  xy: 353, 114
+  size: 91, 22
+  orig: 131, 79
+  offset: 0, 29
+  index: -1
+Effects/Attack_Fx0007
+  rotate: true
+  xy: 601, 385
+  size: 129, 29
+  orig: 131, 79
+  offset: 0, 22
+  index: -1
+Effects/Attack_Fx0008
+  rotate: false
+  xy: 359, 237
+  size: 130, 51
+  orig: 131, 79
+  offset: 0, 12
+  index: -1
+Effects/Attack_Fx0009
+  rotate: true
+  xy: 457, 136
+  size: 99, 79
+  orig: 131, 79
+  offset: 31, 0
+  index: -1
+Effects/Attack_Fx0010
+  rotate: true
+  xy: 595, 327
+  size: 56, 20
+  orig: 131, 79
+  offset: 75, 23
+  index: -1
+Effects/Attack_Fx0011
+  rotate: true
+  xy: 606, 112
+  size: 37, 22
+  orig: 131, 79
+  offset: 94, 22
+  index: -1
+Effects/Attack_Fx0012
+  rotate: true
+  xy: 556, 304
+  size: 14, 22
+  orig: 131, 79
+  offset: 117, 22
+  index: -1
+Effects/Hit fx0002
+  rotate: false
+  xy: 344, 408
+  size: 137, 106
+  orig: 184, 157
+  offset: 33, 38
+  index: -1
+Effects/Hit fx0003
+  rotate: false
+  xy: 2, 255
+  size: 180, 149
+  orig: 184, 157
+  offset: 4, 8
+  index: -1
+Effects/Hit fx0004
+  rotate: false
+  xy: 184, 251
+  size: 173, 153
+  orig: 184, 157
+  offset: 0, 2
+  index: -1
+Effects/Hit fx0005
+  rotate: false
+  xy: 179, 100
+  size: 172, 149
+  orig: 184, 157
+  offset: 0, 3
+  index: -1
+Effects/Hit fx0006
+  rotate: false
+  xy: 2, 99
+  size: 175, 154
+  orig: 184, 157
+  offset: 1, 0
+  index: -1
 Peasant_1/Arm_L_1
   rotate: false
-  xy: 308, 293
+  xy: 593, 190
   size: 28, 37
   orig: 28, 37
   offset: 0, 0
   index: -1
 Peasant_1/Arm_R_1
   rotate: false
-  xy: 278, 86
+  xy: 606, 77
   size: 26, 33
   orig: 26, 33
   offset: 0, 0
   index: -1
 Peasant_1/Body_1
   rotate: false
-  xy: 112, 85
+  xy: 2, 2
   size: 88, 95
   orig: 88, 95
   offset: 0, 0
   index: -1
 Peasant_1/Hand_L_1
-  rotate: false
-  xy: 306, 74
+  rotate: true
+  xy: 606, 259
   size: 28, 29
   orig: 28, 29
   offset: 0, 0
   index: -1
 Peasant_1/Hand_R_1
-  rotate: false
-  xy: 193, 2
+  rotate: true
+  xy: 554, 22
   size: 24, 22
   orig: 24, 22
   offset: 0, 0
   index: -1
 Peasant_1/Head_1
-  rotate: false
-  xy: 2, 285
+  rotate: true
+  xy: 483, 412
   size: 102, 116
   orig: 102, 116
   offset: 0, 0
   index: -1
 Peasant_1/Shoulder_L_1
-  rotate: false
-  xy: 112, 46
+  rotate: true
+  xy: 556, 366
   size: 44, 37
   orig: 44, 37
   offset: 0, 0
   index: -1
 Peasant_1/Shoulder_R_1
   rotate: false
-  xy: 301, 140
+  xy: 498, 48
   size: 31, 31
   orig: 31, 31
   offset: 0, 0
   index: -1
 Peasant_1/Weapon_1
   rotate: false
-  xy: 2, 458
+  xy: 2, 461
   size: 340, 53
   orig: 340, 53
   offset: 0, 0
   index: -1
 Peasant_2/Arm_L_2
   rotate: false
-  xy: 308, 216
+  xy: 438, 41
   size: 28, 36
   orig: 28, 36
   offset: 0, 0
   index: -1
 Peasant_2/Arm_R_2
   rotate: true
-  xy: 202, 90
+  xy: 491, 237
   size: 29, 36
   orig: 29, 36
   offset: 0, 0
   index: -1
 Peasant_2/Body_2
-  rotate: false
-  xy: 204, 211
+  rotate: true
+  xy: 463, 304
   size: 102, 91
   orig: 102, 91
   offset: 0, 0
   index: -1
 Peasant_2/Hand_L_2
   rotate: true
-  xy: 256, 33
+  xy: 498, 22
   size: 24, 26
   orig: 24, 26
   offset: 0, 0
   index: -1
 Peasant_2/Hand_R_2
   rotate: true
-  xy: 227, 33
+  xy: 599, 51
   size: 24, 27
   orig: 24, 27
   offset: 0, 0
   index: -1
 Peasant_2/Head_2
-  rotate: false
-  xy: 106, 182
+  rotate: true
+  xy: 302, 2
   size: 96, 99
   orig: 96, 99
   offset: 0, 0
   index: -1
 Peasant_2/Shoulder_L_2
   rotate: false
-  xy: 308, 332
+  xy: 403, 44
   size: 33, 33
   orig: 33, 33
   offset: 0, 0
   index: -1
 Peasant_2/Shoulder_R_2
   rotate: false
-  xy: 158, 50
+  xy: 403, 79
   size: 34, 33
   orig: 34, 33
   offset: 0, 0
   index: -1
 Peasant_2/Weapon_2
   rotate: false
-  xy: 2, 7
+  xy: 538, 144
   size: 53, 158
   orig: 53, 158
   offset: 0, 0
   index: -1
 Peasant_3/Arm_L_3
-  rotate: false
-  xy: 306, 105
+  rotate: true
+  xy: 564, 53
   size: 26, 33
   orig: 26, 33
   offset: 0, 0
   index: -1
 Peasant_3/Arm_R_3
   rotate: false
-  xy: 308, 254
+  xy: 593, 151
   size: 28, 37
   orig: 28, 37
   offset: 0, 0
   index: -1
 Peasant_3/Body_3
-  rotate: true
-  xy: 204, 121
+  rotate: false
+  xy: 92, 2
   size: 88, 95
   orig: 88, 95
   offset: 0, 0
   index: -1
 Peasant_3/Hand_L_3
   rotate: true
-  xy: 284, 33
+  xy: 465, 15
   size: 24, 22
   orig: 24, 22
   offset: 0, 0
   index: -1
 Peasant_3/Hand_R_3
-  rotate: false
-  xy: 227, 59
+  rotate: true
+  xy: 606, 229
   size: 28, 29
   orig: 28, 29
   offset: 0, 0
   index: -1
 Peasant_3/Head_3
   rotate: false
-  xy: 2, 167
+  xy: 359, 290
   size: 102, 116
   orig: 102, 116
   offset: 0, 0
   index: -1
 Peasant_3/Shoulder_L_3
   rotate: false
-  xy: 194, 52
+  xy: 531, 48
   size: 31, 31
   orig: 31, 31
   offset: 0, 0
   index: -1
 Peasant_3/Shoulder_R_3
-  rotate: false
-  xy: 112, 7
+  rotate: true
+  xy: 556, 320
   size: 44, 37
   orig: 44, 37
   offset: 0, 0
   index: -1
 Peasant_3/Weapon_3
   rotate: false
-  xy: 2, 403
+  xy: 2, 406
   size: 340, 53
   orig: 340, 53
   offset: 0, 0
   index: -1
 Peasant_4/Arm_L_4
   rotate: false
-  xy: 301, 173
+  xy: 468, 43
   size: 28, 36
   orig: 28, 36
   offset: 0, 0
   index: -1
 Peasant_4/Arm_R_4
-  rotate: true
-  xy: 240, 90
+  rotate: false
+  xy: 606, 289
   size: 29, 36
   orig: 29, 36
   offset: 0, 0
   index: -1
 Peasant_4/Body_4
   rotate: false
-  xy: 204, 304
+  xy: 353, 138
   size: 102, 97
   orig: 102, 97
   offset: 0, 0
   index: -1
 Peasant_4/Hand_L_4
   rotate: true
-  xy: 194, 26
+  xy: 526, 22
   size: 24, 26
   orig: 24, 26
   offset: 0, 0
   index: -1
 Peasant_4/Hand_R_4
-  rotate: true
-  xy: 257, 59
+  rotate: false
+  xy: 438, 12
   size: 25, 27
   orig: 25, 27
   offset: 0, 0
   index: -1
 Peasant_4/Head_4
-  rotate: false
-  xy: 106, 283
+  rotate: true
+  xy: 182, 2
   size: 96, 118
   orig: 96, 118
   offset: 0, 0
   index: -1
 Peasant_4/Shoulder_L_4
   rotate: false
-  xy: 158, 15
+  xy: 403, 9
   size: 33, 33
   orig: 33, 33
   offset: 0, 0
   index: -1
 Peasant_4/Shoulder_R_4
   rotate: false
-  xy: 308, 367
+  xy: 491, 268
   size: 34, 34
   orig: 34, 34
   offset: 0, 0
   index: -1
 Peasant_4/Weapon_4
-  rotate: false
-  xy: 57, 7
+  rotate: true
+  xy: 446, 81
   size: 53, 158
   orig: 53, 158
   offset: 0, 0

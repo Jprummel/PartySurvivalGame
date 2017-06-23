@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "07QSFsKoyzDWqt9GtGDN/b6+GYY", "spine": "3.5.51", "width": 272.32, "height": 162.37, "images": "" },
+"skeleton": { "hash": "0wxFKAKrVPQWxc70eTXccj3L6Z0", "spine": "3.5.51", "width": 272.32, "height": 162.37, "images": "" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "Body", "parent": "root", "length": 30.2, "rotation": 90.57, "x": -1.03, "y": 32.17 },
@@ -10,7 +10,9 @@
 	{ "name": "Arm_Right", "parent": "Shoulder_Right", "length": 11.08, "rotation": 3.77, "x": 22.36, "y": 1.12 },
 	{ "name": "Hand_Left", "parent": "Arm_Left", "length": 24.79, "rotation": -75.99, "x": 20.77, "y": -1.93 },
 	{ "name": "Hand_Right", "parent": "Arm_Right", "length": 15.45, "rotation": -6.52, "x": 13.09, "y": -0.7 },
-	{ "name": "Head", "parent": "Torso", "x": 35.1, "y": 0.1 }
+	{ "name": "Head", "parent": "Torso", "x": 35.1, "y": 0.1 },
+	{ "name": "Hit", "parent": "Head", "x": 21.88, "y": 12.59 },
+	{ "name": "Spear", "parent": "Hand_Right", "rotation": -97.54, "x": 4.08, "y": -41.4 }
 ],
 "slots": [
 	{ "name": "Hand_Left", "bone": "Hand_Left", "attachment": "Militia_1/Left_Hand" },
@@ -20,7 +22,10 @@
 	{ "name": "Militia_1/Head", "bone": "Head", "attachment": "Militia_1/Head" },
 	{ "name": "Militia_1/Weapon", "bone": "Hand_Right", "attachment": "Militia_1/Weapon" },
 	{ "name": "Militia_1/Right_Hand", "bone": "Hand_Right", "attachment": "Militia_1/Right_Hand" },
-	{ "name": "Militia_1/Right_Arm", "bone": "Arm_Right", "attachment": "Militia_3/Right_Arm" }
+	{ "name": "Militia_1/Right_Arm", "bone": "Arm_Right", "attachment": "Militia_3/Right_Arm" },
+	{ "name": "Spear", "bone": "Hand_Right" },
+	{ "name": "Spear_Fx", "bone": "Spear" },
+	{ "name": "Hit_Fx", "bone": "Hit" }
 ],
 "skins": {
 	"default": {
@@ -29,6 +34,13 @@
 			"Militia_2/Left_Hand": { "rotation": -177.21, "width": 22, "height": 22 },
 			"Militia_3/Left_Hand": { "x": -0.75, "y": 4.39, "rotation": -177.21, "width": 23, "height": 23 },
 			"Militia_4/Left_Hand": { "rotation": -177.21, "width": 21, "height": 25 }
+		},
+		"Hit_Fx": {
+			"Effects/Hit fx0002": { "width": 184, "height": 157 },
+			"Effects/Hit fx0003": { "width": 184, "height": 157 },
+			"Effects/Hit fx0004": { "width": 184, "height": 157 },
+			"Effects/Hit fx0005": { "width": 184, "height": 157 },
+			"Effects/Hit fx0006": { "width": 184, "height": 157 }
 		},
 		"Militia_1/Body": {
 			"Militia_1/Body": {
@@ -215,6 +227,22 @@
 			"Militia_2/Weapon": { "x": 16.62, "y": -1.08, "rotation": 88.71, "width": 31, "height": 105 },
 			"Militia_3/Weapon": { "x": 3.83, "y": 14.37, "rotation": 80.13, "width": 272, "height": 41 },
 			"Militia_4/Shield": { "x": -0.99, "y": -0.41, "rotation": 80.13, "width": 61, "height": 71 }
+		},
+		"Spear": {
+			"Spear": {
+				"type": "boundingbox",
+				"vertexCount": 8,
+				"vertices": [ 19.57, 89.31, 23.53, 92.93, 26.09, 89.78, -3.05, -84.73, -0.11, -108.86, -21.01, -153.01, -20.29, -100.58, -9.9, -84.62 ]
+			}
+		},
+		"Spear_Fx": {
+			"Effects/Attack_Fx0006": { "width": 131, "height": 79 },
+			"Effects/Attack_Fx0007": { "width": 131, "height": 79 },
+			"Effects/Attack_Fx0008": { "width": 131, "height": 79 },
+			"Effects/Attack_Fx0009": { "width": 131, "height": 79 },
+			"Effects/Attack_Fx0010": { "width": 131, "height": 79 },
+			"Effects/Attack_Fx0011": { "width": 131, "height": 79 },
+			"Effects/Attack_Fx0012": { "width": 131, "height": 79 }
 		}
 	}
 },
@@ -530,6 +558,24 @@
 		]
 	},
 	"Attack_Left": {
+		"slots": {
+			"Spear": {
+				"attachment": [
+					{ "time": 0, "name": null },
+					{ "time": 0.1333, "name": "Spear" }
+				]
+			},
+			"Spear_Fx": {
+				"attachment": [
+					{ "time": 0.1333, "name": "Effects/Attack_Fx0006" },
+					{ "time": 0.1667, "name": "Effects/Attack_Fx0007" },
+					{ "time": 0.2, "name": "Effects/Attack_Fx0008" },
+					{ "time": 0.2333, "name": "Effects/Attack_Fx0009" },
+					{ "time": 0.2667, "name": "Effects/Attack_Fx0011" },
+					{ "time": 0.3, "name": null }
+				]
+			}
+		},
 		"bones": {
 			"Shoulder_Right": {
 				"rotate": [
@@ -659,6 +705,15 @@
 					{ "time": 0.2333, "angle": 15.34 },
 					{ "time": 0.3333, "angle": 0 }
 				]
+			},
+			"Spear": {
+				"translate": [
+					{ "time": 0.1333, "x": -12.54, "y": -42.42 },
+					{ "time": 0.1667, "x": -0.9, "y": 14.62 }
+				],
+				"scale": [
+					{ "time": 0.1333, "x": 2.001, "y": 1 }
+				]
 			}
 		}
 	},
@@ -692,6 +747,23 @@
 			"Militia_1/Weapon": {
 				"attachment": [
 					{ "time": 0, "name": "Militia_3/Weapon" }
+				]
+			},
+			"Spear": {
+				"attachment": [
+					{ "time": 0, "name": null },
+					{ "time": 0.1333, "name": "Spear" }
+				]
+			},
+			"Spear_Fx": {
+				"attachment": [
+					{ "time": 0.1333, "name": "Effects/Attack_Fx0006" },
+					{ "time": 0.1667, "name": "Effects/Attack_Fx0007" },
+					{ "time": 0.2, "name": "Effects/Attack_Fx0008" },
+					{ "time": 0.2333, "name": "Effects/Attack_Fx0009" },
+					{ "time": 0.2667, "name": "Effects/Attack_Fx0010" },
+					{ "time": 0.3, "name": "Effects/Attack_Fx0011" },
+					{ "time": 0.3333, "name": "Effects/Attack_Fx0012" }
 				]
 			}
 		},
@@ -858,6 +930,28 @@
 				"translate": [
 					{ "time": 0, "x": 0, "y": -2.4 }
 				]
+			},
+			"Spear": {
+				"translate": [
+					{ "time": 0.1333, "x": 11.15, "y": 140.52 },
+					{ "time": 0.1667, "x": 5.04, "y": 61.03 }
+				],
+				"scale": [
+					{ "time": 0, "x": -2, "y": 2 },
+					{ "time": 0.1333, "x": -2, "y": 1 }
+				]
+			}
+		},
+		"deform": {
+			"default": {
+				"Spear": {
+					"Spear": [
+						{
+							"time": 0.1333,
+							"vertices": [ -16.7597, -191.4853, -24.33102, -199.07191, -29.73521, -193.0305, 12.11536, 157.94093, 3.99271, 205.82167, 37.85595, 297.17603, 45.05625, 191.1826, 25.80386, 158.36021 ]
+						}
+					]
+				}
 			}
 		},
 		"drawOrder": [
@@ -1772,6 +1866,18 @@
 		]
 	},
 	"Hit_Left": {
+		"slots": {
+			"Hit_Fx": {
+				"attachment": [
+					{ "time": 0, "name": "Effects/Hit fx0002" },
+					{ "time": 0.0333, "name": "Effects/Hit fx0003" },
+					{ "time": 0.0667, "name": "Effects/Hit fx0004" },
+					{ "time": 0.1, "name": "Effects/Hit fx0005" },
+					{ "time": 0.1333, "name": "Effects/Hit fx0006" },
+					{ "time": 0.1667, "name": null }
+				]
+			}
+		},
 		"bones": {
 			"Shoulder_Right": {
 				"rotate": [
@@ -1885,6 +1991,16 @@
 					{ "time": 0, "name": "Militia_3/Left_Hand" }
 				]
 			},
+			"Hit_Fx": {
+				"attachment": [
+					{ "time": 0.0333, "name": "Effects/Hit fx0002" },
+					{ "time": 0.0667, "name": "Effects/Hit fx0003" },
+					{ "time": 0.1, "name": "Effects/Hit fx0004" },
+					{ "time": 0.1333, "name": "Effects/Hit fx0005" },
+					{ "time": 0.1667, "name": "Effects/Hit fx0006" },
+					{ "time": 0.2, "name": null }
+				]
+			},
 			"Militia_1/Body": {
 				"attachment": [
 					{ "time": 0, "name": "Militia_3/Body" }
@@ -1995,6 +2111,17 @@
 				],
 				"translate": [
 					{ "time": 0, "x": 0, "y": -2.4 }
+				]
+			},
+			"Hit": {
+				"rotate": [
+					{ "time": 0.0333, "angle": 26.26 }
+				],
+				"translate": [
+					{ "time": 0.0333, "x": 2.31, "y": -26.21 }
+				],
+				"scale": [
+					{ "time": 0, "x": 1, "y": -1 }
 				]
 			}
 		},

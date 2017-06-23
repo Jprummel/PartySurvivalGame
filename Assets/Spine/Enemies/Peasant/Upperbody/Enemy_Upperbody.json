@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "pbrv3jb65TfEArpDPqO0CQVkRmY", "spine": "3.5.51", "width": 340.09, "height": 163.72, "images": "" },
+"skeleton": { "hash": "xHVz3T+0Ev/zcEWkXmRutTkvqhI", "spine": "3.5.51", "width": 340.09, "height": 163.72, "images": "" },
 "bones": [
 	{ "name": "root", "x": -196.06 },
 	{ "name": "1/Body_1", "parent": "root", "length": 54.08, "rotation": 86.9, "x": 2.45, "y": 35.14 },
@@ -9,7 +9,9 @@
 	{ "name": "1/Arm_R_1", "parent": "1/Sohuldeer_R_1", "length": 14.69, "rotation": 2.78, "x": 19.18, "y": -0.6 },
 	{ "name": "1/Hand_L_1", "parent": "1/Arm_L_1", "length": 19.82, "rotation": 0.25, "x": 17.55, "y": -0.05 },
 	{ "name": "1/Hand_R_1", "parent": "1/Arm_R_1", "length": 14.46, "rotation": -2.4, "x": 18.78, "y": -0.76 },
-	{ "name": "1/Head_1", "parent": "1/Body_1", "length": 38.18, "rotation": 84.69, "x": 75.99, "y": -1.21 }
+	{ "name": "1/Head_1", "parent": "1/Body_1", "length": 38.18, "rotation": 84.69, "x": 75.99, "y": -1.21 },
+	{ "name": "Hit", "parent": "1/Head_1", "rotation": -102.31, "x": 23.87, "y": -19.44 },
+	{ "name": "Pitchfork", "parent": "1/Hand_R_1", "rotation": -53.62, "x": 94.35, "y": -114.05 }
 ],
 "slots": [
 	{ "name": "Weapon", "bone": "1/Hand_R_1", "attachment": "Peasant_1/Weapon_1" },
@@ -23,10 +25,19 @@
 	{ "name": "Hand_L", "bone": "1/Hand_L_1", "attachment": "Hand_L_Left" },
 	{ "name": "Shoulder_L", "bone": "1/Shoulder_L_1", "attachment": "Shoulder_L_Left" },
 	{ "name": "Pitchfork", "bone": "1/Hand_R_1", "attachment": "Pitchfork" },
-	{ "name": "Pitchfork_Back", "bone": "1/Hand_L_1" }
+	{ "name": "Pitchfork_Back", "bone": "1/Hand_L_1" },
+	{ "name": "Hit_Fx", "bone": "Hit" },
+	{ "name": "Pitchfrok_Fx", "bone": "Pitchfork" }
 ],
 "skins": {
 	"default": {
+		"Hit_Fx": {
+			"Effects/Hit fx0002": { "width": 184, "height": 157 },
+			"Effects/Hit fx0003": { "width": 184, "height": 157 },
+			"Effects/Hit fx0004": { "width": 184, "height": 157 },
+			"Effects/Hit fx0005": { "width": 184, "height": 157 },
+			"Effects/Hit fx0006": { "width": 184, "height": 157 }
+		},
 		"Pitchfork": {
 			"Pitchfork": {
 				"type": "boundingbox",
@@ -40,6 +51,15 @@
 				"vertexCount": 30,
 				"vertices": [ -61.62, 6.96, -22.85, -4.12, -20.81, -3.44, -19.79, -0.74, -20.18, 1.02, -57.11, 19.11, -18.31, 7.5, -16.35, 8.39, -14.62, 11.81, -15.72, 14.7, -52.35, 31.49, -12.16, 21.42, -10.57, 23.05, -9.47, 26.39, -10.33, 28.84, -46.41, 44.48, -7.08, 32.91, -4.48, 31.44, -2.82, 27.23, -3.18, 24.26, -7.02, 13.95, 84.79, -19.65, 85.9, -21.87, 84.08, -27.62, 82.27, -28.56, -10.36, 5.62, -14.86, -6.52, -16.97, -9.03, -20.4, -10.84, -23.41, -10.38 ]
 			}
+		},
+		"Pitchfrok_Fx": {
+			"Effects/Attack_Fx0006": { "width": 131, "height": 79 },
+			"Effects/Attack_Fx0007": { "width": 131, "height": 79 },
+			"Effects/Attack_Fx0008": { "width": 131, "height": 79 },
+			"Effects/Attack_Fx0009": { "width": 131, "height": 79 },
+			"Effects/Attack_Fx0010": { "width": 131, "height": 79 },
+			"Effects/Attack_Fx0011": { "width": 131, "height": 79 },
+			"Effects/Attack_Fx0012": { "width": 131, "height": 79 }
 		},
 		"Weapon": {
 			"Peasant_1/Weapon_1": { "x": 9.57, "y": -0.55, "rotation": 126.59, "width": 340, "height": 53 },
@@ -448,6 +468,17 @@
 		]
 	},
 	"Attack_Left": {
+		"slots": {
+			"Pitchfrok_Fx": {
+				"attachment": [
+					{ "time": 0.0667, "name": "Effects/Attack_Fx0006" },
+					{ "time": 0.1, "name": "Effects/Attack_Fx0008" },
+					{ "time": 0.1333, "name": "Effects/Attack_Fx0009" },
+					{ "time": 0.1667, "name": "Effects/Attack_Fx0012" },
+					{ "time": 0.2, "name": null }
+				]
+			}
+		},
 		"bones": {
 			"1/Body_1": {
 				"rotate": [
@@ -551,6 +582,18 @@
 					{ "time": 0.2, "x": 2.64, "y": -6.47 },
 					{ "time": 0.3333, "x": 0, "y": 0 }
 				]
+			},
+			"Pitchfork": {
+				"rotate": [
+					{ "time": 0.0667, "angle": 6.58 }
+				],
+				"translate": [
+					{ "time": 0.0667, "x": -27.08, "y": 34.12 },
+					{ "time": 0.1, "x": -65.48, "y": 88.61 }
+				],
+				"scale": [
+					{ "time": 0, "x": 1.996, "y": 1.996 }
+				]
 			}
 		}
 	},
@@ -590,6 +633,15 @@
 				"attachment": [
 					{ "time": 0, "name": "Head_Right" },
 					{ "time": 0.3333, "name": "Head_Right" }
+				]
+			},
+			"Pitchfrok_Fx": {
+				"attachment": [
+					{ "time": 0.0333, "name": "Effects/Attack_Fx0006" },
+					{ "time": 0.0667, "name": "Effects/Attack_Fx0008" },
+					{ "time": 0.1, "name": "Effects/Attack_Fx0009" },
+					{ "time": 0.1333, "name": "Effects/Attack_Fx0011" },
+					{ "time": 0.1667, "name": null }
 				]
 			},
 			"Shoulder_L": {
@@ -708,6 +760,19 @@
 					{ "time": 0.0667, "angle": -20.04 },
 					{ "time": 0.1333, "angle": 34.62 },
 					{ "time": 0.3333, "angle": 0 }
+				]
+			},
+			"Pitchfork": {
+				"rotate": [
+					{ "time": 0.0333, "angle": -4.32 }
+				],
+				"translate": [
+					{ "time": 0, "x": -179.79, "y": 241.92 },
+					{ "time": 0.0333, "x": -148.98, "y": 201.88 },
+					{ "time": 0.0667, "x": -106.95, "y": 149.28 }
+				],
+				"scale": [
+					{ "time": 0, "x": -2, "y": 2 }
 				]
 			}
 		},
@@ -1479,6 +1544,16 @@
 	},
 	"Hit_Left": {
 		"slots": {
+			"Hit_Fx": {
+				"attachment": [
+					{ "time": 0.1, "name": "Effects/Hit fx0002" },
+					{ "time": 0.1333, "name": "Effects/Hit fx0003" },
+					{ "time": 0.1667, "name": "Effects/Hit fx0004" },
+					{ "time": 0.2, "name": "Effects/Hit fx0005" },
+					{ "time": 0.2333, "name": "Effects/Hit fx0006" },
+					{ "time": 0.2667, "name": null }
+				]
+			},
 			"Pitchfork": {
 				"attachment": [
 					{ "time": 0, "name": null }
@@ -1622,6 +1697,16 @@
 				"attachment": [
 					{ "time": 0, "name": "Head_Right" },
 					{ "time": 0.3333, "name": "Head_Right" }
+				]
+			},
+			"Hit_Fx": {
+				"attachment": [
+					{ "time": 0.1333, "name": "Effects/Hit fx0002" },
+					{ "time": 0.1667, "name": "Effects/Hit fx0003" },
+					{ "time": 0.2, "name": "Effects/Hit fx0004" },
+					{ "time": 0.2333, "name": "Effects/Hit fx0005" },
+					{ "time": 0.2667, "name": "Effects/Hit fx0006" },
+					{ "time": 0.3, "name": null }
 				]
 			},
 			"Pitchfork": {
@@ -1788,6 +1873,17 @@
 				"scale": [
 					{ "time": 0, "x": 1, "y": 1, "curve": "stepped" },
 					{ "time": 0.3333, "x": 1, "y": 1 }
+				]
+			},
+			"Hit": {
+				"rotate": [
+					{ "time": 0, "angle": 27.58 }
+				],
+				"translate": [
+					{ "time": 0, "x": -36.19, "y": -6.49 }
+				],
+				"scale": [
+					{ "time": 0, "x": 1, "y": -1 }
 				]
 			}
 		},
