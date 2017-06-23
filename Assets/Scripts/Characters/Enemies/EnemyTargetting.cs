@@ -7,7 +7,7 @@ public class EnemyTargetting : MonoBehaviour {
 
     private List<GameObject> _players = new List<GameObject>();
 
-    private float _oldDist = 150;
+    private float _oldDist = 250;
     private GameObject _target;
     private Unit _AStar;
 
@@ -22,7 +22,7 @@ public class EnemyTargetting : MonoBehaviour {
         _AStar = GetComponent<Unit>();
         _players.AddRange(GameObject.FindGameObjectsWithTag(Tags.PLAYER));
 
-        InvokeRepeating("CalculateTarget", 1, 0.25f);
+        InvokeRepeating("CalculateTarget", 0.5f, 0.25f);
     }
 
     void CalculateTarget()
@@ -36,7 +36,7 @@ public class EnemyTargetting : MonoBehaviour {
                     {
                         _target = _players[i];
                     }
-                    _oldDist = newDist;
+                _oldDist = newDist;
                 }
             }
         _AStar.target = _target.transform;

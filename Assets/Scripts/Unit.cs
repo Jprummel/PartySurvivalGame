@@ -27,7 +27,7 @@ public class Unit : MonoBehaviour {
         {
             PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
             MoveAnimation();
-            CheckDistance();
+            //CheckDistance();
         }
     }
 

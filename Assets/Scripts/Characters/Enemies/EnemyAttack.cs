@@ -4,12 +4,12 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour {
 
     Enemy _enemy;
-    EnemyTargetting _enemyTargetting;
+    EnemyTargetting _enemyTargetting; 
     private bool _readyToAttack = true;
 
 	void Awake () {
         _enemy = GetComponent<Enemy>();
-        _enemyTargetting = GetComponentInChildren<EnemyTargetting>();
+        _enemyTargetting = GetComponentInChildren<EnemyTargetting>();  
 	}
 	
 	void Update () {
@@ -46,6 +46,12 @@ public class EnemyAttack : MonoBehaviour {
     void AttackOnTitanComplete(Spine.TrackEntry track)
     {
         _enemy.UpperBody.state.SetAnimation(0, SpineAnimationNames.IDLE + _enemy.MoveStateName, true);
+        StartCoroutine(ResetAttack());
+    }
+
+    IEnumerator ResetAttack()
+    {
+        yield return new WaitForSeconds(_enemy.AttackSpeed);
         _readyToAttack = true;
     }
 }
