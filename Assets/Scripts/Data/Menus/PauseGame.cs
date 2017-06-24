@@ -3,7 +3,7 @@
 public class PauseGame : MonoBehaviour {
 
     [SerializeField]private GameObject _pauseScreen;
-    private bool _gameIsPaused;
+    public static bool _gameIsPaused;
     private SceneLoader _sceneLoader;
 
     void Awake()

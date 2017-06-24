@@ -20,7 +20,7 @@ public class Pathfinding : MonoBehaviour {
 
     public void StartFindPath(Vector3 startPos, Vector3 targetPos)
     {
-        StartCoroutine(FindPath(startPos, targetPos));
+            StartCoroutine(FindPath(startPos, targetPos));
     }
 
     IEnumerator FindPath(Vector3 startPos, Vector3 targetPos)
