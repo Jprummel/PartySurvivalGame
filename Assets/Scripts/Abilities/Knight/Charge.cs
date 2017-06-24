@@ -72,25 +72,19 @@ public class Charge : Ability {
         _player.CanMove = false;   
         //start animation spaghettios
         _sound.PlayAbilitySound();
-        //_player.CharacterAnimator.SetBool("WindUp",true);
-        _player.UpperBody.state.SetAnimation(0, SpineAnimationNames.ABILITY + _player.MoveStateName, false);
+        _player.UpperBodyAnimator.SetBool("UsingAbility", true);
+        _player.LowerBodyAnimator.SetBool("UsingAbility", true);
         //start charge
         _charging = true;
         _player.Invincible = true;
         yield return new WaitForSeconds(_windUpTime);
-        //_player.CharacterAnimator.SetBool("WindUp", false);
-
-        //_player.CharacterAnimator.SetBool("Charge",true);
         yield return new WaitForSeconds(_chargeTime);
-        _charging = false;
-        _player.Invincible = false;
-        //end charge
-        //_player.CharacterAnimator.SetBool("Charge", false);
-
-        //_player.CharacterAnimator.SetBool("IntoIdle", true);
         yield return new WaitForSeconds(_intoIdleTime);
-        //_player.CharacterAnimator.SetBool("IntoIdle", false);
         //end animation spaghettios
+        _player.UpperBodyAnimator.SetBool("UsingAbility", false);
+        _player.LowerBodyAnimator.SetBool("UsingAbility", false);
+        _player.Invincible = false;
+        _charging = false;
         _cooldown = _maxCooldown;
         _abilityIsReady = false;
         _player.CanMove = true;

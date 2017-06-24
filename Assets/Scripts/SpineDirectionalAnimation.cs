@@ -14,6 +14,6 @@ public class SpineDirectionalAnimation : StateMachineBehaviour {
         SkeletonAnimation anim = animator.GetComponent<SkeletonAnimation>();
         Character _char = animator.GetComponentInParent<Character>();
         Debug.Log(_animName + _char.MoveStateName);
-        anim.state.SetAnimation(0, _animName + _char.MoveStateName, _loop);
+        anim.state.SetAnimation(0, _animName + "_" + _char.MoveStateName, _loop);
     }
 }
