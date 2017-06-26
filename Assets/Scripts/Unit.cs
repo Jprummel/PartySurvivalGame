@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour {
 
-    private CharacterAnimations _animations;
     private bool _isMoving = false;
     private Enemy _enemy;
     private Rigidbody2D _rgb2d;
@@ -16,7 +15,6 @@ public class Unit : MonoBehaviour {
     {
         _enemy = GetComponent<Enemy>();
         _rgb2d = GetComponent<Rigidbody2D>();
-        _animations = GetComponent<CharacterAnimations>();
         InvokeRepeating("FindPath", 0.01f, 0.25f);
     }
 
@@ -79,12 +77,5 @@ public class Unit : MonoBehaviour {
         {
             _enemy.moveState = Character.MoveState.RIGHT;
         }
-
-        MoveAnimation();
-    }
-
-    void MoveAnimation()
-    {
-            _animations.MoveAnimation();
     }
 }

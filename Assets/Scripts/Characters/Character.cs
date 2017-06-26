@@ -7,6 +7,7 @@ using Spine.Unity;
 public class Character : MonoBehaviour, IDamageable {
 
     //Spine values
+    [SerializeField] protected SkeletonAnimation _upperBodySkeleton;
     [SerializeField]protected Animator _upperBodyAnimator;
     [SerializeField]protected Animator _lowerBodyAnimator;
     protected string _moveStateName;
@@ -21,6 +22,12 @@ public class Character : MonoBehaviour, IDamageable {
     {
         get { return _lowerBodyAnimator; }
         set { _lowerBodyAnimator = value; }
+    }
+
+    public SkeletonAnimation UpperBody
+    {
+        get { return _upperBodySkeleton; }
+        set { _upperBodySkeleton = value; }
     }
 
     public string MoveStateName

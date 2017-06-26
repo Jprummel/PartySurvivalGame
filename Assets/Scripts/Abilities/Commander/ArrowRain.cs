@@ -134,7 +134,6 @@ public class ArrowRain : Ability {
     IEnumerator StartAnimation()
     {
         //_player.CharacterAnimator.SetBool("CommandArchers", true);
-        _player.UpperBody.state.SetAnimation(0, SpineAnimationNames.ABILITY + "_" +_player.MoveStateName, false);
         yield return new WaitForSeconds(0.75f);
         //_player.UpperBody.state.SetAnimation(0, SpineAnimationNames.IDLE + _player.MoveStateName, true);
         //_player.CharacterAnimator.SetBool("CommandArchers", false);
