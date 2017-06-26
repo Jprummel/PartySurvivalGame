@@ -2,7 +2,6 @@
 
 public class PlayerMovement : MonoBehaviour {
 
-    private CharacterAnimations _animations;
     private PlayerCharacter _player;
     private Rigidbody2D _rgb2d;
     private Quaternion _rotation;
@@ -10,7 +9,6 @@ public class PlayerMovement : MonoBehaviour {
 
     void Awake()
     {
-        _animations = GetComponent<CharacterAnimations>();
         _player = GetComponent<PlayerCharacter>();
     }
 
@@ -31,13 +29,11 @@ public class PlayerMovement : MonoBehaviour {
         {
             _player.UpperBodyAnimator.SetBool("IsWalking", true);//Test
             _player.LowerBodyAnimator.SetBool("IsWalking", true);//Test
-            //_animations.MoveAnimation();//Test
         }
         else
         {
             _player.UpperBodyAnimator.SetBool("IsWalking", false);//Test
             _player.LowerBodyAnimator.SetBool("IsWalking", false);//Test
-            //_animations.IdleAnimation();//Test
         }
     }
 }

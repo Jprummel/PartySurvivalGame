@@ -2,7 +2,6 @@
 
 public class ControllerInput : MonoBehaviour {
 
-    private CharacterAnimations _animations;
     private ShopDisplay _shopDisplay;
     private WalkParticle _walkParticle;
     private CharacterSoundFX _soundEffects;
@@ -38,7 +37,6 @@ public class ControllerInput : MonoBehaviour {
                 if (Input.GetButtonDown(InputAxes.XBOX_A + _player.PlayerID))
                 {
                     _player.Ability.UseAbility();
-                    //_animations.AbilityAnimation();
                 }
 
                 if (Input.GetButtonDown(InputAxes.XBOX_B + _player.PlayerID) && _player.Ability.UsingAbility)
@@ -53,16 +51,12 @@ public class ControllerInput : MonoBehaviour {
             if (Input.GetButtonDown(InputAxes.XBOX_X + _player.PlayerID) && _playerAttack.ReadyToAttack)
             {
                 _playerAttack.Attack();
-                //_player.Animations.PlayerAttackAnimation(_player.LightAttackState);
-                _soundEffects.PlayLightAttackAudio(); //Basic Attack (miss) sound
             }
 
             if (Input.GetButtonDown(InputAxes.XBOX_Y + _player.PlayerID) && _playerAttack.ReadyToAttack)
             {
                 //Heavy Attack
-                _soundEffects.PlayHeavyAttackAudio(); // Heavy Attack (miss) sound
                 _playerAttack.HeavyAttack();
-                //_player.Animations.PlayerAttackAnimation(3);//Test
             }
             if (_player.CanMove)
             {
@@ -90,7 +84,6 @@ public class ControllerInput : MonoBehaviour {
             {
                 _player.UpperBodyAnimator.SetBool("IsWalking", false);//Test
                 _player.LowerBodyAnimator.SetBool("IsWalking", false);//Test
-                //_player.Animations.IdleAnimation();//Test
             }
         }
 

@@ -7,11 +7,8 @@ using Spine.Unity;
 public class Character : MonoBehaviour, IDamageable {
 
     //Spine values
-    [SerializeField]protected SkeletonAnimation _upperBodySkeleton;
-    [SerializeField]protected SkeletonAnimation _lowerBodySkeleton;
-    [SerializeField] protected Animator _upperBodyAnimator;
-    [SerializeField] protected Animator _lowerBodyAnimator;
-    protected CharacterAnimations _animations;
+    [SerializeField]protected Animator _upperBodyAnimator;
+    [SerializeField]protected Animator _lowerBodyAnimator;
     protected string _moveStateName;
 
     public Animator UpperBodyAnimator
@@ -24,24 +21,6 @@ public class Character : MonoBehaviour, IDamageable {
     {
         get { return _lowerBodyAnimator; }
         set { _lowerBodyAnimator = value; }
-    }
-
-    public SkeletonAnimation UpperBody
-    {
-        get { return _upperBodySkeleton; }
-        set { _upperBodySkeleton = value; }
-    }
-
-    public SkeletonAnimation LowerBody
-    {
-        get { return _lowerBodySkeleton; }
-        set { _lowerBodySkeleton = value; }
-    }
-
-    public CharacterAnimations Animations
-    {
-        get { return _animations; }
-        set { _animations = value; }
     }
 
     public string MoveStateName
@@ -159,7 +138,6 @@ public class Character : MonoBehaviour, IDamageable {
     protected virtual void Awake()
     {
         CheckMoveState();
-        _animations     = GetComponent<CharacterAnimations>();
         _giveGold       = DOTween.Sequence();
         _ranking        = GameObject.FindGameObjectWithTag(Tags.RANKTRACKER).GetComponent<Ranking>();
         _soundEffects   = GetComponent<CharacterSoundFX>();
@@ -260,24 +238,8 @@ public class Character : MonoBehaviour, IDamageable {
 
     IEnumerator HitRoutine()
     {
-        _upperBodySkeleton.AnimationName = SpineAnimationNames.HIT + _moveStateName;
         _canMove = false;
         yield return new WaitForSeconds(0.5f);
-        _canMove = true;
-        _upperBodySkeleton.AnimationName = SpineAnimationNames.IDLE + _moveStateName;
-    }
-
-    void GetHit()
-    {
-        _upperBodySkeleton.AnimationName = SpineAnimationNames.HIT + _moveStateName;
-        _upperBodySkeleton.state.Complete += IdleState;
-    }
-
-    void IdleState(Spine.TrackEntry trackEntry)
-    {
-        Debug.Log("Going into idle");
-        _upperBodySkeleton.AnimationName = SpineAnimationNames.IDLE + _moveStateName;
-        _lowerBodySkeleton.AnimationName = SpineAnimationNames.IDLE + _moveStateName;
         _canMove = true;
     }
 

@@ -60,12 +60,11 @@ public class ArrowRain : Ability {
                 if(_circle.transform.position.x < transform.position.x)
                 {
                     _player.moveState = Character.MoveState.LEFT;
-                    _player.Animations.IdleAnimation();
+                    //Idle animations here
                 }
                 else if(_circle.transform.position.x > transform.position.x)
                 {
                     _player.moveState = Character.MoveState.RIGHT;
-                    _player.Animations.IdleAnimation();
                 }
             }
         }

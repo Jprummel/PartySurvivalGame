@@ -19,6 +19,7 @@ public class Ability : MonoBehaviour {
     public bool UsingAbility
     {
         get { return _usingAbility; }
+        set { _usingAbility = value; }
     }
 
     public Sprite AbilityImage
@@ -29,11 +30,13 @@ public class Ability : MonoBehaviour {
     public float Cooldown
     {
         get { return _cooldown; }
+        set { _cooldown = value; }
     }
 
     public float MaxCooldown
     {
         get { return _maxCooldown; }
+        set { _maxCooldown = value; }
     }
 
     void Awake()

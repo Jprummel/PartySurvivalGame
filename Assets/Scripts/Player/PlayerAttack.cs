@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour {
 
-    PlayerCharacter _player;
+    private PlayerCharacter _player;
+    private CharacterSoundFX _soundEffects;
     private float   _defaultDamage;
     private float   _comboResetTimer;
     private float   _delayBetweenCombos;
@@ -16,6 +17,7 @@ public class PlayerAttack : MonoBehaviour {
     void Awake()
     {
         _player = GetComponent<PlayerCharacter>();
+        _soundEffects = GetComponent<CharacterSoundFX>();
     }
 
     void Update(){
@@ -28,7 +30,7 @@ public class PlayerAttack : MonoBehaviour {
         if (_readyToAttack && _delayBetweenCombos <= 0)
         {
             StartCoroutine(AttackAnimRoutine(_player.LightAttackState));
-            //_player.Animations.PlayerAttackAnimation(_player.LightAttackState);
+            _soundEffects.PlayLightAttackAudio(); //Basic Attack (miss) sound
             _readyToAttack = false;
             _player.LightAttackState++;
             _comboResetTimer = 0.8f;
@@ -46,8 +48,8 @@ public class PlayerAttack : MonoBehaviour {
         if (_readyToAttack & !_player.Ability.UsingAbility)
         {
             _player.CanMove = false;
-            //_player.Animations.PlayerAttackAnimation(3);
             StartCoroutine(HeavyAttackRoutine(2));
+            _soundEffects.PlayHeavyAttackAudio(); // Heavy Attack (miss) sound
             _readyToAttack = false;
             StartCoroutine(Cooldown(1));
         }
@@ -66,7 +68,7 @@ public class PlayerAttack : MonoBehaviour {
         switch (animationAttackState)
         {
             case 1:
-            _player.UpperBody.AnimationState.SetAnimation(0, SpineAnimationNames.FOREHAND + _player.MoveStateName, false);
+                _player.UpperBody.AnimationState.SetAnimation(0, SpineAnimationNames.FOREHAND + _player.MoveStateName, false);
                 break;
             case 2:
                 _player.UpperBody.AnimationState.SetAnimation(0, SpineAnimationNames.BACKHAND + _player.MoveStateName, false);
