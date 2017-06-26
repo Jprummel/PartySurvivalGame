@@ -26,8 +26,6 @@ public class Unit : MonoBehaviour {
         if (target != null && !_enemy.IsDead)
         {
             PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
-            MoveAnimation();
-            //CheckDistance();
         }
     }
 
@@ -63,24 +61,11 @@ public class Unit : MonoBehaviour {
                 {
                     transform.position = Vector3.MoveTowards(transform.position, currentWaypoint, Time.deltaTime *_enemy.MovementSpeed);
                     Vector3 direction = transform.position - currentWaypoint;
-                    _rgb2d.velocity = Vector2.zero;
+                    //_rgb2d.velocity = Vector2.zero;
                     SetMoveState(direction.x);
                 }
                 yield return null;
             }
-        }
-    }
-
-    void CheckDistance()
-    {
-        float distance = Vector2.Distance(transform.position, target.position);
-        if(distance <= _enemy.AttackRange)
-        {
-            _isAttacking = true;
-        }
-        else
-        {
-            _isAttacking = false;
         }
     }
 
@@ -94,6 +79,8 @@ public class Unit : MonoBehaviour {
         {
             _enemy.moveState = Character.MoveState.RIGHT;
         }
+
+        MoveAnimation();
     }
 
     void MoveAnimation()
