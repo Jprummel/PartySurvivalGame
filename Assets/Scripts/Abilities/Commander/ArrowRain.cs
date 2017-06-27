@@ -139,4 +139,9 @@ public class ArrowRain : Ability {
         //_player.CharacterAnimator.SetBool("CommandArchers", false);
         _player.CanMove = true;
     }
+
+    public void FinishMark()
+    {
+
+    }
 }

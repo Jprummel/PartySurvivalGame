@@ -81,6 +81,19 @@ public class Charge : Ability {
         yield return new WaitForSeconds(_chargeTime);
         yield return new WaitForSeconds(_intoIdleTime);
         //end animation spaghettios
+        /*_player.UpperBodyAnimator.SetBool("UsingAbility", false);
+        _player.LowerBodyAnimator.SetBool("UsingAbility", false);
+        _player.Invincible = false;
+        _charging = false;
+        _cooldown = _maxCooldown;
+        _abilityIsReady = false;
+        _player.CanMove = true;
+        _chargeSpeed = 0f;
+        _usingAbility = false;*/
+    }
+
+    public void FinishCharge()
+    {
         _player.UpperBodyAnimator.SetBool("UsingAbility", false);
         _player.LowerBodyAnimator.SetBool("UsingAbility", false);
         _player.Invincible = false;

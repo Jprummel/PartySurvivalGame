@@ -30,6 +30,15 @@ public class Whirlwind : Ability {
         _sound.PlayAbilitySound();
         yield return new WaitForSeconds(0.9f);
         //_player.CharacterAnimator.SetBool("UseAbility", false);
+        /*_player.UpperBodyAnimator.SetBool("UsingAbility", false);
+        _player.LowerBodyAnimator.SetBool("UsingAbility", false);
+        _cooldown = _maxCooldown;
+        _usingAbility = false;
+        _abilityIsReady = false;*/
+    }
+
+    public void FinishWhirlwind()
+    {
         _player.UpperBodyAnimator.SetBool("UsingAbility", false);
         _player.LowerBodyAnimator.SetBool("UsingAbility", false);
         _cooldown = _maxCooldown;

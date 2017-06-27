@@ -5,7 +5,9 @@ public class PlayerAttack : MonoBehaviour {
 
     private PlayerCharacter _player;
     private CharacterSoundFX _soundEffects;
+    private int _animationAttackState;
     private float   _defaultDamage;
+    private float   _modifier = 2;
     private float   _comboResetTimer;
     private float   _delayBetweenCombos;
     private bool    _readyToAttack = true;
@@ -29,7 +31,8 @@ public class PlayerAttack : MonoBehaviour {
     {
         if (_readyToAttack && _delayBetweenCombos <= 0)
         {
-            StartCoroutine(AttackAnimRoutine(_player.LightAttackState));
+            //StartCoroutine(AttackAnimRoutine(_player.LightAttackState));
+            _player.UpperBodyAnimator.SetInteger("AttackState",_player.LightAttackState);
             _soundEffects.PlayLightAttackAudio(); //Basic Attack (miss) sound
             _readyToAttack = false;
             _player.LightAttackState++;
@@ -55,14 +58,14 @@ public class PlayerAttack : MonoBehaviour {
         }
     }
 
-   IEnumerator AttackAnimRoutine(int animationAttackState)
+   /*IEnumerator AttackAnimRoutine(int animationAttackState)
     {
         _player.UpperBodyAnimator.SetInteger("AttackState", animationAttackState);
         yield return new WaitForSeconds(0.5f);
         _player.UpperBodyAnimator.SetInteger("AttackState", 0);
-    }
+    }*/
 
-    void AttackAnim(int animationAttackState)
+    /*void AttackAnim(int animationAttackState)
     {
 
         switch (animationAttackState)
@@ -77,7 +80,7 @@ public class PlayerAttack : MonoBehaviour {
                 _player.UpperBody.AnimationState.SetAnimation(0, SpineAnimationNames.OVERHEAD + _player.MoveStateName, false);
                 break;
         }
-    }
+    }*/
 
     void StartComboResetTimer()
     {
@@ -110,5 +113,28 @@ public class PlayerAttack : MonoBehaviour {
         _player.Ability.CanUseAbility = true;
         _player.CanMove = true;
         _player.UpperBodyAnimator.SetInteger("AttackState", 0); //Test
+    }
+
+    public void FinishLightAttack()
+    {
+        _player.UpperBodyAnimator.SetInteger("AttackState", 0);
+        _readyToAttack = true;
+    }
+
+    public void StartHeavyAttack()
+    {
+        _player.UpperBodyAnimator.SetInteger("AttackState", 3);
+        _player.CanMove = false;
+        _player.Ability.CanUseAbility = false;
+        _player.Damage = _player.Damage * _modifier;
+    }
+
+    public void FinishHeavyAttack()
+    {
+        _player.Damage = _player.Damage / _modifier;
+        _player.Ability.CanUseAbility = true;        
+        _player.CanMove = true;
+        _player.UpperBodyAnimator.SetInteger("AttackState", 0);
+        _readyToAttack = true;
     }
 }
