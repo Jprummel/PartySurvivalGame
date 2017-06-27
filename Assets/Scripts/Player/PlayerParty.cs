@@ -8,6 +8,7 @@ public class PlayerParty : MonoBehaviour {
     public static List<GameObject>      Players             = new List<GameObject>();
     public static List<PlayerCharacter> PlayerCharacters    = new List<PlayerCharacter>();
     private List<GameObject> _ingamePlayers = new List<GameObject>();
+    public static List<int> PlayerIDs = new List<int>();
 
     public List<GameObject> InGamePlayers
     {
@@ -33,6 +34,8 @@ public class PlayerParty : MonoBehaviour {
         for (int i = 0; i < Players.Count; i++)
         {
             GameObject Player = Instantiate(Players[i]);
+            PlayerCharacter pc = Player.GetComponent<PlayerCharacter>();
+            pc.PlayerID = PlayerIDs[i];//Links player id to the id in the same list position as the player.
             Player.transform.position = _spawnPoints[i].position;
             _ingamePlayers.Add(Player);
         }

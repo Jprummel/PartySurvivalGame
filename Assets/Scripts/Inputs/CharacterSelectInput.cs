@@ -122,7 +122,7 @@ public class CharacterSelectInput : MonoBehaviour {
     {
         if(Input.GetButtonDown(InputAxes.XBOX_B + _playerID))
         {
-            _selectPrefab.DeselectCharacter();
+            _selectPrefab.DeselectCharacter(_playerID);
             _inputDelay = _inputDelayMaxTime;
         }
     }
