@@ -56,7 +56,7 @@ public class ControllerInput : MonoBehaviour {
             }
             if (_playerScripts.Player.CanMove)
             {
-                if (Input.GetAxis(InputAxes.LEFT_JOYSTICK_X + _playerScripts.Player.PlayerID) != 0 || Input.GetAxis(InputAxes.LEFT_JOYSTICK_Y + _player.PlayerID) != 0)
+                if (Input.GetAxis(InputAxes.LEFT_JOYSTICK_X + _playerScripts.Player.PlayerID) != 0 || Input.GetAxis(InputAxes.LEFT_JOYSTICK_Y + _playerScripts.Player.PlayerID) != 0)
                 {
                     float x = Input.GetAxis(InputAxes.LEFT_JOYSTICK_X + _playerScripts.Player.PlayerID);
                     float y = Input.GetAxis(InputAxes.LEFT_JOYSTICK_Y + _playerScripts.Player.PlayerID);

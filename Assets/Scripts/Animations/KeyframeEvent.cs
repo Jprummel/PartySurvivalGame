@@ -19,12 +19,15 @@ public class KeyframeEvent : MonoBehaviour {
         {
             case KeyframeTags.LIGHT_ATTACK_END:
                 _playerScripts.PlayerAttack.FinishLightAttack();
+                Debug.Log("Ay");
                 break;
             case KeyframeTags.HEAVY_ATTACK_START:
                 _playerScripts.PlayerAttack.StartHeavyAttack();
+                Debug.Log("Kek");
                 break;
             case KeyframeTags.HEAVY_ATTACK_END:
                 _playerScripts.PlayerAttack.FinishHeavyAttack();
+                Debug.Log("Lmao");
                 break;
             /*case KeyframeTags.WHIRLWIND_START:
                 

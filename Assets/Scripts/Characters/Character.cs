@@ -45,6 +45,13 @@ public class Character : MonoBehaviour, IDamageable {
     [SerializeField]protected float     _attackSpeed;
     [SerializeField]protected float     _goldValue;
     [SerializeField]protected float     _currentHealth;
+    protected float _defaultDamage;
+
+    public float DefaultDamage
+    {
+        get { return _defaultDamage; }
+        set { _defaultDamage = value; }
+    }
 
     private GameObject _lastSource;
 

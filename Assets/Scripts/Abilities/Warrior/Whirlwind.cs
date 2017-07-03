@@ -16,29 +16,34 @@ public class Whirlwind : Ability {
     {
         if (_abilityIsReady && _canUseAbility && !_usingAbility)
         {
-            StartCoroutine(WhirlwindRoutine());
+            WhirlwindStart();
         }
+    }
+
+    void WhirlwindStart()
+    {
+        _player.DefaultDamage = _player.Damage;
+        _usingAbility = true;
+        _player.UpperBodyAnimator.SetBool("UsingAbility", true);
+        _player.LowerBodyAnimator.SetBool("UsingAbility", true);
+        StartCoroutine(SpecialAttackDamage(0.8f, 1));
+        _sound.PlayAbilitySound();
     }
 
     IEnumerator WhirlwindRoutine()
     {
+        _player.DefaultDamage = _player.Damage;
         _usingAbility = true;
-        _player.UpperBodyAnimator.SetBool("UsingAbility",true);
-        _player.LowerBodyAnimator.SetBool("UsingAbility",true);
-        StartCoroutine(SpecialAttackDamage(0.8f,1));
-        //_player.CharacterAnimator.SetBool("UseAbility",true);
+        _player.UpperBodyAnimator.SetBool("UsingAbility", true);
+        _player.LowerBodyAnimator.SetBool("UsingAbility", true);
+        StartCoroutine(SpecialAttackDamage(0.8f, 1));
         _sound.PlayAbilitySound();
         yield return new WaitForSeconds(0.9f);
-        //_player.CharacterAnimator.SetBool("UseAbility", false);
-        /*_player.UpperBodyAnimator.SetBool("UsingAbility", false);
-        _player.LowerBodyAnimator.SetBool("UsingAbility", false);
-        _cooldown = _maxCooldown;
-        _usingAbility = false;
-        _abilityIsReady = false;*/
     }
 
     public void FinishWhirlwind()
     {
+        _player.Damage = _player.DefaultDamage;
         _player.UpperBodyAnimator.SetBool("UsingAbility", false);
         _player.LowerBodyAnimator.SetBool("UsingAbility", false);
         _cooldown = _maxCooldown;

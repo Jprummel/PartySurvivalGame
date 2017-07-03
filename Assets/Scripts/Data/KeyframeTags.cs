@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class KeyframeTags : MonoBehaviour {
 
-    public const string LIGHT_ATTACK_START  = "Light_Attack_Start";
-    public const string LIGHT_ATTACK_END    = "Light_Attack_End";
-    public const string HEAVY_ATTACK_START  = "Heavy_Attack_Start";
-    public const string HEAVY_ATTACK_END    = "Heavy_Attack_End";
+    public const string LIGHT_ATTACK_START  = "Lightattack_Start";
+    public const string LIGHT_ATTACK_END    = "Lightattack_End";
+    public const string HEAVY_ATTACK_START  = "Heavyattack_Start";
+    public const string HEAVY_ATTACK_END    = "Heavyattack_End";
     public const string HIT_START           = "Hit_Start";
     public const string HIT_END             = "Hit_End";
     public const string WHIRLWIND_START     = "Whirlwind_Start";

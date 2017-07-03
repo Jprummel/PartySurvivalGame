@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "UsGB/KquWrxwCT59lg+8it7y7u0", "spine": "3.5.51", "width": 341.48, "height": 224.47, "images": "./../warrior/" },
+"skeleton": { "hash": "UVDZSRgz+WIl4yYrU3q48wdo0Jw", "spine": "3.5.51", "width": 341.48, "height": 224.47, "images": "./../warrior/" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "Pelvis", "parent": "root", "length": 39.2, "rotation": 90.31, "x": -1.68, "y": 95.17 },
@@ -659,10 +659,14 @@
 	}
 },
 "events": {
-	"Attack_End": {},
-	"Attack_Start": {},
+	"Death_End": {},
+	"Death_Start": {},
+	"Heavyattack_End": {},
+	"Heavyattack_Start": {},
 	"Hit_End": {},
 	"Hit_Start": {},
+	"Lightattack_End": {},
+	"Lightattack_Start": {},
 	"Whirlwind_End": {},
 	"Whirlwind_Start": {}
 },
@@ -1709,8 +1713,8 @@
 			}
 		],
 		"events": [
-			{ "time": 0.2, "name": "Attack_Start" },
-			{ "time": 0.3, "name": "Attack_End" }
+			{ "time": 0.2, "name": "Lightattack_Start" },
+			{ "time": 0.3, "name": "Lightattack_End" }
 		]
 	},
 	"Backhand_Right": {
@@ -1908,8 +1912,8 @@
 			}
 		],
 		"events": [
-			{ "time": 0.2, "name": "Attack_Start" },
-			{ "time": 0.3, "name": "Attack_End" }
+			{ "time": 0.2, "name": "Lightattack_Start" },
+			{ "time": 0.3, "name": "Lightattack_End" }
 		]
 	},
 	"Death_Back": {
@@ -2333,6 +2337,10 @@
 					{ "slot": "Warrior_Head", "offset": -4 }
 				]
 			}
+		],
+		"events": [
+			{ "time": 0, "name": "Death_Start" },
+			{ "time": 0.7, "name": "Death_End" }
 		]
 	},
 	"Death_Right": {
@@ -2519,6 +2527,10 @@
 					{ "slot": "Warrior_Hand_R", "offset": 2 }
 				]
 			}
+		],
+		"events": [
+			{ "time": 0, "name": "Death_Start" },
+			{ "time": 0.7, "name": "Death_End" }
 		]
 	},
 	"Forehand_Back": {
@@ -3229,8 +3241,8 @@
 			}
 		],
 		"events": [
-			{ "time": 0.1333, "name": "Attack_Start" },
-			{ "time": 0.3, "name": "Attack_End" }
+			{ "time": 0.1333, "name": "Lightattack_Start" },
+			{ "time": 0.3, "name": "Lightattack_End" }
 		]
 	},
 	"Forehand_Right": {
@@ -3491,8 +3503,8 @@
 			}
 		],
 		"events": [
-			{ "time": 0.1333, "name": "Attack_Start" },
-			{ "time": 0.3, "name": "Attack_End" }
+			{ "time": 0.1333, "name": "Lightattack_Start" },
+			{ "time": 0.3, "name": "Lightattack_End" }
 		]
 	},
 	"Hit_Back": {
@@ -4022,8 +4034,8 @@
 			}
 		],
 		"events": [
-			{ "time": 0.1333, "name": "Attack_Start" },
-			{ "time": 0.2667, "name": "Attack_End" }
+			{ "time": 0.1333, "name": "Lightattack_Start" },
+			{ "time": 0.2667, "name": "Lightattack_End" }
 		]
 	},
 	"Idle_Back": {
@@ -5357,8 +5369,8 @@
 			}
 		],
 		"events": [
-			{ "time": 0.2333, "name": "Attack_Start" },
-			{ "time": 0.3, "name": "Attack_End" }
+			{ "time": 0.2333, "name": "Heavyattack_Start" },
+			{ "time": 0.3, "name": "Heavyattack_End" }
 		]
 	},
 	"Overhead_Right": {
@@ -5753,8 +5765,8 @@
 			}
 		],
 		"events": [
-			{ "time": 0.2333, "name": "Attack_Start" },
-			{ "time": 0.3, "name": "Attack_End" }
+			{ "time": 0.2333, "name": "Heavyattack_Start" },
+			{ "time": 0.3, "name": "Heavyattack_End" }
 		]
 	},
 	"Walk_Back": {
