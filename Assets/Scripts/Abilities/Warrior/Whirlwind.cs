@@ -44,6 +44,7 @@ public class Whirlwind : Ability {
     public void FinishWhirlwind()
     {
         _player.Damage = _player.DefaultDamage;
+        Debug.Log(_player.Damage + "DMG " + _player.DefaultDamage);
         _player.UpperBodyAnimator.SetBool("UsingAbility", false);
         _player.LowerBodyAnimator.SetBool("UsingAbility", false);
         _cooldown = _maxCooldown;

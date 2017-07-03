@@ -1,642 +1,642 @@
 
 Warrior_Upperbody.png
-size: 3504,648
+size: 2248,1025
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 Effects/Backhand0007
   rotate: false
-  xy: 3397, 528
+  xy: 2140, 787
   size: 105, 118
   orig: 105, 118
   offset: 0, 0
   index: -1
 Effects/Backhand0008
   rotate: false
-  xy: 1559, 212
+  xy: 2, 49
   size: 255, 434
   orig: 255, 434
   offset: 0, 0
   index: -1
 Effects/Backhand0009
   rotate: true
-  xy: 1261, 144
+  xy: 1261, 521
   size: 502, 296
   orig: 502, 296
   offset: 0, 0
   index: -1
 Effects/Backhand0010
   rotate: false
-  xy: 702, 121
+  xy: 702, 498
   size: 317, 525
   orig: 317, 525
   offset: 0, 0
   index: -1
 Effects/Backhand0011
   rotate: true
-  xy: 448, 116
+  xy: 448, 493
   size: 530, 252
   orig: 530, 252
   offset: 0, 0
   index: -1
 Effects/Backhand0012
-  rotate: false
-  xy: 2071, 3
+  rotate: true
+  xy: 1903, 679
   size: 232, 235
   orig: 232, 235
   offset: 0, 0
   index: -1
 Effects/Hit fx0002
-  rotate: true
-  xy: 1801, 7
-  size: 137, 106
+  rotate: false
+  xy: 1150, 4
+  size: 184, 157
   orig: 184, 157
-  offset: 33, 38
+  offset: 0, 0
   index: -1
 Effects/Hit fx0003
   rotate: true
-  xy: 2537, 80
-  size: 180, 149
+  xy: 1585, 48
+  size: 184, 157
   orig: 184, 157
-  offset: 4, 8
+  offset: 0, 0
   index: -1
 Effects/Hit fx0004
   rotate: true
-  xy: 2844, 94
-  size: 173, 153
+  xy: 1744, 48
+  size: 184, 157
   orig: 184, 157
-  offset: 0, 2
+  offset: 0, 0
   index: -1
 Effects/Hit fx0005
-  rotate: true
-  xy: 2999, 100
-  size: 172, 149
+  rotate: false
+  xy: 1559, 866
+  size: 184, 157
   orig: 184, 157
-  offset: 0, 3
+  offset: 0, 0
   index: -1
 Effects/Hit fx0006
-  rotate: true
-  xy: 2688, 85
-  size: 175, 154
+  rotate: false
+  xy: 1559, 707
+  size: 184, 157
   orig: 184, 157
-  offset: 1, 0
+  offset: 0, 0
   index: -1
 Effects/Warrior_Whirlwind_Slash
-  rotate: false
-  xy: 2, 2
+  rotate: true
+  xy: 1373, 215
   size: 304, 104
   orig: 304, 104
   offset: 0, 0
   index: -1
 Effects/forehand0005
   rotate: false
-  xy: 1816, 231
+  xy: 259, 68
   size: 215, 415
   orig: 215, 415
   offset: 0, 0
   index: -1
 Effects/forehand0006
   rotate: true
-  xy: 2217, 262
+  xy: 772, 112
   size: 384, 347
   orig: 384, 347
   offset: 0, 0
   index: -1
 Effects/forehand0007
   rotate: true
-  xy: 2033, 240
+  xy: 476, 85
   size: 406, 182
   orig: 406, 182
   offset: 0, 0
   index: -1
 Effects/forehand0008
-  rotate: false
-  xy: 551, 4
+  rotate: true
+  xy: 660, 103
   size: 388, 110
   orig: 388, 110
   offset: 0, 0
   index: -1
 Effects/forehand0009
-  rotate: true
-  xy: 1961, 9
+  rotate: false
+  xy: 928, 2
   size: 220, 108
   orig: 220, 108
   offset: 0, 0
   index: -1
 Effects/overhead0008
   rotate: false
-  xy: 1021, 124
+  xy: 1021, 501
   size: 238, 522
   orig: 238, 522
   offset: 0, 0
   index: -1
 Effects/overhead0009
   rotate: true
-  xy: 2, 108
+  xy: 2, 485
   size: 538, 444
   orig: 538, 444
   offset: 0, 0
   index: -1
 Effects/overhead0010
   rotate: false
-  xy: 2755, 361
+  xy: 1479, 234
   size: 265, 285
   orig: 265, 285
   offset: 0, 0
   index: -1
 Effects/overhead0011
-  rotate: true
-  xy: 2305, 13
+  rotate: false
+  xy: 1903, 913
   size: 247, 110
   orig: 247, 110
   offset: 0, 0
   index: -1
 Effects/overhead_Impact0009
   rotate: false
-  xy: 308, 8
+  xy: 685, 3
   size: 241, 98
   orig: 241, 98
   offset: 0, 0
   index: -1
 Effects/overhead_Impact0010
   rotate: true
-  xy: 2417, 57
+  xy: 1465, 10
   size: 203, 118
   orig: 203, 118
   offset: 0, 0
   index: -1
 Effects/overhead_Impact0011
-  rotate: true
-  xy: 3151, 482
+  rotate: false
+  xy: 1903, 543
   size: 164, 134
   orig: 164, 134
   offset: 0, 0
   index: -1
 Effects/overhead_Impact0012
   rotate: true
-  xy: 3022, 479
+  xy: 1336, 14
   size: 167, 127
   orig: 167, 127
   offset: 0, 0
   index: -1
 Warrior_1/Assets_Warrior_1_Blue/Arm_L_1_Blue
   rotate: true
-  xy: 2566, 262
+  xy: 2130, 435
   size: 46, 113
   orig: 46, 113
   offset: 0, 0
   index: -1
 Warrior_1/Assets_Warrior_1_Blue/Arm_R_1_Blue
-  rotate: false
-  xy: 1045, 3
+  rotate: true
+  xy: 1746, 244
   size: 56, 119
   orig: 56, 119
   offset: 0, 0
   index: -1
 Warrior_1/Assets_Warrior_1_Blue/Body_1_Blue
-  rotate: false
-  xy: 1277, 4
+  rotate: true
+  xy: 1746, 894
   size: 129, 138
   orig: 129, 138
   offset: 0, 0
   index: -1
 Warrior_1/Assets_Warrior_1_Blue/Head_1_Blue
-  rotate: false
-  xy: 2988, 7
+  rotate: true
+  xy: 2152, 966
   size: 57, 85
   orig: 57, 85
   offset: 0, 0
   index: -1
 Warrior_1/Assets_Warrior_1_Blue/Shouder_L__Blue
   rotate: false
-  xy: 1909, 105
+  xy: 2, 2
   size: 47, 45
   orig: 47, 45
   offset: 0, 0
   index: -1
 Warrior_1/Assets_Warrior_1_Green/Arm_R_1_Green
-  rotate: false
-  xy: 1103, 3
+  rotate: true
+  xy: 1867, 244
   size: 56, 119
   orig: 56, 119
   offset: 0, 0
   index: -1
 Warrior_1/Assets_Warrior_1_Green/Body_1_Green
-  rotate: false
-  xy: 1408, 4
+  rotate: true
+  xy: 1746, 763
   size: 129, 138
   orig: 129, 138
   offset: 0, 0
   index: -1
 Warrior_1/Assets_Warrior_1_Green/Hand_R_1_Green
   rotate: true
-  xy: 2887, 273
+  xy: 1717, 6
   size: 40, 37
   orig: 40, 37
   offset: 0, 0
   index: -1
 Warrior_1/Assets_Warrior_1_Green/Head_1_Green
-  rotate: false
-  xy: 2926, 274
+  rotate: true
+  xy: 2152, 907
   size: 57, 85
   orig: 57, 85
   offset: 0, 0
   index: -1
 Warrior_1/Assets_Warrior_1_Green/Shouder_L_1_Green
   rotate: false
-  xy: 1909, 58
+  xy: 51, 2
   size: 47, 45
   orig: 47, 45
   offset: 0, 0
   index: -1
 Warrior_1/Assets_Warrior_1_Orange/Arm_R_1_Orange
   rotate: false
-  xy: 1161, 3
+  xy: 2037, 286
   size: 56, 119
   orig: 56, 119
   offset: 0, 0
   index: -1
 Warrior_1/Assets_Warrior_1_Orange/Body_1_Orange
-  rotate: false
-  xy: 1539, 4
+  rotate: true
+  xy: 1746, 632
   size: 129, 138
   orig: 129, 138
   offset: 0, 0
   index: -1
 Warrior_1/Assets_Warrior_1_Orange/Head_1_Orange
-  rotate: false
-  xy: 2985, 274
+  rotate: true
+  xy: 2140, 728
   size: 57, 85
   orig: 57, 85
   offset: 0, 0
   index: -1
 Warrior_1/Assets_Warrior_1_Orange/Shouder_L_1_Orange
   rotate: false
-  xy: 1909, 11
+  xy: 100, 2
   size: 47, 45
   orig: 47, 45
   offset: 0, 0
   index: -1
 Warrior_1/Assets_Warrior_1_Purple/Arm_R_Purple
   rotate: false
-  xy: 1219, 3
+  xy: 2036, 165
   size: 56, 119
   orig: 56, 119
   offset: 0, 0
   index: -1
 Warrior_1/Assets_Warrior_1_Purple/Body_Purple
-  rotate: false
-  xy: 1670, 6
+  rotate: true
+  xy: 1903, 412
   size: 129, 138
   orig: 129, 138
   offset: 0, 0
   index: -1
 Warrior_1/Assets_Warrior_1_Purple/Hand_L_1_Purple
-  rotate: false
-  xy: 3456, 460
+  rotate: true
+  xy: 1790, 8
   size: 38, 32
   orig: 38, 32
   offset: 0, 0
   index: -1
 Warrior_1/Assets_Warrior_1_Purple/Head_1_Purple
-  rotate: false
-  xy: 3047, 13
+  rotate: true
+  xy: 2140, 669
   size: 57, 85
   orig: 57, 85
   offset: 0, 0
   index: -1
 Warrior_1/Assets_Warrior_1_Purple/Shouder_L_3_
-  rotate: true
-  xy: 2755, 312
+  rotate: false
+  xy: 149, 2
   size: 47, 45
   orig: 47, 45
   offset: 0, 0
   index: -1
 Warrior_2/Assets_Warrior_2_Blue/Arm_L_2_Blue
   rotate: false
-  xy: 941, 3
+  xy: 1693, 589
   size: 50, 116
   orig: 50, 116
   offset: 0, 0
   index: -1
 Warrior_2/Assets_Warrior_2_Blue/Arm_L_Shoulder_2_Blue
   rotate: true
-  xy: 1559, 146
+  xy: 278, 2
   size: 64, 54
   orig: 64, 54
   offset: 0, 0
   index: -1
 Warrior_2/Assets_Warrior_2_Blue/Arm_R_2_Blue
   rotate: true
-  xy: 3167, 202
+  xy: 2094, 161
   size: 52, 118
   orig: 52, 118
   offset: 0, 0
   index: -1
 Warrior_2/Assets_Warrior_2_Blue/Arm_R_Hand_2_Blue
-  rotate: true
-  xy: 3456, 494
+  rotate: false
+  xy: 1756, 7
   size: 32, 39
   orig: 32, 39
   offset: 0, 0
   index: -1
 Warrior_2/Assets_Warrior_2_Blue/Arm_R_Shoulder_2_Blue
   rotate: true
-  xy: 3397, 470
+  xy: 2043, 407
   size: 56, 57
   orig: 56, 57
   offset: 0, 0
   index: -1
 Warrior_2/Assets_Warrior_2_Blue/Body_2_Blue
   rotate: true
-  xy: 3022, 369
+  xy: 1559, 522
   size: 108, 132
   orig: 108, 132
   offset: 0, 0
   index: -1
 Warrior_2/Assets_Warrior_2_Blue/Helmed_2_Blue
   rotate: false
-  xy: 1839, 152
+  xy: 502, 6
   size: 59, 77
   orig: 59, 77
   offset: 0, 0
   index: -1
 Warrior_2/Assets_Warrior_2_Green/Arm_L_Shoulder_2_Green
   rotate: true
-  xy: 1615, 146
+  xy: 334, 2
   size: 64, 54
   orig: 64, 54
   offset: 0, 0
   index: -1
 Warrior_4/Assets_Warrior_4_Green/Arm_L_Shoulder_4_Green
   rotate: true
-  xy: 1615, 146
+  xy: 334, 2
   size: 64, 54
   orig: 64, 54
   offset: 0, 0
   index: -1
 Warrior_2/Assets_Warrior_2_Green/Arm_R_Shoulder_2_Green
   rotate: false
-  xy: 3422, 282
+  xy: 1903, 187
   size: 56, 55
   orig: 56, 55
   offset: 0, 0
   index: -1
 Warrior_4/Assets_Warrior_4_Green/Arm_R_Shoulder_4_Green
   rotate: false
-  xy: 3422, 282
+  xy: 1903, 187
   size: 56, 55
   orig: 56, 55
   offset: 0, 0
   index: -1
 Warrior_2/Assets_Warrior_2_Green/Body_2_Green
   rotate: true
-  xy: 3156, 372
+  xy: 1745, 522
   size: 108, 132
   orig: 108, 132
   offset: 0, 0
   index: -1
 Warrior_2/Assets_Warrior_2_Green/Helmed_2_Green
   rotate: false
-  xy: 1900, 152
+  xy: 563, 6
   size: 59, 77
   orig: 59, 77
   offset: 0, 0
   index: -1
 Warrior_2/Assets_Warrior_2_Purple/Arm_L_Shoulder_2_Purple
   rotate: true
-  xy: 1671, 146
+  xy: 390, 2
   size: 64, 54
   orig: 64, 54
   offset: 0, 0
   index: -1
 Warrior_2/Assets_Warrior_2_Purple/Arm_R_Shoulder_2_Purple
-  rotate: false
-  xy: 3422, 225
+  rotate: true
+  xy: 2073, 103
   size: 56, 55
   orig: 56, 55
   offset: 0, 0
   index: -1
 Warrior_2/Assets_Warrior_2_Purple/Body_2_Purple
   rotate: false
-  xy: 3287, 514
+  xy: 2135, 535
   size: 108, 132
   orig: 108, 132
   offset: 0, 0
   index: -1
 Warrior_2/Assets_Warrior_2_Purple/Helmed_2_Purple
   rotate: false
-  xy: 3106, 21
+  xy: 624, 6
   size: 59, 77
   orig: 59, 77
   offset: 0, 0
   index: -1
 Warrior_2/Àssets_Warrior_2_Orange/Arm_L_Shoulder_2_Orange
   rotate: true
-  xy: 1727, 146
+  xy: 446, 2
   size: 64, 54
   orig: 64, 54
   offset: 0, 0
   index: -1
 Warrior_2/Àssets_Warrior_2_Orange/Arm_R_Shoulder_2_Orange
   rotate: true
-  xy: 3150, 144
+  xy: 2073, 45
   size: 56, 55
   orig: 56, 55
   offset: 0, 0
   index: -1
 Warrior_2/Àssets_Warrior_2_Orange/Body_2_Orange
   rotate: true
-  xy: 3290, 360
+  xy: 1746, 412
   size: 108, 132
   orig: 108, 132
   offset: 0, 0
   index: -1
 Warrior_2/Àssets_Warrior_2_Orange/Helmed_2_Orange
   rotate: false
-  xy: 3044, 290
+  xy: 2069, 544
   size: 59, 77
   orig: 59, 77
   offset: 0, 0
   index: -1
 Warrior_3/Assets_Warrior_3_Blue/Arm_L_3_Blue
-  rotate: true
-  xy: 2681, 262
+  rotate: false
+  xy: 1988, 187
   size: 46, 113
   orig: 46, 113
   offset: 0, 0
   index: -1
 Warrior_3/Assets_Warrior_3_Blue/Arm_R_3_Blue
   rotate: true
-  xy: 3167, 314
+  xy: 1903, 129
   size: 56, 119
   orig: 56, 119
   offset: 0, 0
   index: -1
 Warrior_3/Assets_Warrior_3_Blue/Shouder_L_3_Blue
   rotate: true
-  xy: 2833, 315
+  xy: 1585, 2
   size: 44, 42
   orig: 44, 42
   offset: 0, 0
   index: -1
 Warrior_3/Assets_Warrior_3_Green/Shouder_L_3_Green
-  rotate: true
-  xy: 2796, 263
+  rotate: false
+  xy: 198, 2
   size: 47, 45
   orig: 47, 45
   offset: 0, 0
   index: -1
 Warrior_3/Assets_Warrior_3_Orange/Arm_R_3_Orange
   rotate: false
-  xy: 3424, 339
+  xy: 1903, 8
   size: 56, 119
   orig: 56, 119
   offset: 0, 0
   index: -1
 Warrior_3/Assets_Warrior_3_Orange/Shouder_L_3_Orange
   rotate: true
-  xy: 2843, 269
+  xy: 1629, 2
   size: 44, 42
   orig: 44, 42
   offset: 0, 0
   index: -1
 Warrior_3/Assets_Warrior_3_Purple/Arm_R_3_Purple
-  rotate: true
-  xy: 3167, 256
+  rotate: false
+  xy: 1961, 8
   size: 56, 119
   orig: 56, 119
   offset: 0, 0
   index: -1
 Warrior_3/Assets_Warrior_3_Purple/Shouder_L_3_Purple
   rotate: true
-  xy: 2877, 315
+  xy: 1673, 2
   size: 44, 42
   orig: 44, 42
   offset: 0, 0
   index: -1
 Warrior_4/Assets_Warrior_4_Blue/Arm_L_4_Blue
-  rotate: false
-  xy: 993, 3
+  rotate: true
+  xy: 2130, 483
   size: 50, 116
   orig: 50, 116
   offset: 0, 0
   index: -1
 Warrior_4/Assets_Warrior_4_Blue/Arm_L_Hand_4_Blue
   rotate: false
-  xy: 2802, 314
+  xy: 247, 2
   size: 29, 45
   orig: 29, 45
   offset: 0, 0
   index: -1
 Warrior_4/Assets_Warrior_4_Blue/Arm_L_Shoulder_4_Blue
   rotate: true
-  xy: 1783, 146
+  xy: 1559, 641
   size: 64, 54
   orig: 64, 54
   offset: 0, 0
   index: -1
 Warrior_4/Assets_Warrior_4_Blue/Arm_R_4_Blue
-  rotate: true
-  xy: 2417, 3
+  rotate: false
+  xy: 2019, 8
   size: 52, 119
   orig: 52, 119
   offset: 0, 0
   index: -1
 Warrior_4/Assets_Warrior_4_Blue/Arm_R_Shoulder_4_Blue
-  rotate: true
-  xy: 3207, 144
+  rotate: false
+  xy: 2130, 104
   size: 56, 55
   orig: 56, 55
   offset: 0, 0
   index: -1
 Warrior_4/Assets_Warrior_4_Blue/Body_4_Blue
   rotate: true
-  xy: 3288, 250
+  xy: 1903, 302
   size: 108, 132
   orig: 108, 132
   offset: 0, 0
   index: -1
 Warrior_4/Assets_Warrior_4_Blue/Helmed_4_Blue
   rotate: false
-  xy: 3105, 290
+  xy: 2069, 465
   size: 59, 77
   orig: 59, 77
   offset: 0, 0
   index: -1
 Warrior_4/Assets_Warrior_4_Green/Body_4_Green
   rotate: true
-  xy: 3287, 140
+  xy: 1746, 302
   size: 108, 132
   orig: 108, 132
   offset: 0, 0
   index: -1
 Warrior_4/Assets_Warrior_4_Orange/Arm_L_Shoulder_4_Orange
   rotate: true
-  xy: 2538, 14
+  xy: 1615, 641
   size: 64, 54
   orig: 64, 54
   offset: 0, 0
   index: -1
 Warrior_4/Assets_Warrior_4_Orange/Arm_R_Shoulder_4_Orange
   rotate: false
-  xy: 3421, 168
+  xy: 2188, 104
   size: 56, 55
   orig: 56, 55
   offset: 0, 0
   index: -1
 Warrior_4/Assets_Warrior_4_Orange/Body_4_Orange
-  rotate: false
-  xy: 3167, 6
+  rotate: true
+  xy: 2102, 325
   size: 108, 132
   orig: 108, 132
   offset: 0, 0
   index: -1
 Warrior_4/Assets_Warrior_4_Purple/Arm_L_Shoulder_4_
-  rotate: true
-  xy: 2594, 14
+  rotate: false
+  xy: 2069, 623
   size: 64, 54
   orig: 64, 54
   offset: 0, 0
   index: -1
 Warrior_4/Assets_Warrior_4_Purple/Arm_R_Shoulder_4_
-  rotate: false
-  xy: 3421, 111
+  rotate: true
+  xy: 2130, 46
   size: 56, 55
   orig: 56, 55
   offset: 0, 0
   index: -1
 Warrior_4/Assets_Warrior_4_Purple/Body_4_Green
-  rotate: false
-  xy: 3277, 6
+  rotate: true
+  xy: 2095, 215
   size: 108, 132
   orig: 108, 132
   offset: 0, 0
   index: -1
 Weapon_Blue
-  rotate: false
-  xy: 2650, 17
+  rotate: true
+  xy: 1121, 163
   size: 336, 61
   orig: 336, 61
   offset: 0, 0
   index: -1
 Weapon_Green
   rotate: true
-  xy: 2566, 310
+  xy: 1184, 163
   size: 336, 61
   orig: 336, 61
   offset: 0, 0
   index: -1
 Weapon_Orange
   rotate: true
-  xy: 2629, 310
+  xy: 1247, 163
   size: 336, 61
   orig: 336, 61
   offset: 0, 0
   index: -1
 Weapon_Purple
   rotate: true
-  xy: 2692, 310
+  xy: 1310, 183
   size: 336, 61
   orig: 336, 61
   offset: 0, 0

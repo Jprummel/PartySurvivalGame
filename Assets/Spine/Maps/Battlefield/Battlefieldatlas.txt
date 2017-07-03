@@ -1,0 +1,61 @@
+
+Battlefield.png
+size: 5967,3851
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Battlefield/Dead_Knight_Left
+  rotate: false
+  xy: 5764, 3642
+  size: 201, 207
+  orig: 201, 207
+  offset: 0, 0
+  index: -1
+Battlefield/Dead_Knight_Right
+  rotate: false
+  xy: 2, 2
+  size: 198, 64
+  orig: 198, 64
+  offset: 0, 0
+  index: -1
+Battlefield/Fly
+  rotate: false
+  xy: 4306, 246
+  size: 15, 12
+  orig: 15, 12
+  offset: 0, 0
+  index: -1
+Battlefield/Map
+  rotate: false
+  xy: 2, 609
+  size: 5760, 3240
+  orig: 5760, 3240
+  offset: 0, 0
+  index: -1
+Battlefield/Water
+  rotate: false
+  xy: 2, 68
+  size: 4302, 539
+  orig: 4302, 539
+  offset: 0, 0
+  index: -1
+Battlefield/bird
+  rotate: true
+  xy: 4306, 260
+  size: 347, 725
+  orig: 347, 725
+  offset: 0, 0
+  index: -1
+
+Battlefield2.png
+size: 3299,547
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Battlefield/Castle
+  rotate: false
+  xy: 2, 2
+  size: 3295, 543
+  orig: 3295, 543
+  offset: 0, 0
+  index: -1

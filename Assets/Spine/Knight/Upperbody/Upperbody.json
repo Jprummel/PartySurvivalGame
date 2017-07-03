@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "XhKBzGdAWou0zKEPifzsiGw5wy0", "spine": "3.5.51", "width": 364.45, "height": 285.45, "images": "" },
+"skeleton": { "hash": "IgHD932SWuolqIiuWaKUHdluU3I", "spine": "3.6.36", "width": 364.45, "height": 285.45, "images": "" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "knight_1/Assets_Knight_1_Blue/Body_1", "parent": "root", "length": 43.63, "rotation": 90.75, "x": -16.36, "y": 81.59 },
@@ -674,12 +674,19 @@
 	}
 },
 "events": {
-	"Attack_End": {},
-	"Attack_Start": {},
+	"Animation_End": {},
+	"Block_End": {},
+	"Block_Start": {},
 	"Charge_End": {},
 	"Charge_Start": {},
+	"Death_End": {},
+	"Death_Start": {},
+	"Heavy_Attack_End": {},
+	"Heavy_Attack_Start": {},
 	"Hit_End": {},
-	"Hit_start": {}
+	"Hit_Start": {},
+	"Light_Attack_End": {},
+	"Light_Attack_Start": {}
 },
 "animations": {
 	"Ability_Back": {
@@ -2064,7 +2071,8 @@
 		],
 		"events": [
 			{ "time": 0.2667, "name": "Charge_Start" },
-			{ "time": 2.7, "name": "Charge_End" }
+			{ "time": 2.7, "name": "Charge_End" },
+			{ "time": 3, "name": "Animation_End" }
 		]
 	},
 	"Ability_Right": {
@@ -2760,8 +2768,9 @@
 			}
 		],
 		"events": [
-			{ "time": 0.2667, "name": "Attack_Start" },
-			{ "time": 2.7, "name": "Charge_End" }
+			{ "time": 0.2667, "name": "Heavy_Attack_Start" },
+			{ "time": 2.7, "name": "Charge_End" },
+			{ "time": 3, "name": "Animation_End" }
 		]
 	},
 	"Backhand_Back": {
@@ -3432,8 +3441,9 @@
 			{ "time": 0.6667 }
 		],
 		"events": [
-			{ "time": 0.2333, "name": "Attack_Start" },
-			{ "time": 0.3333, "name": "Attack_End" }
+			{ "time": 0.2333, "name": "Light_Attack_Start" },
+			{ "time": 0.3333, "name": "Light_Attack_End" },
+			{ "time": 0.6667, "name": "Animation_End" }
 		]
 	},
 	"Backhand_Right": {
@@ -3750,8 +3760,9 @@
 			}
 		],
 		"events": [
-			{ "time": 0.2333, "name": "Attack_Start" },
-			{ "time": 0.3333, "name": "Attack_End" }
+			{ "time": 0.2333, "name": "Light_Attack_Start" },
+			{ "time": 0.3333, "name": "Light_Attack_End" },
+			{ "time": 0.6667, "name": "Animation_End" }
 		]
 	},
 	"Block_Back": {
@@ -4283,6 +4294,10 @@
 					{ "slot": "Body", "offset": 1 }
 				]
 			}
+		],
+		"events": [
+			{ "time": 0, "name": "Block_Start" },
+			{ "time": 0.6667, "name": "Block_End" }
 		]
 	},
 	"Block_Right": {
@@ -4499,6 +4514,10 @@
 					{ "slot": "Shoulder_R", "offset": 1 }
 				]
 			}
+		],
+		"events": [
+			{ "time": 0, "name": "Block_Start" },
+			{ "time": 0.6667, "name": "Block_End" }
 		]
 	},
 	"Death_Back": {
@@ -4899,7 +4918,11 @@
 					{ "time": 0.4, "angle": 71.11 }
 				]
 			}
-		}
+		},
+		"events": [
+			{ "time": 0, "name": "Death_Start" },
+			{ "time": 0.5667, "name": "Death_End" }
+		]
 	},
 	"Death_Right": {
 		"slots": {
@@ -5102,6 +5125,10 @@
 					{ "slot": "Shoulder_R", "offset": 1 }
 				]
 			}
+		],
+		"events": [
+			{ "time": 0, "name": "Death_Start" },
+			{ "time": 0.5667, "name": "Death_End" }
 		]
 	},
 	"Forehand_Back": {
@@ -5732,8 +5759,9 @@
 			}
 		],
 		"events": [
-			{ "time": 0.2, "name": "Attack_Start" },
-			{ "time": 0.3, "name": "Attack_End" }
+			{ "time": 0.2, "name": "Light_Attack_Start" },
+			{ "time": 0.3, "name": "Light_Attack_End" },
+			{ "time": 0.6667, "name": "Animation_End" }
 		]
 	},
 	"Forehand_Right": {
@@ -6076,8 +6104,9 @@
 			}
 		],
 		"events": [
-			{ "time": 0.2, "name": "Attack_Start" },
-			{ "time": 0.3, "name": "Attack_End" }
+			{ "time": 0.2, "name": "Light_Attack_Start" },
+			{ "time": 0.3, "name": "Light_Attack_End" },
+			{ "time": 0.6667, "name": "Animation_End" }
 		]
 	},
 	"Hit_Back": {
@@ -6543,8 +6572,8 @@
 			}
 		},
 		"events": [
-			{ "time": 0.0333, "name": "Hit_start" },
-			{ "time": 0.2, "name": "Hit_End" }
+			{ "time": 0, "name": "Hit_Start" },
+			{ "time": 0.2333, "name": "Hit_End" }
 		]
 	},
 	"Hit_Right": {
@@ -6738,8 +6767,8 @@
 			}
 		],
 		"events": [
-			{ "time": 0.0333, "name": "Hit_start" },
-			{ "time": 0.2, "name": "Hit_End" }
+			{ "time": 0, "name": "Hit_Start" },
+			{ "time": 0.2333, "name": "Hit_End" }
 		]
 	},
 	"Idle_Back": {
@@ -7424,8 +7453,9 @@
 			}
 		},
 		"events": [
-			{ "time": 0.3, "name": "Attack_Start" },
-			{ "time": 0.4, "name": "Attack_Start" }
+			{ "time": 0.3, "name": "Heavy_Attack_Start" },
+			{ "time": 0.4, "name": "Heavy_Attack_End" },
+			{ "time": 0.6667, "name": "Animation_End" }
 		]
 	},
 	"Overhead_Right": {
@@ -7746,8 +7776,9 @@
 			}
 		],
 		"events": [
-			{ "time": 0.3, "name": "Attack_Start" },
-			{ "time": 0.4, "name": "Attack_End" }
+			{ "time": 0.3, "name": "Heavy_Attack_Start" },
+			{ "time": 0.4, "name": "Heavy_Attack_End" },
+			{ "time": 0.6667, "name": "Animation_End" }
 		]
 	},
 	"Walk_Back": {

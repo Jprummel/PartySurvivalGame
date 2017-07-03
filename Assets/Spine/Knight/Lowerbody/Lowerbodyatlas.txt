@@ -1,124 +1,124 @@
 
 Lowerbody.png
-size: 419,286
+size: 737,164
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 Knight_4/Assets_Knight_4_Blue/Foot_L_4
-  rotate: true
-  xy: 359, 31
+  rotate: false
+  xy: 670, 109
   size: 65, 53
   orig: 65, 53
   offset: 0, 0
   index: -1
 Knight_4/Assets_Knight_4_Blue/Foot_R_4
-  rotate: true
-  xy: 172, 4
+  rotate: false
+  xy: 597, 57
   size: 65, 53
   orig: 65, 53
   offset: 0, 0
   index: -1
 Knight_4/Assets_Knight_4_Blue/Leg_L_4
   rotate: true
-  xy: 2, 8
+  xy: 310, 108
   size: 54, 120
   orig: 54, 120
   offset: 0, 0
   index: -1
 Knight_4/Assets_Knight_4_Blue/Leg_R_4
-  rotate: false
-  xy: 154, 71
+  rotate: true
+  xy: 432, 108
   size: 54, 120
   orig: 54, 120
   offset: 0, 0
   index: -1
 Knight_4/Assets_Knight_4_Blue/Shield_4
-  rotate: false
-  xy: 2, 64
+  rotate: true
+  xy: 2, 12
   size: 150, 220
   orig: 150, 220
   offset: 0, 0
   index: -1
 knight_1/Assets_Knight_1_Blue/Foot_L_1
   rotate: false
-  xy: 333, 141
+  xy: 310, 15
   size: 84, 41
   orig: 84, 41
   offset: 0, 0
   index: -1
 knight_1/Assets_Knight_1_Blue/Foot_R_1
   rotate: false
-  xy: 333, 98
+  xy: 396, 2
   size: 84, 41
   orig: 84, 41
   offset: 0, 0
   index: -1
 knight_1/Assets_Knight_1_Blue/Leg_L_1
-  rotate: false
-  xy: 273, 98
+  rotate: true
+  xy: 224, 11
   size: 58, 84
   orig: 58, 84
   offset: 0, 0
   index: -1
 knight_1/Assets_Knight_1_Blue/Leg_R_1
-  rotate: false
-  xy: 210, 95
+  rotate: true
+  xy: 508, 45
   size: 61, 87
   orig: 61, 87
   offset: 0, 0
   index: -1
 knight_2/Assets_Knight_2_Blue/Foot_L_2
   rotate: false
-  xy: 270, 9
+  xy: 683, 14
   size: 49, 45
   orig: 49, 45
   offset: 0, 0
   index: -1
 knight_2/Assets_Knight_2_Blue/Foot_R_2
-  rotate: true
-  xy: 124, 2
+  rotate: false
+  xy: 664, 61
   size: 52, 46
   orig: 52, 46
   offset: 0, 0
   index: -1
 knight_2/Assets_Knight_2_Blue/Leg_L_2
   rotate: true
-  xy: 240, 184
+  xy: 310, 58
   size: 48, 105
   orig: 48, 105
   offset: 0, 0
   index: -1
 knight_2/Assets_Knight_2_Blue/Leg_R_2
   rotate: true
-  xy: 240, 234
+  xy: 554, 112
   size: 50, 114
   orig: 50, 114
   offset: 0, 0
   index: -1
 knight_3/Assets_Knight_3_Blue/Foot_L_3
   rotate: false
-  xy: 273, 56
+  xy: 597, 15
   size: 84, 40
   orig: 84, 40
   offset: 0, 0
   index: -1
 knight_3/Assets_Knight_3_Blue/Foot_R_3
-  rotate: true
-  xy: 227, 9
+  rotate: false
+  xy: 482, 2
   size: 84, 41
   orig: 84, 41
   offset: 0, 0
   index: -1
 knight_3/Assets_Knight_3_Blue/Leg_L_3
-  rotate: false
-  xy: 356, 195
+  rotate: true
+  xy: 417, 45
   size: 61, 89
   orig: 61, 89
   offset: 0, 0
   index: -1
 knight_3/Assets_Knight_3_Blue/Leg_R_3
   rotate: false
-  xy: 154, 193
+  xy: 224, 71
   size: 84, 91
   orig: 84, 91
   offset: 0, 0
