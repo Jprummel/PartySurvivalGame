@@ -52,6 +52,7 @@ public class PlayerAttack : MonoBehaviour {
         {
             _player.CanMove = false;
             StartCoroutine(HeavyAttackRoutine(2));
+            //StartHeavyAttack();
             _soundEffects.PlayHeavyAttackAudio(); // Heavy Attack (miss) sound
             _readyToAttack = false;
             StartCoroutine(Cooldown(1));
@@ -117,7 +118,6 @@ public class PlayerAttack : MonoBehaviour {
 
     public void FinishLightAttack()
     {
-        _player.UpperBodyAnimator.SetInteger("AttackState", 0);
         _readyToAttack = true;
     }
 
@@ -131,10 +131,16 @@ public class PlayerAttack : MonoBehaviour {
 
     public void FinishHeavyAttack()
     {
+        Debug.Log("Sasageyo");
         _player.Damage = _player.Damage / _modifier;
         _player.Ability.CanUseAbility = true;        
-        _player.CanMove = true;
-        _player.UpperBodyAnimator.SetInteger("AttackState", 0);
+        _player.CanMove = true;        
         _readyToAttack = true;
+    }
+
+    public void FinishAttackAnimation()
+    {
+        Debug.Log("Shinzou");
+        _player.UpperBodyAnimator.SetInteger("AttackState", 0);
     }
 }

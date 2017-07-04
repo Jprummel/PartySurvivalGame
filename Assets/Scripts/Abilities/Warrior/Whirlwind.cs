@@ -30,7 +30,7 @@ public class Whirlwind : Ability {
         _sound.PlayAbilitySound();
     }
 
-    IEnumerator WhirlwindRoutine()
+    /*IEnumerator WhirlwindRoutine()
     {
         _player.DefaultDamage = _player.Damage;
         _usingAbility = true;
@@ -39,7 +39,7 @@ public class Whirlwind : Ability {
         StartCoroutine(SpecialAttackDamage(0.8f, 1));
         _sound.PlayAbilitySound();
         yield return new WaitForSeconds(0.9f);
-    }
+    }*/
 
     public void FinishWhirlwind()
     {

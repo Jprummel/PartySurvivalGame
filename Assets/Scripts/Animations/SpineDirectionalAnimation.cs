@@ -7,12 +7,24 @@ public class SpineDirectionalAnimation : StateMachineBehaviour {
 
     [SerializeField] private string _animName;
     [SerializeField] private bool _loop;
-
+    [SerializeField] private bool _isAttack;
+    SkeletonAnimation anim;
+    Character _char;
+    string direction;
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        SkeletonAnimation anim = animator.GetComponent<SkeletonAnimation>();
-        Character _char = animator.GetComponentInParent<Character>();
+        anim = animator.GetComponent<SkeletonAnimation>();
+        _char = animator.GetComponentInParent<Character>();
         anim.state.SetAnimation(0, _animName + "_" + _char.MoveStateName, _loop);
+    }
+
+    public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        if (_char.MoveStateName != direction && !_isAttack)
+        {
+            anim.state.SetAnimation(0, _animName + "_" + _char.MoveStateName, _loop);
+            direction = _char.MoveStateName;
+        }
     }
 }
