@@ -29,27 +29,21 @@ public class EnemyAttack : MonoBehaviour {
                 if (_readyToAttack)
                 {
                     _readyToAttack = false;
-                    StartCoroutine(AttackCooldown());  
+                    StartCoroutine(StartAttack());
+                    StartCoroutine(Cooldown());
                 }
             }
         }
 
     }
 
-    IEnumerator AttackCooldown()
+    IEnumerator StartAttack()
     {
-        _enemy.UpperBody.state.SetAnimation(0, SpineAnimationNames.ATTACK + _enemy.MoveStateName, false);
-        _enemy.UpperBody.state.Complete += AttackOnTitanComplete;
+        _enemy.UpperBodyAnimator.SetInteger("AttackState", 1);
         yield return null;
     }
-    
-    void AttackOnTitanComplete(Spine.TrackEntry track)
-    {
-        _enemy.UpperBody.state.SetAnimation(0, SpineAnimationNames.IDLE + _enemy.MoveStateName, true);
-        StartCoroutine(ResetAttack());
-    }
 
-    IEnumerator ResetAttack()
+    IEnumerator Cooldown()
     {
         yield return new WaitForSeconds(_enemy.AttackSpeed);
         _readyToAttack = true;

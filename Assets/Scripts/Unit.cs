@@ -20,10 +20,19 @@ public class Unit : MonoBehaviour {
 
     void FindPath()
     {
-        
         if (target != null && !_enemy.IsDead)
         {
             PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+        }
+        if (_isMoving)
+        {
+            _enemy.UpperBodyAnimator.SetBool("IsWalking", true);
+            _enemy.LowerBodyAnimator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            _enemy.UpperBodyAnimator.SetBool("IsWalking", false);
+            _enemy.LowerBodyAnimator.SetBool("IsWalking", false);
         }
     }
 
