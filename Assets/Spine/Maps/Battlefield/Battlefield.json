@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "I6ZcIjlDHVtK2XbKTz7zXjiOxeU", "spine": "3.6.36", "width": 6667.38, "height": 3501.07, "images": "" },
+"skeleton": { "hash": "wczrYJPdXLy8isXanzvfi0MWfXk", "spine": "3.6.36", "width": 4488.67, "height": 937.22, "images": "" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "Battlefield/Water5", "parent": "root", "x": -1602.2, "y": 1228.97 },
@@ -35,37 +35,22 @@
 	{ "name": "Battlefield/Water9", "parent": "root", "x": 1165.09, "y": 1188.83 },
 	{ "name": "Battlefield/Water10", "parent": "root", "x": 1471.86, "y": 1120.03 },
 	{ "name": "Battlefield/Water11", "parent": "root", "x": 1733.02, "y": 1203.17 },
-	{ "name": "Battlefield/Water12", "parent": "root", "x": 1961.36, "y": 1368.24 },
-	{ "name": "Bird", "parent": "root", "x": -3171.91, "y": 875.33 },
-	{ "name": "Bird2", "parent": "root", "x": -3090.55, "y": 687.06, "scaleX": 0.856, "scaleY": 0.856 },
-	{ "name": "Bird3", "parent": "root", "rotation": -36.32, "x": -2951.46, "y": 1807.38, "shearY": -40.64 },
-	{ "name": "Bird4", "parent": "root", "rotation": -180, "x": 3093.33, "y": -1276.05 },
-	{ "name": "Bird5", "parent": "root", "rotation": -180, "x": 3221.42, "y": -1488 },
-	{ "name": "Bird6", "parent": "root", "x": -3314.43, "y": 741.81, "scaleX": 0.482, "scaleY": 0.482 }
+	{ "name": "Battlefield/Water12", "parent": "root", "x": 1961.36, "y": 1368.24 }
 ],
 "slots": [
-	{ "name": "Battlefield/Map", "bone": "root", "attachment": "Battlefield/Map" },
+	{ "name": "Battlefield/Map", "bone": "root" },
 	{ "name": "Battlefield/Water", "bone": "Battlefield/Water12", "attachment": "Battlefield/Water" },
-	{ "name": "Battlefield/Castle", "bone": "root", "attachment": "Battlefield/Castle" },
+	{ "name": "Battlefield/Castle", "bone": "root" },
 	{ "name": "Battlefield/Dead_Knight_Right", "bone": "Battlefield/Water11", "attachment": "Battlefield/Dead_Knight_Right" },
 	{ "name": "Battlefield/Dead_Knight_Left", "bone": "Battlefield/Dead_Knight_Left7", "attachment": "Battlefield/Dead_Knight_Left" },
 	{ "name": "Battlefield/Fly", "bone": "Battlefield/Fly3", "attachment": "Battlefield/Fly" },
 	{ "name": "Battlefield/Fly2", "bone": "Battlefield/Fly5", "attachment": "Battlefield/Fly" },
 	{ "name": "Battlefield/Fly3", "bone": "Battlefield/Fly7", "attachment": "Battlefield/Fly" },
 	{ "name": "Battlefield/Fly4", "bone": "Battlefield/Fly9", "attachment": "Battlefield/Fly" },
-	{ "name": "Battlefield/Fly5", "bone": "Battlefield/Fly11", "attachment": "Battlefield/Fly" },
-	{ "name": "Bird", "bone": "Bird", "attachment": "Battlefield/bird" },
-	{ "name": "Bird2", "bone": "Bird2", "attachment": "Battlefield/bird" },
-	{ "name": "Bird3", "bone": "Bird3", "attachment": "Battlefield/bird" },
-	{ "name": "Bird4", "bone": "Bird4", "attachment": "Battlefield/bird" },
-	{ "name": "Bird5", "bone": "Bird5", "attachment": "Battlefield/bird" },
-	{ "name": "Bird6", "bone": "Bird6", "attachment": "Battlefield/bird" }
+	{ "name": "Battlefield/Fly5", "bone": "Battlefield/Fly11", "attachment": "Battlefield/Fly" }
 ],
 "skins": {
 	"default": {
-		"Battlefield/Castle": {
-			"Battlefield/Castle": { "x": 67.13, "y": 1363.52, "width": 3295, "height": 543 }
-		},
 		"Battlefield/Dead_Knight_Left": {
 			"Battlefield/Dead_Knight_Left": {
 				"type": "mesh",
@@ -150,9 +135,6 @@
 				"height": 12
 			}
 		},
-		"Battlefield/Map": {
-			"Battlefield/Map": { "width": 5760, "height": 3240 }
-		},
 		"Battlefield/Water": {
 			"Battlefield/Water": {
 				"type": "mesh",
@@ -164,24 +146,6 @@
 				"width": 4302,
 				"height": 539
 			}
-		},
-		"Bird": {
-			"Battlefield/bird": { "x": -1.99, "y": 1.64, "scaleX": 0.5, "scaleY": 0.254, "width": 347, "height": 725 }
-		},
-		"Bird2": {
-			"Battlefield/bird": { "x": -1.99, "y": 1.64, "scaleX": 0.5, "scaleY": 0.254, "width": 347, "height": 725 }
-		},
-		"Bird3": {
-			"Battlefield/bird": { "x": -1.99, "y": 1.64, "scaleX": 0.5, "scaleY": 0.254, "width": 347, "height": 725 }
-		},
-		"Bird4": {
-			"Battlefield/bird": { "x": -1.99, "y": 1.64, "scaleX": 0.5, "scaleY": 0.254, "width": 347, "height": 725 }
-		},
-		"Bird5": {
-			"Battlefield/bird": { "x": -1.99, "y": 1.64, "scaleX": 0.5, "scaleY": 0.254, "width": 347, "height": 725 }
-		},
-		"Bird6": {
-			"Battlefield/bird": { "x": -1.99, "y": 1.64, "scaleX": 0.5, "scaleY": 0.254, "width": 347, "height": 725 }
 		}
 	}
 },

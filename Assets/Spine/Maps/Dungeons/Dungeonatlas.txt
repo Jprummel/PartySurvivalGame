@@ -1,0 +1,76 @@
+
+Dungeon.png
+size: 330,264
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Dungeon/Flame_1
+  rotate: true
+  xy: 2, 6
+  size: 69, 100
+  orig: 69, 100
+  offset: 0, 0
+  index: -1
+Dungeon/Flame_2
+  rotate: false
+  xy: 249, 4
+  size: 63, 73
+  orig: 63, 73
+  offset: 0, 0
+  index: -1
+Dungeon/Flame_3
+  rotate: false
+  xy: 187, 2
+  size: 60, 84
+  orig: 60, 84
+  offset: 0, 0
+  index: -1
+Dungeon/Flame_4
+  rotate: true
+  xy: 104, 2
+  size: 73, 81
+  orig: 73, 81
+  offset: 0, 0
+  index: -1
+Dungeon/Flame_5
+  rotate: false
+  xy: 170, 88
+  size: 60, 94
+  orig: 60, 94
+  offset: 0, 0
+  index: -1
+Dungeon/Flame_6
+  rotate: false
+  xy: 232, 101
+  size: 58, 81
+  orig: 58, 81
+  offset: 0, 0
+  index: -1
+Dungeon/Fly
+  rotate: false
+  xy: 295, 250
+  size: 15, 12
+  orig: 15, 12
+  offset: 0, 0
+  index: -1
+Dungeon/Glow
+  rotate: true
+  xy: 2, 77
+  size: 185, 166
+  orig: 185, 166
+  offset: 0, 0
+  index: -1
+Dungeon/Rat
+  rotate: true
+  xy: 292, 79
+  size: 103, 36
+  orig: 103, 36
+  offset: 0, 0
+  index: -1
+Dungeon/Wood
+  rotate: true
+  xy: 170, 184
+  size: 78, 123
+  orig: 78, 123
+  offset: 0, 0
+  index: -1
