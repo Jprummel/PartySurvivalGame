@@ -7,9 +7,8 @@ public class KeyframeEvent : MonoBehaviour {
     private SkeletonAnimation _anim;
 
 	void Start () {
-        _playerScripts = GetComponentInParent<PlayerScriptCollector>();
         _anim = GetComponent<SkeletonAnimation>();
-
+        _playerScripts = GetComponentInParent<PlayerScriptCollector>();
         _anim.state.Event += OnEvent;
 	}
 
@@ -46,12 +45,6 @@ public class KeyframeEvent : MonoBehaviour {
                 break;
             case KeyframeTags.MARK_END:
                 _playerScripts.ArrowRain.FinishMark();
-                break;
-            case KeyframeTags.HIT_START:
-                
-                break;
-            case KeyframeTags.HIT_END:
-
                 break;
         }
     }
