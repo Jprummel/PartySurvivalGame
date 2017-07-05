@@ -124,7 +124,7 @@ public class ArrowRain : Ability {
         //wait for traveltime
         yield return new WaitForSeconds(_travelTime);
         //activate the collider so that it can deal damage
-        StartCoroutine(SpecialAttackDamage(3f, 0.15f));
+        //StartCoroutine(SpecialAttackDamage(3f, 0.15f));
         ExecuteEvents.Execute<HandleCollider>(_circle, null, (x, y) => x.SwitchCollider(true));
         //leave the collider on for a split second
         yield return new WaitForSeconds(0.25f);

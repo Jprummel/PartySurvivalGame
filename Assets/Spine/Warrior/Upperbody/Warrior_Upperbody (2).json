@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "qLytdtnw5iifrH4wVUI/t6VtRmM", "spine": "3.6.36", "width": 341.48, "height": 224.47, "images": "./../warrior/" },
+"skeleton": { "hash": "+JiQKzhY30r20ILW/xwogG+O6qg", "spine": "3.6.36", "width": 341.48, "height": 224.47, "images": "./../warrior/" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "Pelvis", "parent": "root", "length": 39.2, "rotation": 90.31, "x": -1.68, "y": 95.17 },
@@ -659,9 +659,10 @@
 	}
 },
 "events": {
-	"Animation_End": {},
 	"Death_End": {},
 	"Death_Start": {},
+	"Heavy_Attack_Animation_End": {},
+	"Light_Attack_Animation_End": {},
 	"Heavy_Attack_End": {},
 	"Heavy_Attack_Start": {},
 	"Hit_End": {},
@@ -1716,7 +1717,7 @@
 		"events": [
 			{ "time": 0.2, "name": "Light_Attack_Start" },
 			{ "time": 0.3, "name": "Light_Attack_End" },
-			{ "time": 0.5, "name": "Animation_End" }
+			{ "time": 0.5, "name": "Light_Attack_Animation_End" }
 		]
 	},
 	"Backhand_Right": {
@@ -1916,7 +1917,7 @@
 		"events": [
 			{ "time": 0.2, "name": "Light_Attack_Start" },
 			{ "time": 0.3, "name": "Light_Attack_End" },
-			{ "time": 0.5, "name": "Animation_End" }
+			{ "time": 0.5, "name": "Light_Attack_Animation_End" }
 		]
 	},
 	"Death_Back": {
@@ -3246,7 +3247,7 @@
 		"events": [
 			{ "time": 0.1333, "name": "Light_Attack_Start" },
 			{ "time": 0.3, "name": "Light_Attack_End" },
-			{ "time": 0.5, "name": "Animation_End" }
+			{ "time": 0.5, "name": "Light_Attack_Animation_End" }
 		]
 	},
 	"Forehand_Right": {
@@ -3509,7 +3510,7 @@
 		"events": [
 			{ "time": 0.1333, "name": "Light_Attack_Start" },
 			{ "time": 0.3, "name": "Light_Attack_End" },
-			{ "time": 0.5, "name": "Animation_End" }
+			{ "time": 0.5, "name": "Light_Attack_Animation_End" }
 		]
 	},
 	"Hit_Back": {
@@ -5376,7 +5377,7 @@
 		"events": [
 			{ "time": 0.2333, "name": "Heavy_Attack_Start" },
 			{ "time": 0.3, "name": "Heavy_Attack_End" },
-			{ "time": 0.6667, "name": "Animation_End" }
+			{ "time": 0.6667, "name": "Heavy_Attack_Animation_End" }
 		]
 	},
 	"Overhead_Right": {
@@ -5773,7 +5774,7 @@
 		"events": [
 			{ "time": 0.2333, "name": "Heavy_Attack_Start" },
 			{ "time": 0.3, "name": "Heavy_Attack_End" },
-			{ "time": 0.6667, "name": "Animation_End" }
+			{ "time": 0.6667, "name": "Heavy_Attack_Animation_End" }
 		]
 	},
 	"Walk_Back": {

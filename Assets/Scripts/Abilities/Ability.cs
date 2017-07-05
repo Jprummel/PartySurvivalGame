@@ -81,12 +81,13 @@ public class Ability : MonoBehaviour {
 
     }
 
-    protected IEnumerator SpecialAttackDamage(float modifier, float time)
+    protected void ResetSpecialAttackDamage()
     {
-        float defaultDamage = _player.Damage;
+        _player.Damage = _player.DefaultDamage;
+    }
 
-        _player.Damage = _player.Damage * modifier;
-        yield return new WaitForSeconds(time);
-        _player.Damage = defaultDamage;
+    protected void GiveSpecialAttackDamage(float modifier)
+    {
+        _player.Damage *= modifier;
     }
 }

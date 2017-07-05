@@ -151,13 +151,15 @@ public class Character : MonoBehaviour, IDamageable {
 
     protected virtual void Awake()
     {
+
         CheckMoveState();
         _giveGold       = DOTween.Sequence();
         _ranking        = GameObject.FindGameObjectWithTag(Tags.RANKTRACKER).GetComponent<Ranking>();
         _soundEffects   = GetComponent<CharacterSoundFX>();
         _rgb2d          = GetComponent<Rigidbody2D>();
         _canMove        = true;
-        _currentHealth  = _maxHealth;             //Sets the characters current health to its max health on spawn       
+        _currentHealth  = _maxHealth;             //Sets the characters current health to its max health on spawn    
+        _defaultDamage  = _damage;
     }
 
     protected virtual void Update()
@@ -188,7 +190,6 @@ public class Character : MonoBehaviour, IDamageable {
             Debug.Log("source: " + damageSource);
             if (_currentHealth > 0)
             {
-                StartCoroutine(TakeDamageRoutine());
                 //attack checks for collision with player or enemy
                 if (this.gameObject.tag == Tags.PLAYER & damageSource.gameObject.tag == Tags.ENEMY & !_invincible)
                 {
@@ -198,6 +199,7 @@ public class Character : MonoBehaviour, IDamageable {
                 }
                 if (this.gameObject.tag == Tags.ENEMY & damageSource.gameObject.tag == Tags.PLAYER)
                 {
+                    StartCoroutine(TakeDamageRoutine());
                     StartCoroutine(HitRoutine());
                     //_soundEffects.PlayHitAudio();
                     _currentHealth -= damageSource.Damage;   //Reduces currenthealth by the amount of damage the source of damage has

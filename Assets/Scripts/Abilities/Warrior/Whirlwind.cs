@@ -22,11 +22,12 @@ public class Whirlwind : Ability {
 
     void WhirlwindStart()
     {
-        _player.DefaultDamage = _player.Damage;
+        //_player.DefaultDamage = _player.Damage;
         _usingAbility = true;
         _player.UpperBodyAnimator.SetBool("UsingAbility", true);
         _player.LowerBodyAnimator.SetBool("UsingAbility", true);
-        StartCoroutine(SpecialAttackDamage(0.8f, 1));
+        //StartCoroutine(SpecialAttackDamage(0.8f, 1));
+        GiveSpecialAttackDamage(0.8f);
         _sound.PlayAbilitySound();
     }
 
@@ -43,7 +44,8 @@ public class Whirlwind : Ability {
 
     public void FinishWhirlwind()
     {
-        _player.Damage = _player.DefaultDamage;
+        //_player.Damage = _player.DefaultDamage;
+        ResetSpecialAttackDamage();
         Debug.Log(_player.Damage + "DMG " + _player.DefaultDamage);
         _player.UpperBodyAnimator.SetBool("UsingAbility", false);
         _player.LowerBodyAnimator.SetBool("UsingAbility", false);
