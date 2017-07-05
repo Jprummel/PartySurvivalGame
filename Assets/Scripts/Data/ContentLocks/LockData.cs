@@ -9,6 +9,10 @@ public class LockData : MonoBehaviour {
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
+        if (FindObjectsOfType(GetType()).Length > 1)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public static void UnlockMap(string mapToUnlock)
