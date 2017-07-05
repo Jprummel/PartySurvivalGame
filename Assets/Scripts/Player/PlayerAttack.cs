@@ -9,10 +9,17 @@ public class PlayerAttack : MonoBehaviour {
     private float   _modifier = 2;
     private float   _comboResetTimer;
     private float   _delayBetweenCombos;
+    private bool _isAttacking;
     private bool    _readyToAttack = true;
     public bool ReadyToAttack
     {
         get { return _readyToAttack; }
+    }
+
+    public bool IsAttacking
+    {
+        get { return _isAttacking; }
+        set { _isAttacking = value; }
     }
 
     void Awake()
@@ -33,6 +40,7 @@ public class PlayerAttack : MonoBehaviour {
             _player.UpperBodyAnimator.SetInteger("AttackState",_player.LightAttackState);
             _soundEffects.PlayLightAttackAudio(); //Basic Attack (miss) sound
             _readyToAttack = false;
+            _isAttacking = true;
             _player.LightAttackState++;
             _comboResetTimer = 0.8f;
             if (_player.LightAttackState > _player.MaxLightAttackState)
@@ -50,6 +58,7 @@ public class PlayerAttack : MonoBehaviour {
         {
             _player.CanMove = false;
             _readyToAttack = false;
+            _isAttacking = true;
             StartHeavyAttack();
             _soundEffects.PlayHeavyAttackAudio(); // Heavy Attack (miss) sound    
             StartCoroutine(Cooldown(1));
@@ -99,6 +108,7 @@ public class PlayerAttack : MonoBehaviour {
 
     public void FinishAttackAnimation()
     {
+        _isAttacking = false;
         _player.UpperBodyAnimator.SetInteger("AttackState", 0);
         _player.Ability.CanUseAbility = true;
         _player.CanMove = true;
