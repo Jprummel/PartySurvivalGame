@@ -10,6 +10,8 @@ public class KeyframeTags : MonoBehaviour {
     public const string HEAVY_ATTACK_START          = "Heavy_Attack_Start";
     public const string HEAVY_ATTACK_END            = "Heavy_Attack_End";
     public const string HEAVY_ATTACK_ANIMATION_END  = "Heavy_Attack_Animation_End";
+    public const string ATTACK_END                  = "Attack_End";
+    public const string ATTACK_ANIMATION_END        = "Attack_Animation_End";
     public const string HIT_START                   = "Hit_Start";
     public const string HIT_END                     = "Hit_End";
     public const string WHIRLWIND_START             = "Whirlwind_Start";

@@ -32,9 +32,6 @@ public class KeyframeEvent : MonoBehaviour {
             case KeyframeTags.HEAVY_ATTACK_ANIMATION_END:
                 _playerScripts.PlayerAttack.FinishAttackAnimation();
                 break;
-            /*case KeyframeTags.WHIRLWIND_START:
-                
-                break;*/
             case KeyframeTags.WHIRLWIND_END:
                 _playerScripts.Whirlwind.FinishWhirlwind();
                 break;
