@@ -1,314 +1,293 @@
 
 Upperbody.png
-size: 1135,268
+size: 2019,163
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-Effects/Attack_Fx0006
-  rotate: false
-  xy: 671, 2
-  size: 91, 22
-  orig: 131, 79
-  offset: 0, 29
-  index: -1
-Effects/Attack_Fx0007
-  rotate: false
-  xy: 710, 98
-  size: 129, 29
-  orig: 131, 79
-  offset: 0, 22
-  index: -1
-Effects/Attack_Fx0008
-  rotate: false
-  xy: 710, 129
-  size: 130, 51
-  orig: 131, 79
-  offset: 0, 12
-  index: -1
-Effects/Attack_Fx0009
-  rotate: true
-  xy: 461, 12
-  size: 99, 79
-  orig: 131, 79
-  offset: 31, 0
-  index: -1
-Effects/Attack_Fx0010
-  rotate: false
-  xy: 764, 2
-  size: 56, 20
-  orig: 131, 79
-  offset: 75, 23
-  index: -1
-Effects/Attack_Fx0011
-  rotate: false
-  xy: 1041, 28
-  size: 37, 22
-  orig: 131, 79
-  offset: 94, 22
-  index: -1
-Effects/Attack_Fx0012
-  rotate: true
-  xy: 822, 8
-  size: 14, 22
-  orig: 131, 79
-  offset: 117, 22
-  index: -1
 Effects/Hit fx0002
   rotate: false
-  xy: 2, 9
-  size: 137, 106
+  xy: 2, 4
+  size: 184, 157
   orig: 184, 157
-  offset: 33, 38
+  offset: 0, 0
   index: -1
 Effects/Hit fx0003
   rotate: false
-  xy: 2, 117
-  size: 180, 149
+  xy: 188, 4
+  size: 184, 157
   orig: 184, 157
-  offset: 4, 8
+  offset: 0, 0
   index: -1
 Effects/Hit fx0004
   rotate: false
-  xy: 361, 113
-  size: 173, 153
+  xy: 374, 4
+  size: 184, 157
   orig: 184, 157
-  offset: 0, 2
+  offset: 0, 0
   index: -1
 Effects/Hit fx0005
   rotate: false
-  xy: 536, 117
-  size: 172, 149
+  xy: 560, 4
+  size: 184, 157
   orig: 184, 157
-  offset: 0, 3
+  offset: 0, 0
   index: -1
 Effects/Hit fx0006
   rotate: false
-  xy: 184, 112
-  size: 175, 154
+  xy: 746, 4
+  size: 184, 157
   orig: 184, 157
-  offset: 1, 0
+  offset: 0, 0
   index: -1
-Militia_1/Body
+Effects/Stab_effect0001
   rotate: false
-  xy: 620, 37
-  size: 78, 78
-  orig: 86, 78
-  offset: 8, 0
+  xy: 1368, 116
+  size: 183, 45
+  orig: 183, 45
+  offset: 0, 0
   index: -1
-Militia_1/Head
+Effects/Stab_effect0002
   rotate: false
-  xy: 141, 3
+  xy: 1368, 69
+  size: 183, 45
+  orig: 183, 45
+  offset: 0, 0
+  index: -1
+Effects/Stab_effect0003
+  rotate: false
+  xy: 1480, 22
+  size: 183, 45
+  orig: 183, 45
+  offset: 0, 0
+  index: -1
+Effects/Stab_effect0004
+  rotate: false
+  xy: 1553, 116
+  size: 183, 45
+  orig: 183, 45
+  offset: 0, 0
+  index: -1
+Militia_Orange_1/Body
+  rotate: false
+  xy: 1845, 83
+  size: 84, 78
+  orig: 84, 78
+  offset: 0, 0
+  index: -1
+Militia_Orange_1/Head
+  rotate: true
+  xy: 932, 51
   size: 110, 107
   orig: 110, 107
   offset: 0, 0
   index: -1
-Militia_1/Left_Arm
-  rotate: true
-  xy: 1041, 52
-  size: 33, 42
-  orig: 33, 42
-  offset: 0, 0
-  index: -1
-Militia_1/Left_Hand
+Militia_Orange_1/Left_Arm
   rotate: false
-  xy: 1110, 91
-  size: 23, 23
-  orig: 23, 23
+  xy: 1738, 119
+  size: 34, 42
+  orig: 34, 42
   offset: 0, 0
   index: -1
-Militia_1/Right_Arm
+Militia_Orange_1/Left_Hand
   rotate: true
-  xy: 1068, 142
-  size: 31, 49
-  orig: 31, 49
-  offset: 0, 0
-  index: -1
-Militia_1/Right_Hand
-  rotate: false
-  xy: 1110, 116
+  xy: 1810, 138
   size: 23, 24
   orig: 23, 24
   offset: 0, 0
   index: -1
-Militia_1/Shield
+Militia_Purple_1/Left_Hand
   rotate: true
-  xy: 846, 2
+  xy: 1810, 138
+  size: 23, 24
+  orig: 23, 24
+  offset: 0, 0
+  index: -1
+Militia_Orange_1/Right_Arm
+  rotate: true
+  xy: 1553, 82
+  size: 32, 49
+  orig: 32, 49
+  offset: 0, 0
+  index: -1
+Militia_Orange_1/Right_Hand
+  rotate: true
+  xy: 1927, 2
+  size: 24, 23
+  orig: 24, 23
+  offset: 0, 0
+  index: -1
+Militia_Purple_1/Right_Hand
+  rotate: true
+  xy: 1927, 2
+  size: 24, 23
+  orig: 24, 23
+  offset: 0, 0
+  index: -1
+Militia_Orange_1/Shield
+  rotate: true
+  xy: 1927, 28
   size: 53, 86
   orig: 53, 86
   offset: 0, 0
   index: -1
-Militia_1/Weapon
-  rotate: false
-  xy: 710, 225
-  size: 272, 41
-  orig: 272, 41
-  offset: 0, 0
-  index: -1
-Militia_2/Body
-  rotate: false
-  xy: 700, 26
-  size: 81, 70
-  orig: 81, 70
-  offset: 0, 0
-  index: -1
-Militia_2/Head
-  rotate: false
-  xy: 984, 175
-  size: 138, 91
-  orig: 138, 91
-  offset: 0, 0
-  index: -1
-Militia_2/Left_Arm
-  rotate: false
-  xy: 1077, 91
-  size: 31, 49
-  orig: 31, 49
-  offset: 0, 0
-  index: -1
-Militia_2/Left_Hand
-  rotate: false
-  xy: 1070, 4
-  size: 22, 22
-  orig: 22, 22
-  offset: 0, 0
-  index: -1
-Militia_2/Right_Arm
-  rotate: false
-  xy: 934, 13
-  size: 31, 49
-  orig: 31, 49
-  offset: 0, 0
-  index: -1
-Militia_2/Right_Hand
+Militia_Purple_1/Shield
   rotate: true
-  xy: 1045, 4
-  size: 22, 23
-  orig: 22, 23
-  offset: 0, 0
-  index: -1
-Militia_2/Shield
-  rotate: false
-  xy: 783, 24
-  size: 61, 72
-  orig: 61, 72
-  offset: 0, 0
-  index: -1
-Militia_2/Weapon
-  rotate: true
-  xy: 961, 142
-  size: 31, 105
-  orig: 31, 105
-  offset: 0, 0
-  index: -1
-Militia_3/Body
-  rotate: false
-  xy: 846, 57
-  size: 78, 78
-  orig: 84, 78
-  offset: 0, 0
-  index: -1
-Militia_3/Head
-  rotate: false
-  xy: 253, 3
-  size: 106, 107
-  orig: 108, 109
-  offset: 0, 0
-  index: -1
-Militia_3/Left_Arm
-  rotate: true
-  xy: 967, 22
-  size: 31, 49
-  orig: 31, 49
-  offset: 0, 0
-  index: -1
-Militia_3/Left_Hand
-  rotate: false
-  xy: 1085, 31
-  size: 23, 23
-  orig: 23, 23
-  offset: 0, 0
-  index: -1
-Militia_3/Right_Arm
-  rotate: true
-  xy: 1085, 56
-  size: 33, 42
-  orig: 33, 42
-  offset: 0, 0
-  index: -1
-Militia_3/Right_Hand
-  rotate: false
-  xy: 1110, 31
-  size: 23, 23
-  orig: 23, 23
-  offset: 0, 0
-  index: -1
-Militia_3/Shield
-  rotate: true
-  xy: 989, 87
+  xy: 1927, 28
   size: 53, 86
   orig: 53, 86
   offset: 0, 0
   index: -1
-Militia_3/Weapon
+Militia_Orange_1/Weapon
   rotate: false
-  xy: 710, 182
+  xy: 932, 8
   size: 272, 41
   orig: 272, 41
   offset: 0, 0
   index: -1
-Militia_4/Body
+Militia_Purple_1/Weapon
   rotate: false
-  xy: 542, 22
-  size: 76, 93
-  orig: 76, 93
+  xy: 932, 8
+  size: 272, 41
+  orig: 272, 41
   offset: 0, 0
   index: -1
-Militia_4/Head
+Militia_Orange_3/Body
   rotate: false
-  xy: 361, 20
-  size: 98, 91
-  orig: 98, 91
+  xy: 1753, 2
+  size: 85, 78
+  orig: 85, 78
   offset: 0, 0
   index: -1
-Militia_4/Left_Arm
+Militia_Orange_3/Head
   rotate: true
-  xy: 620, 2
-  size: 33, 49
-  orig: 33, 49
+  xy: 1041, 51
+  size: 110, 107
+  orig: 110, 107
   offset: 0, 0
   index: -1
-Militia_4/Left_Hand
+Militia_Orange_3/Left_Arm
+  rotate: true
+  xy: 1757, 83
+  size: 34, 42
+  orig: 34, 42
+  offset: 0, 0
+  index: -1
+Militia_Orange_3/Left_Hand
   rotate: false
-  xy: 1018, 28
-  size: 21, 25
-  orig: 21, 25
+  xy: 1952, 2
+  size: 23, 24
+  orig: 23, 24
   offset: 0, 0
   index: -1
-Militia_4/Right_Arm
-  rotate: true
-  xy: 989, 55
-  size: 30, 50
-  orig: 30, 50
-  offset: 0, 0
-  index: -1
-Militia_4/Right_Hand
-  rotate: true
-  xy: 1018, 5
-  size: 21, 25
-  orig: 21, 25
-  offset: 0, 0
-  index: -1
-Militia_4/Shield
+Militia_Purple_3/Left_Hand
   rotate: false
-  xy: 926, 64
-  size: 61, 71
-  orig: 61, 71
+  xy: 1952, 2
+  size: 23, 24
+  orig: 23, 24
   offset: 0, 0
   index: -1
-Militia_4/Weapon
+Militia_Orange_3/Right_Arm
   rotate: true
-  xy: 842, 137
-  size: 43, 117
-  orig: 43, 117
+  xy: 1604, 82
+  size: 32, 49
+  orig: 32, 49
+  offset: 0, 0
+  index: -1
+Militia_Orange_3/Right_Hand
+  rotate: true
+  xy: 1977, 2
+  size: 24, 23
+  orig: 24, 23
+  offset: 0, 0
+  index: -1
+Militia_Purple_3/Right_Hand
+  rotate: true
+  xy: 1977, 2
+  size: 24, 23
+  orig: 24, 23
+  offset: 0, 0
+  index: -1
+Militia_Orange_3/Shield
+  rotate: true
+  xy: 1931, 108
+  size: 53, 86
+  orig: 53, 86
+  offset: 0, 0
+  index: -1
+Militia_Purple_3/Shield
+  rotate: true
+  xy: 1931, 108
+  size: 53, 86
+  orig: 53, 86
+  offset: 0, 0
+  index: -1
+Militia_Orange_3/Weapon
+  rotate: false
+  xy: 1206, 8
+  size: 272, 41
+  orig: 272, 41
+  offset: 0, 0
+  index: -1
+Militia_Purple_3/Weapon
+  rotate: false
+  xy: 1206, 8
+  size: 272, 41
+  orig: 272, 41
+  offset: 0, 0
+  index: -1
+Militia_Purple_1/Body
+  rotate: false
+  xy: 1840, 3
+  size: 85, 78
+  orig: 85, 78
+  offset: 0, 0
+  index: -1
+Militia_Purple_1/Head
+  rotate: true
+  xy: 1150, 51
+  size: 110, 107
+  orig: 110, 107
+  offset: 0, 0
+  index: -1
+Militia_Purple_1/Left_Arm
+  rotate: false
+  xy: 1774, 119
+  size: 34, 42
+  orig: 34, 42
+  offset: 0, 0
+  index: -1
+Militia_Purple_1/Right_Arm
+  rotate: true
+  xy: 1655, 82
+  size: 32, 49
+  orig: 32, 49
+  offset: 0, 0
+  index: -1
+Militia_Purple_3/Body
+  rotate: false
+  xy: 1665, 2
+  size: 86, 78
+  orig: 86, 78
+  offset: 0, 0
+  index: -1
+Militia_Purple_3/Head
+  rotate: true
+  xy: 1259, 51
+  size: 110, 107
+  orig: 110, 107
+  offset: 0, 0
+  index: -1
+Militia_Purple_3/Left_Arm
+  rotate: true
+  xy: 1801, 83
+  size: 34, 42
+  orig: 34, 42
+  offset: 0, 0
+  index: -1
+Militia_Purple_3/Right_Arm
+  rotate: true
+  xy: 1706, 82
+  size: 32, 49
+  orig: 32, 49
   offset: 0, 0
   index: -1

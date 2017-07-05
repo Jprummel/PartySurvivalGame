@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "RNq8lFidVLZOXOaXybg0dkGu1hE", "spine": "3.5.51", "width": 89.22, "height": 91.9, "images": "" },
+"skeleton": { "hash": "Lwm6E1WT8YrNQJm0J9HkUCNZ2X8", "spine": "3.6.36", "width": 89.22, "height": 91.9, "images": "" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "Assets_Left_View/Leg", "parent": "root", "length": 28.8, "rotation": -90.54, "x": -17.28, "y": 81.12 },
@@ -31,12 +31,12 @@
 			"Assets_Right_View/Left_Booth": { "x": 13.11, "y": 6.86, "rotation": 92.17, "width": 51, "height": 48 }
 		},
 		"Assets_Left_View/Left_Leg": {
-			"Assets_Left_View/Left_Leg": { "x": 18.06, "y": 0.07, "rotation": 90.41, "width": 34, "height": 56 },
-			"Assets_Right_View/Left_Leg": { "rotation": 88.01, "width": 34, "height": 56 }
+			"Assets_Left_View/Left_Leg": { "x": 18.06, "y": 0.07, "rotation": 90.41, "width": 35, "height": 56 },
+			"Assets_Right_View/Left_Leg": { "rotation": 88.01, "width": 35, "height": 56 }
 		},
 		"Assets_Left_View/Leg": {
 			"Assets_Left_View/Leg": { "x": 19.52, "y": -0.56, "rotation": 90.8, "width": 34, "height": 56 },
-			"Assets_Right_View/Left_Leg": { "rotation": 90.54, "width": 34, "height": 56 }
+			"Assets_Right_View/Left_Leg": { "rotation": 90.54, "width": 35, "height": 56 }
 		}
 	}
 },

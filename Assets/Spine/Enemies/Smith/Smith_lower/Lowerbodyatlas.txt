@@ -1,6 +1,6 @@
 
 Lowerbody.png
-size: 127,110
+size: 162,110
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
@@ -13,7 +13,7 @@ Assets_Left_View/Booth
   index: -1
 Assets_Left_View/Left_Booth
   rotate: false
-  xy: 2, 60
+  xy: 55, 60
   size: 51, 48
   orig: 51, 48
   offset: 0, 0
@@ -21,34 +21,34 @@ Assets_Left_View/Left_Booth
 Assets_Left_View/Left_Leg
   rotate: false
   xy: 2, 2
-  size: 34, 56
-  orig: 34, 56
+  size: 35, 56
+  orig: 35, 56
   offset: 0, 0
   index: -1
 Assets_Left_View/Leg
   rotate: false
-  xy: 2, 2
+  xy: 76, 2
   size: 34, 56
   orig: 34, 56
   offset: 0, 0
   index: -1
 Assets_Right_View/Left_Booth
   rotate: false
-  xy: 55, 60
+  xy: 108, 60
   size: 51, 48
   orig: 51, 48
   offset: 0, 0
   index: -1
 Assets_Right_View/Left_Leg
   rotate: false
-  xy: 38, 2
-  size: 34, 56
-  orig: 34, 56
+  xy: 39, 2
+  size: 35, 56
+  orig: 35, 56
   offset: 0, 0
   index: -1
 Assets_Right_View/Right_Booth
-  rotate: false
-  xy: 74, 10
+  rotate: true
+  xy: 112, 7
   size: 51, 48
   orig: 51, 48
   offset: 0, 0
