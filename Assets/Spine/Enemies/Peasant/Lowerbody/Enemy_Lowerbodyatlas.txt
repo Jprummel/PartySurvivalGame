@@ -1,146 +1,146 @@
 
 Enemy_Lowerbody.png
-size: 464,96
+size: 233,158
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-4/Foot_B_4 
-  rotate: false
-  xy: 153, 5
-  size: 33, 34
-  orig: 33, 34
-  offset: 0, 0
-  index: -1
-Peasant_1/Foot_B_1
+Peasant_1.2/Foot_B_1
   rotate: true
-  xy: 2, 41
+  xy: 2, 103
   size: 53, 48
   orig: 53, 48
   offset: 0, 0
   index: -1
-Peasant_1/Foot_L_1
-  rotate: false
-  xy: 43, 3
-  size: 53, 36
-  orig: 53, 36
-  offset: 0, 0
-  index: -1
-Peasant_1/Foot_R_1
-  rotate: false
-  xy: 98, 3
-  size: 53, 36
-  orig: 53, 36
-  offset: 0, 0
-  index: -1
-Peasant_1/Leg_L_1
-  rotate: false
-  xy: 178, 44
-  size: 48, 50
-  orig: 48, 50
-  offset: 0, 0
-  index: -1
-Peasant_1/Leg_R_1
-  rotate: false
-  xy: 228, 44
-  size: 48, 50
-  orig: 48, 50
-  offset: 0, 0
-  index: -1
-Peasant_2/Foot_B_2
+Peasant_1_Pale/Foot_B_1
   rotate: true
-  xy: 188, 2
-  size: 40, 44
-  orig: 40, 44
-  offset: 0, 0
-  index: -1
-Peasant_2/Foot_L_2
-  rotate: false
-  xy: 274, 3
-  size: 41, 39
-  orig: 41, 39
-  offset: 0, 0
-  index: -1
-Peasant_2/Foot_R_2
-  rotate: false
-  xy: 234, 2
-  size: 38, 40
-  orig: 38, 40
-  offset: 0, 0
-  index: -1
-Peasant_2/Leg_L_2
-  rotate: false
-  xy: 378, 49
-  size: 41, 45
-  orig: 41, 45
-  offset: 0, 0
-  index: -1
-Peasant_2/Leg_R_2
-  rotate: false
-  xy: 2, 2
-  size: 39, 37
-  orig: 39, 37
-  offset: 0, 0
-  index: -1
-Peasant_3/Foot_B_3
-  rotate: true
-  xy: 52, 41
+  xy: 2, 103
   size: 53, 48
   orig: 53, 48
   offset: 0, 0
   index: -1
-Peasant_3/Foot_L_3
-  rotate: true
-  xy: 102, 41
+Peasant_1.2/Foot_L_1
+  rotate: false
+  xy: 2, 10
   size: 53, 36
   orig: 53, 36
   offset: 0, 0
   index: -1
-Peasant_3/Foot_R_3
-  rotate: true
-  xy: 140, 41
+Peasant_1_Pale/Foot_L_1
+  rotate: false
+  xy: 2, 10
   size: 53, 36
   orig: 53, 36
   offset: 0, 0
   index: -1
-Peasant_3/Leg_L_3
+Peasant_1.2/Foot_R_1
   rotate: false
-  xy: 278, 44
+  xy: 152, 120
+  size: 53, 36
+  orig: 53, 36
+  offset: 0, 0
+  index: -1
+Peasant_1_Pale/Foot_R_1
+  rotate: false
+  xy: 152, 120
+  size: 53, 36
+  orig: 53, 36
+  offset: 0, 0
+  index: -1
+Peasant_1.2/Leg_L_1
+  rotate: false
+  xy: 52, 106
   size: 48, 50
   orig: 48, 50
   offset: 0, 0
   index: -1
-Peasant_3/Leg_R_3
+Peasant_1_Pale/Leg_L_1
   rotate: false
-  xy: 328, 44
+  xy: 52, 106
   size: 48, 50
   orig: 48, 50
   offset: 0, 0
   index: -1
-Peasant_4/Foot_L_4
+Peasant_1.2/Leg_R_1
   rotate: false
-  xy: 317, 3
-  size: 41, 39
-  orig: 41, 39
+  xy: 52, 54
+  size: 48, 50
+  orig: 48, 50
   offset: 0, 0
   index: -1
-Peasant_4/Foot_R_4
+Peasant_1_Pale/Leg_R_1
   rotate: false
-  xy: 360, 3
-  size: 41, 39
-  orig: 41, 39
+  xy: 52, 54
+  size: 48, 50
+  orig: 48, 50
   offset: 0, 0
   index: -1
-Peasant_4/Leg_L_4
-  rotate: false
-  xy: 403, 2
-  size: 41, 45
-  orig: 41, 45
+Peasant_3.2/Foot_B_3
+  rotate: true
+  xy: 2, 48
+  size: 53, 48
+  orig: 53, 48
   offset: 0, 0
   index: -1
-Peasant_4/Leg_R_4
+Peasant_3_Pale/Foot_B_3
+  rotate: true
+  xy: 2, 48
+  size: 53, 48
+  orig: 53, 48
+  offset: 0, 0
+  index: -1
+Peasant_3.2/Foot_L_3
+  rotate: true
+  xy: 152, 65
+  size: 53, 36
+  orig: 53, 36
+  offset: 0, 0
+  index: -1
+Peasant_3.2/Foot_R_3
+  rotate: true
+  xy: 190, 65
+  size: 53, 36
+  orig: 53, 36
+  offset: 0, 0
+  index: -1
+Peasant_3.2/Leg_L_3
   rotate: false
-  xy: 421, 49
-  size: 41, 45
-  orig: 41, 45
+  xy: 57, 2
+  size: 48, 50
+  orig: 48, 50
+  offset: 0, 0
+  index: -1
+Peasant_3.2/Leg_R_3
+  rotate: false
+  xy: 102, 54
+  size: 48, 50
+  orig: 48, 50
+  offset: 0, 0
+  index: -1
+Peasant_3_Pale/Foot_L_3
+  rotate: true
+  xy: 157, 10
+  size: 53, 36
+  orig: 53, 36
+  offset: 0, 0
+  index: -1
+Peasant_3_Pale/Foot_R_3
+  rotate: true
+  xy: 195, 10
+  size: 53, 36
+  orig: 53, 36
+  offset: 0, 0
+  index: -1
+Peasant_3_Pale/Leg_L_3
+  rotate: false
+  xy: 102, 106
+  size: 48, 50
+  orig: 48, 50
+  offset: 0, 0
+  index: -1
+Peasant_3_Pale/Leg_R_3
+  rotate: false
+  xy: 107, 2
+  size: 48, 50
+  orig: 48, 50
   offset: 0, 0
   index: -1
