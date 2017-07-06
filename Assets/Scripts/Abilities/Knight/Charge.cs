@@ -99,9 +99,10 @@ public class Charge : Ability {
         _player.Invincible = false;
         _charging = false;
         _cooldown = _maxCooldown;
-        _abilityIsReady = false;
+        _abilityIsReady = false;  
         _player.CanMove = true;
         _chargeSpeed = 0f;
         _usingAbility = false;
+        _player.RGB2D.velocity = Vector2.zero;
     }
 }
