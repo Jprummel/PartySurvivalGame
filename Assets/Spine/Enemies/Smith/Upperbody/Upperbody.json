@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "ukGOUOdyXR5ZIXhNmdRZqJ5OcQ0", "spine": "3.6.36", "width": 165.11, "height": 251.87, "images": "" },
+"skeleton": { "hash": "pXa+sKCy5YwL6e62McKOQ15P0QI", "spine": "3.6.36", "width": 165.11, "height": 250.87, "images": "" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "Assets_Back_View/Skirt", "parent": "root", "length": 42.55, "rotation": 91.05, "x": 3.06, "y": 61.68 },
@@ -97,7 +97,7 @@
 			"Effects/Hit fx0006": { "width": 184, "height": 157 }
 		}
 	},
-	"Brown": {
+	"Smith_1": {
 		"Assets_Back_View/Body": {
 			"Assets_Left_View_Reskin/Body": { "name": "Assets_Left_View/Body", "x": 31.4, "y": 3.25, "rotation": -89.32, "width": 79, "height": 80 },
 			"Assets_Right_View_Reskin/Body": { "name": "Assets_Right_View/Body", "x": 27.66, "y": -5.87, "rotation": -89.32, "width": 79, "height": 80 }
@@ -172,7 +172,7 @@
 			"Weapon/Weapon": { "x": 40.94, "y": 7.05, "rotation": -7.38, "width": 140, "height": 112 }
 		}
 	},
-	"Blue": {
+	"Smith_2": {
 		"Assets_Back_View/Body": {
 			"Assets_Left_View_Reskin/Body": { "x": 31.4, "y": 3.25, "rotation": -89.32, "width": 79, "height": 80 },
 			"Assets_Right_View_Reskin/Body": { "x": 27.66, "y": -5.87, "rotation": -89.32, "width": 79, "height": 80 }

@@ -1,0 +1,556 @@
+{
+"skeleton": { "hash": "ECM3pCLogVZGI/WgJtW/SwsP7Io", "spine": "3.6.36", "width": 78.33, "height": 48.42, "images": "" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "Militia_1/Left_Leg", "parent": "root", "length": 20.33, "rotation": -86.61, "x": -17.19, "y": 40.64 },
+	{ "name": "Militia_1/Left_Feet", "parent": "Militia_1/Left_Leg", "length": 22.66, "rotation": -59.22, "x": 23.59, "y": -0.19 },
+	{ "name": "Militia_1/Right_Leg", "parent": "root", "length": 19.97, "rotation": -89.61, "x": 17.26, "y": 39.41 },
+	{ "name": "Militia_1/Right_Feet", "parent": "Militia_1/Right_Leg", "length": 24.66, "rotation": -59.64, "x": 23.45, "y": -0.15 }
+],
+"slots": [
+	{ "name": "Militia_1/Right_Feet", "bone": "Militia_1/Right_Feet", "attachment": "Militia_Orange_1/Right_Feet" },
+	{ "name": "Militia_1/Right_Leg", "bone": "Militia_1/Right_Leg", "attachment": "Militia_Orange_1/Right_Leg" },
+	{ "name": "Militia_1/Left_Feet", "bone": "Militia_1/Left_Feet", "attachment": "Militia_Orange_1/Left_Feet" },
+	{ "name": "Militia_1/Left_Leg", "bone": "Militia_1/Left_Leg", "attachment": "Militia_Orange_1/Left_Leg" }
+],
+"skins": {
+	"default": {},
+	"Militia_1": {
+		"Militia_1/Left_Feet": {
+			"Militia_Orange_1/Left_Feet": { "x": 8.21, "y": 2.74, "rotation": 145.83, "width": 41, "height": 27 },
+			"Militia_Orange_3/Left_Feet": { "x": -0.3, "y": 8.84, "rotation": 145.83, "width": 44, "height": 25 }
+		},
+		"Militia_1/Left_Leg": {
+			"Militia_Orange_1/Left_Leg": { "x": 10.03, "y": 0.79, "rotation": 86.61, "width": 36, "height": 28 },
+			"Militia_Orange_3/Left_Leg": { "x": 11.93, "y": -0.9, "rotation": 86.61, "width": 36, "height": 28 }
+		},
+		"Militia_1/Right_Feet": {
+			"Militia_Orange_1/Right_Feet": { "x": 8.68, "y": 2.74, "rotation": 148.18, "width": 44, "height": 25 },
+			"Militia_Orange_3/Right_Feet": { "x": -3.65, "y": 2.17, "rotation": 149.86, "width": 41, "height": 27 }
+		},
+		"Militia_1/Right_Leg": {
+			"Militia_Orange_1/Right_Leg": { "x": 10.98, "y": -1.01, "rotation": 92.74, "width": 39, "height": 29 },
+			"Militia_Orange_3/Right_Leg": { "x": 5.97, "y": -1.2, "rotation": 89.61, "width": 39, "height": 29 }
+		}
+	},
+	"Militia_2": {
+		"Militia_1/Left_Feet": {
+			"Militia_Orange_1/Left_Feet": { "x": 8.21, "y": 2.74, "rotation": 145.83, "width": 41, "height": 27 },
+			"Militia_Orange_3/Left_Feet": { "x": -0.3, "y": 8.84, "rotation": 145.83, "width": 44, "height": 25 }
+		},
+		"Militia_1/Left_Leg": {
+			"Militia_Orange_1/Left_Leg": { "x": 10.03, "y": 0.79, "rotation": 86.61, "width": 36, "height": 28 },
+			"Militia_Orange_3/Left_Leg": { "x": 11.93, "y": -0.9, "rotation": 86.61, "width": 36, "height": 28 }
+		},
+		"Militia_1/Right_Feet": {
+			"Militia_Orange_1/Right_Feet": { "x": 8.68, "y": 2.74, "rotation": 148.18, "width": 44, "height": 25 },
+			"Militia_Orange_3/Right_Feet": { "x": -3.65, "y": 2.17, "rotation": 149.86, "width": 41, "height": 27 }
+		},
+		"Militia_1/Right_Leg": {
+			"Militia_Orange_1/Right_Leg": { "x": 10.98, "y": -1.01, "rotation": 92.74, "width": 39, "height": 29 },
+			"Militia_Orange_3/Right_Leg": { "x": 5.97, "y": -1.2, "rotation": 89.61, "width": 39, "height": 29 }
+		}
+	}
+},
+"animations": {
+	"Death_Left": {
+		"bones": {
+			"Militia_1/Right_Leg": {
+				"rotate": [
+					{ "time": 0, "angle": 28.38 },
+					{ "time": 0.6667, "angle": 12.15 }
+				],
+				"translate": [
+					{ "time": 0, "x": -11.9, "y": -3.9 }
+				]
+			},
+			"Militia_1/Left_Leg": {
+				"rotate": [
+					{ "time": 0, "angle": -30.31 },
+					{ "time": 0.2667, "angle": 34.83 },
+					{ "time": 0.6667, "angle": 18.26 }
+				],
+				"translate": [
+					{ "time": 0, "x": 6.11, "y": -3.9 }
+				]
+			},
+			"Militia_1/Right_Feet": {
+				"rotate": [
+					{ "time": 0, "angle": -27.08 },
+					{ "time": 0.6667, "angle": 54.86 }
+				],
+				"translate": [
+					{ "time": 0, "x": -4.07, "y": -1.51 }
+				]
+			},
+			"Militia_1/Left_Feet": {
+				"rotate": [
+					{ "time": 0, "angle": 29.32 },
+					{ "time": 0.2667, "angle": 94.46 },
+					{ "time": 0.6667, "angle": 77.89 }
+				]
+			},
+			"root": {
+				"rotate": [
+					{
+						"time": 0,
+						"angle": 0,
+						"curve": [ 1, 0, 0.75, 1 ]
+					},
+					{ "time": 0.4667, "angle": 53.03 }
+				]
+			}
+		},
+		"drawOrder": [
+			{
+				"time": 0,
+				"offsets": [
+					{ "slot": "Militia_1/Right_Feet", "offset": 2 },
+					{ "slot": "Militia_1/Right_Leg", "offset": 2 }
+				]
+			}
+		]
+	},
+	"Death_Right": {
+		"slots": {
+			"Militia_1/Left_Feet": {
+				"attachment": [
+					{ "time": 0, "name": "Militia_Orange_3/Left_Feet" }
+				]
+			},
+			"Militia_1/Left_Leg": {
+				"attachment": [
+					{ "time": 0, "name": "Militia_Orange_3/Left_Leg" }
+				]
+			},
+			"Militia_1/Right_Feet": {
+				"attachment": [
+					{ "time": 0, "name": "Militia_Orange_3/Right_Feet" }
+				]
+			},
+			"Militia_1/Right_Leg": {
+				"attachment": [
+					{ "time": 0, "name": "Militia_Orange_3/Right_Leg" }
+				]
+			}
+		},
+		"bones": {
+			"Militia_1/Left_Leg": {
+				"rotate": [
+					{ "time": 0, "angle": -35.4, "curve": "stepped" },
+					{ "time": 0.2667, "angle": -35.4 },
+					{ "time": 0.6667, "angle": 21.3 }
+				],
+				"translate": [
+					{ "time": 0, "x": 6.33, "y": -5.59 }
+				]
+			},
+			"Militia_1/Left_Feet": {
+				"rotate": [
+					{ "time": 0, "angle": 35.32, "curve": "stepped" },
+					{ "time": 0.2667, "angle": 35.32 },
+					{ "time": 0.6667, "angle": -90.85 }
+				],
+				"translate": [
+					{ "time": 0, "x": -2.8, "y": -2.23 }
+				]
+			},
+			"Militia_1/Right_Leg": {
+				"rotate": [
+					{ "time": 0, "angle": 20.49 },
+					{ "time": 0.4667, "angle": -26.49 }
+				],
+				"translate": [
+					{ "time": 0, "x": -12.55, "y": -6.12 }
+				]
+			},
+			"Militia_1/Right_Feet": {
+				"rotate": [
+					{ "time": 0, "angle": -15.11 },
+					{ "time": 0.4667, "angle": -62.09 }
+				]
+			},
+			"root": {
+				"rotate": [
+					{
+						"time": 0,
+						"angle": 0,
+						"curve": [ 1, 0, 0.75, 1 ]
+					},
+					{ "time": 0.4667, "angle": -66.98 }
+				]
+			}
+		}
+	},
+	"Idle_Left": {
+		"bones": {
+			"Militia_1/Right_Leg": {
+				"rotate": [
+					{ "time": 0, "angle": 28.38 }
+				],
+				"translate": [
+					{ "time": 0, "x": -11.9, "y": -3.9 }
+				]
+			},
+			"Militia_1/Left_Leg": {
+				"rotate": [
+					{ "time": 0, "angle": -30.31 }
+				],
+				"translate": [
+					{ "time": 0, "x": 6.11, "y": -3.9 }
+				]
+			},
+			"Militia_1/Right_Feet": {
+				"rotate": [
+					{ "time": 0, "angle": -27.08 }
+				],
+				"translate": [
+					{ "time": 0, "x": -4.07, "y": -1.51 }
+				]
+			},
+			"Militia_1/Left_Feet": {
+				"rotate": [
+					{ "time": 0, "angle": 29.32 }
+				]
+			}
+		},
+		"drawOrder": [
+			{
+				"time": 0,
+				"offsets": [
+					{ "slot": "Militia_1/Right_Feet", "offset": 2 },
+					{ "slot": "Militia_1/Right_Leg", "offset": 2 }
+				]
+			}
+		]
+	},
+	"Idle_Right": {
+		"slots": {
+			"Militia_1/Left_Feet": {
+				"attachment": [
+					{ "time": 0, "name": "Militia_Orange_3/Left_Feet" }
+				]
+			},
+			"Militia_1/Left_Leg": {
+				"attachment": [
+					{ "time": 0, "name": "Militia_Orange_3/Left_Leg" }
+				]
+			},
+			"Militia_1/Right_Feet": {
+				"attachment": [
+					{ "time": 0, "name": "Militia_Orange_3/Right_Feet" }
+				]
+			},
+			"Militia_1/Right_Leg": {
+				"attachment": [
+					{ "time": 0, "name": "Militia_Orange_3/Right_Leg" }
+				]
+			}
+		},
+		"bones": {
+			"Militia_1/Left_Leg": {
+				"rotate": [
+					{ "time": 0, "angle": -35.4 }
+				],
+				"translate": [
+					{ "time": 0, "x": 6.33, "y": -5.59 }
+				]
+			},
+			"Militia_1/Left_Feet": {
+				"rotate": [
+					{ "time": 0, "angle": 35.32 }
+				],
+				"translate": [
+					{ "time": 0, "x": -2.8, "y": -2.23 }
+				]
+			},
+			"Militia_1/Right_Leg": {
+				"rotate": [
+					{ "time": 0, "angle": 20.49 }
+				],
+				"translate": [
+					{ "time": 0, "x": -12.55, "y": -6.12 }
+				]
+			},
+			"Militia_1/Right_Feet": {
+				"rotate": [
+					{ "time": 0, "angle": -15.11 }
+				]
+			}
+		}
+	},
+	"Walk_Left": {
+		"bones": {
+			"Militia_1/Right_Leg": {
+				"rotate": [
+					{
+						"time": 0,
+						"angle": -5.45,
+						"curve": [ 0.255, 0, 0.62, 0.47 ]
+					},
+					{
+						"time": 0.1,
+						"angle": -40.07,
+						"curve": [ 0.367, 0.46, 0.754, 1 ]
+					},
+					{
+						"time": 0.2,
+						"angle": -5.45,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{
+						"time": 0.4333,
+						"angle": 11.55,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{
+						"time": 0.6333,
+						"angle": 68.4,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{ "time": 0.8333, "angle": -5.45 }
+				],
+				"translate": [
+					{
+						"time": 0,
+						"x": -18.81,
+						"y": 5.17,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{
+						"time": 0.2,
+						"x": -38.05,
+						"y": -4.45,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{
+						"time": 0.4333,
+						"x": -18.81,
+						"y": -3.4,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{
+						"time": 0.6333,
+						"x": -5.14,
+						"y": -4.45,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{ "time": 0.8333, "x": -18.81, "y": 5.17 }
+				]
+			},
+			"Militia_1/Left_Leg": {
+				"rotate": [
+					{
+						"time": 0,
+						"angle": 7.37,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{
+						"time": 0.2,
+						"angle": 57.19,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{
+						"time": 0.4333,
+						"angle": 21.5,
+						"curve": [ 0.25, 0, 0.625, 0.5 ]
+					},
+					{
+						"time": 0.5333,
+						"angle": -48.79,
+						"curve": [ 0.375, 0.5, 0.75, 1 ]
+					},
+					{
+						"time": 0.6333,
+						"angle": -27.03,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{ "time": 0.8333, "angle": 7.37 }
+				],
+				"translate": [
+					{
+						"time": 0,
+						"x": 13.24,
+						"y": -3.9,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{
+						"time": 0.2,
+						"x": 29.36,
+						"y": -3.9,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{
+						"time": 0.4333,
+						"x": 13.24,
+						"y": 10.55,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{
+						"time": 0.6333,
+						"x": -1.12,
+						"y": -3.9,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{ "time": 0.8333, "x": 13.24, "y": -3.9 }
+				]
+			},
+			"Militia_1/Right_Feet": {
+				"rotate": [
+					{
+						"time": 0,
+						"angle": 57.39,
+						"curve": [ 0.255, 0, 0.62, 0.47 ]
+					},
+					{
+						"time": 0.1,
+						"angle": 1.29,
+						"curve": [ 0.367, 0.46, 0.754, 1 ]
+					},
+					{
+						"time": 0.2,
+						"angle": 4.42,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{
+						"time": 0.4333,
+						"angle": -11.02,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{
+						"time": 0.6333,
+						"angle": 1.08,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{ "time": 0.8333, "angle": 57.39 }
+				],
+				"translate": [
+					{ "time": 0, "x": -4.07, "y": -1.51 }
+				]
+			},
+			"Militia_1/Left_Feet": {
+				"rotate": [
+					{
+						"time": 0,
+						"angle": -11.91,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{
+						"time": 0.2,
+						"angle": 8.93,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{
+						"time": 0.4333,
+						"angle": 67.77,
+						"curve": [ 0.25, 0, 0.625, 0.5 ]
+					},
+					{
+						"time": 0.5333,
+						"angle": -0.68,
+						"curve": [ 0.375, 0.5, 0.75, 1 ]
+					},
+					{
+						"time": 0.6333,
+						"angle": 22.89,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{ "time": 0.8333, "angle": -11.91 }
+				]
+			}
+		},
+		"drawOrder": [
+			{
+				"time": 0,
+				"offsets": [
+					{ "slot": "Militia_1/Right_Feet", "offset": 2 },
+					{ "slot": "Militia_1/Right_Leg", "offset": 2 }
+				]
+			}
+		]
+	},
+	"Walk_Right": {
+		"slots": {
+			"Militia_1/Left_Feet": {
+				"attachment": [
+					{ "time": 0, "name": "Militia_Orange_3/Left_Feet" }
+				]
+			},
+			"Militia_1/Left_Leg": {
+				"attachment": [
+					{ "time": 0, "name": "Militia_Orange_3/Left_Leg" }
+				]
+			},
+			"Militia_1/Right_Feet": {
+				"attachment": [
+					{ "time": 0, "name": "Militia_Orange_3/Right_Feet" }
+				]
+			},
+			"Militia_1/Right_Leg": {
+				"attachment": [
+					{ "time": 0, "name": "Militia_Orange_3/Right_Leg" }
+				]
+			}
+		},
+		"bones": {
+			"Militia_1/Left_Leg": {
+				"rotate": [
+					{ "time": 0, "angle": -7.62 },
+					{ "time": 0.1, "angle": 49 },
+					{ "time": 0.2333, "angle": 29.72 },
+					{ "time": 0.5, "angle": -9.79 },
+					{ "time": 0.7667, "angle": -57.88 },
+					{ "time": 1, "angle": -7.62 }
+				],
+				"translate": [
+					{ "time": 0, "x": 16.27, "y": 10.83 },
+					{ "time": 0.2333, "x": 28.13, "y": -5.98 },
+					{ "time": 0.5, "x": 16.27, "y": -2.52 },
+					{ "time": 0.7667, "x": -0.29, "y": 12.04 },
+					{ "time": 1, "x": 16.27, "y": 10.83 }
+				]
+			},
+			"Militia_1/Left_Feet": {
+				"rotate": [
+					{ "time": 0, "angle": -62.11 },
+					{ "time": 0.1, "angle": -7.23 },
+					{ "time": 0.3333, "angle": -12.53 },
+					{ "time": 0.5, "angle": 9.21 },
+					{ "time": 0.7667, "angle": -63.71 },
+					{ "time": 1, "angle": -62.11 }
+				],
+				"translate": [
+					{ "time": 0, "x": -2.8, "y": -2.23 }
+				]
+			},
+			"Militia_1/Right_Leg": {
+				"rotate": [
+					{ "time": 0, "angle": -17.46 },
+					{ "time": 0.2333, "angle": -66.83 },
+					{ "time": 0.5, "angle": -32.75 },
+					{ "time": 0.6333, "angle": 50.08 },
+					{ "time": 0.7667, "angle": 30.5 },
+					{ "time": 1, "angle": -17.46 }
+				],
+				"translate": [
+					{ "time": 0, "x": -22.29, "y": -6.12 },
+					{ "time": 0.2333, "x": -38.85, "y": 8.85 },
+					{ "time": 0.5, "x": -18.24, "y": 12.63 },
+					{ "time": 0.7667, "x": -3.57, "y": -8.35 },
+					{ "time": 1, "x": -22.29, "y": -6.12 }
+				]
+			},
+			"Militia_1/Right_Feet": {
+				"rotate": [
+					{ "time": 0, "angle": 17.06 },
+					{ "time": 0.2333, "angle": -58.52 },
+					{ "time": 0.5, "angle": -51.86 },
+					{ "time": 0.6333, "angle": -2.88 },
+					{ "time": 0.7667, "angle": -28.54 },
+					{ "time": 1, "angle": 17.06 }
+				]
+			}
+		}
+	}
+}
+}

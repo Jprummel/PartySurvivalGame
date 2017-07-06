@@ -37,7 +37,7 @@ public class Charge : Ability {
     {
         if(!_usingAbility && _canUseAbility && _abilityIsReady)
         {
-            StartCoroutine(ChargeRoutine());
+            ChargeRoutine();
         }
     }
 
@@ -51,6 +51,7 @@ public class Charge : Ability {
             float xDir = transform.forward.magnitude;
             if (transform.rotation.y == 1)
             {
+                Debug.Log("lmaokekxd");
                 //change direction if player changes direction
                 xDir = -xDir;
             }
@@ -66,7 +67,7 @@ public class Charge : Ability {
         
     }
 
-    IEnumerator ChargeRoutine()
+    void ChargeRoutine()
     {
         _usingAbility = true;
         _player.CanMove = false;   
@@ -77,9 +78,10 @@ public class Charge : Ability {
         //start charge
         _charging = true;
         _player.Invincible = true;
-        yield return new WaitForSeconds(_windUpTime);
+        /*yield return new WaitForSeconds(_windUpTime);
         yield return new WaitForSeconds(_chargeTime);
-        yield return new WaitForSeconds(_intoIdleTime);
+        yield return new WaitForSeconds(_intoIdleTime);*/
+
         //end animation spaghettios
         /*_player.UpperBodyAnimator.SetBool("UsingAbility", false);
         _player.LowerBodyAnimator.SetBool("UsingAbility", false);
@@ -99,9 +101,10 @@ public class Charge : Ability {
         _player.Invincible = false;
         _charging = false;
         _cooldown = _maxCooldown;
-        _abilityIsReady = false;
+        _abilityIsReady = false;  
         _player.CanMove = true;
         _chargeSpeed = 0f;
         _usingAbility = false;
+        _player.RGB2D.velocity = Vector2.zero;
     }
 }
