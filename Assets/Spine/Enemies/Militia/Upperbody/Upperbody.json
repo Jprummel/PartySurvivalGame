@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "uC+PRI8i5aimxpZaSnF7D2dSd5I", "spine": "3.6.36", "width": 272.32, "height": 162.37, "images": "" },
+"skeleton": { "hash": "ZfA0di9OAU2HAqA14CubzC2g4lI", "spine": "3.6.36", "width": 272.32, "height": 162.37, "images": "" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "Body", "parent": "root", "length": 30.2, "rotation": 90.57, "x": -1.03, "y": 32.17 },
@@ -50,7 +50,7 @@
 			"Effects/Stab_effect0004": { "width": 183, "height": 45 }
 		}
 	},
-	"Orange": {
+	"Militia_!": {
 		"Hand_Left": {
 			"Militia_Purple_1/Left_Hand": { "name": "Militia_Orange_1/Left_Hand", "rotation": -177.21, "width": 23, "height": 24 },
 			"Militia_Purple_3/Left_Hand": { "name": "Militia_Orange_3/Left_Hand", "x": -0.75, "y": 4.39, "rotation": -177.21, "width": 23, "height": 24 }
@@ -164,7 +164,7 @@
 			"Militia_Purple_3/Weapon": { "name": "Militia_Orange_3/Weapon", "x": 3.83, "y": 14.37, "rotation": 80.13, "width": 272, "height": 41 }
 		}
 	},
-	"Purple": {
+	"Militia_2": {
 		"Hand_Left": {
 			"Militia_Purple_1/Left_Hand": { "rotation": -177.21, "width": 23, "height": 24 },
 			"Militia_Purple_3/Left_Hand": { "x": -0.75, "y": 4.39, "rotation": -177.21, "width": 23, "height": 24 }
@@ -273,9 +273,9 @@
 	}
 },
 "events": {
-	"Attack_Animation_end": {},
+	"Animation_End": {},
 	"Attack_End": {},
-	"Attack_start": {},
+	"Attack_Start": {},
 	"Death_End": {},
 	"Death_Start": {},
 	"Hit_End": {},
@@ -448,9 +448,9 @@
 			}
 		},
 		"events": [
-			{ "time": 0.1333, "name": "Attack_start" },
+			{ "time": 0.1333, "name": "Attack_Start" },
 			{ "time": 0.2667, "name": "Attack_End" },
-			{ "time": 0.3333, "name": "Attack_Animation_end" }
+			{ "time": 0.3333, "name": "Animation_End" }
 		]
 	},
 	"Attack_Right": {
@@ -706,9 +706,9 @@
 			}
 		],
 		"events": [
-			{ "time": 0.1333, "name": "Attack_start" },
+			{ "time": 0.1333, "name": "Attack_Start" },
 			{ "time": 0.2667, "name": "Attack_End" },
-			{ "time": 0.3333, "name": "Attack_Animation_end" }
+			{ "time": 0.3333, "name": "Animation_End" }
 		]
 	},
 	"Death_Left": {
@@ -1096,7 +1096,7 @@
 		],
 		"events": [
 			{ "time": 0, "name": "Hit_Start" },
-			{ "time": 0.2, "name": "Hit_End" }
+			{ "time": 0.2667, "name": "Hit_End" }
 		]
 	},
 	"Hit_Right": {
@@ -1254,7 +1254,7 @@
 		],
 		"events": [
 			{ "time": 0, "name": "Hit_Start" },
-			{ "time": 0.2, "name": "Hit_End" }
+			{ "time": 0.2667, "name": "Hit_End" }
 		]
 	},
 	"Idle_Left": {
@@ -1380,7 +1380,7 @@
 			}
 		},
 		"deform": {
-			"Orange": {
+			"Militia_!": {
 				"Militia_1/Body": {
 					"Militia_1/Body": [
 						{
@@ -1542,7 +1542,7 @@
 			}
 		},
 		"deform": {
-			"Orange": {
+			"Militia_!": {
 				"Militia_1/Body": {
 					"Militia_Purple_3/Body": [
 						{

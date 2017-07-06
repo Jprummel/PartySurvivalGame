@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+"skeleton": { "hash": "SaWzzGZDgi2yub3HuC+iayjUClQ", "spine": "3.6.36", "width": 340.08, "height": 163.72, "images": "" },
+=======
 "skeleton": { "hash": "8CczWhRSsu5eCdzBeEaZxN30900", "spine": "3.6.36", "width": 340.08, "height": 163.72, "images": "" },
+>>>>>>> origin/master
 "bones": [
 	{ "name": "root", "x": -196.06 },
 	{ "name": "1/Body_1", "parent": "root", "length": 54.08, "rotation": 86.9, "x": 2.45, "y": 35.14 },
@@ -55,6 +59,8 @@
 		"Weapon": {
 			"Peasant_1_Pale/Weapon_1": { "x": 9.57, "y": -0.55, "rotation": 126.59, "width": 340, "height": 52 },
 			"Peasant_3_Pale/Weapon_3": { "x": 0.8, "y": 9.24, "rotation": 126.5, "width": 340, "height": 52 }
+<<<<<<< HEAD
+=======
 		}
 	},
 	"Peasant": {
@@ -89,10 +95,48 @@
 		"Shoulder_R": {
 			"Shoulder_R_Left": { "name": "Peasant_1.2/Shoulder_R_1", "x": 11.34, "y": 0.63, "rotation": 136.19, "width": 32, "height": 30 },
 			"Shoulder_R_Right": { "name": "Peasant_3.2/Shoulder_R_3", "x": 8.53, "y": -2.2, "rotation": 40.01, "width": 44, "height": 36 }
+>>>>>>> origin/master
 		}
 	},
 	"Peasant_pale": {
 		"Arm_L": {
+<<<<<<< HEAD
+			"Arm_L_Left": { "name": "Peasant_1.2/Arm_L_1", "x": 8.2, "y": 0.43, "rotation": 92.86, "width": 28, "height": 35 },
+			"Arm_L_Right": { "name": "Peasant_3.2/Arm_L_3", "x": 8.87, "y": -0.32, "rotation": 75.28, "width": 26, "height": 32 }
+		},
+		"Arm_R": {
+			"Arm_R_Left": { "name": "Peasant_1.2/Arm_R_1", "x": 9.91, "y": -1.06, "rotation": 115.4, "width": 26, "height": 32 },
+			"Arm_R_Right": { "name": "Peasant_3.2/Arm_R_3", "x": 9.66, "y": -1, "rotation": 81.38, "width": 28, "height": 35 }
+		},
+		"Body": {
+			"Body_Left": { "name": "Peasant_1.2/Body_1", "x": 32.63, "y": 0.4, "rotation": -86.9, "width": 88, "height": 95 },
+			"Back_Right": { "name": "Peasant_3.2/Body_3", "x": 32.56, "y": 1.76, "rotation": -86.9, "width": 88, "height": 95 }
+		},
+		"Hand_L": {
+			"Hand_L_Left": { "name": "Peasant_1.2/Hand_L_1", "x": 5.85, "y": -0.69, "rotation": 92.55, "width": 33, "height": 27 },
+			"Hand_L_Right": { "name": "Peasant_3.2/Hand_L_3", "x": 8.61, "y": 0.27, "rotation": 54.94, "width": 29, "height": 25 }
+		},
+		"Hand_R": {
+			"Hand_R_Left": { "name": "Peasant_1.2/Hand_R_1", "x": 7.44, "y": 1.93, "rotation": 132.04, "width": 29, "height": 25 },
+			"Hand_R_Right": { "name": "Peasant_3.2/Hand_R_3", "x": 9.04, "y": -1.08, "rotation": 83.82, "width": 33, "height": 27 }
+		},
+		"Head": {
+			"Head_Left": { "name": "Peasant_1.2/Head_1", "x": 7.39, "y": -14.09, "rotation": -171.59, "width": 101, "height": 116 },
+			"Head_Right": { "name": "Peasant_3.2/Head_3", "x": 2.2, "y": -14.89, "rotation": -171.59, "width": 101, "height": 116 }
+		},
+		"Shoulder_L": {
+			"Shoulder_L_Left": { "name": "Peasant_1.2/Shoulder_L_1", "x": 1.69, "y": 0.58, "rotation": 43.82, "width": 41, "height": 36 },
+			"Shoulder_L_Right": { "name": "Peasant_3.2/Shoulder_L_3", "x": 6.4, "y": 0.77, "rotation": 71.44, "width": 32, "height": 30 }
+		},
+		"Shoulder_R": {
+			"Shoulder_R_Left": { "name": "Peasant_1.2/Shoulder_R_1", "x": 11.34, "y": 0.63, "rotation": 136.19, "width": 32, "height": 30 },
+			"Shoulder_R_Right": { "name": "Peasant_3.2/Shoulder_R_3", "x": 8.53, "y": -2.2, "rotation": 40.01, "width": 44, "height": 36 }
+		}
+	},
+	"Peasant_2": {
+		"Arm_L": {
+=======
+>>>>>>> origin/master
 			"Arm_L_Left": { "name": "Peasant_1_Pale/Arm_L_1", "x": 8.2, "y": 0.43, "rotation": 92.86, "width": 28, "height": 35 },
 			"Arm_L_Right": { "name": "Peasant_3_Pale/Arm_L_3", "x": 8.87, "y": -0.32, "rotation": 75.28, "width": 26, "height": 32 }
 		},
@@ -453,6 +497,29 @@
 					{ "time": 0.1667, "angle": 70.72 },
 					{ "time": 0.3, "angle": 80.14 },
 					{ "time": 0.3333, "angle": 0 }
+<<<<<<< HEAD
+				]
+			},
+			"1/Head_1": {
+				"rotate": [
+					{ "time": 0, "angle": 0 },
+					{ "time": 0.0667, "angle": -20.04 },
+					{ "time": 0.1333, "angle": 34.62 },
+					{ "time": 0.3333, "angle": 0 }
+				]
+			},
+			"Pitchfork": {
+				"translate": [
+					{ "time": 0, "x": -179.79, "y": 241.92 },
+					{ "time": 0.0667, "x": -192.46, "y": 261.88 },
+					{ "time": 0.1, "x": -157.26, "y": 215.14, "curve": "stepped" },
+					{ "time": 0.1333, "x": -74.27, "y": 97.66 }
+				],
+				"scale": [
+					{ "time": 0, "x": -2, "y": 2 },
+					{ "time": 0.0667, "x": -2, "y": 1.091 }
+=======
+>>>>>>> origin/master
 				]
 			},
 			"1/Head_1": {

@@ -3,6 +3,7 @@
 public class PlayerMovement : MonoBehaviour {
 
     private PlayerCharacter _player;
+    private PlayerScriptCollector _playerScripts;
     private Rigidbody2D _rgb2d;
     private Quaternion _rotation;
     private Vector2 _direction;
@@ -10,6 +11,7 @@ public class PlayerMovement : MonoBehaviour {
     void Awake()
     {
         _player = GetComponent<PlayerCharacter>();
+        _playerScripts = GetComponent<PlayerScriptCollector>();
     }
 
 	void Start () {
@@ -27,7 +29,10 @@ public class PlayerMovement : MonoBehaviour {
     {
         if(moveDir != Vector2.zero)
         {
-            _player.UpperBodyAnimator.SetBool("IsWalking", true);//Test
+            if (!_playerScripts.PlayerAttack.IsAttacking)
+            {
+                _player.UpperBodyAnimator.SetBool("IsWalking", true);//Test
+            }
             _player.LowerBodyAnimator.SetBool("IsWalking", true);//Test
         }
         else
