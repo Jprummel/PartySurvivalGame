@@ -23,7 +23,7 @@ public class SceneLoader : MonoBehaviour {
 
     IEnumerator ChangeSceneRoutine(string sceneName)
     {
-        _fader.Fade(1, 1.5f);
+        _fader.Fade(1, 1.4f);
         yield return new WaitForSeconds(1.5f);
         _async = SceneManager.LoadSceneAsync(sceneName);
         _isLoading = true;

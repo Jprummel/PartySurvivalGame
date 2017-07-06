@@ -33,7 +33,7 @@ public class ComicScene : MonoBehaviour {
                 _currentPanel++;
             }
             else if (_currentPanel == _comicPanels.Count && !_isLoading) //If this is the last panel
-            {   //Fade in comic panel and load corresponding level
+            {   //Load corresponding level
                 for (int i = 0; i < _continueObjects.Count; i++)
                 {
                     _continueObjects[i].SetActive(false);
