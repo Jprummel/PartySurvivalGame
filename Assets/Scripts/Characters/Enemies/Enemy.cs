@@ -1,13 +1,13 @@
-﻿using System;
+﻿//using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using Spine.Unity;
 
 public class Enemy : Character, IDamageable{
-
-    [SerializeField]protected GameObject _deadBody;
+    
     [SerializeField]protected float _damageGrowFactor;
     [SerializeField]protected float _healthGrowFactor;
     [SerializeField]protected float _goldValueGrowFactor;
@@ -22,6 +22,9 @@ public class Enemy : Character, IDamageable{
         _enemySpawner = GameObject.FindGameObjectWithTag(Tags.ENEMYSPAWNER).GetComponent<EnemySpawner>();
         _healthBar = GetComponentInChildren<Image>();
         base.Awake();
+        int randomint = Random.Range(1, 3);
+        _upperBodySkeleton.skeleton.SetSkin(Name + "_" + randomint);
+        _lowerBodySkeleton.skeleton.SetSkin(Name + "_" + randomint);
     }
 
     protected override void Update()
@@ -41,8 +44,7 @@ public class Enemy : Character, IDamageable{
         collider.enabled = false;
         _enemySpawner.spawnedEnemies.Remove(this.gameObject);
         yield return new WaitForSeconds(1f);
-        //Instantiate(_deadBody, transform.position, transform.rotation);
-        Destroy(this.gameObject);
+         Destroy(this.gameObject);
     }
 
     void UpdateHealthbar()

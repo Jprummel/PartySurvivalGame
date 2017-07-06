@@ -1,0 +1,55 @@
+
+Throne_Room.png
+size: 2945,1693
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Banner
+  rotate: false
+  xy: 2708, 1372
+  size: 235, 319
+  orig: 235, 319
+  offset: 0, 0
+  index: -1
+Banner_King
+  rotate: false
+  xy: 2708, 841
+  size: 207, 198
+  orig: 207, 198
+  offset: 0, 0
+  index: -1
+Banner_Right
+  rotate: false
+  xy: 2708, 1041
+  size: 218, 329
+  orig: 218, 329
+  offset: 0, 0
+  index: -1
+Shine
+  rotate: false
+  xy: 2708, 531
+  size: 62, 51
+  orig: 62, 51
+  offset: 0, 0
+  index: -1
+Sunrays
+  rotate: false
+  xy: 2, 2
+  size: 2704, 1689
+  orig: 2704, 1689
+  offset: 0, 0
+  index: -1
+Treasure_Chest_Left
+  rotate: false
+  xy: 2708, 692
+  size: 165, 147
+  orig: 165, 147
+  offset: 0, 0
+  index: -1
+Treasure_Chest_Right
+  rotate: false
+  xy: 2708, 584
+  size: 147, 106
+  orig: 147, 106
+  offset: 0, 0
+  index: -1

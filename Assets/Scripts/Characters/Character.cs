@@ -8,6 +8,7 @@ public class Character : MonoBehaviour, IDamageable {
 
     //Spine values
     [SerializeField] protected SkeletonAnimation _upperBodySkeleton;
+    [SerializeField] protected SkeletonAnimation _lowerBodySkeleton;
     [SerializeField]protected Animator _upperBodyAnimator;
     [SerializeField]protected Animator _lowerBodyAnimator;
     protected string _moveStateName;
