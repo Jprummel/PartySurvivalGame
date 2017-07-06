@@ -1,0 +1,62 @@
+
+Lowerbody.png
+size: 122,88
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Militia_Orange_1/Left_Feet
+  rotate: true
+  xy: 56, 45
+  size: 41, 27
+  orig: 41, 27
+  offset: 0, 0
+  index: -1
+Militia_Orange_1/Left_Leg
+  rotate: true
+  xy: 2, 4
+  size: 36, 28
+  orig: 36, 28
+  offset: 0, 0
+  index: -1
+Militia_Orange_1/Right_Feet
+  rotate: true
+  xy: 2, 42
+  size: 44, 25
+  orig: 44, 25
+  offset: 0, 0
+  index: -1
+Militia_Orange_1/Right_Leg
+  rotate: true
+  xy: 85, 47
+  size: 39, 29
+  orig: 39, 29
+  offset: 0, 0
+  index: -1
+Militia_Orange_3/Left_Feet
+  rotate: true
+  xy: 29, 42
+  size: 44, 25
+  orig: 44, 25
+  offset: 0, 0
+  index: -1
+Militia_Orange_3/Left_Leg
+  rotate: true
+  xy: 32, 4
+  size: 36, 28
+  orig: 36, 28
+  offset: 0, 0
+  index: -1
+Militia_Orange_3/Right_Feet
+  rotate: true
+  xy: 62, 2
+  size: 41, 27
+  orig: 41, 27
+  offset: 0, 0
+  index: -1
+Militia_Orange_3/Right_Leg
+  rotate: true
+  xy: 91, 6
+  size: 39, 29
+  orig: 39, 29
+  offset: 0, 0
+  index: -1
