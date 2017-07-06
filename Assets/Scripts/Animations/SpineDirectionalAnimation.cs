@@ -23,6 +23,7 @@ public class SpineDirectionalAnimation : StateMachineBehaviour {
     {
         if (_char.MoveStateName != direction && !_isAttack)
         {
+            Debug.Log(_animName + "_" + _char.MoveStateName);
             anim.state.SetAnimation(0, _animName + "_" + _char.MoveStateName, _loop);
             direction = _char.MoveStateName;
         }

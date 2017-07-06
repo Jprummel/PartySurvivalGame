@@ -55,10 +55,6 @@ public class EnemySpawner : MonoBehaviour {
     {
         int randomEnemy = Random.Range(_minEnemyType, _enemyTypeCount);
         GameObject spawnedEnemy = Instantiate(_enemyTypes[randomEnemy]);
-        Character _char = spawnedEnemy.GetComponent<Character>();
-        SkeletonAnimation _skel = _char.UpperBody;
-        int randomint = Random.Range(1, 3);
-        _skel.skeleton.SetSkin(_char.Name + "_" + randomint);
         spawnedEnemies.Add(spawnedEnemy);
         spawnedEnemy.transform.position = _spawnpoints[Random.Range(0, _spawnpoints.Count)].position;
         spawnedEnemy.transform.SetParent(_enemyParentObject);
