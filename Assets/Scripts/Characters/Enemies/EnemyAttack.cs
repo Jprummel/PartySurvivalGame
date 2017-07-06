@@ -4,24 +4,24 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour {
 
     Enemy _enemy;
-    EnemyTargetting _enemyTargetting; 
+    EnemyTargetting _enemyTargetting;
     private bool _readyToAttack = true;
 
-	void Awake () {
+    void Awake() {
         _enemy = GetComponent<Enemy>();
-        _enemyTargetting = GetComponentInChildren<EnemyTargetting>();  
-	}
-	
-	void Update () {
+        _enemyTargetting = GetComponentInChildren<EnemyTargetting>();
+    }
+
+    void Update() {
         if (!_enemy.IsDead)
         {
             Attack();
         }
-	}
+    }
 
     void Attack()
     {
-        if(_enemyTargetting.Target != null)
+        if (_enemyTargetting.Target != null)
         {
             float distance = Vector2.Distance(transform.position, _enemyTargetting.Target.transform.position);
             if (distance <= _enemy.AttackRange)
@@ -29,23 +29,25 @@ public class EnemyAttack : MonoBehaviour {
                 if (_readyToAttack)
                 {
                     _readyToAttack = false;
-                    StartCoroutine(StartAttack());
-                    StartCoroutine(Cooldown());
+                    StartAttack();
                 }
             }
         }
 
     }
 
-    IEnumerator StartAttack()
+    private void StartAttack()
     {
         _enemy.UpperBodyAnimator.SetInteger("AttackState", 1);
-        yield return null;
     }
 
-    IEnumerator Cooldown()
+    public void FinishAttack()
     {
-        yield return new WaitForSeconds(_enemy.AttackSpeed);
         _readyToAttack = true;
+    }
+
+    public void FinishAttackAnimation()
+    {
+        _enemy.UpperBodyAnimator.SetInteger("AttackState", 0);
     }
 }
