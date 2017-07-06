@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "nYGcw+jqd6gBtUjsN1UcjlVweiU", "spine": "3.6.36", "width": 197.33, "height": 202.57, "images": "" },
+"skeleton": { "hash": "bmjOa36vWX7JrPpJoSTa/zu8O+g", "spine": "3.6.36", "width": 197.33, "height": 207.1, "images": "" },
 "bones": [
 	{ "name": "root", "x": -196.06 },
 	{ "name": "1/Body_1", "parent": "root", "length": 54.08, "rotation": 86.9, "x": 2.45, "y": 35.14 },
@@ -38,10 +38,6 @@
 			"Effects/Hit fx0005": { "width": 184, "height": 157 },
 			"Effects/Hit fx0006": { "width": 184, "height": 157 }
 		},
-		"Shield": {
-			"Soldier_1/Shield_3": { "x": 22.21, "y": -6.05, "rotation": 132.74, "width": 37, "height": 109 },
-			"Soldier_3/Shield_3": { "rotation": 131.73, "width": 37, "height": 108 }
-		},
 		"Sword_Fx": {
 			"Effects/Forhand0009": { "x": -19, "y": -65.09, "scaleX": 0.631, "scaleY": 0.631, "rotation": -142.11, "width": 271, "height": 208 }
 		},
@@ -53,7 +49,7 @@
 			}
 		}
 	},
-	"Soldier_Blue": {
+	"Soldier_1": {
 		"Arm_L": {
 			"Arm_L_Left": { "name": "Soldier_1_Blue/Arm_L_1", "x": 10.18, "y": -1.38, "rotation": 93.79, "width": 28, "height": 29 },
 			"Arm_L_Right": { "name": "Soldier_3_Blue/Arm_L_3", "x": 8.87, "y": -0.32, "rotation": 58.46, "width": 29, "height": 34 }
@@ -78,6 +74,10 @@
 			"Head_Left": { "name": "Soldier_1_Blue/Head_1", "x": 7.39, "y": -14.09, "rotation": -171.59, "width": 88, "height": 105 },
 			"Head_Right": { "name": "Soldier_3_Blue/Head_3", "x": 6.62, "y": -15.57, "rotation": -171.59, "width": 88, "height": 106 }
 		},
+		"Shield": {
+			"Soldier_1/Shield_3": { "name": "Soldier_1_Blue/Shield_1", "x": 27.17, "y": -4.32, "rotation": 131.73, "width": 37, "height": 109 },
+			"Soldier_3/Shield_3": { "name": "Soldier_3_Blue/Shield_3", "x": 7.45, "y": 17.14, "rotation": 131.73, "width": 37, "height": 108 }
+		},
 		"Shoulder_L": {
 			"Shoulder_L_Left": { "name": "Soldier_1_Blue/Shoulder_L_1", "x": 7.22, "y": 2.18, "rotation": 75.81, "width": 38, "height": 37 },
 			"Shoulder_L_Right": { "name": "Soldier_3_Blue/Shoulder_L_3", "x": 6.58, "y": 1.66, "rotation": 75.54, "width": 33, "height": 38 }
@@ -91,7 +91,7 @@
 			"Weapon/Weapon3": { "name": "Weapon/Weapon (blue)", "x": -18.51, "y": 35.76, "rotation": -49.03, "width": 132, "height": 30 }
 		}
 	},
-	"Soldier_Red": {
+	"Soldier_2": {
 		"Arm_L": {
 			"Arm_L_Left": { "name": "Soldier_1/Arm_L_1", "x": 10.18, "y": -1.38, "rotation": 93.79, "width": 28, "height": 29 },
 			"Arm_L_Right": { "name": "Soldier_3/Arm_L_3", "x": 8.87, "y": -0.32, "rotation": 58.46, "width": 29, "height": 34 }

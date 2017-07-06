@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "Nth0niL6P+mLpR2Z6p1X0GyOXes", "spine": "3.6.36", "width": 78.33, "height": 48.42, "images": "" },
+"skeleton": { "hash": "ECM3pCLogVZGI/WgJtW/SwsP7Io", "spine": "3.6.36", "width": 78.33, "height": 48.42, "images": "" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "Militia_1/Left_Leg", "parent": "root", "length": 20.33, "rotation": -86.61, "x": -17.19, "y": 40.64 },
@@ -15,7 +15,7 @@
 ],
 "skins": {
 	"default": {},
-	"Orange": {
+	"Militia_1": {
 		"Militia_1/Left_Feet": {
 			"Militia_Orange_1/Left_Feet": { "x": 8.21, "y": 2.74, "rotation": 145.83, "width": 41, "height": 27 },
 			"Militia_Orange_3/Left_Feet": { "x": -0.3, "y": 8.84, "rotation": 145.83, "width": 44, "height": 25 }
@@ -33,7 +33,7 @@
 			"Militia_Orange_3/Right_Leg": { "x": 5.97, "y": -1.2, "rotation": 89.61, "width": 39, "height": 29 }
 		}
 	},
-	"Purple": {
+	"Militia_2": {
 		"Militia_1/Left_Feet": {
 			"Militia_Orange_1/Left_Feet": { "x": 8.21, "y": 2.74, "rotation": 145.83, "width": 41, "height": 27 },
 			"Militia_Orange_3/Left_Feet": { "x": -0.3, "y": 8.84, "rotation": 145.83, "width": 44, "height": 25 }

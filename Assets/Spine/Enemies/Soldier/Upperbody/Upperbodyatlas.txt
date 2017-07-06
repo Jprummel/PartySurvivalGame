@@ -46,39 +46,11 @@ Effects/Hit fx0006
   orig: 184, 157
   offset: 0, 0
   index: -1
-Soldier_1/Body_1
-  rotate: true
-  xy: 351, 2
-  size: 77, 74
-  orig: 77, 74
-  offset: 0, 0
-  index: -1
-Soldier_1/Head_1
+Soldier_1/Arm_L_1
   rotate: false
-  xy: 607, 12
-  size: 88, 99
-  orig: 88, 99
-  offset: 0, 0
-  index: -1
-Soldier_1/Shield_3
-  rotate: false
-  xy: 787, 2
-  size: 37, 109
-  orig: 37, 109
-  offset: 0, 0
-  index: -1
-Soldier_1/Shoulder_L_1
-  rotate: false
-  xy: 1023, 47
-  size: 38, 37
-  orig: 38, 37
-  offset: 0, 0
-  index: -1
-Soldier_1/Shoulder_R_1
-  rotate: true
-  xy: 866, 2
-  size: 33, 38
-  orig: 33, 38
+  xy: 1143, 55
+  size: 28, 29
+  orig: 28, 29
   offset: 0, 0
   index: -1
 Soldier_1_Blue/Arm_L_1
@@ -88,11 +60,11 @@ Soldier_1_Blue/Arm_L_1
   orig: 28, 29
   offset: 0, 0
   index: -1
-Soldier_1/Arm_L_1
+Soldier_1/Arm_R_1
   rotate: false
-  xy: 1143, 55
-  size: 28, 29
-  orig: 28, 29
+  xy: 984, 77
+  size: 29, 34
+  orig: 29, 34
   offset: 0, 0
   index: -1
 Soldier_1_Blue/Arm_R_1
@@ -102,25 +74,11 @@ Soldier_1_Blue/Arm_R_1
   orig: 29, 34
   offset: 0, 0
   index: -1
-Soldier_1/Arm_R_1
-  rotate: false
-  xy: 984, 77
-  size: 29, 34
-  orig: 29, 34
-  offset: 0, 0
-  index: -1
-Soldier_1_Blue/Body_1
+Soldier_1/Body_1
   rotate: true
   xy: 275, 2
   size: 77, 74
   orig: 77, 74
-  offset: 0, 0
-  index: -1
-Soldier_1_Blue/Hand_L_1
-  rotate: false
-  xy: 246, 35
-  size: 27, 25
-  orig: 27, 25
   offset: 0, 0
   index: -1
 Soldier_1/Hand_L_1
@@ -130,11 +88,11 @@ Soldier_1/Hand_L_1
   orig: 27, 25
   offset: 0, 0
   index: -1
-Soldier_1_Blue/Hand_R_1
-  rotate: true
-  xy: 2, 2
-  size: 26, 29
-  orig: 26, 29
+Soldier_1_Blue/Hand_L_1
+  rotate: false
+  xy: 246, 35
+  size: 27, 25
+  orig: 27, 25
   offset: 0, 0
   index: -1
 Soldier_1/Hand_R_1
@@ -144,6 +102,41 @@ Soldier_1/Hand_R_1
   orig: 26, 29
   offset: 0, 0
   index: -1
+Soldier_1_Blue/Hand_R_1
+  rotate: true
+  xy: 2, 2
+  size: 26, 29
+  orig: 26, 29
+  offset: 0, 0
+  index: -1
+Soldier_1/Head_1
+  rotate: false
+  xy: 607, 12
+  size: 88, 99
+  orig: 88, 99
+  offset: 0, 0
+  index: -1
+Soldier_1/Shoulder_L_1
+  rotate: true
+  xy: 984, 37
+  size: 38, 37
+  orig: 38, 37
+  offset: 0, 0
+  index: -1
+Soldier_1/Shoulder_R_1
+  rotate: true
+  xy: 826, 2
+  size: 33, 38
+  orig: 33, 38
+  offset: 0, 0
+  index: -1
+Soldier_1_Blue/Body_1
+  rotate: true
+  xy: 351, 2
+  size: 77, 74
+  orig: 77, 74
+  offset: 0, 0
+  index: -1
 Soldier_1_Blue/Head_1
   rotate: false
   xy: 517, 6
@@ -151,60 +144,25 @@ Soldier_1_Blue/Head_1
   orig: 88, 105
   offset: 0, 0
   index: -1
+Soldier_1_Blue/Shield_1
+  rotate: false
+  xy: 787, 2
+  size: 37, 109
+  orig: 37, 109
+  offset: 0, 0
+  index: -1
 Soldier_1_Blue/Shoulder_L_1
-  rotate: true
-  xy: 984, 37
+  rotate: false
+  xy: 1023, 47
   size: 38, 37
   orig: 38, 37
   offset: 0, 0
   index: -1
 Soldier_1_Blue/Shoulder_R_1
   rotate: true
-  xy: 826, 2
+  xy: 866, 2
   size: 33, 38
   orig: 33, 38
-  offset: 0, 0
-  index: -1
-Soldier_3/Body_3
-  rotate: false
-  xy: 905, 37
-  size: 77, 74
-  orig: 77, 74
-  offset: 0, 0
-  index: -1
-Soldier_3/Head_3
-  rotate: false
-  xy: 697, 12
-  size: 88, 99
-  orig: 88, 99
-  offset: 0, 0
-  index: -1
-Soldier_3/Shield_3
-  rotate: true
-  xy: 136, 23
-  size: 37, 108
-  orig: 37, 108
-  offset: 0, 0
-  index: -1
-Soldier_3/Shoulder_L_3
-  rotate: true
-  xy: 946, 2
-  size: 33, 38
-  orig: 33, 38
-  offset: 0, 0
-  index: -1
-Soldier_3/Shoulder_R_3
-  rotate: false
-  xy: 1103, 47
-  size: 38, 37
-  orig: 38, 37
-  offset: 0, 0
-  index: -1
-Soldier_3_Blue/Arm_L_3
-  rotate: true
-  xy: 986, 6
-  size: 29, 34
-  orig: 29, 34
   offset: 0, 0
   index: -1
 Soldier_3/Arm_L_3
@@ -214,11 +172,11 @@ Soldier_3/Arm_L_3
   orig: 29, 34
   offset: 0, 0
   index: -1
-Soldier_3_Blue/Arm_R_3
+Soldier_3_Blue/Arm_L_3
   rotate: true
-  xy: 33, 2
-  size: 26, 29
-  orig: 26, 29
+  xy: 986, 6
+  size: 29, 34
+  orig: 29, 34
   offset: 0, 0
   index: -1
 Soldier_3/Arm_R_3
@@ -228,18 +186,18 @@ Soldier_3/Arm_R_3
   orig: 26, 29
   offset: 0, 0
   index: -1
-Soldier_3_Blue/Body_3
+Soldier_3_Blue/Arm_R_3
+  rotate: true
+  xy: 33, 2
+  size: 26, 29
+  orig: 26, 29
+  offset: 0, 0
+  index: -1
+Soldier_3/Body_3
   rotate: false
   xy: 826, 37
   size: 77, 74
   orig: 77, 74
-  offset: 0, 0
-  index: -1
-Soldier_3_Blue/Hand_L_3
-  rotate: false
-  xy: 93, 5
-  size: 25, 23
-  orig: 25, 23
   offset: 0, 0
   index: -1
 Soldier_3/Hand_L_3
@@ -249,11 +207,11 @@ Soldier_3/Hand_L_3
   orig: 25, 23
   offset: 0, 0
   index: -1
-Soldier_3_Blue/Hand_R_3
-  rotate: true
-  xy: 64, 2
-  size: 26, 27
-  orig: 26, 27
+Soldier_3_Blue/Hand_L_3
+  rotate: false
+  xy: 93, 5
+  size: 25, 23
+  orig: 25, 23
   offset: 0, 0
   index: -1
 Soldier_3/Hand_R_3
@@ -263,6 +221,41 @@ Soldier_3/Hand_R_3
   orig: 26, 27
   offset: 0, 0
   index: -1
+Soldier_3_Blue/Hand_R_3
+  rotate: true
+  xy: 64, 2
+  size: 26, 27
+  orig: 26, 27
+  offset: 0, 0
+  index: -1
+Soldier_3/Head_3
+  rotate: false
+  xy: 697, 12
+  size: 88, 99
+  orig: 88, 99
+  offset: 0, 0
+  index: -1
+Soldier_3/Shoulder_L_3
+  rotate: true
+  xy: 906, 2
+  size: 33, 38
+  orig: 33, 38
+  offset: 0, 0
+  index: -1
+Soldier_3/Shoulder_R_3
+  rotate: false
+  xy: 1063, 47
+  size: 38, 37
+  orig: 38, 37
+  offset: 0, 0
+  index: -1
+Soldier_3_Blue/Body_3
+  rotate: false
+  xy: 905, 37
+  size: 77, 74
+  orig: 77, 74
+  offset: 0, 0
+  index: -1
 Soldier_3_Blue/Head_3
   rotate: false
   xy: 427, 5
@@ -270,30 +263,37 @@ Soldier_3_Blue/Head_3
   orig: 88, 106
   offset: 0, 0
   index: -1
+Soldier_3_Blue/Shield_3
+  rotate: true
+  xy: 136, 23
+  size: 37, 108
+  orig: 37, 108
+  offset: 0, 0
+  index: -1
 Soldier_3_Blue/Shoulder_L_3
   rotate: true
-  xy: 906, 2
+  xy: 946, 2
   size: 33, 38
   orig: 33, 38
   offset: 0, 0
   index: -1
 Soldier_3_Blue/Shoulder_R_3
   rotate: false
-  xy: 1063, 47
+  xy: 1103, 47
   size: 38, 37
   orig: 38, 37
   offset: 0, 0
   index: -1
 Weapon/Weapon
   rotate: false
-  xy: 275, 81
+  xy: 2, 30
   size: 132, 30
   orig: 132, 30
   offset: 0, 0
   index: -1
 Weapon/Weapon (blue)
   rotate: false
-  xy: 2, 30
+  xy: 275, 81
   size: 132, 30
   orig: 132, 30
   offset: 0, 0
