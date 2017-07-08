@@ -38,6 +38,7 @@ public class KeyframeEvent : MonoBehaviour {
 
                 break;
             case KeyframeTags.CHARGE_END:
+                Debug.Log("keyframe event");
                 _playerScripts.Charge.FinishCharge();
                 break;
             case KeyframeTags.MARK_START:

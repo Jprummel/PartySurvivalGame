@@ -23,8 +23,9 @@ public class Enemy : Character, IDamageable{
         _healthBar = GetComponentInChildren<Image>();
         base.Awake();
         int randomint = Random.Range(1, 3);
-        _upperBodySkeleton.skeleton.SetSkin(Name + "_" + randomint);
-        _lowerBodySkeleton.skeleton.SetSkin(Name + "_" + randomint);
+        string skinName = "Peasant_" + randomint;
+        _upperBodySkeleton.initialSkinName = skinName;
+        _lowerBodySkeleton.initialSkinName = skinName;
     }
 
     protected override void Update()

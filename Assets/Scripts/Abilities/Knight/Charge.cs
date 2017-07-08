@@ -71,7 +71,7 @@ public class Charge : Ability {
     {
         _usingAbility = true;
         _player.CanMove = false;   
-        //start animation spaghettios
+        //start animation
         _sound.PlayAbilitySound();
         _player.UpperBodyAnimator.SetBool("UsingAbility", true);
         _player.LowerBodyAnimator.SetBool("UsingAbility", true);
@@ -82,7 +82,7 @@ public class Charge : Ability {
         yield return new WaitForSeconds(_chargeTime);
         yield return new WaitForSeconds(_intoIdleTime);*/
 
-        //end animation spaghettios
+        //end animation
         /*_player.UpperBodyAnimator.SetBool("UsingAbility", false);
         _player.LowerBodyAnimator.SetBool("UsingAbility", false);
         _player.Invincible = false;
@@ -96,6 +96,7 @@ public class Charge : Ability {
 
     public void FinishCharge()
     {
+        Debug.Log("finito");
         _player.UpperBodyAnimator.SetBool("UsingAbility", false);
         _player.LowerBodyAnimator.SetBool("UsingAbility", false);
         _player.Invincible = false;
