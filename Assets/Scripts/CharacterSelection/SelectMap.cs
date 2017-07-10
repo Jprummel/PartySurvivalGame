@@ -5,7 +5,6 @@ using UnityEngine;
 public class SelectMap : MonoBehaviour {
 
     [SerializeField]private string _comicToLoad;
-    [SerializeField]private string _levelToLoad;
     private MapSelection _mapSelection;
 
     private void Awake()
@@ -15,13 +14,6 @@ public class SelectMap : MonoBehaviour {
 
     public void ChooseMap()
     {
-        if (!SettingsInformation.SkipCutscenes)
-        {
-            _mapSelection.SelectedMap = _comicToLoad;
-        }
-        else
-        {
-            _mapSelection.SelectedMap = _levelToLoad;
-        }
+        _mapSelection.SelectedMap = _comicToLoad;
     }
 }
