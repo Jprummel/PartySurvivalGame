@@ -26,6 +26,7 @@ public class EnemyAttack : MonoBehaviour {
             float distance = Vector2.Distance(transform.position, _enemyTargetting.Target.transform.position);
             if (distance <= _enemy.AttackRange)
             {
+                //Time.timeScale = 0;
                 if (_readyToAttack)
                 {
                     _readyToAttack = false;

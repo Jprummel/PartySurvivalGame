@@ -21,7 +21,7 @@ public class AttackCollider : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D target)
     {
             if (_source.tag == Tags.PLAYER && target.tag == Tags.ENEMY)
-            {
+            {    
                 ExecuteEvents.Execute<IDamageable>(target.gameObject, null, (x, y) => x.TakeDamage(_source));
             }
             if (_source.tag == Tags.ENEMY && target.tag == Tags.PLAYER)
