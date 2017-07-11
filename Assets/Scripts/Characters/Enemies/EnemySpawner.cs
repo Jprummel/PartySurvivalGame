@@ -33,12 +33,9 @@ public class EnemySpawner : MonoBehaviour {
             case 5:
                 _enemyTypeCount = 1; //Adds Militia
                 break;
-            case 8:
-                _minEnemyType = 1; //Removes peasants
-                _enemyTypeCount = 2; //Adds blacksmiths
-                break;
+
             case 15:
-                _enemyTypeCount = 3; //Adds soldiers
+                _enemyTypeCount = 2; //Adds soldiers
                 break;
         }
     }
