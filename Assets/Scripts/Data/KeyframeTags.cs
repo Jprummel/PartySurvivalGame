@@ -18,6 +18,7 @@ public class KeyframeTags : MonoBehaviour {
     public const string WHIRLWIND_END               = "Whirlwind_End";
     public const string CHARGE_START                = "Charge_Start";
     public const string CHARGE_END                  = "Charge_End";
+    public const string CHARGE_ANIMATION_END        = "Charge_Animation_End";
     public const string MARK_START                  = "Mark_Start";
     public const string MARK_END                    = "Mark_End";
 }

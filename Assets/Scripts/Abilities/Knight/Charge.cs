@@ -17,13 +17,6 @@ public class Charge : Ability {
     private float _windUpTime;
     private float _intoIdleTime;
 
-    void Start()
-    {
-        _chargeTime = _charge.length;
-        _windUpTime = _windUp.length;
-        _intoIdleTime = _intoIdle.length / 1.5f;
-    }
-
     protected override void Update()
     {
         base.Update();
